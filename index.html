@@ -1,74 +1,27 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Présentation des Personnages</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <h1>Les Personnages</h1>
-        <div class="table">
-            <div class="personnage">
-                <img src="lee-lou.jpg">
-                <h2>Lee-Lou</h2>
-                <button onclick="window.location.href='https://www.instagram.com/leelgortina/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-            <div class="personnage">
-                <img src="manon.jpg">
-                <h2>Manon</h2>
-                <button onclick="window.location.href='https://www.instagram.com/manon_figuccia/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-            <div class="personnage">
-                <img src="estelle.jpg">
-                <h2>Estelle</h2>
-                <button onclick="window.location.href='https://www.instagram.com/stlouuuu/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-            <div class="personnage">
-                <img src="mazia.jpg">
-                <h2>Mazia</h2>
-                <button onclick="window.location.href='https://www.instagram.com/mazia.nice/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-            <div class="personnage">
-                <img src="mickaella.jpg">
-                <h2>Mickaella</h2>
-                <button onclick="window.location.href='https://www.instagram.com/mickaella_trl/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-            <div class="personnage">
-                <img src="gaia.jpg">
-                <h2>Gaia</h2>
-                <button onclick="window.location.href='https://www.instagram.com/gaia_cmb/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-            <div class="personnage">
-                <img src="keti.jpg">
-                <h2>Keti</h2>
-                <button onclick="window.location.href='https://www.instagram.com/issakadze/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-            <div class="personnage">
-                <img src="leane.jpg">
-                <h2>Leane</h2>
-                <button onclick="window.location.href='https://www.instagram.com/leane.vuletic/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-            <div class="personnage">
-                <img src="junior.jpg">
-                <h2>Junior</h2>
-                <button onclick="window.location.href='https://www.instagram.com/junior_joyant/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-            <div class="personnage">
-                <img src="deborah.jpg">
-                <h2>Deborah</h2>
-                <button onclick="window.location.href='https://www.instagram.com/deborah.slg/'">Voir mon Instagram</button>
-                <button onclick="fermerPresentation()">Quitter la présentation</button>
-            </div>
-        </div>
-
-        <script src="script.js"></script>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="enter-button">Entrer</button>
+  <div id="door-wrapper">
+    <div id="door"></div>
+  </div>
+  <div id="room" style="display:none;">
+    <div id="characters">
+      <!-- Dynamically generated characters will be added here -->
+    </div>
+  </div>
+  <div id="character-presentation" style="display:none;">
+    <h2 id="character-name"></h2>
+    <p id="character-description"></p>
+    <a id="instagram-link" href="#" target="_blank">Voir mon Instagram</a>
+    <button id="exit-button">Quitter</button>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
