@@ -28,7 +28,8 @@
 /* Define the properties and layout of the room area */
 #room {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Arrange characters in 5 columns */
+  grid-template-columns: repeat(3, 1fr); /* Arrange characters in 3 columns */
+  grid-template-rows: repeat(7, 1fr); /* Arrange characters in 7 rows */
   gap: 20px; /* Add some gap between characters */
   justify-items: center; /* Center characters horizontally */
   align-items: center; /* Center characters vertically */
