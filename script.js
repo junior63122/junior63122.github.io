@@ -29,12 +29,11 @@ var characters = [
 
 var charactersContainer = document.getElementById('characters');
 
-// Create and add the characters to the room
 characters.forEach(function(character, index) {
   var characterDiv = document.createElement('div');
   characterDiv.classList.add('character');
   characterDiv.innerHTML = `
-    <img src="images/character${index+1}.jpg" onerror="this.src='profil0.jpg'; alt="${character.name}">
+    <img src="https://github.com/junior63122/junior63122.github.io/blob/main/avatar-1577909_1280.png?raw=true" alt="${character.name}">
     <h3 class="character-name">${character.name}</h3>
   `;
   characterDiv.addEventListener('click', function() {
