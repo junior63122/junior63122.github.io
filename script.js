@@ -3,8 +3,6 @@ document.getElementById('enter-button').addEventListener('click', function() {
   document.getElementById('door-wrapper').style.display = "none";
   document.getElementById('room').style.display = "block";
 });
-
-// Define an array of characters with their names, descriptions, and Instagram links
 var characters = [
   { name: "lee-lou", description: "", instagram: "https://www.instagram.com/leelgortina" },
   { name: "manon", description: "", instagram: "https://www.instagram.com/manon_figuccia" },
