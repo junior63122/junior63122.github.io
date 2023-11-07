@@ -2,6 +2,7 @@ document.getElementById('enter-button').addEventListener('click', function() {
   document.getElementById('door').style.animation = "openDoor 2s ease-in-out forwards";
   document.getElementById('door-wrapper').style.display = "none";
   document.getElementById('room').style.display = "block";
+  this.style.display = "none"; // Hide the enter-button using 'this'
 });
 var characters = [
   { name: "lee-lou", description: "hello hello, enchanté ! moi c’est Lee-Lou, j’ai 21 ans et je viens d’arriver à Nice le mois dernier, c’est super cool d’avoir créé ce groupe !", instagram: "https://www.instagram.com/leelgortina" },
