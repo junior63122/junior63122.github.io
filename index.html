@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Mon jeu</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div class="game-container">
-		<button class="start-button" onclick="startGame()">Entrer</button>
-		<div class="door"></div>
-		<div class="characters-container">
-			<div class="character" onclick="showCharacterInfo('Personnage 1')">
-				<div class="character-name">Personnage 1</div>
-			</div>
-			<div class="character" onclick="showCharacterInfo('Personnage 2')">
-				<div class="character-name">Personnage 2</div>
-			</div>
-			<div class="character" onclick="showCharacterInfo('Personnage 3')">
-				<div class="character-name">Personnage 3</div>
-			</div>
-			<div class="character" onclick="showCharacterInfo('Personnage 4')">
-				<div class="character-name">Personnage 4</div>
-			</div>
-			<div class="character" onclick="showCharacterInfo('Personnage 5')">
-				<div class="character-name">Personnage 5</div>
-			</div>
-			<div class="character" onclick="showCharacterInfo('Personnage 6')">
-				<div class="character-name">Personnage 6</div>
-			</div>
-			<div class="character" onclick="showCharacterInfo('Personnage 7')">
-				<div class="character-name">Personnage 7</div>
-			</div>
-			<div class="character" onclick="showCharacterInfo('Personnage 8')">
-				<div class="character-name">Personnage 8</div>
-			</div>
-		</div>
-	</div>
+    <head>
+        <title>Présentation des Personnages</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Les Personnages</h1>
+        <div class="table">
+            <div class="personnage">
+                <img src="lee-lou.jpg">
+                <h2>Lee-Lou</h2>
+                <button onclick="window.location.href='https://www.instagram.com/leelgortina/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+            <div class="personnage">
+                <img src="manon.jpg">
+                <h2>Manon</h2>
+                <button onclick="window.location.href='https://www.instagram.com/manon_figuccia/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+            <div class="personnage">
+                <img src="estelle.jpg">
+                <h2>Estelle</h2>
+                <button onclick="window.location.href='https://www.instagram.com/stlouuuu/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+            <div class="personnage">
+                <img src="mazia.jpg">
+                <h2>Mazia</h2>
+                <button onclick="window.location.href='https://www.instagram.com/mazia.nice/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+            <div class="personnage">
+                <img src="mickaella.jpg">
+                <h2>Mickaella</h2>
+                <button onclick="window.location.href='https://www.instagram.com/mickaella_trl/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+            <div class="personnage">
+                <img src="gaia.jpg">
+                <h2>Gaia</h2>
+                <button onclick="window.location.href='https://www.instagram.com/gaia_cmb/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+            <div class="personnage">
+                <img src="keti.jpg">
+                <h2>Keti</h2>
+                <button onclick="window.location.href='https://www.instagram.com/issakadze/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+            <div class="personnage">
+                <img src="leane.jpg">
+                <h2>Leane</h2>
+                <button onclick="window.location.href='https://www.instagram.com/leane.vuletic/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+            <div class="personnage">
+                <img src="junior.jpg">
+                <h2>Junior</h2>
+                <button onclick="window.location.href='https://www.instagram.com/junior_joyant/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+            <div class="personnage">
+                <img src="deborah.jpg">
+                <h2>Deborah</h2>
+                <button onclick="window.location.href='https://www.instagram.com/deborah.slg/'">Voir mon Instagram</button>
+                <button onclick="fermerPresentation()">Quitter la présentation</button>
+            </div>
+        </div>
 
-	<script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
