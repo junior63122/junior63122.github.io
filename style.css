@@ -1,16 +1,16 @@
 /* Define the wrapper for the door and set its height */
 #door-wrapper {
-  position: center;
-  height: 500px;
+  position: relative;
+  height: 200px;
 }
 
 /* Define the door properties, its position and animation */
 #door {
-  width: 100px;
-  height: 150px;
+  width: 200px;
+  height: 300px;
   border: 2px solid black;
   background-color: brown;
-  position: absolute;
+  position: center;
   bottom: 0;
   animation: openDoor 2s ease-in-out forwards; /* Animate the door opening */
 }
