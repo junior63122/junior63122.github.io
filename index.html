@@ -1,4 +1,4 @@
-o<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,10 @@ o<!DOCTYPE html>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="enter-button">Voir les présentations </button>
+  <button id="enter-button">Entrer</button>
+  <div id="door-wrapper">
+    <div id="door"></div>
+  </div>
   <div id="room" style="display:none;">
     <div id="characters">
       <!-- Dynamically generated characters will be added here -->
@@ -16,8 +19,8 @@ o<!DOCTYPE html>
   <div id="character-presentation" style="display:none;">
     <h2 id="character-name"></h2>
     <p id="character-description"></p>
-    <a id="instagram-link" href="#" target="_blank"> Instagram</a>
-    <button id="exit-button">Retour</button>
+    <a id="instagram-link" href="#" target="_blank">Voir mon Instagram</a>
+    <button id="exit-button">Quitter</button>
   </div>
   <script src="script.js"></script>
 </body>
