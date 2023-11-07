@@ -6,9 +6,27 @@ document.getElementById('enter-button').addEventListener('click', function() {
 
 // Define an array of characters with their names, descriptions, and Instagram links
 var characters = [
-  { name: "Character 1", description: "Description 1", instagram: "https://www.instagram.com/character1" },
-  { name: "Character 2", description: "Description 2", instagram: "https://www.instagram.com/character2" },
-  // Add more characters here...
+  { name: "lee-lou", description: "", instagram: "https://www.instagram.com/leelgortina" },
+  { name: "manon", description: "", instagram: "https://www.instagram.com/manon_figuccia" },
+  { name: "estelle", description: "", instagram: "https://www.instagram.com/stlouuuu" },
+  { name: "mazia", description: "", instagram: "https://www.instagram.com/mazia.nice" },
+  { name: "mickaella", description: "", instagram: "https://www.instagram.com/mickaella_trl" },
+  { name: "gaia", description: "", instagram: "https://www.instagram.com/gaia_cmb" },
+  { name: "keti", description: "", instagram: "https://www.instagram.com/issakadze" },
+  { name: "leane", description: "", instagram: "https://www.instagram.com/leane.vuletic" },
+  { name: "junior", description: "", instagram: "https://www.instagram.com/junior_joyant" },
+  { name: "deborah", description: "", instagram: "https://www.instagram.com/deborah.slg" },
+  { name: "laurine", description: "", instagram: "https://www.instagram.com/laurine.drs" },
+  { name: "chloe", description: "", instagram: "https://www.instagram.com/chloe_pantel" },
+  { name: "indiana", description: "", instagram: "https://www.instagram.com/indiana.af" },
+  { name: "aya", description: "", instagram: "https://www.instagram.com/aya_mira_kouhoub" },
+  { name: "leina", description: "", instagram: "https://www.instagram.com/leina.cl" },
+  { name: "melissa", description: "", instagram: "https://www.instagram.com/melissa_vgl" },
+  { name: "lisa", description: "", instagram: "https://www.instagram.com/lisaafenich" },
+  { name: "roxane", description: "", instagram: "https://www.instagram.com/roxxane.vrt" },
+  { name: "crn", description: "", instagram: "https://www.instagram.com/crn_zkr" },
+  { name: "chirine", description: "", instagram: "https://www.instagram.com/chirinekrn" },
+  { name: "clss.p6", description: "", instagram: "https://www.instagram.com/clss.p6" }  
 ];
 
 var charactersContainer = document.getElementById('characters');
