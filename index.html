@@ -17,26 +17,20 @@
     #description {
       text-align: center;
       margin-top: 20px;
-      margin-bottom: 20px; /* Add margin-bottom to create space for the button */
-    }
-
-    #enter-button {
-      display: block; /* Set the button to display as a block element */
-      margin: 0 auto; /* Center the button horizontally */
     }
   </style>
 </head>
 
 <body>
-  <div id="description">
-    <p>Dans le groupe on a entre 20 et 26 ans, on a une maman de deux enfants, on fait nos études pour la majorité à Nice il y en a beaucoup de la fac de Carlone de ce que j'ai compris, on n'a pas beaucoup d'amis, donc on a créé ce groupe pour essayer de rencontrer des gens et de casser un peu la solitude, on aime visiblement tous sortir, donc du coup on essaie de trouver des sorties on a proposé beaucoup d'activités comme des restaurants le marché de Noël, certains du groupe vont sortir ce soir à 20h dans un bar boire un verre histoire de se découvrir; on a un petit comité qui aime les dramas et les animés, on fait parfois des rébus , et on se taquine dans la bienveillance , et pour le reste à suivre bah on programmera des sortie....</p>
-  </div>
-
   <div>
     <button id="enter-button">Accueil</button>
-    <div id="door-wrapper" style="display:none;">
+    <div id="door-wrapper"style="display:none;">
       <div id="door" style="display:none;"></div>
     </div>
+  </div>
+
+  <div id="description">
+    <p>ahaha</p>
   </div>
 
   <div id="room" style="display:none;">
@@ -49,13 +43,12 @@
     <h2 id="character-name"></h2>
     <p id="character-description"></p>
     <a id="instagram-link" href="#" target="_blank">Voir mon Instagram</a>
-    <button id="exit-button">Retour</button>
+    <button id="exit-button">Retout</button>
   </div>
 
   <script src="script.js">
     document.getElementById("enter-button").addEventListener("click", function() {
       document.getElementById("enter-button").style.display = "none";
-      document.getElementById("description").remove();
     });
   </script>
 </body>
