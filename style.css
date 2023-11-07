@@ -1,6 +1,6 @@
 /* Define the wrapper for the door and set its height */
 #door-wrapper {
-  position: relative;
+  position: center;
   height: 200px;
 }
 
