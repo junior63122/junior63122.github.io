@@ -12,7 +12,7 @@
   background-color: brown;
   position: center;
   bottom: 0;
-  animation: openDoor 2s ease-in-out forwards; /* Animate the door opening */
+  animation: openDoor 20s ease-in-out forwards; /* Animate the door opening */
 }
 
 /* Create the animation for the door */
