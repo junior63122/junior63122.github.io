@@ -34,7 +34,7 @@ characters.forEach(function(character, index) {
   var characterDiv = document.createElement('div');
   characterDiv.classList.add('character');
   characterDiv.innerHTML = `
-    <img src="images/character${index+1}.jpg" onerror="this.src='default-image.jpg'; alt="${character.name}">
+    <img src="images/character${index+1}.jpg" onerror="this.src='profil0.jpg'; alt="${character.name}">
     <h3 class="character-name">${character.name}</h3>
   `;
   characterDiv.addEventListener('click', function() {
