@@ -1,53 +1,56 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>My Game</title>
-
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
+    #description {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
-
-  <button id="enter-button">Entrer</button>
-
-  <div id="door-wrapper">
-
-    <div id="door"></div>
-
+  <div>
+    <button id="enter-button">Accueil</button>
+    <div id="door-wrapper">
+      <div id="door"></div>
+    </div>
   </div>
 
-<div id="room" style="display:none;">
-
-  <div id="characters" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(7, 1fr)">
-
-    <!-- Dynamically generated characters will be added here -->
-
+  <div id="description">
+    <p>ahaha</p>
   </div>
 
-</div>
-
+  <div id="room" style="display:none;">
+    <div id="characters" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(7, 1fr)">
+      <!-- Dynamically generated characters will be added here -->
+    </div>
   </div>
 
   <div id="character-presentation" style="display:none;">
-
     <h2 id="character-name"></h2>
-
     <p id="character-description"></p>
-
     <a id="instagram-link" href="#" target="_blank">Voir mon Instagram</a>
-
     <button id="exit-button">Retout</button>
-
   </div>
 
-  <script src="script.js"></script>
-
+  <script src="script.js">
+    document.getElementById("enter-button").addEventListener("click", function() {
+      document.getElementById("enter-button").style.display = "none";
+    });
+  </script>
 </body>
+
+</html>
