@@ -1,31 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+To remove the "Entrer" button but keep the rest of the content intact, you can modify the HTML code as follows:
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Game</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+    <!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>My Game</title>  <link rel="stylesheet" href="style.css"></head><body>  <div id="door-wrapper">    <div id="door"></div>  </div>  <div id="characters">    <!-- Dynamically generated characters will be added here -->  </div>  <div id="character-presentation" style="display:none;">    <h2 id="character-name"></h2>    <p id="character-description"></p>    <a id="instagram-link" href="#" target="_blank">Voir mon Instagram</a>    <button id="exit-button">Quitter</button>  </div>  <script src="script.js"></script></body></html>
 
-<body>
-  <button id="enter-button">Entrer</button>
-  <div id="door-wrapper">
-    <div id="door"></div>
-  </div>
+With this modification, the "Entrer" button is removed while keeping the remaining HTML elements intact. Make sure to update your CSS and JavaScript code accordingly if you were previously targeting the "enter-button" element.
 
-  <div id="characters">
-    <!-- Dynamically generated characters will be added here -->
-  </div>
-
-  <div id="character-presentation" style="display:none;">
-    <h2 id="character-name"></h2>
-    <p id="character-description"></p>
-    <a id="instagram-link" href="#" target="_blank">Voir mon Instagram</a>
-    <button id="exit-button">Quitter</button>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-
-</html>
