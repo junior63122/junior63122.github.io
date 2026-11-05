@@ -142,16 +142,10 @@
     "rubrique": "Finance",
     "emoji": "📈",
     "type": "revue",
-    "titre": "Finance : A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
+    "titre": "Finance : Appel à témoignages : salariés, étudiants, comment vous adaptez-vous à la flambée des factures de gaz et d’électricité ?",
     "chapo": "Bourse, marchés, taux, crypto et argent au quotidien : ce qui a bougé aujourd'hui. Le point du 5 novembre.",
     "corps": [],
     "liens": [
-      {
-        "titre": "A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
-        "source": "Le Monde",
-        "url": "https://www.lemonde.fr/economie/article/2026/11/05/a-wall-street-la-victoire-democrate-aux-midterms-a-fait-exploser-la-bulle-de-l-ia_6807339_3234.html",
-        "resume": "Le Nasdaq, l’indice qui regroupe de nombreuses valeurs technologiques, perdait plus de 5 % en séance, jeudi 5 novembre. Les résultats des élections américaines de mi-mandat accentuent la défiance envers la plupart des valeurs liées à l’intelligence…"
-      },
       {
         "titre": "Appel à témoignages : salariés, étudiants, comment vous adaptez-vous à la flambée des factures de gaz et d’électricité ?",
         "source": "Le Monde",
@@ -175,6 +169,12 @@
         "source": "Le Monde",
         "url": "https://www.lemonde.fr/argent/article/2026/11/04/hausse-des-taux-les-anciennes-generations-de-produits-structures-penalisees_6806038_1657007.html",
         "resume": "Si la hausse des taux freine la valorisation de certains produits déjà en portefeuille, elle offre aussi davantage de marges pour construire de nouvelles solutions, potentiellement plus rémunératrices."
+      },
+      {
+        "titre": "Au Luxembourg, le « FMI européen » s’inquiète de la situation financière de la France",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/03/au-luxembourg-le-fmi-europeen-s-inquiete-de-la-situation-financiere-de-la-france_6805642_3234.html",
+        "resume": "Le Mécanisme européen de stabilité peut prêter jusqu’à 500 milliards d’euros aux pays financièrement étranglés. « Nous n’avons aucune raison d’intervenir à ce stade », assure son directeur général."
       }
     ],
     "auteur": "La rédaction (auto) · Sources : Le Monde"
@@ -203,12 +203,6 @@
         "resume": "La démocrate, 45 ans, a battu l’actuelle maire de la ville de Los Angeles, Karen Bass, 73 ans, une politicienne pourtant chevronnée. Comme Zohran Mamdani, maire de New York, Nithya Raman se concentre sur les préoccupations sociales des électeurs."
       },
       {
-        "titre": "A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
-        "source": "Le Monde",
-        "url": "https://www.lemonde.fr/economie/article/2026/11/05/a-wall-street-la-victoire-democrate-aux-midterms-a-fait-exploser-la-bulle-de-l-ia_6807339_3234.html",
-        "resume": "Le Nasdaq, l’indice qui regroupe de nombreuses valeurs technologiques, perdait plus de 5 % en séance, jeudi 5 novembre. Les résultats des élections américaines de mi-mandat accentuent la défiance envers la plupart des valeurs liées à l’intelligence…"
-      },
-      {
         "titre": "En Irak, petites mains et figures du djihadisme français passent en jugement",
         "source": "Le Monde",
         "url": "https://www.lemonde.fr/international/article/2026/11/05/en-irak-petites-mains-et-figures-du-djihadisme-francais-passent-en-jugement_6807335_3210.html",
@@ -219,6 +213,12 @@
         "source": "Le Monde",
         "url": "https://www.lemonde.fr/planete/article/2026/11/05/midterms-2026-il-y-a-desormais-un-fort-potentiel-d-avancees-en-matiere-climatique-aux-etats-unis_6807334_3244.html",
         "resume": "Spécialiste des politiques environnementales et professeure associée à l’université de Californie à Santa Barbara, Leah C. Stokes juge, dans un entretien au « Monde », que les démocrates, en contrôlant le Sénat et la Chambre des représentants, peuvent…"
+      },
+      {
+        "titre": "Vanté par Donald Trump, l’accord américano-russe sur le gazole bat de l’aile",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/international/article/2026/11/05/vante-par-donald-trump-l-accord-americano-russe-sur-le-gazole-bat-de-l-aile_6807332_3210.html",
+        "resume": "Plusieurs navires russes chargés de gazole destiné au marché américain ont brusquement changé de cap en haute mer, ces derniers jours. Craignant les risques réputationnels et les sanctions, les entreprises américaines rechignent à en acheter."
       }
     ],
     "auteur": "La rédaction (auto) · Sources : Le Monde"
@@ -318,16 +318,10 @@
     "rubrique": "Tech",
     "emoji": "💻",
     "type": "revue",
-    "titre": "Tech : A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
+    "titre": "Tech : Aide aux créateurs de contenu : pourquoi les annonces du CNC font grincer des dents",
     "chapo": "Intelligence artificielle, start-up, cybersécurité : les nouvelles du numérique. Le point du 5 novembre.",
     "corps": [],
     "liens": [
-      {
-        "titre": "A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
-        "source": "Le Monde",
-        "url": "https://www.lemonde.fr/economie/article/2026/11/05/a-wall-street-la-victoire-democrate-aux-midterms-a-fait-exploser-la-bulle-de-l-ia_6807339_3234.html",
-        "resume": "Le Nasdaq, l’indice qui regroupe de nombreuses valeurs technologiques, perdait plus de 5 % en séance, jeudi 5 novembre. Les résultats des élections américaines de mi-mandat accentuent la défiance envers la plupart des valeurs liées à l’intelligence…"
-      },
       {
         "titre": "Aide aux créateurs de contenu : pourquoi les annonces du CNC font grincer des dents",
         "source": "Le Monde",
@@ -351,6 +345,12 @@
         "source": "Le Monde",
         "url": "https://www.lemonde.fr/pixels/article/2026/11/05/the-legend-of-zelda-ou-l-art-de-faire-peau-neuve_6806825_4408996.html",
         "resume": "Le remake de « Zelda : Ocarina of Time », sorti jeudi, a dérouté de nombreux fans par son aspect visuel, jugé trop éloigné de l’original sorti en 1998. Mais c’est oublier la diversité des réincarnations esthétiques passées de la franchise, d’épisode en…"
+      },
+      {
+        "titre": "Comment « The Legend of Zelda : Ocarina of Time » a-t-il révolutionné le monde du jeu vidéo ? Comprendre en trois minutes",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/comprendre-en-3-minutes/video/2026/11/05/comment-the-legend-of-zelda-ocarina-of-time-a-t-il-revolutionne-le-monde-du-jeu-video-comprendre-en-trois-minutes_6806815_6176282.html",
+        "resume": "A la fin des années 1990, alors que la 3D dans le jeu vidéo est encore balbutiante, Nintendo sort « The Legend of Zelda : Ocarina of Time », un jeu devenu culte."
       }
     ],
     "auteur": "La rédaction (auto) · Sources : Le Monde"
