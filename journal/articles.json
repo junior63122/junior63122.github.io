@@ -1,0 +1,114 @@
+[
+  {
+    "id": "2026-11-05-0-junior-joyant-l-ambianceur-nicois-qui-code",
+    "date": "2026-11-05",
+    "rubrique": "Portrait",
+    "emoji": "🌟",
+    "titre": "Junior Joyant, l'ambianceur niçois qui code",
+    "chapo": "Étudiant en informatique et cybersécurité à Nice, Junior Joyant a fait de la bonne humeur sa marque de fabrique.",
+    "corps": [
+      "On l'a croisé du côté de la Coulée verte, sous quelques nuages, inarrêtable. Junior Joyant ne passe pas inaperçu : un sourire, une blague, et la conversation est lancée.",
+      "Niçois pur jus, il partage son temps entre ses études en informatique et cybersécurité, ses amis et ses séries. « Je cherche toujours à rencontrer de nouvelles personnes », confie-t-il. Son credo : ne jamais se prendre trop au sérieux.",
+      "Quand on lui demande de se résumer en une phrase, il répond sans hésiter : « À Nice, même les lundis ont l'air de vacances. »"
+    ],
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-05-1-animes-et-k-dramas-la-watchlist-de-junior",
+    "date": "2026-11-05",
+    "rubrique": "Culture",
+    "emoji": "🎬",
+    "titre": "Animes et K-dramas : la watchlist de Junior",
+    "chapo": "Grand fan d'animes et de K-dramas, Junior Joyant nous ouvre sa watchlist.",
+    "corps": [
+      "En ce moment, c'est Spy x Family qui tourne en boucle chez Junior. « Les combats, l'amitié, les rebondissements… j'adore », explique-t-il.",
+      "Côté K-drama, il recommande Crash Landing on You : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
+      "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
+    ],
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-05-2-soiree-series-ce-que-regarde-junior-joyant",
+    "date": "2026-11-05",
+    "rubrique": "Culture",
+    "emoji": "🎬",
+    "titre": "Soirée séries : ce que regarde Junior Joyant",
+    "chapo": "Grand fan d'animes et de K-dramas, Junior Joyant nous ouvre sa watchlist.",
+    "corps": [
+      "En ce moment, c'est One Piece qui tourne en boucle chez Junior. « Les combats, l'amitié, les rebondissements… j'adore », explique-t-il.",
+      "Côté K-drama, il recommande Goblin : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
+      "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
+    ],
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-04-0-le-conseil-cyber-de-junior-les-sauvegardes",
+    "date": "2026-11-04",
+    "rubrique": "Tech & Cyber",
+    "emoji": "🔐",
+    "titre": "Le conseil cyber de Junior : les sauvegardes",
+    "chapo": "Chaque semaine, notre étudiant en cybersécurité préféré partage une astuce simple pour se protéger en ligne.",
+    "corps": [
+      "Cette fois, Junior Joyant s'attaque à un classique : les sauvegardes. « Tout le monde pense que ça n'arrive qu'aux autres », sourit-il.",
+      "Son conseil est clair : la règle 3-2-1 : trois copies, deux supports, une hors de chez soi.",
+      "« La cybersécurité, ce n'est pas que pour les hackers en sweat à capuche, c'est pour tout le monde », rappelle-t-il avant de retourner à ses cours."
+    ],
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-03-0-soiree-series-ce-que-regarde-junior-joyant",
+    "date": "2026-11-03",
+    "rubrique": "Culture",
+    "emoji": "🎬",
+    "titre": "Soirée séries : ce que regarde Junior Joyant",
+    "chapo": "Grand fan d'animes et de K-dramas, Junior Joyant nous ouvre sa watchlist.",
+    "corps": [
+      "En ce moment, c'est Demon Slayer qui tourne en boucle chez Junior. « Les combats, l'amitié, les rebondissements… j'adore », explique-t-il.",
+      "Côté K-drama, il recommande Crash Landing on You : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
+      "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
+    ],
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-02-0-le-conseil-cyber-de-junior-les-mots-de-passe",
+    "date": "2026-11-02",
+    "rubrique": "Tech & Cyber",
+    "emoji": "🔐",
+    "titre": "Le conseil cyber de Junior : les mots de passe",
+    "chapo": "Chaque semaine, notre étudiant en cybersécurité préféré partage une astuce simple pour se protéger en ligne.",
+    "corps": [
+      "Cette fois, Junior Joyant s'attaque à un classique : les mots de passe. « Tout le monde pense que ça n'arrive qu'aux autres », sourit-il.",
+      "Son conseil est clair : un gestionnaire de mots de passe et des phrases de passe longues valent mieux que « Nice2024! ».",
+      "« La cybersécurité, ce n'est pas que pour les hackers en sweat à capuche, c'est pour tout le monde », rappelle-t-il avant de retourner à ses cours."
+    ],
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-01-0-la-journee-de-junior-dans-la-douceur-nicoise",
+    "date": "2026-11-01",
+    "rubrique": "Brève",
+    "emoji": "☀️",
+    "titre": "La journée de Junior, dans la douceur niçoise",
+    "chapo": "Les nouvelles du jour, en bref.",
+    "corps": [
+      "Junior Joyant a été aperçu près de la colline du Château, d'excellente humeur.",
+      "Au programme : un peu de code, un peu de cyber, et sûrement un épisode de Goblin ce soir.",
+      "Sa phrase du jour : « Une soirée sans danser, c'est une soirée ratée. »"
+    ],
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
+  }
+]
