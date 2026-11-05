@@ -1,6 +1,7 @@
 [
   {
     "id": "2026-11-05-actu-business",
+    "lang": "fr",
     "date": "2026-11-05",
     "section": "Business",
     "rubrique": "Business",
@@ -42,71 +43,71 @@
       }
     ],
     "auteur": "Camille Rostand",
-    "lang": "fr",
     "sources": [
       "Le Monde"
     ]
   },
   {
     "id": "2026-11-05-actu-evenementiel",
+    "lang": "fr",
     "date": "2026-11-05",
     "section": "Événementiel",
     "rubrique": "Événementiel",
     "emoji": "🎪",
     "type": "revue",
-    "titre": "Événementiel : Budget séminaire d'entreprise : PINK'OLA révèle les chiffres",
-    "chapo": "Salons, festivals, concerts, grands rendez-vous : l'agenda et l'actualité de l'événementiel. Le point du 5 novembre.",
+    "titre": "Événementiel : Une collaboration inédite qui « ouvre des perspectives » pour l’agence End Event, spécialisée dans l’univers de Noël - Ouest-France",
+    "chapo": "Salons, festivals, concerts, grands rendez-vous : l'actualité de l'événementiel. Le point du 5 novembre.",
     "corps": [],
     "liens": [
       {
-        "titre": "Budget séminaire d'entreprise : PINK'OLA révèle les chiffres",
-        "source": "Presse Agence",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNlNZOWR3c2NER3hOWWNmYm04RTFYU0Q2YUV1RkFMZTRzeFg2clJSRGtUenY0ekhCa04tRHItYUlaMm9NRUlnbU1vZ0xjRHhQYmJNbXFTSVlpSzM5Qm0zZWIzSGE2YXR0LTJpOXkxUmppTThuSEdnY0M1aE9Uc1RXM2Q3TjdwM2d6aHhtemxYbXhpZXdHZExyUTl1MFl4WGh6Z05wM2J0OWJ5SHVtUEh1X1Q5Zw?oc=5",
+        "titre": "Une collaboration inédite qui « ouvre des perspectives » pour l’agence End Event, spécialisée dans l’univers de Noël - Ouest-France",
+        "source": "Ouest-France",
+        "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOaUFQWW1RS01LTjRjUi1reW1TNW9uOF9YVm01dzZZeEU3VGRYZjl1U1luRkpGMkprc0VsOVBLNXNjeUVrV3Y0S3loeUI5dEQ0S1dMMVlyU0lORVZyQk03c2ppaVhsNmpDbG5NRFd4TV9XNUtEMTVqbGwxVXZOaDUySE9hODM3Z0N6d1VySFpvNDVnOEpfSDI0U29tQnZrLV9VUU9kUmE0X0lyVFhUeTZsdzVhNHpDcE9FRkVWbUtlc2l5OWN4QTJJU3o5elU0eVFMT0xNT013U0RMYXdxWFo4TTFiZlVoZEc1ZkptMURhUllGdjJIQjFiSzRfMU5uSDZLcDBtVTVEZE85blVlYTZscw?oc=5",
+        "resume": "Une collaboration inédite qui « ouvre des perspectives » pour l’agence End Event, spécialisée dans l’univers de Noël Ouest-France"
+      },
+      {
+        "titre": "Ouvertures et grands événements attendus en 2026 à Paris et en Ile-de-France : l'agenda de l'année",
+        "source": "Sortir à Paris",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOdmRfblllM0Q0VkZXUGExbEVqQWNudjNqa2hnd1BVc3RhZTViRFhPUHIxUDFhbV9udlBTLWtNYnYteEpMa05yWWtGUFNETE5CcjBLT19RTmNJWGUzM1RIaTV3OWhiV1FtOV9ieTRReWtiNnlYMGdCa1hBNGdfYXY5cGNVaTNsT3hkTU9mRGJ6XzhqT1QzSFdpeVB4QjdkQVRuaEd3cmF6VThEaVZTNWg4NXF5ZmwyZVlkNzdEU0lXZVdfUGR2Vm5mQkZScWREQQ?oc=5",
         "resume": ""
       },
       {
-        "titre": "LILLE : Événementiel - Un manoir de 600 m² se lance sur le marché de la privatisation intégrale",
-        "source": "Presse Agence",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQV2Z3a3U4QVc2azJOX2FJNnNCNkNkSEdYajB2TzFVak5DWnhGZjA1ZlhKZXk0b3lvTEZtMXE5SHVLVF9xdzE2WnJET0pmQkZTUDV0ZlF6dkxiUWx6ekR5c1Q5cTVKZUFQYTBXWTV0dVZya2x1eFBSRElVUXhlTFBmZWVlSXRwYW5RZlVpQmFHRy1aSVUwdkpPbkFJRlU3bno2X01qUzRJcXFfUnVQbG9HV2tjaDEwSmY5eFNqcl93?oc=5",
+        "titre": "C'est une récompense nationale : deux festivals des Pyrénées-Orientales finalistes d'un concours qui distingue les meilleurs événements de France",
+        "source": "L'Indépendant",
+        "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxNdUJ3cVpqdDFZY3hRTTVxYkMtNXpvM0k1NkwzVDVLcFZyQWxwYXFiaWJsSUp0T2xQQ0pwMF9PcVdoRFdEYWFybnRqOTAzcVo0QmZtbTVKV1RMWjNlVnlzQkZDM0tXQXROWFdqb3BlN09jRXcwbW0ydS1YTkxJblkzZkR1N1RGU0RIQUtoN1d2MVlvek1fYXRMSEZGWlZ0UlRyNVp1N1NTWDlTZE9WX3hvb3NaWXowRmlBUVp5NXdoSmJYR1k2R241RXBLbnlscVBZWjNHRERkZTlsR19WN0JDcl9PcDJ4ejV0WWhqLXRwT2p2LXY4Mmh6QzdZQk5INWEzN3VDYmxmVXNrMUk4RlowOHg4MFBNVEx0YXlwUzJn?oc=5",
         "resume": ""
       },
       {
-        "titre": "Charline Baudry-Biancarelli est nommée directrice du commerce international et du marketing événementiel chez Universal Pictures",
-        "source": "Ecran total",
-        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPWmUyVGVwbkRfN0IwNE9wODRkUHZhVVhVWGo4R0ZYcUNNT29qc2Q1VmRxUzZraDR1MTJVcFk2by1CV0dnb2wwTDFWa25IRF83UVJDcWxiTU1rajRROHJhanFuS1EtUnFOM1pzLTZiNWR6QUE1WFY1cGJlZ0M0Q01ONXV2aThURUJJdElxZzB4ZnhiekE1N2lyb3Qxc2pOT2VNc2JuTGlEWER6N2VIYWQySUNjZEF0anF2cldGYl9xVl94b1BxX0pqd3RYN2lodzhlRTZ2WEZlQTFudGt1TTVqYTVIWUc4SWJERklIUWN3MzBJSlhrMWc?oc=5",
-        "resume": ""
+        "titre": "Dans la Manche, ils transforment un hôtel plus que centenaire en appart hôtel et établissement événementiel - Ouest-France",
+        "source": "Ouest-France",
+        "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxPaTVDQnR4bUJET1ZXeC1qSWttZFV1YS15OUJadGNnVVRoVDFHX0d3bUpxNW1ybXJaYWEyQnNobzVaYlkySXNtT3lHbzFLY296UU1GS01YSzRPVml1Nnh1cHZ5MTZXMmtXc0VSRXpsaFNoYnU2dmVnVmlST05MaFp2M0NyaGx5WVIyVnMxbUJ6bFNFbHBubXZWU2NPdS1sM2pDdzFOc09Ccm5DaFZwOUNUZGFWbnV6VGM2TV9MWEh4TzVrT2ZjOFl0MXQ4MlYzUzNTQnpTT3NxeXhSMVFpclN2NmpHc2VRT05meHpmZWxnTV9VdkZnZkRxVkhDaG9TUVAtZTNyU29zSm1uRGw4eVhpU2NIWmdLQW51R1djY1k0LVIxT1FraTQ4aWtBbWR0a1FIS2c?oc=5",
+        "resume": "Dans la Manche, ils transforment un hôtel plus que centenaire en appart hôtel et établissement événementiel Ouest-France"
       },
       {
-        "titre": "« Le Grimoire de l’Événementiel en Afrique de l’Ouest » : Mamadou Bailo Danso veut professionnaliser le secteur et en faire une véritable industrie",
-        "source": "Mediaguinee.com",
-        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNOEdaWGdobFFHTElqX0tRRk9xNmE3bzFIbjRjMmZpN1VVX1c0ZGlwcW9BSFRmSnR2TFo5bm9iNTljOHlRc0hjMXF4b0RacjNZZGp1OWtUU3pRblplN2lta1BOZ2pqWFA3SjA2aU5JSkZOYTlmXzh2eXl3Q3FqQS0zQUl5djQ2S0Z2RmdYZE1lX24wc1dyNnNHWERZS1dRLVpBbWgtdkdlZWxSWEN4UjVEUzFFRzFyS0hrTGJmUGZOUTh6dlBsRVpzOHUwSmVlVkM5dXBaelBuWDZuWjh6QXFVLUswd0lWV3lGd3V0VzNUdnFXWGRYNEhvQWVKLVM1UzlnWnc?oc=5",
-        "resume": ""
-      },
-      {
-        "titre": "Événementiel en Afrique de l’Ouest : Mamadou Bailo Danso veut passer de l’improvisation à une véritable industrie",
-        "source": "Guinee7.com",
-        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOaEtXeTY0dFJaMkV4aktKRkd5VkowS2l4WE9CdUY3bndHaHVPdjZVNDJPdE1yYl9zUkFMVThRZ2stUUxrV1RnWE1XMWRiVU40TmFvZW9FU2tqcXVBSGtFMjhxNHp3djQza2k4RmJpUWRKZ3BvSFhIMHBpNXFpemlvX296a3RTaFBDMGpkNVhiRTVWZDUxcmtlOFo0LW1vdXBvWWp5amQ2U1RIOFVHY29WeUtXQlNtVmdGd0s0Ti1RSHhyWko1bDBqWGN4WUJXbWt3ZTROZFR6UHhZeHF6ekE?oc=5",
+        "titre": "Tourisme à Paris : l'événementiel, Céline Dion et le Pape portent le mois de septembre",
+        "source": "L'Echo touristique",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQU25kcEpST3hZdGtsZzZDeWo4QWhYeDJjdUxIMHVuNmRoTDJXZGgwY1U2UFlSZmotcTZ4WWlOOGtja0xnRXFLYzdIZk1vNVpXMllkdF9EeFE4bFFPeV84QktxMXk1RXk3R2VIUkk3V1VBT3dOMWNmRmpQWm1XMzdTVC02SkZKcUFSNllMOFdfV1FBazd1VjJVZ0FFTDM0OXE4OGE3YWlUTUx6bHVveWRPOW5PRFAzNi15SUFldTJFQlE?oc=5",
         "resume": ""
       }
     ],
     "auteur": "Léa Fontaine",
-    "lang": "fr",
     "sources": [
-      "Presse Agence",
-      "Ecran total",
-      "Mediaguinee.com",
-      "Guinee7.com"
+      "Ouest-France",
+      "Sortir à Paris",
+      "L'Indépendant",
+      "L'Echo touristique"
     ]
   },
   {
     "id": "2026-11-05-actu-finance",
+    "lang": "fr",
     "date": "2026-11-05",
     "section": "Finance",
     "rubrique": "Finance",
     "emoji": "📈",
     "type": "revue",
     "titre": "Finance : Appel à témoignages : salariés, étudiants, comment vous adaptez-vous à la flambée des factures de gaz et d’électricité ?",
-    "chapo": "Bourse, marchés, taux, crypto et argent au quotidien : ce qui a bougé aujourd'hui. Le point du 5 novembre.",
+    "chapo": "Bourse, marchés, taux, crypto et argent au quotidien : ce qui a bougé. Le point du 5 novembre.",
     "corps": [],
     "liens": [
       {
@@ -141,13 +142,13 @@
       }
     ],
     "auteur": "Hugo Marchetti",
-    "lang": "fr",
     "sources": [
       "Le Monde"
     ]
   },
   {
     "id": "2026-11-05-actu-monde",
+    "lang": "fr",
     "date": "2026-11-05",
     "section": "Monde",
     "rubrique": "Monde",
@@ -189,13 +190,13 @@
       }
     ],
     "auteur": "Sofia Delmas",
-    "lang": "fr",
     "sources": [
       "Le Monde"
     ]
   },
   {
     "id": "2026-11-05-actu-nice-cote-d-azur",
+    "lang": "fr",
     "date": "2026-11-05",
     "section": "Nice & Côte d'Azur",
     "rubrique": "Nice & Côte d'Azur",
@@ -237,7 +238,6 @@
       }
     ],
     "auteur": "Lucas Giordano",
-    "lang": "fr",
     "sources": [
       "ici.fr",
       "BFM",
@@ -246,6 +246,7 @@
   },
   {
     "id": "2026-11-05-actu-sport",
+    "lang": "fr",
     "date": "2026-11-05",
     "section": "Sport",
     "rubrique": "Sport",
@@ -287,13 +288,13 @@
       }
     ],
     "auteur": "Inès Morel",
-    "lang": "fr",
     "sources": [
       "Le Monde"
     ]
   },
   {
     "id": "2026-11-05-actu-tech",
+    "lang": "fr",
     "date": "2026-11-05",
     "section": "Tech",
     "rubrique": "Tech",
@@ -335,9 +336,339 @@
       }
     ],
     "auteur": "Nathan Belkacem",
-    "lang": "fr",
     "sources": [
       "Le Monde"
+    ]
+  },
+  {
+    "id": "2026-11-05-en-actu-business",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Business",
+    "rubrique": "Business",
+    "emoji": "💼",
+    "type": "revue",
+    "titre": "Business: Firms told to publish salaries in job adverts ahead of new law",
+    "chapo": "Companies, jobs and strategy: the business news that matters. Our round-up for 5 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Firms told to publish salaries in job adverts ahead of new law",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cmd9343z3zw2o?at_medium=RSS&at_campaign=rss",
+        "resume": "The goverment argues the change will help jobseekers and could help to prevent pay discrimination."
+      },
+      {
+        "titre": "Major tech stocks plunge as US midterms add to fears of AI slowdown",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cmn04705rd8jo?at_medium=RSS&at_campaign=rss",
+        "resume": "The market has been reacting to possible tougher scrutiny of data centre construction and the AI industry following the US midterms"
+      },
+      {
+        "titre": "Interest rates hiked to 4% in first increase in over three years",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/ck5ynw45jrgqo?at_medium=RSS&at_campaign=rss",
+        "resume": "Most analysts expected the increase from 3.75% to 4%."
+      },
+      {
+        "titre": "Drunk and dangerous e-bike riders face on-the-spot fines under crackdown",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cmze4zk4d789o?at_medium=RSS&at_campaign=rss",
+        "resume": "A consultation will consider fines and other ways to clamp down on dangerous e-bike riders."
+      },
+      {
+        "titre": "Why do veterinary fees and sausage rolls vary in price across London?",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cmgqw51gdnzyo?at_medium=RSS&at_campaign=rss",
+        "resume": "Location is not just the only factor on why prices differ across London, as Anna O'Neill finds out."
+      }
+    ],
+    "auteur": "Camille Rostand",
+    "sources": [
+      "BBC News"
+    ]
+  },
+  {
+    "id": "2026-11-05-en-actu-evenementiel",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Événementiel",
+    "rubrique": "Events",
+    "emoji": "🎪",
+    "type": "revue",
+    "titre": "Events: A new report highlights the state of access to music and live events for Disabled people.",
+    "chapo": "Trade shows, festivals, concerts and big gatherings: the events industry today. Our round-up for 5 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "A new report highlights the state of access to music and live events for Disabled people.",
+        "source": "Disability Rights UK",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWXk2WUp1S1JBZmxjWjluU1F1LV9Qc3NhaGlZcGQ4SXh0cHM3Q3FrajBzNVdabXk0ZXJSelZYRmFrWTA3cDRIaTU0QTA2S2FNVlJjUFgyT1Nzam1pMTJDVm1OMW84bDJwVUhPbEgteWRwVnlaRW5vdV9abUN0VldKWTlPVGFvd0JJUkQ1TTVfOTUwZ285QWpvRV9uQmZheTNXUnZTX2JqcXgyVGlOaGhnUk93?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Clarion Events extends long-term commitment to Olympia with multi-year exhibition agreements",
+        "source": "Event Industry News",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNS0tsYi1XaWNpcy1NYWRwd085b1ExZHJzbVFxYndOb2pVOWFBTU9XMy1Vb1ROWVJPX0pIUW50TFhVS1FjVGd4bWI1SHF1bnNGVnJBWkVQa1AweW5HOVJ6aG04bjl3U3dGdkswdDdjZWJBUUFVZnhkdlBQSzVNdjlHZTFTUmJQX1NyZnVKRkV4NlhHb1VEdlUzcExpYThfM0ZaUkoyMjVOTUM5N0x3OXBsN0FOb3dzcjV2VGFHcWQ5c01wYWw1eUtTcTF6VQ?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Grace Therapeutics Announces Participation in Upcoming Industry and Investor Events in November 2026",
+        "source": "The Manila Times",
+        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQdS1ycTVyZEcyOXRoeHRhYUJjbHZpeFQzRzFnREo3cWFyUlFuX2VTaTRNOUp6eVJ4Z29teW9pdk56YTY4elBxUU5qZXJ2am5HOUtsc0RMT0ZpcXBXTXRtX2dLNFhmZURkdVl1a012Z19yQmVUSUR0VTdSci1JNHZMVGRoZm82UDh6Qk5Id3lyUGdGVG04THVWQ01saXhKb21hMndlTDlRRjB4bTd3LUFjSkZGQ2hTaHNwV2UxYzVIVm93UXhkMG1CV0gzRkwzT1JrXzdEWUhESFVqMU9tWlN2TkE4RW5abDMtQUpkZmQ4M0w5SWtBWk9INXNoTFlqUVBUNjVzUtIBigJBVV95cUxPdDJSQzg2eDJtMUhpUTVFck5Ea2d1R1B1cVhyOVIyaGd3eEtqa1VWOHJfZkpsRkl4Z040TXdsclZoaFg1Z3QxaDJZZ0puekNWU1h5dEpTLVF4N1BiWGhlMEhmN1Z5MkE5OE1TbV81ckdBaGpBTlpSQkpFSU1QLWdxM2w1MkF0MnRsZjRTQ0JieWJmd0xhOXBKTUNKQjhvRnJDeUtBSU1IUUlFa1QxOW14bldUamtibmhPQmt4NVFQYjBwb0ZOR1IyVk9mR2ZjR0xqQ3JuRDdKQ3JrV0RVbXZmOHhWZ2YzSzVtY1hRTDNtLU9USTRpSzlSalJNdDk0c1JYYlh2MHhkWlhSUQ?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Vast majority of disabled audience members at music events feel ‘at risk’, says report",
+        "source": "Arts Professional",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOdWJ5QUFaYkthcGhfMXRILVc3MlZOUmNKUEF0enY5MDBMS3VhandnQkVzV2RQTVpUbmY2UktJSS03VUZSLVFrRWRaaXRCQ09KazJublFycW5qNjU1ek14R3R6TXY0QjN0bUVoYkk3dVplX2NNT0lQX1B5VmphUzlZX1ZwclhTT3Z6Z3FJTk5uamFVVHNPRTVJYm4tVE1RT2hUSVZnYk9COWRNaDRJOVluWnhwN2RSYlc1VXoxWmRFQjA?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "In Pictures: ARN Innovation Awards 2026 winners take centre stage",
+        "source": "ARNnet",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORzl2X2NweGFFdGVrT2dyeHp3blVoUGVTWGdpQ0lMRXNzTl9aQWluNFdQS0RNQmVsYkJ5d2FFdm1kanp4R0d4X0ZNNGhrVGFVNzdQQlRsaUJFNlF2clV4ZWF0V3JyOTZUTVhJQVJnTVFBRmxoNW9FM1pJUFRsRVhsdUxQOEM1LS01Xzd3dWk2OUhKS21KN0JxMElyQThKVkNSbktoMFRYZHIwUmtUa2lKZg?oc=5",
+        "resume": ""
+      }
+    ],
+    "auteur": "Léa Fontaine",
+    "sources": [
+      "Disability Rights UK",
+      "Event Industry News",
+      "The Manila Times",
+      "Arts Professional",
+      "ARNnet"
+    ]
+  },
+  {
+    "id": "2026-11-05-en-actu-finance",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Finance",
+    "rubrique": "Finance",
+    "emoji": "📈",
+    "type": "revue",
+    "titre": "Finance: Meta Platforms completes $15 billion senior notes offering and issues additional shares",
+    "chapo": "Stocks, markets, interest rates and crypto: what moved today. Our round-up for 5 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Meta Platforms completes $15 billion senior notes offering and issues additional shares",
+        "source": "Investing.com UK",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOSU9FMnBWT3RnWVM4ckowR0F3cHZOMmxadzJQdExkbU93T3Rpa2FaUUxBakd5aXdVZjFBVm54ZjVIa1VMS2R3VS1JWVRpVWM3Rkt6SnkyZk9Bc29WRDlUdHFRWEM1N2ZzWjUyaHZlQWxhWU9EbUs2dFYtR1hmelU4UWFXQUNRbHlrLUd5eHFfS2J4LUl1YmtBQkR1ODJMSVlYN1ZOaGNwMWJmTnFvb0p0dVhKbmdodkszenJRZHcxTlJ6TFI0enBXSHZMcjBlRms1dzFnS29GcWdVV3hIY1lYZA?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "NextEra Energy files financial statements related to pending Dominion Energy merger",
+        "source": "Investing.com UK",
+        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNV09ZYTI1aENIeE0tSkFYQ3JILThPdVlrRGZRQXVtMlVqQXZiOTZROHlldHVUSGRtREEyOWIxVmRpWWRMenhPUjlkLTNrZHhRNU9sZ1RrQzVWRWJHdWw5NjZhcFQ3MmJJeFJOaWpqR21oa2Myb1pUbWhwLTFuRVFrU2V2a3ptaFNYOFZtVEM2ZElaY01PSU9TY3FOcEkwTnVMX1ZwMEl6UktrSzlYa2wzeDlyV3NkT3JzSW0yOXFYMXZZdHZORWFmOFgzVE1LQ3ZKZlZjWFJhckk1RmVz?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Trading Day: A November 5 market bonfire - Euronext Markets: Real-time Stock Market Data | live",
+        "source": "Euronext Markets: Real-time Stock Market Data | live",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNYTZlZFNUdmlQbU8wV2VvbUpXZkZDR0tPa0F1WmtmREZQLV9NbC1RaDFOZDhnYjk2ZFlIVkFhN3FyR2JGRUdnN3VaUS1scEpLWnFjOGRGZlBHbllNa3VRdUJwTi1TaFNMaUNlOXF5QW1DUGVmMGZNTVdBME40c013SGF5Wm12ckNn?oc=5",
+        "resume": "Trading Day: A November 5 market bonfire Euronext Markets: Real-time Stock Market Data | live"
+      },
+      {
+        "titre": "SanDisk stock plunges 20% as AI selloff deepens despite strong earnings",
+        "source": "Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRFlRSERrVVMxMDdidzVSSXN4czdBSVMzVHJTQUh4aVdnTXg0aGIwaFNhdEJPdnRXck5QeTNjeV9pTnZ6b183eGxETVFFT3RaLWdxSVdodU1ReUh6dGpVX2xIWE1NNTU4dG91NzNyUFBqLTZNVE43dENMS1hjZjVWRDk4X0tlRkp4UDlhNXIwSWxWMXBtSk9v?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Market Selloff Hits Financial Stocks. Why Banks, Brokerages Are Caught in the Crossfire. -- Barrons.com",
+        "source": "Moomoo",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxON1Zjd25sQ1hTVjZmMDU2WDJsUEdzRzdIY2k2dVd5TXE0SUNQNi1EWDIzeTdiUHlMaFZ5RWRHaGEzaHFmUlJDU1ZkMmlLV0V2U2E2ZUJTTW45ejl5aFU2RHdSbGpkNmR1SENob2U4NW9JU2FYU2cwRjlITjBLbGlPXzdqOXlTcGZ1RXVNY0V3ejctSzFCcEhvLTY3ZTNYSXNkd3NxdHhaeWlQQmNXV1hCTjFR?oc=5",
+        "resume": ""
+      }
+    ],
+    "auteur": "Hugo Marchetti",
+    "sources": [
+      "Investing.com UK",
+      "Euronext Markets: Real-time Stock Market Data | live",
+      "Yahoo Finance",
+      "Moomoo"
+    ]
+  },
+  {
+    "id": "2026-11-05-en-actu-monde",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Monde",
+    "rubrique": "World",
+    "emoji": "🌍",
+    "type": "revue",
+    "titre": "World: California governor commutes sentences for state's 548 death row inmates",
+    "chapo": "Around the world in a few headlines. Our round-up for 5 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "California governor commutes sentences for state's 548 death row inmates",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cqrkyyd2j8mvo?at_medium=RSS&at_campaign=rss",
+        "resume": "California has historically had the largest population of people on death row in the US."
+      },
+      {
+        "titre": "Who could be behind hoax bomb threats to European air travel?",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cx8dzzjg3g9zo?at_medium=RSS&at_campaign=rss",
+        "resume": "There is no hard evidence so far linking airline bomb threats to Russia, Iran or any proxy groups."
+      },
+      {
+        "titre": "Eight killed in series of shootings in western Turkey",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cvj6jj21pd2ko?at_medium=RSS&at_campaign=rss",
+        "resume": "Victims are found in several locations in three separate vehicles, according to local reports."
+      },
+      {
+        "titre": "Melania Trump calls for lasting Ukraine truce as she hosts Russian and Ukrainian officials",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/c9p8g085mz07o?at_medium=RSS&at_campaign=rss",
+        "resume": "The US first lady was credited by all for playing a key though unspecified role in the ceasefire."
+      },
+      {
+        "titre": "French protests see numbers surge as unions join strikes over high cost of living",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/ckx2qzv835pgo?at_medium=RSS&at_campaign=rss",
+        "resume": "The interior ministry estimates 600,000 people joined protests across France, while the unions say the number was far higher."
+      }
+    ],
+    "auteur": "Sofia Delmas",
+    "sources": [
+      "BBC News"
+    ]
+  },
+  {
+    "id": "2026-11-05-en-actu-nice-cote-d-azur",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Nice & the Riviera",
+    "emoji": "🌴",
+    "type": "revue",
+    "titre": "Nice & the Riviera: Thousands take to the streets of Nice and Cannes in nationwide protests",
+    "chapo": "What's happening on the French Riviera, from Nice to Monaco. Our round-up for 5 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Thousands take to the streets of Nice and Cannes in nationwide protests",
+        "source": "Riviera Radio",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZWZMbUphcUJDWW5KZld6ZW1OSnJ1OHhaUWFNUXNmUVNXejRaOEFaMWJBSEI4Z2E2YkhGSVo2b2RIbGVsSDVTajBDdm9yLVhnVXRISWtOdUpvMlA5bnRxRTRzVVI0NnduTHlldFJYR1FMbTVydFhWbjJaUG1wSU5BMlRtdlVSdnJPeGg5dmZhbDdpem5hVDJfSUpiYTV0NTVqblBWbktqeUMyeTF4eEpZWko2LU9XNXkzM1E?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Nationwide strike disrupts trains and public services across the Alpes-Maritimes",
+        "source": "Riviera Radio",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOVdZTk52RDRpRG90TnFLRlZ2RVY0TFNxUkdqWTJGWnZLMmlveFVQMFpLYTRrREZGbHFUT2pucXRMS3pHU2pyWnlzSHlzOXBBWENnLXVOY1dkUjFBTTQzT1RGTExRamwzVzdoS3I4R2ZlQ01LbjJ6Qk52MEFHa0FRWE1ZV29HRm90bDgwTjFRV25tRXVaX2Fjb2tnTnF5MXM3TmhEUGdDb1c1ZmJoYkdkdF9LVnlkeGtpX0lwQ0dsYW1JaDZJUWc?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Protests and strikes expected across the French Riviera on Thursday, 5 November",
+        "source": "Riviera Radio",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOUGdqbjZudW9hVG0xX1dNVks0N0RsSFdlSFZfNkpLN3BGWUhLbEFoZF9qN3FjYU5zUjU2T0Y2REhGYmNmZ1JxRzYyUmQ0ZTNJY1Y5Q2lpazhxb1BONFJlTFZNeURPS3BkdUJHVC1kOV82eHd0ekVRcWdQNU94YmNnSnZEMDZMTkk2cVowRTdVazkzUjEyM0hXdFVWelc1YTUxUmFpU0kyS0ZycDljS0FOWWtzRE1jUXl2U3lFaE12ZnlVQ2M?oc=5",
+        "resume": ""
+      }
+    ],
+    "auteur": "Lucas Giordano",
+    "sources": [
+      "Riviera Radio"
+    ]
+  },
+  {
+    "id": "2026-11-05-en-actu-sport",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Sport",
+    "rubrique": "Sport",
+    "emoji": "⚽",
+    "type": "revue",
+    "titre": "Sport: Forest need balance between Woodstock and military - Glasner",
+    "chapo": "Results, transfers and the big moments in sport. Our round-up for 5 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Forest need balance between Woodstock and military - Glasner",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/football/articles/cwg5jj6nvmnyo?at_medium=RSS&at_campaign=rss",
+        "resume": "Oliver Glasner insists his Nottingham Forest side cannot survive on \"flower power\" as he tries to strike a balance between trust and respect at the club."
+      },
+      {
+        "titre": "Keep or sell Konsa? - FPL gameweek 10 dilemmas",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/football/articles/cm4g112qp051o?at_medium=RSS&at_campaign=rss",
+        "resume": "BBC Sport's Fantasy Premier League expert FPL Heisenberg gives his answers to some of the biggest dilemmas facing managers in gameweek 10."
+      },
+      {
+        "titre": "Friday's gossip: Man Utd contact Deschamps",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/football/articles/c9rky3g7e8zro?at_medium=RSS&at_campaign=rss",
+        "resume": "Manchester United contact Didier Deschamps, support for Michael Carrick remains at Old Trafford, Arsenal are interested in Club Brugge striker Nicolo Tresoldi, plus more."
+      },
+      {
+        "titre": "Antonelli says 2027 preparation starts now",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/formula1/articles/cx0544g2n1jdo?at_medium=RSS&at_campaign=rss",
+        "resume": "New world champion Kimi Antonelli says he is treating the final races of the season as the beginnings of his campaign to retain the title next year."
+      },
+      {
+        "titre": "Russell to have 'deep, deep look in mirror'",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/formula1/articles/cr3wvvpxnx1wo?at_medium=RSS&at_campaign=rss",
+        "resume": "Mercedes' George Russell speaks about his season after team-mate Kimi Antonelli won the championship"
+      }
+    ],
+    "auteur": "Inès Morel",
+    "sources": [
+      "BBC News"
+    ]
+  },
+  {
+    "id": "2026-11-05-en-actu-tech",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Tech",
+    "rubrique": "Tech",
+    "emoji": "💻",
+    "type": "revue",
+    "titre": "Tech: Elon Musk's millions failed to deliver Republican wins in fierce midterms",
+    "chapo": "Start-ups, cybersecurity and digital life: the latest from the tech world. Our round-up for 5 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Elon Musk's millions failed to deliver Republican wins in fierce midterms",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cv8ez3p3ge5ko?at_medium=RSS&at_campaign=rss",
+        "resume": "Musk spent nearly $500m in the 2026 US midterm elections, an individual election spending record."
+      },
+      {
+        "titre": "French blood storage impacted by freezer hacks as theories swirl about culprits",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/c8vgxyvz6y9ro?at_medium=RSS&at_campaign=rss",
+        "resume": "The French Blood Establishment (EFS) said cold rooms storing blood were impacted by hackers."
+      },
+      {
+        "titre": "Graduates are managing AI - but are they learning much else?",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/c820vz6wyp65o?at_medium=RSS&at_campaign=rss",
+        "resume": "Graduates are spending more time managing AI, but are they missing out on other work experience?"
+      },
+      {
+        "titre": "Tech Life",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sounds/play/w3ct8jyt?at_medium=RSS&at_campaign=rss",
+        "resume": "When copyright strikes silence reporters, rail safety & the Lord of the Rings live show."
+      },
+      {
+        "titre": "Binance says fake job interviews used as part of $6.3bn crypto hack",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/ck5ynwz9gy67o?at_medium=RSS&at_campaign=rss",
+        "resume": "An engineer was contacted through a legitimate job-hunting platform and invited to bogus job interviews with fake company representatives, Binance says."
+      }
+    ],
+    "auteur": "Nathan Belkacem",
+    "sources": [
+      "BBC News"
     ]
   },
   {
