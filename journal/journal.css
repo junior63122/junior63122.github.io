@@ -42,8 +42,7 @@ a { color: inherit; }
   letter-spacing: -0.02em;
 }
 .masthead h1 a { text-decoration: none; }
-.edition, .tagline { color: var(--muted); margin: 0; font-size: 0.95rem; }
-.edition { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; }
+.tagline { color: var(--muted); margin: 0; font-size: 0.95rem; }
 
 nav#filters { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
 nav#filters button {
@@ -98,3 +97,20 @@ ol.revue a:hover h3 { text-decoration: underline; }
 ol.revue p { margin: 0 0 6px; }
 ol.revue .src { font-size: 0.85rem; color: var(--muted); }
 ol.revue .src a { text-decoration: underline; }
+
+.topbar {
+  max-width: 1100px; margin: 0 auto; padding: 10px 16px 6px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted);
+}
+.langs { display: flex; gap: 4px; }
+.langs button {
+  font: inherit; letter-spacing: 0.08em; cursor: pointer;
+  background: none; color: var(--ink); border: 1px solid var(--rule); padding: 3px 8px;
+}
+.langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.sig { font-size: 0.82rem; font-style: italic; color: var(--muted); margin: 0; }
+.card .sig { margin-top: auto; padding-top: 6px; }
+.redaction-title { font-family: "Playfair Display", serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 6px; }
+.redaction { list-style: none; padding: 0; margin: 0 auto 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; max-width: 760px; }

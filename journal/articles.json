@@ -1,53 +1,5 @@
 [
   {
-    "id": "2026-11-05-0-junior-joyant-l-ambianceur-nicois-qui-code",
-    "date": "2026-11-05",
-    "rubrique": "Portrait",
-    "emoji": "🌟",
-    "titre": "Junior Joyant, l'ambianceur niçois qui code",
-    "chapo": "Étudiant en informatique et cybersécurité à Nice, Junior Joyant a fait de la bonne humeur sa marque de fabrique.",
-    "corps": [
-      "On l'a croisé du côté de la Coulée verte, sous quelques nuages, inarrêtable. Junior Joyant ne passe pas inaperçu : un sourire, une blague, et la conversation est lancée.",
-      "Niçois pur jus, il partage son temps entre ses études en informatique et cybersécurité, ses amis et ses séries. « Je cherche toujours à rencontrer de nouvelles personnes », confie-t-il. Son credo : ne jamais se prendre trop au sérieux.",
-      "Quand on lui demande de se résumer en une phrase, il répond sans hésiter : « À Nice, même les lundis ont l'air de vacances. »"
-    ],
-    "auteur": "La rédaction (auto)",
-    "section": "Junior",
-    "type": "junior"
-  },
-  {
-    "id": "2026-11-05-1-animes-et-k-dramas-la-watchlist-de-junior",
-    "date": "2026-11-05",
-    "rubrique": "Culture",
-    "emoji": "🎬",
-    "titre": "Animes et K-dramas : la watchlist de Junior",
-    "chapo": "Grand fan d'animes et de K-dramas, Junior Joyant nous ouvre sa watchlist.",
-    "corps": [
-      "En ce moment, c'est Spy x Family qui tourne en boucle chez Junior. « Les combats, l'amitié, les rebondissements… j'adore », explique-t-il.",
-      "Côté K-drama, il recommande Crash Landing on You : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
-      "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
-    ],
-    "auteur": "La rédaction (auto)",
-    "section": "Junior",
-    "type": "junior"
-  },
-  {
-    "id": "2026-11-05-2-soiree-series-ce-que-regarde-junior-joyant",
-    "date": "2026-11-05",
-    "rubrique": "Culture",
-    "emoji": "🎬",
-    "titre": "Soirée séries : ce que regarde Junior Joyant",
-    "chapo": "Grand fan d'animes et de K-dramas, Junior Joyant nous ouvre sa watchlist.",
-    "corps": [
-      "En ce moment, c'est One Piece qui tourne en boucle chez Junior. « Les combats, l'amitié, les rebondissements… j'adore », explique-t-il.",
-      "Côté K-drama, il recommande Goblin : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
-      "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
-    ],
-    "auteur": "La rédaction (auto)",
-    "section": "Junior",
-    "type": "junior"
-  },
-  {
     "id": "2026-11-05-actu-business",
     "date": "2026-11-05",
     "section": "Business",
@@ -55,7 +7,7 @@
     "emoji": "💼",
     "type": "revue",
     "titre": "Business : Le ciel européen en état d’alerte après des menaces visant une vingtaine de vols commerciaux",
-    "chapo": "Entreprises, emploi, stratégie : l'essentiel de l'actualité économique du jour. Le point du 5 novembre.",
+    "chapo": "Entreprises, emploi, stratégie : l'essentiel de l'actualité économique. Le point du 5 novembre.",
     "corps": [],
     "liens": [
       {
@@ -89,7 +41,11 @@
         "resume": "La CGT estime que les mobilisations ont réuni près de 1,6 million de personnes, dont 350 000 à Paris. De son côté, le ministère de l’intérieur a évalué à 575 000 le nombre de manifestants en France, dont 65 000 dans la capitale."
       }
     ],
-    "auteur": "La rédaction (auto) · Sources : Le Monde"
+    "auteur": "Camille Rostand",
+    "lang": "fr",
+    "sources": [
+      "Le Monde"
+    ]
   },
   {
     "id": "2026-11-05-actu-evenementiel",
@@ -133,7 +89,14 @@
         "resume": ""
       }
     ],
-    "auteur": "La rédaction (auto) · Sources : Presse Agence, Ecran total, Mediaguinee.com, Guinee7.com"
+    "auteur": "Léa Fontaine",
+    "lang": "fr",
+    "sources": [
+      "Presse Agence",
+      "Ecran total",
+      "Mediaguinee.com",
+      "Guinee7.com"
+    ]
   },
   {
     "id": "2026-11-05-actu-finance",
@@ -177,7 +140,11 @@
         "resume": "Le Mécanisme européen de stabilité peut prêter jusqu’à 500 milliards d’euros aux pays financièrement étranglés. « Nous n’avons aucune raison d’intervenir à ce stade », assure son directeur général."
       }
     ],
-    "auteur": "La rédaction (auto) · Sources : Le Monde"
+    "auteur": "Hugo Marchetti",
+    "lang": "fr",
+    "sources": [
+      "Le Monde"
+    ]
   },
   {
     "id": "2026-11-05-actu-monde",
@@ -221,7 +188,11 @@
         "resume": "Plusieurs navires russes chargés de gazole destiné au marché américain ont brusquement changé de cap en haute mer, ces derniers jours. Craignant les risques réputationnels et les sanctions, les entreprises américaines rechignent à en acheter."
       }
     ],
-    "auteur": "La rédaction (auto) · Sources : Le Monde"
+    "auteur": "Sofia Delmas",
+    "lang": "fr",
+    "sources": [
+      "Le Monde"
+    ]
   },
   {
     "id": "2026-11-05-actu-nice-cote-d-azur",
@@ -265,7 +236,13 @@
         "resume": ""
       }
     ],
-    "auteur": "La rédaction (auto) · Sources : ici.fr, BFM, Nice-Matin"
+    "auteur": "Lucas Giordano",
+    "lang": "fr",
+    "sources": [
+      "ici.fr",
+      "BFM",
+      "Nice-Matin"
+    ]
   },
   {
     "id": "2026-11-05-actu-sport",
@@ -309,7 +286,11 @@
         "resume": "Le basketteur français a inscrit près de la moitié des points de son équipe, mercredi, lui permettant de s’offrir la victoire face aux Dallas Maverick (112-111). Il termine aussi la rencontre avec 24 rebonds et 8 contres."
       }
     ],
-    "auteur": "La rédaction (auto) · Sources : Le Monde"
+    "auteur": "Inès Morel",
+    "lang": "fr",
+    "sources": [
+      "Le Monde"
+    ]
   },
   {
     "id": "2026-11-05-actu-tech",
@@ -353,11 +334,119 @@
         "resume": "A la fin des années 1990, alors que la 3D dans le jeu vidéo est encore balbutiante, Nintendo sort « The Legend of Zelda : Ocarina of Time », un jeu devenu culte."
       }
     ],
-    "auteur": "La rédaction (auto) · Sources : Le Monde"
+    "auteur": "Nathan Belkacem",
+    "lang": "fr",
+    "sources": [
+      "Le Monde"
+    ]
+  },
+  {
+    "id": "2026-11-05-0-junior-joyant-le-rire-comme-ligne-de-conduite",
+    "lang": "fr",
+    "date": "2026-11-05",
+    "section": "Junior",
+    "rubrique": "Portrait",
+    "emoji": "🌟",
+    "titre": "Junior Joyant : le rire comme ligne de conduite",
+    "chapo": "Étudiant en informatique et cybersécurité à Nice, Junior Joyant a fait de la bonne humeur sa marque de fabrique.",
+    "corps": [
+      "On l'a croisé du côté de le Vieux-Nice, sous quelques nuages, inarrêtable. Junior Joyant ne passe pas inaperçu : un sourire, une blague, et la conversation est lancée.",
+      "Niçois pur jus, il partage son temps entre ses études en informatique et cybersécurité, ses amis et ses séries. « Je cherche toujours à rencontrer de nouvelles personnes », confie-t-il. Son credo : ne jamais se prendre trop au sérieux.",
+      "Quand on lui demande de se résumer en une phrase, il répond sans hésiter : « À Nice, même les lundis ont l'air de vacances. »"
+    ],
+    "auteur": "Théo Lambert",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-05-1-animes-et-k-dramas-la-watchlist-de-junior",
+    "lang": "fr",
+    "date": "2026-11-05",
+    "section": "Junior",
+    "rubrique": "Culture",
+    "emoji": "🎬",
+    "titre": "Animes et K-dramas : la watchlist de Junior",
+    "chapo": "Grand fan d'animes et de K-dramas, Junior Joyant nous ouvre sa watchlist.",
+    "corps": [
+      "En ce moment, c'est Spy x Family qui tourne en boucle chez Junior. « Les combats, l'amitié, les rebondissements… j'adore », explique-t-il.",
+      "Côté K-drama, il recommande Crash Landing on You : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
+      "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
+    ],
+    "auteur": "Théo Lambert",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-05-2-soiree-series-ce-que-regarde-junior-joyant",
+    "lang": "fr",
+    "date": "2026-11-05",
+    "section": "Junior",
+    "rubrique": "Culture",
+    "emoji": "🎬",
+    "titre": "Soirée séries : ce que regarde Junior Joyant",
+    "chapo": "Grand fan d'animes et de K-dramas, Junior Joyant nous ouvre sa watchlist.",
+    "corps": [
+      "En ce moment, c'est One Piece qui tourne en boucle chez Junior. « Les combats, l'amitié, les rebondissements… j'adore », explique-t-il.",
+      "Côté K-drama, il recommande Goblin : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
+      "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
+    ],
+    "auteur": "Clara Benoît",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-05-en-0-junior-joyant-le-rire-comme-ligne-de-conduite",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Junior",
+    "rubrique": "Profile",
+    "emoji": "🌟",
+    "titre": "Junior Joyant: laughter as a way of life",
+    "chapo": "A computer science and cybersecurity student in Nice, Junior Joyant has made good humour his trademark.",
+    "corps": [
+      "We bumped into him near Old Nice, under a few clouds, unstoppable. Junior Joyant doesn't go unnoticed: one smile, one joke, and the conversation is off.",
+      "Born and raised in Nice, he splits his time between his computer science and cybersecurity studies, his friends and his favourite shows. “I'm always looking to meet new people,” he says. His motto: never take yourself too seriously.",
+      "Asked to sum himself up in one sentence, he doesn't hesitate: “In Nice, even Mondays feel like a holiday.”"
+    ],
+    "auteur": "Théo Lambert",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-05-en-1-animes-et-k-dramas-la-watchlist-de-junior",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Junior",
+    "rubrique": "Culture",
+    "emoji": "🎬",
+    "titre": "Anime and K-dramas: Junior's watchlist",
+    "chapo": "A huge fan of anime and K-dramas, Junior Joyant opens up his watchlist.",
+    "corps": [
+      "Right now, Spy x Family is on repeat at Junior's place. “The fights, the friendship, the plot twists… I love it,” he explains.",
+      "On the K-drama side, he recommends Crash Landing on You: “Perfect for a quiet night in, tissues optional.”",
+      "His advice for beginners: “Start with one episode. Just one. You'll see.”"
+    ],
+    "auteur": "Théo Lambert",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-05-en-2-soiree-series-ce-que-regarde-junior-joyant",
+    "lang": "en",
+    "date": "2026-11-05",
+    "section": "Junior",
+    "rubrique": "Culture",
+    "emoji": "🎬",
+    "titre": "Binge night: what Junior Joyant is watching",
+    "chapo": "A huge fan of anime and K-dramas, Junior Joyant opens up his watchlist.",
+    "corps": [
+      "Right now, One Piece is on repeat at Junior's place. “The fights, the friendship, the plot twists… I love it,” he explains.",
+      "On the K-drama side, he recommends Goblin: “Perfect for a quiet night in, tissues optional.”",
+      "His advice for beginners: “Start with one episode. Just one. You'll see.”"
+    ],
+    "auteur": "Clara Benoît",
+    "type": "junior"
   },
   {
     "id": "2026-11-04-0-le-conseil-cyber-de-junior-les-sauvegardes",
+    "lang": "fr",
     "date": "2026-11-04",
+    "section": "Junior",
     "rubrique": "Tech & Cyber",
     "emoji": "🔐",
     "titre": "Le conseil cyber de Junior : les sauvegardes",
@@ -367,13 +456,31 @@
       "Son conseil est clair : la règle 3-2-1 : trois copies, deux supports, une hors de chez soi.",
       "« La cybersécurité, ce n'est pas que pour les hackers en sweat à capuche, c'est pour tout le monde », rappelle-t-il avant de retourner à ses cours."
     ],
-    "auteur": "La rédaction (auto)",
+    "auteur": "Théo Lambert",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-04-en-0-le-conseil-cyber-de-junior-les-sauvegardes",
+    "lang": "en",
+    "date": "2026-11-04",
     "section": "Junior",
+    "rubrique": "Tech & Cyber",
+    "emoji": "🔐",
+    "titre": "Junior's cyber tip: backups",
+    "chapo": "Every week, our favourite cybersecurity student shares a simple tip to stay safe online.",
+    "corps": [
+      "This time, Junior Joyant tackles a classic: backups. “Everyone thinks it only happens to other people,” he smiles.",
+      "His advice is clear: follow the 3-2-1 rule: three copies, two media, one off-site.",
+      "“Cybersecurity isn't just for hackers in hoodies — it's for everyone,” he reminds us before heading back to class."
+    ],
+    "auteur": "Théo Lambert",
     "type": "junior"
   },
   {
     "id": "2026-11-03-0-soiree-series-ce-que-regarde-junior-joyant",
+    "lang": "fr",
     "date": "2026-11-03",
+    "section": "Junior",
     "rubrique": "Culture",
     "emoji": "🎬",
     "titre": "Soirée séries : ce que regarde Junior Joyant",
@@ -383,13 +490,31 @@
       "Côté K-drama, il recommande Crash Landing on You : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
       "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
     ],
-    "auteur": "La rédaction (auto)",
+    "auteur": "Clara Benoît",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-03-en-0-soiree-series-ce-que-regarde-junior-joyant",
+    "lang": "en",
+    "date": "2026-11-03",
     "section": "Junior",
+    "rubrique": "Culture",
+    "emoji": "🎬",
+    "titre": "Binge night: what Junior Joyant is watching",
+    "chapo": "A huge fan of anime and K-dramas, Junior Joyant opens up his watchlist.",
+    "corps": [
+      "Right now, Demon Slayer is on repeat at Junior's place. “The fights, the friendship, the plot twists… I love it,” he explains.",
+      "On the K-drama side, he recommends Crash Landing on You: “Perfect for a quiet night in, tissues optional.”",
+      "His advice for beginners: “Start with one episode. Just one. You'll see.”"
+    ],
+    "auteur": "Clara Benoît",
     "type": "junior"
   },
   {
     "id": "2026-11-02-0-le-conseil-cyber-de-junior-les-mots-de-passe",
+    "lang": "fr",
     "date": "2026-11-02",
+    "section": "Junior",
     "rubrique": "Tech & Cyber",
     "emoji": "🔐",
     "titre": "Le conseil cyber de Junior : les mots de passe",
@@ -399,24 +524,58 @@
       "Son conseil est clair : un gestionnaire de mots de passe et des phrases de passe longues valent mieux que « Nice2024! ».",
       "« La cybersécurité, ce n'est pas que pour les hackers en sweat à capuche, c'est pour tout le monde », rappelle-t-il avant de retourner à ses cours."
     ],
-    "auteur": "La rédaction (auto)",
-    "section": "Junior",
+    "auteur": "Clara Benoît",
     "type": "junior"
   },
   {
-    "id": "2026-11-01-0-la-journee-de-junior-dans-la-douceur-nicoise",
+    "id": "2026-11-02-en-0-le-conseil-cyber-de-junior-les-mots-de-passe",
+    "lang": "en",
+    "date": "2026-11-02",
+    "section": "Junior",
+    "rubrique": "Tech & Cyber",
+    "emoji": "🔐",
+    "titre": "Junior's cyber tip: passwords",
+    "chapo": "Every week, our favourite cybersecurity student shares a simple tip to stay safe online.",
+    "corps": [
+      "This time, Junior Joyant tackles a classic: passwords. “Everyone thinks it only happens to other people,” he smiles.",
+      "His advice is clear: a password manager and long passphrases beat “Nice2024!” every time.",
+      "“Cybersecurity isn't just for hackers in hoodies — it's for everyone,” he reminds us before heading back to class."
+    ],
+    "auteur": "Clara Benoît",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-01-0-la-journee-de-junior-sous-un-ciel-tout-bleu",
+    "lang": "fr",
     "date": "2026-11-01",
+    "section": "Junior",
     "rubrique": "Brève",
     "emoji": "☀️",
-    "titre": "La journée de Junior, dans la douceur niçoise",
+    "titre": "La journée de Junior, sous un ciel tout bleu",
     "chapo": "Les nouvelles du jour, en bref.",
     "corps": [
-      "Junior Joyant a été aperçu près de la colline du Château, d'excellente humeur.",
+      "Junior Joyant a été aperçu près de la Coulée verte, d'excellente humeur.",
       "Au programme : un peu de code, un peu de cyber, et sûrement un épisode de Goblin ce soir.",
       "Sa phrase du jour : « Une soirée sans danser, c'est une soirée ratée. »"
     ],
-    "auteur": "La rédaction (auto)",
+    "auteur": "Théo Lambert",
+    "type": "junior"
+  },
+  {
+    "id": "2026-11-01-en-0-la-journee-de-junior-sous-un-ciel-tout-bleu",
+    "lang": "en",
+    "date": "2026-11-01",
     "section": "Junior",
+    "rubrique": "In brief",
+    "emoji": "☀️",
+    "titre": "Junior's day, under clear blue skies",
+    "chapo": "Today's news, in brief.",
+    "corps": [
+      "Junior Joyant was spotted near the Promenade du Paillon park, in great spirits.",
+      "On the agenda: a bit of coding, a bit of cyber, and most likely an episode of Goblin tonight.",
+      "Quote of the day: “A night out without dancing is a wasted night.”"
+    ],
+    "auteur": "Théo Lambert",
     "type": "junior"
   }
 ]
