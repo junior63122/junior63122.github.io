@@ -2,7 +2,8 @@
 
 ## 📰 Le Journal de Junior — `/journal/`
 
-Un journal en ligne mis à jour **automatiquement** deux fois par jour :
+Un quotidien en ligne, en **français et en anglais**, mis à jour deux fois par jour par un workflow GitHub Actions.
+Chaque rubrique est signée par un(e) journaliste de la rédaction (noms dans `scripts/generate-news.mjs` et `scripts/generate-article.mjs`) :
 
 - **Actualité** — Business, Finance, Événementiel, Tech, Monde, Nice & Côte d'Azur, Sport.
   Chaque rubrique publie une revue de presse du jour, construite à partir des flux RSS
@@ -20,4 +21,5 @@ Un journal en ligne mis à jour **automatiquement** deux fois par jour :
 
 Lancer le robot à la main : onglet **Actions → « Journal - articles automatiques » → Run workflow**.
 
-Ajouter une rubrique : ajoute une entrée dans `RUBRIQUES` (nom, emoji, intro, flux RSS).
+Ajouter une rubrique : ajoute une entrée dans `RUBRIQUES` (journaliste, emoji, puis nom/intro/flux RSS en `fr` et `en`).
+La version anglaise utilise des flux anglophones (BBC News, Google News).
