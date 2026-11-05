@@ -141,6 +141,7 @@ async function main() {
     }
     const art = buildArticle(rub, items, date, dejaVus);
     if (!art) { console.warn(`! ${rub.nom} : aucune info récente, article ignoré`); continue; }
+    art.liens.forEach((l) => dejaVus.add(l.url)); // une info = une seule rubrique
     const i = db.findIndex((a) => a.id === art.id);
     if (i >= 0) db[i] = art; else db.push(art); // relancer le même jour = mise à jour
     if (!ids.has(art.id)) ajoutes++;
