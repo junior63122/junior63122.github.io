@@ -48,6 +48,314 @@
     "type": "junior"
   },
   {
+    "id": "2026-11-05-actu-business",
+    "date": "2026-11-05",
+    "section": "Business",
+    "rubrique": "Business",
+    "emoji": "💼",
+    "type": "revue",
+    "titre": "Business : Le ciel européen en état d’alerte après des menaces visant une vingtaine de vols commerciaux",
+    "chapo": "Entreprises, emploi, stratégie : l'essentiel de l'actualité économique du jour. Le point du 5 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Le ciel européen en état d’alerte après des menaces visant une vingtaine de vols commerciaux",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/05/le-ciel-europeen-en-etat-d-alerte-apres-des-menaces-visant-une-vingtaine-de-vols-commerciaux_6807344_3234.html",
+        "resume": "Plusieurs pays, dont la France, ont dû mobiliser leur armée de l’air pour escorter des avions de ligne menacés par des alertes à la bombe. Une vingtaine de vols étaient concernés, ce qui laisse supposer une opération coordonnée."
+      },
+      {
+        "titre": "A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/05/a-wall-street-la-victoire-democrate-aux-midterms-a-fait-exploser-la-bulle-de-l-ia_6807339_3234.html",
+        "resume": "Le Nasdaq, l’indice qui regroupe de nombreuses valeurs technologiques, perdait plus de 5 % en séance, jeudi 5 novembre. Les résultats des élections américaines de mi-mandat accentuent la défiance envers la plupart des valeurs liées à l’intelligence…"
+      },
+      {
+        "titre": "Dette : les députés veulent mettre fin aux emprunts d’Etat indexés sur l’inflation",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/politique/article/2026/11/05/dette-les-deputes-veulent-mettre-fin-aux-emprunts-d-etat-indexes-sur-l-inflation_6807190_823448.html",
+        "resume": "Avec la forte hausse des prix, l’Etat doit payer des intérêts très élevés aux détenteurs d’obligations indexées. Le mécanisme risque de lui coûter plus de 10 milliards d’euros en 2026. Une majorité de députés a demandé, mercredi 4 novembre, la fin de ce…"
+      },
+      {
+        "titre": "Sébastien Lecornu exhorte les banques à financer les candidats à l’élection présidentielle",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/05/sebastien-lecornu-exhorte-les-banques-a-financer-les-candidats-a-la-presidentielle_6807149_3234.html",
+        "resume": "Le premier ministre a envoyé deux nouveaux courriers aux banques françaises. Celles-ci plaident pour une solution impliquant des établissements financiers détenus directement ou indirectement par l’Etat."
+      },
+      {
+        "titre": "EN DIRECT, grève du 5 novembre : entre 575 000 et 1,6 million de manifestants en France jeudi, une « conférence sociale » avec les syndicats et le patronat prévue à Matignon lundi",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/politique/live/2026/11/05/en-direct-greve-du-5-novembre-pres-de-600-000-manifestants-en-france-ce-jeudi-selon-une-estimation-provisoire-du-ministere-de-l-interieur_6806775_823448.html",
+        "resume": "La CGT estime que les mobilisations ont réuni près de 1,6 million de personnes, dont 350 000 à Paris. De son côté, le ministère de l’intérieur a évalué à 575 000 le nombre de manifestants en France, dont 65 000 dans la capitale."
+      }
+    ],
+    "auteur": "La rédaction (auto) · Sources : Le Monde"
+  },
+  {
+    "id": "2026-11-05-actu-evenementiel",
+    "date": "2026-11-05",
+    "section": "Événementiel",
+    "rubrique": "Événementiel",
+    "emoji": "🎪",
+    "type": "revue",
+    "titre": "Événementiel : Budget séminaire d'entreprise : PINK'OLA révèle les chiffres",
+    "chapo": "Salons, festivals, concerts, grands rendez-vous : l'agenda et l'actualité de l'événementiel. Le point du 5 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Budget séminaire d'entreprise : PINK'OLA révèle les chiffres",
+        "source": "Presse Agence",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNlNZOWR3c2NER3hOWWNmYm04RTFYU0Q2YUV1RkFMZTRzeFg2clJSRGtUenY0ekhCa04tRHItYUlaMm9NRUlnbU1vZ0xjRHhQYmJNbXFTSVlpSzM5Qm0zZWIzSGE2YXR0LTJpOXkxUmppTThuSEdnY0M1aE9Uc1RXM2Q3TjdwM2d6aHhtemxYbXhpZXdHZExyUTl1MFl4WGh6Z05wM2J0OWJ5SHVtUEh1X1Q5Zw?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "LILLE : Événementiel - Un manoir de 600 m² se lance sur le marché de la privatisation intégrale",
+        "source": "Presse Agence",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQV2Z3a3U4QVc2azJOX2FJNnNCNkNkSEdYajB2TzFVak5DWnhGZjA1ZlhKZXk0b3lvTEZtMXE5SHVLVF9xdzE2WnJET0pmQkZTUDV0ZlF6dkxiUWx6ekR5c1Q5cTVKZUFQYTBXWTV0dVZya2x1eFBSRElVUXhlTFBmZWVlSXRwYW5RZlVpQmFHRy1aSVUwdkpPbkFJRlU3bno2X01qUzRJcXFfUnVQbG9HV2tjaDEwSmY5eFNqcl93?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Charline Baudry-Biancarelli est nommée directrice du commerce international et du marketing événementiel chez Universal Pictures",
+        "source": "Ecran total",
+        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPWmUyVGVwbkRfN0IwNE9wODRkUHZhVVhVWGo4R0ZYcUNNT29qc2Q1VmRxUzZraDR1MTJVcFk2by1CV0dnb2wwTDFWa25IRF83UVJDcWxiTU1rajRROHJhanFuS1EtUnFOM1pzLTZiNWR6QUE1WFY1cGJlZ0M0Q01ONXV2aThURUJJdElxZzB4ZnhiekE1N2lyb3Qxc2pOT2VNc2JuTGlEWER6N2VIYWQySUNjZEF0anF2cldGYl9xVl94b1BxX0pqd3RYN2lodzhlRTZ2WEZlQTFudGt1TTVqYTVIWUc4SWJERklIUWN3MzBJSlhrMWc?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "« Le Grimoire de l’Événementiel en Afrique de l’Ouest » : Mamadou Bailo Danso veut professionnaliser le secteur et en faire une véritable industrie",
+        "source": "Mediaguinee.com",
+        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNOEdaWGdobFFHTElqX0tRRk9xNmE3bzFIbjRjMmZpN1VVX1c0ZGlwcW9BSFRmSnR2TFo5bm9iNTljOHlRc0hjMXF4b0RacjNZZGp1OWtUU3pRblplN2lta1BOZ2pqWFA3SjA2aU5JSkZOYTlmXzh2eXl3Q3FqQS0zQUl5djQ2S0Z2RmdYZE1lX24wc1dyNnNHWERZS1dRLVpBbWgtdkdlZWxSWEN4UjVEUzFFRzFyS0hrTGJmUGZOUTh6dlBsRVpzOHUwSmVlVkM5dXBaelBuWDZuWjh6QXFVLUswd0lWV3lGd3V0VzNUdnFXWGRYNEhvQWVKLVM1UzlnWnc?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Événementiel en Afrique de l’Ouest : Mamadou Bailo Danso veut passer de l’improvisation à une véritable industrie",
+        "source": "Guinee7.com",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOaEtXeTY0dFJaMkV4aktKRkd5VkowS2l4WE9CdUY3bndHaHVPdjZVNDJPdE1yYl9zUkFMVThRZ2stUUxrV1RnWE1XMWRiVU40TmFvZW9FU2tqcXVBSGtFMjhxNHp3djQza2k4RmJpUWRKZ3BvSFhIMHBpNXFpemlvX296a3RTaFBDMGpkNVhiRTVWZDUxcmtlOFo0LW1vdXBvWWp5amQ2U1RIOFVHY29WeUtXQlNtVmdGd0s0Ti1RSHhyWko1bDBqWGN4WUJXbWt3ZTROZFR6UHhZeHF6ekE?oc=5",
+        "resume": ""
+      }
+    ],
+    "auteur": "La rédaction (auto) · Sources : Presse Agence, Ecran total, Mediaguinee.com, Guinee7.com"
+  },
+  {
+    "id": "2026-11-05-actu-finance",
+    "date": "2026-11-05",
+    "section": "Finance",
+    "rubrique": "Finance",
+    "emoji": "📈",
+    "type": "revue",
+    "titre": "Finance : A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
+    "chapo": "Bourse, marchés, taux, crypto et argent au quotidien : ce qui a bougé aujourd'hui. Le point du 5 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/05/a-wall-street-la-victoire-democrate-aux-midterms-a-fait-exploser-la-bulle-de-l-ia_6807339_3234.html",
+        "resume": "Le Nasdaq, l’indice qui regroupe de nombreuses valeurs technologiques, perdait plus de 5 % en séance, jeudi 5 novembre. Les résultats des élections américaines de mi-mandat accentuent la défiance envers la plupart des valeurs liées à l’intelligence…"
+      },
+      {
+        "titre": "Appel à témoignages : salariés, étudiants, comment vous adaptez-vous à la flambée des factures de gaz et d’électricité ?",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/appel-temoignages/2026/11/05/appel-a-temoignages-salaries-etudiants-comment-vous-adaptez-vous-a-la-flambee-des-factures-de-gaz-et-d-electricite_6806862_3234.html",
+        "resume": "Alors que les températures baissent drastiquement en France, les prix du gaz et de l’électricité s’envolent, sur fond de tensions internationales. Racontez-nous vos stratégies pour vous ajuster à ces factures qui s’alourdissent."
+      },
+      {
+        "titre": "Mariage sous le régime de la communauté : les loyers du bien propre d’un époux sont communs aux deux",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/argent/article/2026/11/05/mariage-sous-le-regime-de-la-communaute-les-loyers-du-bien-propre-d-un-epoux-sont-communs-aux-deux_6806818_1657007.html",
+        "resume": "Lors du divorce, le conjoint qui a remboursé le crédit de son logement avec les revenus tirés de sa location doit une « récompense » tenant compte de la plus-value gagnée."
+      },
+      {
+        "titre": "Relèvement du plafond du Livret A : « On est loin de la volonté affichée par Emmanuel Macron d’orienter l’épargne des Français vers des placements à long terme »",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/04/relevement-du-plafond-du-livret-a-on-est-loin-de-la-volonte-affichee-par-emmanuel-macron-d-orienter-l-epargne-des-francais-vers-des-placements-a-long-terme_6806139_3234.html",
+        "resume": "Le gouvernement prévoit de porter entre 25 000 et 30 000 euros le plafond du livret préféré des Français en février 2027, au lieu de 22 950 euros actuellement. Une annonce qui vise à financer des mesures d’urgence, mais qui risque, en définitive,…"
+      },
+      {
+        "titre": "Hausse des taux : les anciennes générations de produits structurés pénalisées",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/argent/article/2026/11/04/hausse-des-taux-les-anciennes-generations-de-produits-structures-penalisees_6806038_1657007.html",
+        "resume": "Si la hausse des taux freine la valorisation de certains produits déjà en portefeuille, elle offre aussi davantage de marges pour construire de nouvelles solutions, potentiellement plus rémunératrices."
+      }
+    ],
+    "auteur": "La rédaction (auto) · Sources : Le Monde"
+  },
+  {
+    "id": "2026-11-05-actu-monde",
+    "date": "2026-11-05",
+    "section": "Monde",
+    "rubrique": "Monde",
+    "emoji": "🌍",
+    "type": "revue",
+    "titre": "Monde : Etats-Unis : le gouverneur démocrate de Californie commue la peine de 548 condamnés à mort",
+    "chapo": "Le tour du monde de l'actualité en quelques titres. Le point du 5 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Etats-Unis : le gouverneur démocrate de Californie commue la peine de 548 condamnés à mort",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/international/article/2026/11/05/etats-unis-le-gouverneur-democrate-de-californie-commue-la-peine-de-548-condamnes-a-mort_6807346_3210.html",
+        "resume": "Gavin Newsom, candidat probable à l’investiture démocrate pour la présidentielle de 2028, dénonce un système incapable d’être « mis en œuvre de manière équitable ». Sa décision, annoncée jeudi, concerne un quart des condamnés à mort aux Etats-Unis."
+      },
+      {
+        "titre": "Midterms 2026 : à Los Angeles, la victoire de Nithya Raman à la mairie illustre la montée en puissance d’une nouvelle gauche aux Etats-Unis",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/international/article/2026/11/05/midterms-2026-a-los-angeles-la-victoire-de-nithya-raman-a-la-mairie-illustre-la-montee-en-puissance-d-une-nouvelle-gauche-aux-etats-unis_6807341_3210.html",
+        "resume": "La démocrate, 45 ans, a battu l’actuelle maire de la ville de Los Angeles, Karen Bass, 73 ans, une politicienne pourtant chevronnée. Comme Zohran Mamdani, maire de New York, Nithya Raman se concentre sur les préoccupations sociales des électeurs."
+      },
+      {
+        "titre": "A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/05/a-wall-street-la-victoire-democrate-aux-midterms-a-fait-exploser-la-bulle-de-l-ia_6807339_3234.html",
+        "resume": "Le Nasdaq, l’indice qui regroupe de nombreuses valeurs technologiques, perdait plus de 5 % en séance, jeudi 5 novembre. Les résultats des élections américaines de mi-mandat accentuent la défiance envers la plupart des valeurs liées à l’intelligence…"
+      },
+      {
+        "titre": "En Irak, petites mains et figures du djihadisme français passent en jugement",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/international/article/2026/11/05/en-irak-petites-mains-et-figures-du-djihadisme-francais-passent-en-jugement_6807335_3210.html",
+        "resume": "Parmi les 47 ressortissants français transférés depuis la Syrie et jugés par la justice irakienne à Bagdad pour appartenance à l’organisation Etat islamique figurent des vétérans du djihadisme hexagonal, à l’image de Thomas Collange."
+      },
+      {
+        "titre": "Midterms 2026 : « Il y a désormais un fort potentiel d’avancées en matière climatique aux Etats-Unis »",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/planete/article/2026/11/05/midterms-2026-il-y-a-desormais-un-fort-potentiel-d-avancees-en-matiere-climatique-aux-etats-unis_6807334_3244.html",
+        "resume": "Spécialiste des politiques environnementales et professeure associée à l’université de Californie à Santa Barbara, Leah C. Stokes juge, dans un entretien au « Monde », que les démocrates, en contrôlant le Sénat et la Chambre des représentants, peuvent…"
+      }
+    ],
+    "auteur": "La rédaction (auto) · Sources : Le Monde"
+  },
+  {
+    "id": "2026-11-05-actu-nice-cote-d-azur",
+    "date": "2026-11-05",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Nice & Côte d'Azur",
+    "emoji": "🌴",
+    "type": "revue",
+    "titre": "Nice & Côte d'Azur : Eric Ciotti dévoile un audit de la ville de Nice et de la métropole Nice côte d'azur",
+    "chapo": "Ce qui se passe près de chez nous, de Nice à Monaco. Le point du 5 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Eric Ciotti dévoile un audit de la ville de Nice et de la métropole Nice côte d'azur",
+        "source": "ici.fr",
+        "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQR2JpYlpRZ0Jqa3lHTEQ1dTNVRjRhdTdwd3R3OE5oMU9EU3QtMVlleHF0eVhySmRnSlhiaTR3dmFoaTFLdnVfMXY0bE5LT0RnNC1QbnJVek14cVlvQkQzZjZJcng1TnlnUTJERTVVVlp2NmVWOURvczc4ZVd0a2gzaTJFSnA1cktkR0hjLWlTQ3NoeW1Db2I5SWc5UDF1WlctREhxWmticGE3SkRYU0Q3NklnTE13bGQtRzYwR2F6ZEd0MjNiM0FlLVhRUVhENG1YM19qMjFzYVd3QUZyVWswamJsT19fQ0hocnVwNkV1Q1c3VTRS?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Féminicide en 2022 à Nice : la cour condamne le conjoint à la perpétuité.",
+        "source": "BFM",
+        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQdmppMjNNYTBCWUF2ZmR0RUtvWHBXejBqZTBMQ3YzQk41MERiYWludG13V2ZYVm1rYk94MjRIR04zdXEyUjVCeWNNS3ZqRzFQVlRyX0QzUjVvUTBpSmF4X1h0NWxHazZKZmxaU0Z2cjdoWTJuaVdrQi1sT2xWTTJ6S3RMblE1MkRva0xLcTdBOEpwT3BxMGlwWmE2QVlwTi1tellfazYxSnpKMnZxNHBGM2p2czZIVmVGcmxMM1BCUUVBSXo1UV9FVmctekxNS1QtUzVnand5WGVNS2R5TEFOa0U3dmk0SDZaVVpiVTBKeGNrSmZtLXZqWHlYRjk?oc=5",
+        "resume": ""
+      },
+      {
+        "titre": "Nice Grand Arénas : comment les acteurs économiques préparent la mue du quartier d’affaires - Nice-Matin",
+        "source": "Nice-Matin",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPb09vMENpdVI0bXpvVkRnT2dDVDJfaXlQeDFKMVl4NFBMcVlTUnJKR1JnOWNIenQyWkUzQllQMFhIREQ2Q3FCSk9HVnNSQ2FDcEZlcHJPanIwM2cyZUE5R0FVN2hxTVpzYXgtSlV6bGtOWDJMYjFoR3dFNVo0MXdycEZaUWo5YWNRejhoXzZFTDY2b0pReVNsU2U0WU5lNmlyMFFuTkttbVR6VmdpMXc1bXN6YzdJMGliNEtPZGZmQlhXbTB3QWpobWRPRVB2Zw?oc=5",
+        "resume": "Nice Grand Arénas : comment les acteurs économiques préparent la mue du quartier d’affaires Nice-Matin"
+      },
+      {
+        "titre": "Alerte météo : la vigilance jaune reconduite jusqu’à ce vendredi dans les Alpes-Maritimes - Nice-Matin",
+        "source": "Nice-Matin",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNSEloRVdfcjdNaDN4dGxGZHBMM3RSckN5LXA5TlZOekYyNlNKNnNOTnJ4RC1mQUVoV1hKZVpOUkZKVVJhZTRwaC15c0JuQXFXSUkzQkV2cTVNUW9xbXBmVWNPZVZFZDlOTDl4RUtGSkdRVVg2eFNlZS1Keld0RUxQN0sxcUgxY3BvcURDaGNZbS04YktJS0Mza0Jwa1lmbnlPdTRWRG5Cc2h1UDczQmlWajMyRkpzaVRxb2NZWXJJZDRLWGxjYThR?oc=5",
+        "resume": "Alerte météo : la vigilance jaune reconduite jusqu’à ce vendredi dans les Alpes-Maritimes Nice-Matin"
+      },
+      {
+        "titre": "INFO BFM NICE CÔTE D'AZUR. Enseignante et directrice agressées à Nice: un appel à la grève lancé pour l'école Clément-Roassal",
+        "source": "BFM",
+        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPMTFNTm9YZzhzN2tuZC1VRUZvSWRiNk9KM3djU3VKd2FFc0NkeGI5cmxUeTJlUW5NOUhIN1pSMHdNcHk0bTNCclhld3BPNUE5OHlKSXQyZ0RMSnhNSjBIcEZDQTJQMm9IWnF1YW1PQTBZSEVMMFRMcUVpTWhvMFR4TWhIRzlVamZCY1JEU21qZ2FmenVQS0wyVnJnZ1dpT3NTWTZnS2Qwa0E5eEkwY0hiSUZuY1FOa2hEQjF0ckxiVlEwZk90UGpzQ0J3ZEdhT29FeEl4TVk1X3UxU2p1MlRPSDdGckl0M3BvWGktbmZiNEkxU0VxaWtjUDJXUUxXLW9RWjlKdHM5WlE0dw?oc=5",
+        "resume": ""
+      }
+    ],
+    "auteur": "La rédaction (auto) · Sources : ici.fr, BFM, Nice-Matin"
+  },
+  {
+    "id": "2026-11-05-actu-sport",
+    "date": "2026-11-05",
+    "section": "Sport",
+    "rubrique": "Sport",
+    "emoji": "⚽",
+    "type": "revue",
+    "titre": "Sport : Football : Olivier Létang, président du LOSC, suspendu quatre mois ferme pour ses propos contre l’arbitrage",
+    "chapo": "Résultats, transferts et grands moments du sport. Le point du 5 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Football : Olivier Létang, président du LOSC, suspendu quatre mois ferme pour ses propos contre l’arbitrage",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sport/article/2026/11/05/football-olivier-letang-president-du-losc-suspendu-quatre-mois-ferme-pour-ses-propos-contre-l-arbitrage_6807338_3242.html",
+        "resume": "Déjà condamné à 20 000 euros d’amende par la commission de discipline de la Ligue de football professionnel mi-septembre, Olivier Létang a écopé en plus jeudi de six mois de suspension dont deux avec sursis, après un appel formulé par la FFF."
+      },
+      {
+        "titre": "Cristiano Ronaldo prend sa retraite internationale, triste fin d’une histoire qui a un peu trop duré",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sport/article/2026/11/05/cristiano-ronaldo-prend-sa-retraite-internationale-triste-fin-d-une-histoire-qui-a-un-peu-trop-dure_6807075_3242.html",
+        "resume": "Le footballeur portugais a annoncé qu’il raccrochait les crampons en sélection, jeudi, dans une vidéo publiée sur Instagram. Véritable légende dans son pays, il part sur un coup d’éclat et une séparation précipitée de la Seleçao das Quinas, le 30 septembre."
+      },
+      {
+        "titre": "Alan Jones, dernier champion du monde australien de formule 1 et premier sacré avec l’écurie Williams, est mort",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/disparitions/article/2026/11/05/alan-jones-dernier-champion-du-monde-australien-de-formule-1-et-premier-sacre-avec-l-ecurie-williams-est-mort_6806857_3382.html",
+        "resume": "Le pilote australien est décédé des suites d’une courte maladie, jeudi, à 80 ans. Il avait été sacré champion du monde de formule 1 avec l’écurie britannique, en 1980."
+      },
+      {
+        "titre": "Cristiano Ronaldo, légende du football portugais, annonce sa retraite internationale",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sport/article/2026/11/05/le-footballeur-cristiano-ronaldo-annonce-sa-retraite-internationale_6806853_3242.html",
+        "resume": "L’attaquant portugais de 41 ans a posté une longue vidéo, mercredi sur Instagram, dans laquelle il rappelle son attachement à la Selaçao das Quinas, dont il a porté les couleurs à 234 reprises, pour 146 buts, un record."
+      },
+      {
+        "titre": "Victor Wembanyama porte les San Antonio Spurs avec 52 points marqués, un nouveau record personnel",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sport/article/2026/11/05/victor-wembanyama-porte-les-san-antonio-spurs-avec-52-points-marques-un-nouveau-record-personnel_6806837_3242.html",
+        "resume": "Le basketteur français a inscrit près de la moitié des points de son équipe, mercredi, lui permettant de s’offrir la victoire face aux Dallas Maverick (112-111). Il termine aussi la rencontre avec 24 rebonds et 8 contres."
+      }
+    ],
+    "auteur": "La rédaction (auto) · Sources : Le Monde"
+  },
+  {
+    "id": "2026-11-05-actu-tech",
+    "date": "2026-11-05",
+    "section": "Tech",
+    "rubrique": "Tech",
+    "emoji": "💻",
+    "type": "revue",
+    "titre": "Tech : A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
+    "chapo": "Intelligence artificielle, start-up, cybersécurité : les nouvelles du numérique. Le point du 5 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "A Wall Street, la victoire démocrate aux midterms a fait exploser la bulle de l’IA",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/05/a-wall-street-la-victoire-democrate-aux-midterms-a-fait-exploser-la-bulle-de-l-ia_6807339_3234.html",
+        "resume": "Le Nasdaq, l’indice qui regroupe de nombreuses valeurs technologiques, perdait plus de 5 % en séance, jeudi 5 novembre. Les résultats des élections américaines de mi-mandat accentuent la défiance envers la plupart des valeurs liées à l’intelligence…"
+      },
+      {
+        "titre": "Aide aux créateurs de contenu : pourquoi les annonces du CNC font grincer des dents",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/11/05/aide-aux-createurs-de-contenus-pourquoi-les-annonces-du-cnc-font-grincer-des-dents_6807331_4408996.html",
+        "resume": "Suspendu depuis le mois d’avril après une polémique, le fonds d’aide à la création sur les plateformes sociales du Centre national du cinéma et de l’image animée sera relancé en 2027, a annoncé son président, Gaëtan Bruel, jeudi, à la Paris Creator Week.…"
+      },
+      {
+        "titre": "Mobilisation sociale et TikTok : une étude bat en brèche le rôle joué par la plateforme dans les violences",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/11/05/mobilisation-sociale-et-tiktok-une-etude-bat-en-breche-le-role-joue-par-la-plateforme-dans-les-violences_6807112_4408996.html",
+        "resume": "Contrairement à ce qu’avance le gouvernement, les chercheurs n’ont pas trouvé de traces d’une coordination particulière des actions violentes sur le réseau social, ni d’une forte viralité des appels à en commettre."
+      },
+      {
+        "titre": "« Le grand danger serait une vision de la recherche mathématique cantonnée à sa partie la plus vulnérable à l’IA »",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sciences/article/2026/11/05/le-grand-danger-serait-une-vision-de-la-recherche-mathematique-cantonnee-a-sa-partie-la-plus-vulnerable-a-l-ia_6806850_1650684.html",
+        "resume": "En réduisant le domaine aux seuls problèmes que l’intelligence artificielle sait résoudre, c’est le travail des chercheurs, à la croisée des disciplines, qui est menacé, alertent les mathématiciens Stéphane Jaffard et Yves Meyer, dans une tribune au « Monde »."
+      },
+      {
+        "titre": "« The Legend of Zelda » ou l’art de faire peau neuve",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/11/05/the-legend-of-zelda-ou-l-art-de-faire-peau-neuve_6806825_4408996.html",
+        "resume": "Le remake de « Zelda : Ocarina of Time », sorti jeudi, a dérouté de nombreux fans par son aspect visuel, jugé trop éloigné de l’original sorti en 1998. Mais c’est oublier la diversité des réincarnations esthétiques passées de la franchise, d’épisode en…"
+      }
+    ],
+    "auteur": "La rédaction (auto) · Sources : Le Monde"
+  },
+  {
     "id": "2026-11-04-0-le-conseil-cyber-de-junior-les-sauvegardes",
     "date": "2026-11-04",
     "rubrique": "Tech & Cyber",
