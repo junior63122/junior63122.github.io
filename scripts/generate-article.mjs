@@ -173,12 +173,14 @@ export function generateArticle(date, index = 0) {
   return {
     id: `${date}-${index}-${slugify(a.titre)}`,
     date,
+    section: "Junior",
     rubrique: rub.nom,
     emoji: rub.emoji,
     titre: a.titre,
     chapo: a.chapo,
     corps: a.corps,
     auteur: "La rédaction (auto)",
+    type: "junior",
   };
 }
 

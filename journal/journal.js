@@ -9,9 +9,11 @@
 
   let articles = [];
   let rubrique = null;
+  const ORDRE = ["Business", "Finance", "Événementiel", "Tech", "Monde", "Nice & Côte d'Azur", "Sport", "Junior"];
+  const sec = (a) => a.section || "Junior";
 
   function renderList() {
-    const list = rubrique ? articles.filter((a) => a.rubrique === rubrique) : articles;
+    const list = rubrique ? articles.filter((a) => sec(a) === rubrique) : articles;
     if (!list.length) { app.innerHTML = '<p class="loading">Aucun article pour le moment.</p>'; return; }
     const [une, ...rest] = list;
     const link = (a) => "#" + encodeURIComponent(a.id);
@@ -24,7 +26,10 @@
            <a href="${link(a)}"><h3>${esc(a.titre)}</h3></a>
            <p>${esc(a.chapo)}</p></div>`).join("")}</section>`;
   }
-  function a_meta(a) { return `${a.emoji} ${a.rubrique} · ${fmt(a.date)}`; }
+  function a_meta(a) {
+    const r = sec(a) === "Junior" ? `Junior · ${a.rubrique}` : a.rubrique;
+    return `${a.emoji} ${r} · ${fmt(a.date)}`;
+  }
 
   function renderArticle(a) {
     app.innerHTML = `<article class="full">
@@ -33,13 +38,18 @@
       <h2>${esc(a.titre)}</h2>
       <p class="chapo">${esc(a.chapo)}</p>
       <p class="byline">Par ${esc(a.auteur)}</p>
-      ${a.corps.map((p) => `<p class="body">${esc(p)}</p>`).join("")}
+      ${(a.corps || []).map((p) => `<p class="body">${esc(p)}</p>`).join("")}
+      ${a.liens && a.liens.length ? `<ol class="revue">${a.liens.map((l) => `
+        <li><a href="${esc(l.url)}" target="_blank" rel="noopener"><h3>${esc(l.titre)}</h3></a>
+          ${l.resume ? `<p>${esc(l.resume)}</p>` : ""}
+          <span class="src">Source : ${esc(l.source || "")} — <a href="${esc(l.url)}" target="_blank" rel="noopener">lire l'article ↗</a></span></li>`).join("")}</ol>` : ""}
     </article>`;
     window.scrollTo(0, 0);
   }
 
   function renderFilters() {
-    const noms = [...new Set(articles.map((a) => a.rubrique))];
+    const present = new Set(articles.map(sec));
+    const noms = ORDRE.filter((n) => present.has(n)).concat([...present].filter((n) => !ORDRE.includes(n)));
     filters.innerHTML = ["Tout", ...noms].map((n) =>
       `<button type="button" data-r="${esc(n)}" aria-pressed="${(n === "Tout" && !rubrique) || n === rubrique}">${esc(n)}</button>`).join("");
   }

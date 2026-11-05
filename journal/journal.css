@@ -88,3 +88,13 @@ article.full p.body:first-of-type::first-letter {
 
 .loading { text-align: center; color: var(--muted); }
 footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px 16px 40px; border-top: 1px solid var(--rule); max-width: 1100px; margin: 0 auto; }
+
+ol.revue { list-style: none; counter-reset: n; padding: 0; margin: 20px 0 0; }
+ol.revue li { counter-increment: n; position: relative; padding: 14px 0 14px 44px; border-bottom: 1px solid var(--rule); }
+ol.revue li::before { content: counter(n); position: absolute; left: 0; top: 10px; font-family: "Playfair Display", serif; font-size: 2rem; color: var(--accent); }
+ol.revue h3 { font-family: "Playfair Display", serif; font-size: 1.25rem; line-height: 1.25; margin: 0 0 4px; }
+ol.revue a { text-decoration: none; }
+ol.revue a:hover h3 { text-decoration: underline; }
+ol.revue p { margin: 0 0 6px; }
+ol.revue .src { font-size: 0.85rem; color: var(--muted); }
+ol.revue .src a { text-decoration: underline; }

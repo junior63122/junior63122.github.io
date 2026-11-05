@@ -11,7 +11,9 @@
       "Niçois pur jus, il partage son temps entre ses études en informatique et cybersécurité, ses amis et ses séries. « Je cherche toujours à rencontrer de nouvelles personnes », confie-t-il. Son credo : ne jamais se prendre trop au sérieux.",
       "Quand on lui demande de se résumer en une phrase, il répond sans hésiter : « À Nice, même les lundis ont l'air de vacances. »"
     ],
-    "auteur": "La rédaction (auto)"
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
   },
   {
     "id": "2026-11-05-1-animes-et-k-dramas-la-watchlist-de-junior",
@@ -25,7 +27,9 @@
       "Côté K-drama, il recommande Crash Landing on You : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
       "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
     ],
-    "auteur": "La rédaction (auto)"
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
   },
   {
     "id": "2026-11-05-2-soiree-series-ce-que-regarde-junior-joyant",
@@ -39,7 +43,9 @@
       "Côté K-drama, il recommande Goblin : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
       "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
     ],
-    "auteur": "La rédaction (auto)"
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
   },
   {
     "id": "2026-11-04-0-le-conseil-cyber-de-junior-les-sauvegardes",
@@ -53,7 +59,9 @@
       "Son conseil est clair : la règle 3-2-1 : trois copies, deux supports, une hors de chez soi.",
       "« La cybersécurité, ce n'est pas que pour les hackers en sweat à capuche, c'est pour tout le monde », rappelle-t-il avant de retourner à ses cours."
     ],
-    "auteur": "La rédaction (auto)"
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
   },
   {
     "id": "2026-11-03-0-soiree-series-ce-que-regarde-junior-joyant",
@@ -67,7 +75,9 @@
       "Côté K-drama, il recommande Crash Landing on You : « Parfait pour une soirée tranquille, avec ou sans mouchoirs. »",
       "Son conseil pour les débutants : « Commencez par un épisode. Juste un. Vous verrez bien. »"
     ],
-    "auteur": "La rédaction (auto)"
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
   },
   {
     "id": "2026-11-02-0-le-conseil-cyber-de-junior-les-mots-de-passe",
@@ -81,7 +91,9 @@
       "Son conseil est clair : un gestionnaire de mots de passe et des phrases de passe longues valent mieux que « Nice2024! ».",
       "« La cybersécurité, ce n'est pas que pour les hackers en sweat à capuche, c'est pour tout le monde », rappelle-t-il avant de retourner à ses cours."
     ],
-    "auteur": "La rédaction (auto)"
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
   },
   {
     "id": "2026-11-01-0-la-journee-de-junior-dans-la-douceur-nicoise",
@@ -95,6 +107,8 @@
       "Au programme : un peu de code, un peu de cyber, et sûrement un épisode de Goblin ce soir.",
       "Sa phrase du jour : « Une soirée sans danser, c'est une soirée ratée. »"
     ],
-    "auteur": "La rédaction (auto)"
+    "auteur": "La rédaction (auto)",
+    "section": "Junior",
+    "type": "junior"
   }
 ]

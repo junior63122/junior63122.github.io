@@ -1,16 +1,21 @@
-name: Journal - article automatique
+name: Journal - articles automatiques
 
 on:
   schedule:
-    - cron: "17 6 * * *" # tous les jours vers 7h/8h (heure de Paris)
+    - cron: "17 5 * * *"  # vers 6h/7h (heure de Paris) : édition du matin
+    - cron: "17 16 * * *" # vers 17h/18h : mise à jour de l'actu
   workflow_dispatch:
     inputs:
       nombre:
-        description: "Nombre d'articles à générer"
+        description: "Nombre d'articles sur Junior à générer"
         default: "1"
 
 permissions:
   contents: write
+
+concurrency:
+  group: journal
+  cancel-in-progress: false
 
 jobs:
   generer:
@@ -20,7 +25,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Générer le(s) article(s)
+      - name: Actualité (Business, Finance, Événementiel, Tech, Monde, Nice, Sport)
+        run: node scripts/generate-news.mjs
+      - name: Article(s) sur Junior
         run: node scripts/generate-article.mjs "${{ github.event.inputs.nombre || '1' }}"
       - name: Publier
         run: |
@@ -28,5 +35,6 @@ jobs:
           git config user.email "journal-bot@users.noreply.github.com"
           git add journal/articles.json
           git diff --cached --quiet && echo "Rien de nouveau" && exit 0
-          git commit -m "Journal : nouvel article du $(date -u +%F)"
+          git commit -m "Journal : édition du $(date -u +%F)"
+          git pull --rebase
           git push
