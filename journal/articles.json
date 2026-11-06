@@ -1,5 +1,578 @@
 [
   {
+    "id": "2026-11-06-actu-business",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "section": "Business",
+    "rubrique": "Business",
+    "emoji": "💼",
+    "type": "revue",
+    "titre": "Les salaires du privé ont baissé de 1,1 % sur un an, en prenant en compte l’inflation",
+    "chapo": "Entreprises, emploi, stratégie : l'essentiel de l'actualité économique. Le point du 6 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Les salaires du privé ont baissé de 1,1 % sur un an, en prenant en compte l’inflation",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie-francaise/article/2026/11/06/les-salaires-du-prive-ont-baisse-de-1-1-sur-un-an-en-prenant-en-compte-l-inflation_6807767_1656968.html",
+        "resume": "Sans correction de la hausse des prix, l’indice du salaire mensuel de base des salariés a progressé de 0,2 % au troisième trimestre par rapport au trimestre précédent et augmenté de 1,9 % sur un an.",
+        "heure": "2026-11-06T10:24:58.000Z"
+      },
+      {
+        "titre": "Moscou accélère la saisie d’actifs russes de groupes occidentaux",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/06/moscou-accelere-la-saisie-d-actifs-russes-de-groupes-occidentaux_6807766_3234.html",
+        "resume": "Européennes et américaines, les entreprises sont ciblées et mises « sous administration provisoire ». Cette menace de confiscation contredit dans les faits les récents appels du pied aux Occidentaux de Kirill Dmitriev, l’homme lige du Kremlin, pour les…",
+        "heure": "2026-11-06T10:15:03.000Z"
+      },
+      {
+        "titre": "Liquidation de Devernois : « La mode se polarise entre le bas de gamme d’un côté et le luxe de l’autre, malheur à ceux qui surnagent au milieu »",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/06/liquidation-de-devernois-la-mode-se-polarise-entre-le-bas-de-gamme-d-un-cote-et-le-luxe-de-l-autre-malheur-a-ceux-qui-surnagent-au-milieu_6807761_3234.html",
+        "resume": "L’entreprise de prêt-à-porter féminin installée dans la Loire, ancienne gloire des années 1990, a trois mois pour trouver un repreneur. Son cas illustre la dynamique mortifère du marché, torpillé par l’ultra-fast-fashion, analyse Isabelle Chaperon,…",
+        "heure": "2026-11-06T09:45:01.000Z"
+      },
+      {
+        "titre": "Christel Heydemann (Orange) : « Il y a beaucoup de fantasmes et d’effets d’annonce autour de l’IA »",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/podcasts/article/2026/11/06/christel-heydemann-orange-il-y-a-beaucoup-de-fantasmes-et-d-effets-d-annonce-autour-de-l-ia_6807760_5463015.html",
+        "resume": "La directrice générale d’Orange, est la deuxième invitée d’« Un Monde d’avance », le nouveau rendez-vous entre des dirigeants de grandes entreprises, des journalistes du « Monde » et des jeunes.",
+        "heure": "2026-11-06T09:44:26.000Z"
+      },
+      {
+        "titre": "Au Mexique, la concentration des data centers suscite l’inquiétude des habitants de l’Etat du Querétaro",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/06/au-mexique-le-queretaro-concentre-les-data-centers-et-les-inquietudes-sur-leurs-consequences-environnementales_6807753_3234.html",
+        "resume": "Cet Etat frappé par une sécheresse chronique accueille plus des deux tiers des centres de données construits par les géants américains de la tech au Mexique. Les ONG dénoncent l’opacité sur leurs usages en eau et des créations d’emplois nettement moindres…",
+        "heure": "2026-11-06T09:15:08.000Z"
+      }
+    ],
+    "auteur": "Camille Rostand",
+    "sources": [
+      "Le Monde"
+    ]
+  },
+  {
+    "id": "2026-11-06-actu-finance",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "section": "Finance",
+    "rubrique": "Finance",
+    "emoji": "📈",
+    "type": "revue",
+    "titre": "Cryptomonnaies : après le vol historique chez Binance, quel moyen pour conserver ses actifs en sécurité ?",
+    "chapo": "Bourse, marchés, taux, crypto et argent au quotidien : ce qui a bougé. Le point du 6 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Cryptomonnaies : après le vol historique chez Binance, quel moyen pour conserver ses actifs en sécurité ?",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/argent/article/2026/11/06/cryptomonnaies-apres-le-vol-historique-chez-binance-quel-moyen-pour-conserver-ses-actifs-en-securite_6807720_1657007.html",
+        "resume": "Les détenteurs de bitcoins, ethereums et autres jetons numériques peuvent assurer la sécurité de leurs actifs par eux-mêmes, ou choisir de déléguer cette tâche à des intermédiaires. Non sans risque dans les deux cas.",
+        "heure": "2026-11-06T05:00:10.000Z"
+      }
+    ],
+    "auteur": "Hugo Marchetti",
+    "sources": [
+      "Le Monde"
+    ]
+  },
+  {
+    "id": "2026-11-06-actu-monde",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "section": "Monde",
+    "rubrique": "Monde",
+    "emoji": "🌍",
+    "type": "revue",
+    "titre": "Guerre en Ukraine : le RN isolé au Sénat sur sa volonté de réduction de l’aide à Kiev, LFI absente du débat",
+    "chapo": "Le tour du monde de l'actualité en quelques titres. Le point du 6 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Guerre en Ukraine : le RN isolé au Sénat sur sa volonté de réduction de l’aide à Kiev, LFI absente du débat",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/international/article/2026/11/06/guerre-en-ukraine-le-rn-isole-au-senat-sur-sa-volonte-de-reduction-de-l-aide-a-kiev-lfi-absente-du-debat_6807755_3210.html",
+        "resume": "Le Rassemblement national a maintenu lors d’un débat mené jeudi au Palais du Luxembourg sa volonté de cesser le soutien financier à l’Ukraine.",
+        "heure": "2026-11-06T09:19:13.000Z"
+      },
+      {
+        "titre": "La Suède invoque la menace russe pour prolonger les contrôles à ses frontières",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/international/article/2026/11/06/la-suede-invoque-la-menace-russe-pour-prolonger-les-controles-a-ses-frontieres_6807752_3210.html",
+        "resume": "Après l’immigration illégale et la criminalité organisée, Stockholm argue des risques de sabotage mené par la Russie pour justifier de sa décision d’enfreindre le principe de la libre circulation au sein de l’espace Schengen. La Norvège et le Danemark ont…",
+        "heure": "2026-11-06T09:13:07.000Z"
+      },
+      {
+        "titre": "« Novaïa Gazeta » dans « Le Monde », trente ans de journalisme de combat face aux pouvoirs russes",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/m-le-mag/article/2026/11/06/novaia-gazeta-dans-le-monde-trente-ans-de-journalisme-de-combat-face-aux-pouvoirs-russes_6807750_4500055.html",
+        "resume": "Emblème de la presse indépendante en Russie, le titre vient d’être demantelé par Vladimir Poutine après de longues années de résistance. Son nom était apparu dans les colonnes du quotidien le 2 mai 1996, qui se faisait alors l’écho d’une enquête sur la…",
+        "heure": "2026-11-06T09:00:18.000Z"
+      },
+      {
+        "titre": "Les importations d’animaux vers Vantara, gigantesque sanctuaire indien, restent sous surveillance malgré la volonté du centre de redorer son image",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/planete/article/2026/11/06/les-importations-d-animaux-vers-vantara-gigantesque-sanctuaire-indien-restent-sous-surveillance-malgre-la-volonte-du-centre-de-redorer-son-image_6807749_3244.html",
+        "resume": "Alors que l’Inde a été critiquée pour ne pas avoir suffisamment contrôlé les importations massives d’animaux à destination de cette grande réserve privée, le pays demeure sous la surveillance de la Cites, la convention internationale chargée d’encadrer le…",
+        "heure": "2026-11-06T09:00:11.000Z"
+      },
+      {
+        "titre": "Donner moins d’argent à l’Europe : la proposition de Marine Le Pen est-elle réaliste ?",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/les-decodeurs/article/2026/11/06/donner-moins-d-argent-a-l-europe-la-proposition-de-marine-le-pen-est-elle-realiste_6807742_4355770.html",
+        "resume": "« Les propositions à la loupe ». La candidate du Rassemblement national veut négocier un rabais d’un tiers sur la contribution française à l’Union européenne pour faire des économies. Mais ses chances de succès sont très minces.",
+        "heure": "2026-11-06T08:40:32.000Z"
+      }
+    ],
+    "auteur": "Sofia Delmas",
+    "sources": [
+      "Le Monde"
+    ]
+  },
+  {
+    "id": "2026-11-06-actu-nice-cote-d-azur",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Nice & Côte d'Azur",
+    "emoji": "🌴",
+    "type": "revue",
+    "titre": "TGV M : un aller-retour vers Nice et la Côte d’Azur fin novembre",
+    "chapo": "Ce qui se passe près de chez nous, de Nice à Monaco. Le point du 6 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "TGV M : un aller-retour vers Nice et la Côte d’Azur fin novembre",
+        "source": "L'Echo touristique",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQUtWMnFnbWd1TDZPRjkzZlc1LXZTTldJcG94NE9DRnB6cEdKbnU2WlpJMDdYQmtyd0VmYm5kMlVZMklkM0NHeHg0LTVzNU85YkNmVTZjaTZqQjJfWjVyMlZWQWh1dlV3eTlESG5EYWlXbXhNaGFfZE9JR2FHLUdSNTJpTlZ6YURRNFVSclhuS29YYVhVbnFtUGl2bHptSDNMcUxWMVVEaWc?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T10:27:45.000Z"
+      },
+      {
+        "titre": "EN DIRECT - Suivez le Conseil Métropolitain Nice Côte d'Azur du 6 novembre 2026",
+        "source": "RCF",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMGJiQmNJcjh3bzNybW5IaThXd3F5cEY5MndoX05MVVdFblpEWUJNSHF1Q1ktTmJJdW9idFNTWVpmS1VobHozV09xNnBRaTM1QWF1eEJiQVJpd1pCSWlqeUpsbmIxOFBCMFJXSDZvWXIxM3d4N3dYekcyODdJWFNzdmI4b2x5U0RGellrWlV2OFNkSG1yREtCRUpEQUVaRDJVdnVXZERnU2xRNjRiSzNYM3hoSGk?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T09:25:00.000Z"
+      },
+      {
+        "titre": "Nice : nouvelle journée de mobilisation ce 7 novembre à l'appel de l'intersyndicale",
+        "source": "BFM",
+        "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOOXJkS2ViNWNWM25TRFdjRjNkZEdPVlJLVW9zalh2bmRnbC0wZVByT3RrWGZZVG4wbjBuM3VBbU9xZTlRQXR2cnFYVjdGYXhra0IwVmYxeFV1T1YxOHNVeXJBSjFfR3JQSThvQ3NGUjJUUnhvNW4zcWY3cHEzcGVCMW5EdnZoSXVyWXNhX2pjdkphbFdQbzh2Z0d2RTM3ZTQ1Q3Frckd1R2V1dW5SZW9XM1NCejdHRTVTSXE1aTVMZk1tQXg2dGE4emw2WHo5cHpQeEhoUXJzV2gtSUg1OVB6MV9oSncwRlU4M0pFTG1KVGdWcVVDT29HLTB2QmJJUXlrc0ZFX1ZJdDUwNDA?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T08:24:33.000Z"
+      },
+      {
+        "titre": "Les résultats de l'audit sur la ville de Nice et la métropole dévoilés par Eric Ciotti",
+        "source": "BFM",
+        "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNRTRhX1B6OVNwQkQ4LXdSYmJHbG1NSWtUY1F1TmVQaTlZbDhEOHpDYzQ0SU1KUEw3M05xUjRzZWVGSDdCUU5nNWJXLTE3UG5CUVp0aU5rRWlkVnIwQWl0WUk2OEI0SnE2UDBVeW5MS1BSQXVpQnNLanN2LUJXWmx5ZEl3X2RnRkpQeWNiQUZhN2p4M24xXzhVNUx4SU8xLWpJMDJRWmhXcjI3OFFHLURjcWgxUEViR1QyaTMzU0NhQ3FwakpJWGQwVmVBLThZRWNBNG1TdWhfbWt6X1RLeEd5bUJ1N1FyM0VQRjk4dkJNZ1JQZHRPZHR0YW4wekF1MVlSMWlpZGQ5TklqSE5OVTh3eUdn?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T08:13:11.000Z"
+      },
+      {
+        "titre": "Nice. Face à face Henri Matisse / Alex Katz…",
+        "source": "Paris Côte d'Azur",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMGc1RWlFTWJWQlJPR2VaU1dGU0NWeEdYUUNuNUVzNkNSaG1pakFTbXpGNWN2QWVjMnZjSzcxMHRqWGJzS2hWc3docEFVaHFLSTZWWFFGVlZvZERBdmZMT0lyUFBnT1FqaGtVeHBCWkJFR1dvSzd3T011Q2tGVy15MTRVTlFlTzZnZExhNmVOSXhJVUlu?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T06:17:12.000Z"
+      }
+    ],
+    "auteur": "Lucas Giordano",
+    "sources": [
+      "L'Echo touristique",
+      "RCF",
+      "BFM",
+      "Paris Côte d'Azur"
+    ]
+  },
+  {
+    "id": "2026-11-06-actu-sport",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "section": "Sport",
+    "rubrique": "Sport",
+    "emoji": "⚽",
+    "type": "revue",
+    "titre": "Au Masters 1000 de Paris, les joueurs doivent composer avec l’une des surfaces les plus rapides du circuit",
+    "chapo": "Résultats, transferts et grands moments du sport. Le point du 6 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Au Masters 1000 de Paris, les joueurs doivent composer avec l’une des surfaces les plus rapides du circuit",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sport/article/2026/11/06/au-masters-1000-de-paris-les-joueurs-doivent-composer-avec-l-une-des-surfaces-les-plus-rapides-du-circuit_6807758_3242.html",
+        "resume": "Les conditions de jeu ayant été jugées trop lentes en 2025, les organisateurs du tournoi parisien ont choisi une surface plus rapide cette année. Ce qui sied bien aux frappeurs tels que Ben Shelton, Tommy Paul ou Taylor Fritz, au détriment de Carlos Alcaraz.",
+        "heure": "2026-11-06T09:30:13.000Z"
+      },
+      {
+        "titre": "L’OM décroche son premier succès de la saison en Ligue Europa, chez le Bayer Leverkusen",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sport/article/2026/11/06/l-om-decroche-son-premier-succes-de-la-saison-en-ligue-europa-chez-le-bayer-leverkusen_6807578_3242.html",
+        "resume": "Après trois défaites, les Marseillais sont allés s’imposer, jeudi soir, en Allemagne (1-0) grâce à un but d’Amine Gouiri, ranimant l’espoir d’une qualification pour les barrages. En Ligue Conférence, Monaco a poursuivi son sans-faute en battant les Danois…",
+        "heure": "2026-11-06T03:38:53.000Z"
+      },
+      {
+        "titre": "Arthur Fils, bien lancé au Masters 1000 de Paris, tentera de briser la malédiction tricolore aux ATP Finals",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sport/article/2026/11/05/arthur-fils-bien-lance-au-masters-1000-de-paris-tentera-de-briser-la-malediction-tricolore-au-masters-atp_6806833_3242.html",
+        "resume": "Vainqueur de Tomas Machac au 2ᵉ tour du tournoi parisien, mercredi, le Francilien disputera le Masters, à la mi-novembre, en Italie. Seuls neuf Français y ont participé avant lui, sans qu’aucun ne parvienne à remporter cette ultime compétition de la saison.",
+        "heure": "2026-11-05T08:00:00.000Z"
+      },
+      {
+        "titre": "Le RC Lens subit « une humiliation » face à Côme en Ligue des champions et poursuit son début de saison tumultueux",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sport/article/2026/11/05/le-rc-lens-subit-une-humiliation-face-a-come-en-ligue-des-champions-et-poursuit-son-debut-de-saison-tumultueux_6806503_3242.html",
+        "resume": "Les Sang et Or sont devenus la première équipe de l’histoire à concéder neuf buts en Ligue des champions à domicile, mercredi, lors de leur défaite face à la formation italienne (1-9). Cette gifle intervient alors que le club traverse une période compliquée.",
+        "heure": "2026-11-04T23:41:48.000Z"
+      },
+      {
+        "titre": "Lens-Côme : le résumé de la déroute historique des Sang et Or en Ligue des champions",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sport/article/2026/11/04/lens-come-le-resume-la-deroute-historique-des-sang-et-or-en-ligue-des-champions_6806466_3242.html",
+        "resume": "Les Sang et Or ont subi contre Côme la pire défaite (1-9) d’un club français en Ligue des champions, mercredi, au stade Bollaert-Delelis. Un match qui risque de laisser des traces chez les hommes de Yannick Cahuzac.",
+        "heure": "2026-11-04T22:47:59.000Z"
+      }
+    ],
+    "auteur": "Inès Morel",
+    "sources": [
+      "Le Monde"
+    ]
+  },
+  {
+    "id": "2026-11-06-actu-tech",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "section": "Tech",
+    "rubrique": "Tech",
+    "emoji": "💻",
+    "type": "revue",
+    "titre": "Confrontés au séisme de l’IA, des mathématiciens cherchent des pistes de cohabitation",
+    "chapo": "Intelligence artificielle, start-up, cybersécurité : les nouvelles du numérique. Le point du 6 novembre.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Confrontés au séisme de l’IA, des mathématiciens cherchent des pistes de cohabitation",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/sciences/article/2026/11/06/confrontes-au-seisme-de-l-ia-des-mathematiciens-cherchent-des-pistes-de-cohabitation_6807757_1650684.html",
+        "resume": "Face aux avancées de l’intelligence artificielle, les « matheux » tentent de réfléchir aux transformations de leur métier. C’est dans ce cadre que plusieurs dizaines d’entre eux se sont réunis, mardi, à Paris pour des ateliers d’une journée.",
+        "heure": "2026-11-06T09:30:10.000Z"
+      },
+      {
+        "titre": "Avec sa Backyard caritative, l’influenceur Clem qui court veut réunir stars du trail et d’Internet",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/11/06/avec-sa-backyard-caritative-l-influenceur-clem-qui-court-veut-reunir-stars-du-trail-et-d-internet_6807732_4408996.html",
+        "resume": "La course sera retransmise vendredi en direct sur Twitch, vingt-cinq heures durant et au profit de l’association Rêves. Elle fera s’affronter notamment le streameur Domingo et la vainqueure de l’UTMB Blandine L’Hirondel, ainsi que des fans.",
+        "heure": "2026-11-06T07:00:05.000Z"
+      },
+      {
+        "titre": "Avec la mobilisation sociale, le soupçon persistant d’une censure sur les réseaux sociaux : « Des gens se font supprimer des vidéos »",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/11/06/avec-la-mobilisation-sociale-le-soupcon-persistant-d-une-censure-sur-les-reseaux-sociaux-des-gens-se-font-supprimer-des-videos_6807727_4408996.html",
+        "resume": "Des internautes dont les vidéos ont été supprimées ou qui ont constaté une baisse du nombre de vues dénoncent une invisibilisation orchestrée par les plateformes sous pression politique. Difficile à étayer, ce sentiment s’explique néanmoins par l’opacité…",
+        "heure": "2026-11-06T05:00:38.000Z"
+      },
+      {
+        "titre": "Comment mon assistant IA est devenu « passif-agressif »",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/m-perso/article/2026/11/06/comment-mon-assistant-ia-est-devenu-passif-agressif_6807724_4497916.html",
+        "resume": "Fini le temps où les intelligences artificielles génératives nous couvraient de compliments. Claude se met à bouder, ChatGPT nous prend de haut, Gemini juge notre vie privée… Les robots conversationnels se rebiffent. Un changement de ton qui n’a rien d’un…",
+        "heure": "2026-11-06T05:00:31.000Z"
+      },
+      {
+        "titre": "Etats-Unis : Google accusé d’avoir laissé son assistant IA Gemini aider une collégienne à planifier son suicide",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/11/06/etats-unis-google-accuse-d-avoir-laisse-son-assistant-ia-gemini-aider-une-collegienne-a-planifier-son-suicide_6807413_4408996.html",
+        "resume": "Avant que ses parents n’interviennent, l’adolescente de 13 ans a échangé, à l’aide de l’ordinateur fourni par son école, des milliers de messages avec le modèle phare d’intelligence artificielle du groupe américain, dans lesquels elle décrit son mal-être.",
+        "heure": "2026-11-06T00:36:12.000Z"
+      }
+    ],
+    "auteur": "Nathan Belkacem",
+    "sources": [
+      "Le Monde"
+    ]
+  },
+  {
+    "id": "2026-11-06-en-actu-business",
+    "lang": "en",
+    "date": "2026-11-06",
+    "section": "Business",
+    "rubrique": "Business",
+    "emoji": "💼",
+    "type": "revue",
+    "titre": "Elon Musk appears to signal the end of the road for Cybertruck",
+    "chapo": "Companies, jobs and strategy: the business news that matters. Our round-up for 6 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Elon Musk appears to signal the end of the road for Cybertruck",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss",
+        "resume": "Musk said it was to make room for production of its Cybercabs - autonomous taxis without a driver.",
+        "heure": "2026-11-06T09:57:04.000Z"
+      },
+      {
+        "titre": "How does it affect me if share prices fall?",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/c33zdz2m1e2o?at_medium=RSS&at_campaign=rss",
+        "resume": "Changes in the FTSE 100 and other indexes are not just for financial experts, they can affect our lives.",
+        "heure": "2026-11-06T09:21:50.000Z"
+      },
+      {
+        "titre": "'I've taken an extra job to pay for heating oil'",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cmj47j7e92gvo?at_medium=RSS&at_campaign=rss",
+        "resume": "People in Sussex say they are taking on extra work and not heating their homes due to oil prices.",
+        "heure": "2026-11-06T06:06:00.000Z"
+      },
+      {
+        "titre": "The engine parts that 'fight the laws of the universe'",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cwe9lmp1pyyxo?at_medium=RSS&at_campaign=rss",
+        "resume": "Investment has surged into the making of jet turbine blades - an extremely difficult component to make.",
+        "heure": "2026-11-06T00:06:06.000Z"
+      },
+      {
+        "titre": "'I was asked if I was a crier': Your worst job interviews revealed",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/c3j4751pqnj8o?at_medium=RSS&at_campaign=rss",
+        "resume": "Bad job interviews can be horrible to experience in the moment, but there is a lot they can teach us about the world of work",
+        "heure": "2026-11-06T00:02:52.000Z"
+      }
+    ],
+    "auteur": "Camille Rostand",
+    "sources": [
+      "BBC News"
+    ]
+  },
+  {
+    "id": "2026-11-06-en-actu-evenementiel",
+    "lang": "en",
+    "date": "2026-11-06",
+    "section": "Événementiel",
+    "rubrique": "Events",
+    "emoji": "🎪",
+    "type": "revue",
+    "titre": "Sharing what works: why the business events industry learns best together",
+    "chapo": "Trade shows, festivals, concerts and big gatherings: the events industry today. Our round-up for 6 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Sharing what works: why the business events industry learns best together",
+        "source": "CIM Business Events",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQR2Rla05jdS1wa3ZQZ1ZXcjJ1UUdpU0g2blZQblFDWlYwMTVSZVNCVVRHTFhVM0o2V3huYU80TGtJVGtLS0JwMEhJX2s5UVRwN2FpOW0ydF81QkgwYlRQU20wZVJNTEs1b3YtTXo5LVp1WkttcGc0akFSZWZNMVR4OW9MOVlUbFJ3RHJXV1dGRGhpTFNWMEJWNzZPQWNBRGo0OUR1NjBHdjZwTmN6bjZv?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T02:49:12.000Z"
+      },
+      {
+        "titre": "LUNR Aerospace to Attend Space Tech Expo Europe 2026, One of Europe's Largest Space Industry Events",
+        "source": "TradingView",
+        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPbWowUGxhMEFZTGIyMkJGOUFDSmhMV1FvR3RjVUNlX2Jfckt2bEZWTjlxWWxVcnJjdDE5SFAzNmVDUHhZem5aY0pQX1V6eTRXUTZBWUE2QWgyWjdoV0pvWnh1djJ5RmlnREo4X0J0MFliSEo5QjJ0WGVrZWN1cDgzUF9CZHF0TnZOT3lqVkFfVHpXdnBMX1JLSHBRejRYZFg4Q0hnZlAyekNRSHF3SXNWb29JbW56Yzd1STNhdVV3RmtVbnFqX3p4SFlQQmNGUEhDWllWWEVWRk1jUmZER1ZBNzRYUWVwOWlCTE9jS0hkb25CVTRhZFJFaW1mQ1MyOURQTGppSA?oc=5",
+        "resume": "",
+        "heure": "2026-11-05T22:00:07.000Z"
+      },
+      {
+        "titre": "Cruise-Industry Tech Could Detect Man-Overboard Events on U.S. Navy Ships",
+        "source": "The Maritime Executive",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZkJMbGl2S1BVWllfczJNUllLTGJ2alc2X3FlMWI3V2V3WXJJZnRCS1k3OHFtN2RWaHR1QTFNMVJYU2YyQkVONTdTMUZ6cHpSQ3BWQkNNbnVhWF91X29sWVFsMWsyenB3MWZHZG1hQlN5UGZMSUNKejM5SnNGTHFvWWxmU0ktVlZUNnh4WlVERDVZZW1iTElzbUxOVTVZUmlLZHBNQ2REcDJ2Rm5FY1NvdQ?oc=5",
+        "resume": "",
+        "heure": "2026-11-04T04:14:10.000Z"
+      }
+    ],
+    "auteur": "Léa Fontaine",
+    "sources": [
+      "CIM Business Events",
+      "TradingView",
+      "The Maritime Executive"
+    ]
+  },
+  {
+    "id": "2026-11-06-en-actu-finance",
+    "lang": "en",
+    "date": "2026-11-06",
+    "section": "Finance",
+    "rubrique": "Finance",
+    "emoji": "📈",
+    "type": "revue",
+    "titre": "Data centers need power, so why did this Dow stock fall 26%?",
+    "chapo": "Stocks, markets, interest rates and crypto: what moved today. Our round-up for 6 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Data centers need power, so why did this Dow stock fall 26%?",
+        "source": "Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNUzVTWDZyT2tvWmdKcHRZdS1ITjhNRG1PbzVPVXdNcWVJbk1iZWNHeXRxalNRcGlmWHlHX1FBcU82eUtkY3NFZ1dOTHRDdld0WE1pcWYwTGJvN1ZuWUREVnh5SEhIQ3hiMDIxcnN6RmVaT0pCSUVHRnlYZm5ydUNiWmpTRG5iQy1Lc0pQUzdsUUh3WFI4VUI1WXFQU29jUVVnZUt5UzdhbXJqR1g0RVFTSUNLNkU?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T10:08:04.000Z"
+      },
+      {
+        "titre": "Increasing signs of a bottom – Market Outlook",
+        "source": "www.sc.com",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8tNUp1Nkt1SGpXbFRWd0U3dWhhV0h1QTdhenhtWGtMYnhEbUlaeTh4aUlwa1VsbWFIVWFqcm9EemFlTU5UcWhrTUIxaFRNMDE0MXRVcnluTlJKMmFNSEtzdGs5czNQb1I5UmlwTDhXbEw2Y2dVb0lyanZjQ3RSQQ?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T09:51:47.000Z"
+      },
+      {
+        "titre": "Nasdaq futures rise after steep AI selloff as chip stocks stabilize",
+        "source": "Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQanhvOGROdXJUck5kaGdNUnNFczRKSzRZYmVqRi1FN3lVVjE2RnU5WWtmaWVJRkE5R25TLUVkT2ttT215Ri1rMXI1UzdUQXVrT19xN2lueUlrMmF6Q3k1ZmJiQmRtWTA5bDcwS0t0VWZwcExISEdZcEZ1MHY0NVdsek1rQ19FOTJwcW5uYTFXTnRScVNBc2Iw?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T09:44:00.000Z"
+      },
+      {
+        "titre": "Yikes! The Stock Market Just Did Something It Has Never Done Before. History Is Clear About What Comes Next.",
+        "source": "Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPXzZSQUsxZE4wekpxUHE4bEt5STFtTFo4Smt0T1JDcHBxWGxYaHNLaDFTbjh0SklJUDFzQmVoRzRGaTgyUXJILVVUQW9adDNEY0hRY1hucDFsUWtyRmFlZ1BUeEZkSjdJSDVSdW93Q3pkUlo5bkk5QzZzN0pBNGlIVzlJVjFKd2hDM3R2MHRfTlAyTnJsYW5J?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T09:32:02.000Z"
+      },
+      {
+        "titre": "The Nasdaq Just Hit Correction Territory. History Says the Stock Market Will Do This Next (Hint: It May Stun You)",
+        "source": "Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOVEVZOTRSZnV5RUk3MktzSTRiaXM3dk5GdTlJMERyY3Y3ajJUeXBaaVQ2VnoteVV1bXUzOENaNHVGRlktVmZFa2VhLVZzOVV1ZHVQT1dnNlI3ekNPaWRNRFZCd1dUT0tOUTVGM2Zka1pZbXJ0N29iV29paEVpbXl0Q1dQa25yVnlpRlVYN1R4UW9LOUFoYnhpWEsteHZSTnMyVnhN?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T09:32:02.000Z"
+      }
+    ],
+    "auteur": "Hugo Marchetti",
+    "sources": [
+      "Investing.com",
+      "www.sc.com",
+      "Yahoo Finance"
+    ]
+  },
+  {
+    "id": "2026-11-06-en-actu-monde",
+    "lang": "en",
+    "date": "2026-11-06",
+    "section": "Monde",
+    "rubrique": "World",
+    "emoji": "🌍",
+    "type": "revue",
+    "titre": "Two dead after bus crashes in France, officials say",
+    "chapo": "Around the world in a few headlines. Our round-up for 6 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Two dead after bus crashes in France, officials say",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cmly00l4p3lwo?at_medium=RSS&at_campaign=rss",
+        "resume": "One child and one young adult were killed in the crash, local authorities say, with more injured.",
+        "heure": "2026-11-06T10:20:46.000Z"
+      },
+      {
+        "titre": "Tanzanian opposition leader found guilty of incitement",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/ckp8g4pm0y4lo?at_medium=RSS&at_campaign=rss",
+        "resume": "The 58-year-old, who has been detained since April last year, was acquitted of the more serious charge of treason.",
+        "heure": "2026-11-06T10:05:32.000Z"
+      },
+      {
+        "titre": "Trump signs order to preserve Oval Office as national monument",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cmy0eeg101djo?at_medium=RSS&at_campaign=rss",
+        "resume": "The order comes after Trump made a series of big changes to the decor of the Oval Office and tore down the White House East Wing.",
+        "heure": "2026-11-06T09:19:57.000Z"
+      },
+      {
+        "titre": "Somalia's top court rejects president's term extension amid political crisis",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/c977ppnezep6o?at_medium=RSS&at_campaign=rss",
+        "resume": "The country's first nationwide elections since 1969 are due next year - a timetable now thrown into doubt.",
+        "heure": "2026-11-06T08:18:10.000Z"
+      },
+      {
+        "titre": "Major construction ongoing near Iran missile bases, satellite images suggest",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/ckjrwx1r2d5ro?at_medium=RSS&at_campaign=rss",
+        "resume": "Evidence of digging and new buildings are visible in satellite imagery taken in November, satellite images suggest.",
+        "heure": "2026-11-06T07:33:41.000Z"
+      }
+    ],
+    "auteur": "Sofia Delmas",
+    "sources": [
+      "BBC News"
+    ]
+  },
+  {
+    "id": "2026-11-06-en-actu-nice-cote-d-azur",
+    "lang": "en",
+    "date": "2026-11-06",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Nice & the Riviera",
+    "emoji": "🌴",
+    "type": "revue",
+    "titre": "OGC Nice want to extend rising star Djibril Coulibaly contract, but…",
+    "chapo": "What's happening on the French Riviera, from Nice to Monaco. Our round-up for 6 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "OGC Nice want to extend rising star Djibril Coulibaly contract, but…",
+        "source": "Get French Football News",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdWtmY0dLT1E5d1Q1NGFLUFZuM1doNy1ZeXFQUlFLUVNuYjRjbENfcmhTWlFEYUFhR0xVRWg1dDlhb0lCeTBJNVhweTQ1OThYRFhFZEpFREpqaWlaMmZMYWNPcFY0NllpRF95S05aamlYMHRaV3dqZHVGVDlFNU8xcWhsaDJtNWRDaTJ4NFVQa0FYNFRKYl9sTW5JanpSQ0hRZkcyVll2Y2hHbUlfQVpB?oc=5",
+        "resume": "",
+        "heure": "2026-11-05T15:13:16.000Z"
+      }
+    ],
+    "auteur": "Lucas Giordano",
+    "sources": [
+      "Get French Football News"
+    ]
+  },
+  {
+    "id": "2026-11-06-en-actu-sport",
+    "lang": "en",
+    "date": "2026-11-06",
+    "section": "Sport",
+    "rubrique": "Sport",
+    "emoji": "⚽",
+    "type": "revue",
+    "titre": "Championship preview: Contenders, pretenders and strugglers",
+    "chapo": "Results, transfers and the big moments in sport. Our round-up for 6 November.",
+    "corps": [],
+    "liens": [
+      {
+        "titre": "Championship preview: Contenders, pretenders and strugglers",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/football/articles/c38xzkkgg7rpo?at_medium=RSS&at_campaign=rss",
+        "resume": "BBC Sport highlights five things to look out for across Saturday's Championship action.",
+        "heure": "2026-11-06T09:22:00.000Z"
+      },
+      {
+        "titre": "Lampard looks for Coventry progress as belief grows",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/football/articles/cr20w943gvl5o?at_medium=RSS&at_campaign=rss",
+        "resume": "Coventry City could move 11th in the Premier League with victory at Everton on Friday as Frank Lampard returns to the Toffees with his side growing in confidence.",
+        "heure": "2026-11-06T08:11:03.000Z"
+      },
+      {
+        "titre": "Australia recruit Hussey for Ashes build-up",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/cricket/articles/c9y7lln8vyglo?at_medium=RSS&at_campaign=rss",
+        "resume": "Australia recruit Michael Hussey as a long-term batting consultant to help them prepare for the 2027 Ashes and 2028 Los Angeles Olympics.",
+        "heure": "2026-11-06T08:05:05.000Z"
+      },
+      {
+        "titre": "Ireland's home straight to World Cup starts with Pumas",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/rugby-union/articles/cve8rx3yxg2eo?at_medium=RSS&at_campaign=rss",
+        "resume": "Less than a year away from a potential 2027 World Cup quarter-final meeting, Ireland's hosting of Argentina represents an important staging post on the journey to Australia next autumn.",
+        "heure": "2026-11-06T08:02:48.000Z"
+      },
+      {
+        "titre": "Scotland can be best & worst team in world - Dempsey",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/rugby-union/articles/cmd934jpg59yo?at_medium=RSS&at_campaign=rss",
+        "resume": "Jack Dempsey on his guilt over leaving Glasgow, coming up against Dave Rennie and Scotland's hopes of finally overcoming New Zealand.",
+        "heure": "2026-11-06T07:53:44.000Z"
+      }
+    ],
+    "auteur": "Inès Morel",
+    "sources": [
+      "BBC News"
+    ]
+  },
+  {
     "id": "2026-11-05-actu-business",
     "lang": "fr",
     "date": "2026-11-05",
