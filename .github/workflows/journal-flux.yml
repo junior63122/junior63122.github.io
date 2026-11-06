@@ -1,0 +1,15 @@
+name: Journal - vérification des flux
+
+# Lancement manuel : teste les flux RSS des médias locaux et affiche le résultat dans le journal d'exécution.
+on:
+  workflow_dispatch:
+
+jobs:
+  flux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/check-feeds.mjs
