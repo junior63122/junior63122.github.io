@@ -63,6 +63,8 @@ async function main() {
   const arg = process.argv.find((a) => a.startsWith("--refresh"));
   const aRafraichir = arg ? (arg.includes("=") ? arg.split("=")[1].split(",") : Object.keys(RECHERCHES)) : [];
   mkdirSync(DIR, { recursive: true });
+  // Photos écartées après relecture : ne jamais les reprendre.
+  const EXCLUES = existsSync(join(DIR, "exclues.json")) ? JSON.parse(readFileSync(join(DIR, "exclues.json"), "utf8")) : [];
   const credits = existsSync(CREDITS) ? JSON.parse(readFileSync(CREDITS, "utf8")) : {};
 
   for (const [rub, requetes] of Object.entries(RECHERCHES)) {
@@ -70,7 +72,7 @@ async function main() {
     const refresh = aRafraichir.includes(rub);
     if (!refresh && actuelles.length >= PAR_RUBRIQUE) { console.log(`= ${rub} : ${actuelles.length} photos`); continue; }
     const retenues = refresh ? [] : actuelles;
-    const vues = new Set(retenues.map((c) => c.page));
+    const vues = new Set([...retenues.map((c) => c.page), ...EXCLUES]);
     for (const q of requetes) {
       if (retenues.length >= PAR_RUBRIQUE) break;
       let res = [];
@@ -83,7 +85,9 @@ async function main() {
           const r = await fetch(img.thumb, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(30000) });
           if (!r.ok) throw new Error(`HTTP ${r.status}`);
           const buf = Buffer.from(await r.arrayBuffer());
-          const fichier = `${slug(rub)}-${retenues.length + 1}.jpg`;
+          let n = retenues.length + 1;
+          while (existsSync(join(DIR, `${slug(rub)}-${n}.jpg`))) n++;
+          const fichier = `${slug(rub)}-${n}.jpg`;
           writeFileSync(join(DIR, fichier), buf);
           retenues.push({ fichier, origine: "wikimedia", auteur: img.auteur, licence: img.licence, licenceUrl: img.licenceUrl, page: img.page });
           vues.add(img.page);

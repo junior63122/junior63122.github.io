@@ -193,14 +193,6 @@
       "page": "https://commons.wikimedia.org/wiki/File:Hemicycle_of_European_Parliament,_Strasbourg,_with_chamber_orchestra_performing.jpg"
     },
     {
-      "fichier": "monde-3.jpg",
-      "origine": "wikimedia",
-      "auteur": "Hemicycle_of_European_Parliament,_Strasbourg,_with_chamber_orchestra_performing.",
-      "licence": "CC BY 2.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Hemicycle_of_European_Parliament,_Strasbourg,_with_chamber_orchestra_performing-cropped.jpg"
-    },
-    {
       "fichier": "monde-4.jpg",
       "origine": "wikimedia",
       "auteur": "Yann ( talk )",
@@ -283,22 +275,6 @@
       "licence": "CC BY-SA 3.0",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "page": "https://commons.wikimedia.org/wiki/File:Allianzcoupdenvoi.jpg"
-    },
-    {
-      "fichier": "sport-4.jpg",
-      "origine": "wikimedia",
-      "auteur": "Ricardo Thomas",
-      "licence": "Public domain",
-      "licenceUrl": "",
-      "page": "https://commons.wikimedia.org/wiki/File:President_Gerald_Ford,_Chief_of_Staff_Donald_Rumsfeld,_and_David_Kennerly,_Personal_Photographer_to_the_President,_following_a_Tennis_Match_on_the_White_House_Tennis_Courts_-_NARA_7062575.jpg"
-    },
-    {
-      "fichier": "sport-5.jpg",
-      "origine": "wikimedia",
-      "auteur": "Timothy Akolamazima",
-      "licence": "CC BY-SA 4.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Tennis_Court_Watering_Ritual.jpg"
     }
   ]
 }
