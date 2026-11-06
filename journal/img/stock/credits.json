@@ -207,6 +207,14 @@
       "licence": "CC BY-SA 3.0",
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
       "page": "https://commons.wikimedia.org/wiki/File:Flags_onu_geneva.jpg"
+    },
+    {
+      "fichier": "monde-6.jpg",
+      "origine": "wikimedia",
+      "auteur": "inyucho",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Hemicycle_of_European_Parliament,_Strasbourg,_with_chamber_orchestra_performing-2.jpg"
     }
   ],
   "Nice & Côte d'Azur": [
@@ -275,6 +283,22 @@
       "licence": "CC BY-SA 3.0",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "page": "https://commons.wikimedia.org/wiki/File:Allianzcoupdenvoi.jpg"
+    },
+    {
+      "fichier": "sport-4.jpg",
+      "origine": "wikimedia",
+      "auteur": "mark.watmough",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Montreal_Alouettes,_Crowds_at_Molson_Stadium,_September_2013.jpg"
+    },
+    {
+      "fichier": "sport-5.jpg",
+      "origine": "wikimedia",
+      "auteur": "TrickyH",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Crowd_at_Dora_Stadium.jpg"
     }
   ]
 }
