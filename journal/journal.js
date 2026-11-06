@@ -9,7 +9,8 @@
   const I18N = {
     fr: {
       locale: "fr-FR",
-      tagline: "Le quotidien niçois : business, finance, événementiel, tech, monde, sport… et toute l'actualité de Junior Joyant.",
+      founded: "Le quotidien de la Baie des Anges · Fondé en 2026",
+      tagline: "Business, finance, événementiel, tech, monde, sport… et toute l'actualité de Junior Joyant.",
       loading: "Chargement des articles…",
       empty: "Aucun article pour le moment.",
       error: "Impossible de charger les articles.",
@@ -30,7 +31,8 @@
     },
     en: {
       locale: "en-GB",
-      tagline: "The daily from Nice: business, finance, events, tech, world, sport… and all the news about Junior Joyant.",
+      founded: "The daily of the Baie des Anges · Founded 2026",
+      tagline: "Business, finance, events, tech, world, sport… and all the news about Junior Joyant.",
       loading: "Loading articles…",
       empty: "No articles yet.",
       error: "Could not load the articles.",

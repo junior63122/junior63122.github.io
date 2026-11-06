@@ -100,7 +100,7 @@ export function parseFeed(xml, feedUrl = "") {
 
 async function fetchFeed(url) {
   const res = await fetch(url, {
-    headers: { "User-Agent": "Mozilla/5.0 (compatible; JournalDeJunior/1.0; +https://junior63122.github.io/journal/)" },
+    headers: { "User-Agent": "Mozilla/5.0 (compatible; EchoDesAnges/1.0; +https://junior63122.github.io/journal/)" },
     signal: AbortSignal.timeout(20000),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
