@@ -35,6 +35,7 @@
       archivesFr: "",
       fromArchives: "Dans nos archives",
       local: "L'actualité de la Côte d'Azur",
+      allArticles: "Tous les articles",
       allArchives: "Toutes les archives ›",
       history: "Notre histoire",
       legal: "Mentions légales",
@@ -71,6 +72,7 @@
       archivesFr: "Our archives are currently available in French only.",
       fromArchives: "From our archives",
       local: "Riviera news",
+      allArticles: "All articles",
       allArchives: "All archives ›",
       history: "Our story",
       legal: "Legal notice",
@@ -144,7 +146,7 @@
     const extra = `<a href="#archives" data-sec="archives">${esc(T.archives)}</a>`;
     document.getElementById("sections").innerHTML = `<a class="home" href="#">${esc(T.home)}</a>${secLinks}${extra}`;
     document.getElementById("drawer-nav").innerHTML = `<a href="#">${esc(T.home)}</a>${secLinks}${extra}<a href="#p/histoire">${esc(T.history)}</a><a href="#p/mentions">${esc(T.legal)}</a>`;
-    document.getElementById("about-links").innerHTML = `<li><a href="#p/histoire">${esc(T.history)}</a></li><li><a href="#archives">${esc(T.archives)}</a></li><li><a href="#p/mentions">${esc(T.legal)}</a></li>`;
+    document.getElementById("about-links").innerHTML = `<li><a href="#p/histoire">${esc(T.history)}</a></li><li><a href="#archives">${esc(T.archives)}</a></li><li><a href="a/">${esc(T.allArticles)}</a></li><li><a href="#p/mentions">${esc(T.legal)}</a></li><li><a href="feed.xml">RSS</a></li>`;
     document.getElementById("footer-sections").innerHTML = ORDRE.map((k) => `<li><a href="${secLink(k)}">${esc(secName(k))}</a></li>`).join("");
     document.getElementById("redaction").innerHTML = REDACTION.map(([nom, k]) => `<li><strong>${esc(nom)}</strong> · ${esc(secName(k))}</li>`).join("");
   }
@@ -187,6 +189,7 @@
 
   function renderHome() {
     markNav(null);
+    setMeta(HOME_TITLE, HOME_DESC, location.href.split("#")[0].split("?")[0]);
     const all = visibles();
     if (!all.length) { app.innerHTML = `<p class="loading">${esc(T.empty)}</p>`; return; }
     const bySec = latestBySection();
@@ -321,8 +324,17 @@
   }
 
   // ---------- Article ----------
+  function setMeta(titre, description, canonical) {
+    document.title = titre;
+    const d = document.querySelector('meta[name="description"]'); if (d) d.setAttribute("content", description);
+    const c = document.querySelector('link[rel="canonical"]'); if (c) c.setAttribute("href", canonical);
+  }
+  const staticUrl = (a) => `a/${a.id.replace(/[^a-z0-9-]/gi, "-")}.html`;
+  const indexable = (a) => a.type === "article" || a.type === "archive" || (a.type === "revue" && a.redige);
+
   function renderArticle(a, focus) {
     markNav(SLUG[a.section]);
+    setMeta(`${a.titre} | L'Écho des Anges`, a.chapo, indexable(a) ? new URL(staticUrl(a), location.href.split("#")[0]).href : location.href.split("#")[0]);
     const revue = a.type === "revue" && !a.redige;
     const sources = a.sources && a.sources.length ? `<span class="sources">${esc(T.sources)} : ${esc(a.sources.join(", "))}</span>` : "";
     app.innerHTML = `<article class="article">
@@ -398,6 +410,8 @@
   });
 
   window.addEventListener("hashchange", route);
+  const HOME_TITLE = document.title;
+  const HOME_DESC = (document.querySelector('meta[name="description"]') || {}).content || "";
   applyStatic();
   const v = "?v=" + Date.now();
   Promise.all([
