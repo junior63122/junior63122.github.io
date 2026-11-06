@@ -13,16 +13,19 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIR = join(ROOT, "journal", "img", "stock");
 const CREDITS = join(DIR, "credits.json");
 const PAR_RUBRIQUE = 5;
+const PAR_RECHERCHE = 2; // pour varier les sujets
+// Pas de personnalités reconnaissables pour illustrer une actualité quelconque.
+const EXCLUS = /putin|poutine|trump|macron|biden|xi jinping|zelensk|erdogan|modi|meloni|scholz|starmer|portrait/i;
 const UA = "EchoDesAnges/1.0 (https://junior63122.github.io/journal/) Node.js";
 
 const RECHERCHES = {
   Business: ["La Défense Paris skyscrapers", "business meeting office", "container port cargo ship"],
-  Finance: ["Euronext Paris Palais Brongniart", "stock exchange trading floor", "euro banknotes coins"],
+  Finance: ["Frankfurt Stock Exchange trading floor", "Palais Brongniart Paris", "euro coins", "euro banknotes", "Banque de France Paris building"],
   "Événementiel": ["concert crowd stage lights", "music festival crowd", "trade fair exhibition hall"],
   Tech: ["data center servers", "computer programming code screen", "smartphone app hands"],
-  Monde: ["United Nations General Assembly hall", "flags of the world", "European Parliament Strasbourg hemicycle"],
+  Monde: ["United Nations General Assembly hall empty", "European Parliament Strasbourg hemicycle", "flags Palais des Nations Geneva", "world globe map"],
   "Nice & Côte d'Azur": ["Promenade des Anglais Nice", "Nice France panorama Baie des Anges", "Monaco harbour Port Hercule"],
-  Sport: ["Allianz Riviera stadium Nice", "football stadium match", "tennis court match"],
+  Sport: ["football match stadium crowd", "OGC Nice match Allianz Riviera", "tennis match court", "Tour de France peloton", "rugby union match"],
 };
 
 const LICENCES_OK = /^(cc0|public domain|pd|cc by(-sa)? \d|cc-by(-sa)?-\d)/i;
@@ -52,16 +55,19 @@ async function chercher(q) {
     };
   }).filter((x) =>
     x.mime === "image/jpeg" && x.thumb && x.w >= 1200 && x.w > x.h * 1.2 &&
-    LICENCES_OK.test(x.licence) && !/trademark|personality/i.test(x.restrictions) && x.auteur);
+    LICENCES_OK.test(x.licence) && !/trademark|personality/i.test(x.restrictions) && x.auteur &&
+    !EXCLUS.test(x.titre) && !/press service|пресс-служба/i.test(x.auteur));
 }
 
 async function main() {
-  const refresh = process.argv.includes("--refresh");
+  const arg = process.argv.find((a) => a.startsWith("--refresh"));
+  const aRafraichir = arg ? (arg.includes("=") ? arg.split("=")[1].split(",") : Object.keys(RECHERCHES)) : [];
   mkdirSync(DIR, { recursive: true });
   const credits = existsSync(CREDITS) ? JSON.parse(readFileSync(CREDITS, "utf8")) : {};
 
   for (const [rub, requetes] of Object.entries(RECHERCHES)) {
     const actuelles = (credits[rub] || []).filter((c) => c.origine === "wikimedia" && existsSync(join(DIR, c.fichier)));
+    const refresh = aRafraichir.includes(rub);
     if (!refresh && actuelles.length >= PAR_RUBRIQUE) { console.log(`= ${rub} : ${actuelles.length} photos`); continue; }
     const retenues = refresh ? [] : actuelles;
     const vues = new Set(retenues.map((c) => c.page));
@@ -69,8 +75,9 @@ async function main() {
       if (retenues.length >= PAR_RUBRIQUE) break;
       let res = [];
       try { res = await chercher(q); } catch (e) { console.warn(`  ${rub} ✗ « ${q} » : ${e.message}`); continue; }
+      let prises = 0;
       for (const img of res) {
-        if (retenues.length >= PAR_RUBRIQUE) break;
+        if (retenues.length >= PAR_RUBRIQUE || prises >= PAR_RECHERCHE) break;
         if (vues.has(img.page)) continue;
         try {
           const r = await fetch(img.thumb, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(30000) });
@@ -80,6 +87,7 @@ async function main() {
           writeFileSync(join(DIR, fichier), buf);
           retenues.push({ fichier, origine: "wikimedia", auteur: img.auteur, licence: img.licence, licenceUrl: img.licenceUrl, page: img.page });
           vues.add(img.page);
+          prises++;
           console.log(`+ ${rub} ← ${img.titre} (${img.licence}, ${img.auteur})`);
         } catch (e) { console.warn(`  ${rub} ✗ ${img.titre} : ${e.message}`); }
       }
