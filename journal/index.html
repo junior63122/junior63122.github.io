@@ -4,37 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L'Écho des Anges</title>
-  <meta name="description" content="L'Écho des Anges, quotidien niçois : business, finance, événementiel, tech, monde, sport et l'actualité de Junior Joyant.">
+  <meta name="description" content="L'Écho des Anges, le quotidien de la Baie des Anges : économie, finance, événementiel, tech, international, Nice et Côte d'Azur, sport.">
+  <meta name="theme-color" content="#0c1a2b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c1a2b'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-style='italic' font-weight='700' font-size='20' text-anchor='middle' fill='%23ffffff'%3EÉ%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,700;1,9..144,900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="journal.css">
 </head>
 <body>
-  <div class="topbar">
-    <span id="edition"></span>
-    <span id="numero"></span>
-    <div class="langs" role="group" aria-label="Langue / Language">
-      <button type="button" data-lang="fr">FR</button>
-      <button type="button" data-lang="en">EN</button>
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-left">
+        <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="drawer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <span data-i18n="menu"></span>
+        </button>
+      </div>
+      <a class="logo" href="#" aria-label="L'Écho des Anges">
+        <svg class="emblem" viewBox="0 0 48 40" aria-hidden="true">
+          <path d="M4 30 C14 28 22 22 26 8" />
+          <path d="M10 33 C21 31 30 24 34 10" />
+          <path d="M17 36 C28 34 38 27 44 14" />
+        </svg>
+        <span class="logo-text">L'Écho <em>des</em> Anges</span>
+      </a>
+      <div class="header-right">
+        <div class="langs" role="group" aria-label="Langue / Language">
+          <button type="button" data-lang="fr">FR</button>
+          <span aria-hidden="true">|</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <header class="masthead">
-    <p class="fonde" data-i18n="founded"></p>
-    <h1><a href="./">L'Écho des Anges</a></h1>
-    <p class="tagline" data-i18n="tagline"></p>
-    <nav id="filters" aria-label="Rubriques"></nav>
+    <p class="dateline"><span id="edition"></span> · <span id="numero"></span> · Nice</p>
+    <nav class="sections" id="sections" aria-label="Rubriques"></nav>
   </header>
+
+  <div class="drawer" id="drawer" hidden>
+    <nav id="drawer-nav" aria-label="Rubriques"></nav>
+  </div>
 
   <main id="app">
     <p class="loading" data-i18n="loading"></p>
   </main>
 
-  <footer>
-    <p class="redaction-title" data-i18n="team"></p>
-    <ul id="redaction" class="redaction"></ul>
-    <p data-i18n="sourcesNote"></p>
-    <p><a href="https://www.instagram.com/junior_joyant" target="_blank" rel="noopener" data-i18n="insta"></a> · <a href="../" data-i18n="back"></a></p>
-    <p>© <span id="year"></span> L'Écho des Anges · Nice</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">L'Écho <em>des</em> Anges</span>
+        <p data-i18n="founded"></p>
+      </div>
+      <div>
+        <h2 data-i18n="sectionsTitle"></h2>
+        <ul id="footer-sections" class="footer-list"></ul>
+      </div>
+      <div>
+        <h2 data-i18n="team"></h2>
+        <ul id="redaction" class="footer-list"></ul>
+      </div>
+      <div>
+        <h2 data-i18n="about"></h2>
+        <p data-i18n="sourcesNote"></p>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> L'Écho des Anges · Nice</p>
   </footer>
 
   <script src="journal.js"></script>

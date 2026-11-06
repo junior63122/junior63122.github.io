@@ -87,11 +87,15 @@ export function parseFeed(xml, feedUrl = "") {
     let source = clean(tag(b, "source")) || MEDIAS[host] || channel.replace(/\s*[:|–-].*$/, "") || host;
     // Google News : « Titre - Média »
     if (host === "news.google.com") {
-      const m = titre.match(/^(.*) - ([^-]{2,60})$/);
-      if (m) { titre = m[1].trim(); source = clean(tag(b, "source")) || m[2].trim(); }
+      const src = clean(tag(b, "source"));
+      if (src && titre.endsWith(" - " + src)) { titre = titre.slice(0, -(src.length + 3)).trim(); source = src; }
+      else {
+        const m = titre.match(/^(.*) - ([^-]{2,60})$/);
+        if (m) { titre = m[1].trim(); source = src || m[2].trim(); }
+      }
     }
     let resume = clean(tag(b, "description") || tag(b, "summary") || tag(b, "content"));
-    if (resume.startsWith(titre)) resume = ""; // Google News répète le titre
+    if (resume.startsWith(titre.slice(0, 40))) resume = ""; // Google News répète le titre
     if (resume.length > 260) resume = resume.slice(0, 257).replace(/\s+\S*$/, "") + "…";
     const d = Date.parse(clean(tag(b, "pubDate") || tag(b, "published") || tag(b, "updated") || tag(b, "dc:date")));
     return { titre, source, url: link, resume, date: Number.isNaN(d) ? null : d };
@@ -128,7 +132,6 @@ export function buildArticle(rub, items, date, dejaVus = new Set(), lang = "fr")
     .slice(0, PAR_ARTICLE);
   if (!choisis.length) return null;
   const sources = [...new Set(choisis.map((i) => i.source).filter(Boolean))];
-  const fr = lang === "fr";
   return {
     id: `${date}-${lang === "fr" ? "" : lang + "-"}actu-${slugify(rub.key)}`,
     lang,
@@ -137,10 +140,10 @@ export function buildArticle(rub, items, date, dejaVus = new Set(), lang = "fr")
     rubrique: L.nom,
     emoji: rub.emoji,
     type: "revue",
-    titre: `${L.nom}${fr ? " : " : ": "}${choisis[0].titre}`,
-    chapo: `${L.intro} ${fr ? "Le point du" : "Our round-up for"} ${dateLang(date, lang)}.`,
+    titre: choisis[0].titre,
+    chapo: `${L.intro} ${lang === "fr" ? "Le point du" : "Our round-up for"} ${dateLang(date, lang)}.`,
     corps: [],
-    liens: choisis.map(({ titre, source, url, resume }) => ({ titre, source, url, resume })),
+    liens: choisis.map(({ titre, source, url, resume, date: d }) => ({ titre, source, url, resume, heure: d ? new Date(d).toISOString() : null })),
     auteur: rub.journaliste,
     sources,
   };
