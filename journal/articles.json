@@ -726,6 +726,232 @@
     ]
   },
   {
+    "id": "2026-11-06-agression-a-l-ecole-clement-roassal-les-enseignants-en-greve",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "heure": "2026-11-06T12:20:00Z",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Éducation",
+    "emoji": "🌴",
+    "type": "article",
+    "auteur": "Lucas Giordano",
+    "titre": "Agression à l'école Clément-Roassal : les enseignants en grève, la mère d'élève en détention",
+    "chapo": "Quatre jours après l'agression de la directrice et d'une enseignante de l'école maternelle niçoise, le personnel du groupe scolaire a cessé le travail vendredi pour réclamer davantage de sécurité.",
+    "corps": [
+      "L'école maternelle Clément-Roassal, à Nice, a vécu vendredi 6 novembre une journée de grève. Les personnels du groupe scolaire Roméo-Roassal ont cessé le travail en solidarité avec la directrice et l'enseignante agressées lundi, un mouvement soutenu par les parents d'élèves, rapportent ici Azur et France 3 Côte d'Azur. Les enseignants réclament davantage de sécurité dans les établissements.",
+      "Les faits remontent au lundi 2 novembre. Selon France 3 Côte d'Azur, une mère d'élève de 36 ans a séquestré la directrice et l'a frappée en la menaçant d'une arme à feu, avant de s'en prendre à une enseignante. Elle a été interpellée et placée en garde à vue, et une plainte a été déposée.",
+      "Présentée à la justice mercredi 4 novembre après 48 heures de garde à vue, la suspecte a été mise en examen et placée en détention provisoire. D'après ici Azur, qui cite le parquet de Nice, elle avait filmé une partie des faits et a fini par exprimer des regrets. Selon le ministre de l'Intérieur et le procureur de Nice, cités par ici Azur, elle était en situation irrégulière, assignée à résidence et avait été fichée pour radicalisation ; France 3 précise qu'elle avait déjà été condamnée pour port d'armes et violences en réunion.",
+      "L'affaire relance le débat sur la sécurité des écoles. Le représentant de la FSU dans les Alpes-Maritimes, Gilles Jean, a plaidé sur ici Azur pour que « tous les personnels de l'école aient un bouton d'alerte ». L'Éducation nationale a activé plusieurs dispositifs de soutien aux équipes, tandis que le syndicat SANCA-UNSA réclame des mesures supplémentaires."
+    ],
+    "liens": [
+      {
+        "titre": "Agression dans une école à Nice : les professeurs du groupe scolaire sont en grève ce vendredi",
+        "source": "ici Azur",
+        "url": "https://www.ici.fr/emissions/l-info-d-ici-ici-azur/agression-contre-une-directrice-et-une-enseignante-a-nice-les-professeurs-du-groupe-scolaire-sont-en-greve-ce-vendredi-9090778"
+      },
+      {
+        "titre": "Attaque dans une école maternelle à Nice : \"tout le monde est choqué\", une grève est organisée",
+        "source": "France 3 Côte d'Azur",
+        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/nice/attaque-dans-une-ecole-maternelle-a-nice-tout-le-monde-est-choque-apres-l-agression-de-deux-enseignantes-une-greve-est-organisee-3445188.html"
+      },
+      {
+        "titre": "Agression dans une école à Nice : la mère de famille mise en examen et placée en détention provisoire",
+        "source": "ici Azur",
+        "url": "https://www.ici.fr/provence-alpes-cote-d-azur/alpes-maritimes-06/nice/agression-dans-une-ecole-a-nice-la-suspecte-a-filme-une-partie-des-faits-et-exprime-des-regrets-en-garde-a-vue-2958752"
+      },
+      {
+        "titre": "Attaque dans une école à Nice : arme introuvable, faux passeports, condamnation pour violence, ce que révèle l'enquête",
+        "source": "France 3 Côte d'Azur",
+        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/nice/attaque-a-l-ecole-de-nice-arme-introuvable-faux-passeports-radicalisation-ce-que-revele-l-enquete-sur-la-mere-de-famille-3443994.html"
+      },
+      {
+        "titre": "Agression d'une directrice d'école à Nice : \"Il faudrait que tous les personnels de l'école aient un bouton d'alerte\"",
+        "source": "ici Azur",
+        "url": "https://www.ici.fr/emissions/l-invite-d-ici-matin-ici-azur/agression-dans-une-ecole-maternelle-a-nice-il-faudrait-que-tous-les-personnels-de-l-ecole-aient-un-bouton-d-alerte-7742018"
+      }
+    ],
+    "sources": [
+      "ici Azur",
+      "France 3 Côte d'Azur"
+    ],
+    "photo": false
+  },
+  {
+    "id": "2026-11-06-audit-des-finances-de-nice-eric-ciotti-charge-la-gestion-est",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "heure": "2026-11-06T12:30:00Z",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Politique",
+    "emoji": "🌴",
+    "type": "article",
+    "auteur": "Lucas Giordano",
+    "titre": "Audit des finances de Nice : Éric Ciotti charge la gestion Estrosi, qui conteste les chiffres",
+    "chapo": "Le maire de Nice a rendu publiques jeudi les conclusions de l'audit financier de la Ville et de la Métropole. Dette élevée, dépenses importantes, travaux à prévoir : son prédécesseur dénonce « une confusion majeure ».",
+    "corps": [
+      "Annoncé depuis plusieurs mois, l'audit financier de la Ville de Nice et de la Métropole Nice Côte d'Azur a été dévoilé jeudi 5 novembre par le maire, Éric Ciotti. Selon France 3 Côte d'Azur, le rapport pointe une dette importante, des dépenses élevées et de nombreux travaux à prévoir, autant d'éléments qualifiés de « contrainte majeure » pour la suite du mandat.",
+      "D'après ici Azur, les conclusions de cet audit de début de mandat fixent les efforts de gestion à mener d'ici à 2032 pour reconstituer l'épargne de la collectivité et stabiliser son endettement. Les données financières et budgétaires de la Ville, de la Métropole et de leurs régies ont été passées au crible, précise Nice-Matin.",
+      "La riposte de Christian Estrosi n'a pas tardé. L'ancien maire, dont la gestion est directement visée, évoque dans Nice-Matin « une confusion majeure sur la réalité des finances » et met en avant « des améliorations significatives » obtenues pendant ses mandats. Les deux hommes, longtemps alliés puis rivaux, s'opposent désormais sur les chiffres.",
+      "Le dossier s'est invité dès vendredi au Conseil métropolitain, où l'audit était au cœur des débats, selon BFM Nice Côte d'Azur.",
+      "Dans le même temps, la majorité municipale doit répondre à une autre polémique : un militant de gauche a saisi le procureur de la République au sujet du coût et des conditions de la campagne de recrutement de policiers municipaux affichée dans le métro parisien, rapporte Nice-Matin. La Ville assure avoir respecté « strictement » les règles de la commande publique et affirme avoir divisé par deux son budget publicitaire global en un an."
+    ],
+    "liens": [
+      {
+        "titre": "\"Une contrainte majeure\" : l'audit financier sur la gestion de Nice par Christian Estrosi révèle une dette élevée et des dépenses importantes",
+        "source": "France 3 Côte d'Azur",
+        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/nice/une-contrainte-majeure-l-audit-financier-sur-la-gestion-de-nice-par-christian-estrosi-revele-une-dette-elevee-et-des-depenses-importantes-3444987.html"
+      },
+      {
+        "titre": "Eric Ciotti dévoile un audit de la ville de Nice et de la métropole Nice côte d'azur",
+        "source": "ici Azur",
+        "url": "https://www.ici.fr/provence-alpes-cote-d-azur/alpes-maritimes-06/nice/eric-ciotti-devoile-un-audit-de-la-ville-de-nice-et-de-la-metropole-nice-cote-d-azur-5123800"
+      },
+      {
+        "titre": "« Une confusion majeure sur la réalité des finances » : Christian Estrosi réagit à l'audit commandé par Eric Ciotti",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/societe/politique/une-confusion-majeure-sur-la-realite-des-finances-christian-estrosi-reagit-a-l-audit-commande-par-eric-ciotti-et-pointe-des-ameliorations-significatives-10754397"
+      },
+      {
+        "titre": "Conseil métropolitain : l'audit au cœur du débat aujourd'hui",
+        "source": "BFM Nice Côte d'Azur",
+        "url": "https://www.bfmtv.com/cote-d-azur/replay-emissions/bonjour-cote-d-azur/video-conseil-metropolitain-l-audit-au-coeur-du-debat-aujourd-hui_VN-202611060338.html"
+      },
+      {
+        "titre": "« Qui paie la facture ? » : la campagne de recrutement de policiers de la Ville de Nice dans le métro parisien fait des vagues",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/societe/politique/qui-paie-la-facture-la-campagne-de-recrutement-de-policiers-de-la-ville-de-nice-dans-le-metro-parisien-fait-des-vagues-la-justice-saisie-10753234"
+      }
+    ],
+    "sources": [
+      "France 3 Côte d'Azur",
+      "ici Azur",
+      "Nice-Matin",
+      "BFM Nice Côte d'Azur"
+    ]
+  },
+  {
+    "id": "2026-11-06-banque-alimentaire-la-grande-collecte-demarre-alors-que-les-",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "heure": "2026-11-06T11:50:00Z",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Solidarité",
+    "emoji": "🌴",
+    "type": "article",
+    "auteur": "Lucas Giordano",
+    "titre": "Banque alimentaire : la grande collecte démarre alors que les besoins augmentent dans les Alpes-Maritimes",
+    "chapo": "La collecte annuelle des banques alimentaires débute ce vendredi dans les supermarchés. Dans le département, le nombre de bénéficiaires est en hausse.",
+    "corps": [
+      "La grande collecte nationale des banques alimentaires a débuté vendredi 6 novembre. Pendant tout le week-end, des bénévoles se relaient à l'entrée des grandes surfaces pour recueillir des dons, redistribués ensuite à 2,4 millions de bénéficiaires en France, rappelle Nice-Matin.",
+      "Dans les Alpes-Maritimes, les besoins progressent : le nombre de bénéficiaires de la Banque alimentaire y est en hausse, selon BFM Nice Côte d'Azur. Interrogé par ici Azur, Tony Amato a décrit une situation alarmante de la pauvreté dans le département, assurant que les personnes aidées par l'association ne tiendraient pas dans le stade de l'Allianz Riviera.",
+      "Les organisateurs ont publié la liste des produits recherchés. Outre les denrées alimentaires, les produits d'hygiène, dont les protections menstruelles, figurent parmi les dons attendus, indique Nice-Matin. L'association cherche aussi des bénévoles pour tenir les points de collecte.",
+      "La collecte intervient dans un contexte social tendu, marqué depuis plusieurs semaines par les manifestations contre la vie chère dans le département."
+    ],
+    "liens": [
+      {
+        "titre": "Denrées alimentaires, produits menstruels, bénévoles… La collecte de la banque alimentaire débute ce vendredi",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/societe/social/denrees-alimentaires-produits-menstruels-benevoles-la-collecte-de-la-banque-alimentaire-debute-ce-vendredi-voici-ce-dont-ils-ont-besoin-10754608"
+      },
+      {
+        "titre": "06 : le nombre de bénéficiaires des Banques Alimentaires en hausse dans le département",
+        "source": "BFM Nice Côte d'Azur",
+        "url": "https://www.bfmtv.com/cote-d-azur/replay-emissions/bonjour-cote-d-azur/video-06-le-nombre-de-beneficiaires-des-banques-alimentaires-en-hausse-dans-le-departement_VN-202611050321.html"
+      },
+      {
+        "titre": "Tony Amato : \"Le nombre de personnes que soutient la Banque Alimentaire ne tiendrait pas dans le stade\"",
+        "source": "ici Azur",
+        "url": "https://www.ici.fr/emissions/ici-ca-compte-ici-azur/tony-amato-le-nombre-de-personnes-que-soutient-la-banque-alimentaire-ne-tiendrait-pas-dans-le-stade-alliance-riviera-4894812"
+      }
+    ],
+    "sources": [
+      "Nice-Matin",
+      "BFM Nice Côte d'Azur",
+      "ici Azur"
+    ]
+  },
+  {
+    "id": "2026-11-06-cannes-un-ouvrier-grievement-blesse-en-installant-les-illumi",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "heure": "2026-11-06T11:40:00Z",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Faits divers",
+    "emoji": "🌴",
+    "type": "article",
+    "auteur": "Lucas Giordano",
+    "titre": "Cannes : un ouvrier grièvement blessé en installant les illuminations de Noël",
+    "chapo": "L'homme, âgé d'une trentaine d'années, a chuté d'une nacelle à une dizaine de mètres de hauteur jeudi soir. Il a été transporté dans un état grave à l'hôpital Pasteur, à Nice.",
+    "corps": [
+      "Un ouvrier qui installait les décorations de Noël à Cannes a été grièvement blessé jeudi 5 novembre, vers 22 heures. Âgé de 30 ans selon France 3 Côte d'Azur, il travaillait sur une nacelle élévatrice placée à environ 10 mètres de hauteur lorsqu'il en a été éjecté.",
+      "Selon Nice-Matin, la nacelle aurait été percutée par un camion. France 3 indique pour sa part que les circonstances de l'accident n'étaient pas encore éclaircies vendredi matin.",
+      "La victime a été transportée en urgence à l'hôpital Pasteur, à Nice. Son pronostic vital était engagé, d'après Nice-Matin.",
+      "L'accident survient en pleine installation des illuminations de fin d'année, qui mobilisent chaque automne de nombreux techniciens dans les communes du littoral."
+    ],
+    "liens": [
+      {
+        "titre": "Il installait les illuminations de Noël : éjecté de sa nacelle, un ouvrier de 30 ans chute de 10 mètres à Cannes",
+        "source": "France 3 Côte d'Azur",
+        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/cannes/il-installait-les-illuminations-de-noel-ejecte-de-sa-nacelle-un-ouvrier-de-30-ans-chute-de-10-metres-a-cannes-3445224.html"
+      },
+      {
+        "titre": "Il installait des décorations de Noël à Cannes avant d'être percuté par un camion",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/faits-divers/il-installait-des-decorations-de-noel-a-cannes-avant-d-etre-percute-par-un-camion-un-ouvrier-d-une-trentaine-d-annees-dans-un-etat-grave-son-pronostic-vital-engage-10754591"
+      }
+    ],
+    "sources": [
+      "France 3 Côte d'Azur",
+      "Nice-Matin"
+    ],
+    "photo": false
+  },
+  {
+    "id": "2026-11-06-deja-30-centimetres-de-neige-a-isola-2000-a-un-mois-de-l-ouv",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "heure": "2026-11-06T12:00:00Z",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Montagne",
+    "emoji": "🌴",
+    "type": "article",
+    "auteur": "Lucas Giordano",
+    "titre": "Déjà 30 centimètres de neige à Isola 2000, à un mois de l'ouverture",
+    "chapo": "Les premières grosses chutes de neige de la saison ont blanchi les stations des Alpes-Maritimes. Sur le littoral, l'épisode méditerranéen a maintenu la vigilance jaune pluie-inondation jusqu'à vendredi après-midi.",
+    "corps": [
+      "L'hiver s'est invité en avance dans le haut pays niçois. Depuis mercredi 4 novembre, la neige tombe sur Isola 2000, où près de 30 centimètres se sont déjà accumulés, selon France 3 Côte d'Azur. Les chutes devaient se poursuivre toute la journée de vendredi.",
+      "La station voisine d'Auron a elle aussi reçu ses premiers flocons. Une bonne nouvelle pour les domaines skiables des Alpes-Maritimes, qui préparent leur ouverture, prévue dans un mois, avec un manteau neigeux déjà en place.",
+      "Sur la côte, le même épisode méditerranéen s'est traduit par de fortes pluies. Météo-France a prolongé jeudi la vigilance jaune pluie-inondation pour les Alpes-Maritimes et le Var jusqu'au vendredi 6 novembre dans l'après-midi, l'épisode s'étant « décalé dans la nuit », rapporte France 3.",
+      "Dans le haut pays, la saison des fêtes d'automne bat son plein : les châtaignes d'Isola figurent parmi les rendez-vous du week-end des 6, 7 et 8 novembre retenus par Nice-Matin."
+    ],
+    "liens": [
+      {
+        "titre": "EN IMAGES. \"Il neige à gros flocons\" : 30 cm à Isola 2000, la station se réjouit à un mois de l'ouverture",
+        "source": "France 3 Côte d'Azur",
+        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/nice/en-images-il-neige-a-gros-flocons-30-cm-a-isola-2000-la-station-se-rejouit-a-un-mois-de-l-ouverture-3445257.html"
+      },
+      {
+        "titre": "\"C'est un peu magique\" : les premières chutes de neige réjouissent les stations de ski des Alpes-Maritimes",
+        "source": "France 3 Côte d'Azur",
+        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/nice/c-est-un-peu-magique-les-premieres-chutes-de-neige-rejouissent-les-stations-de-ski-des-alpes-maritimes-3444723.html"
+      },
+      {
+        "titre": "\"L'épisode méditerranéen se décale dans la nuit\" : la vigilance jaune pluie-inondation prolongée",
+        "source": "France 3 Côte d'Azur",
+        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/var/l-episode-mediterraneen-se-decale-dans-la-nuit-la-vigilance-jaune-pluie-inondation-dans-les-alpes-maritimes-et-le-var-prolongee-3445083.html"
+      },
+      {
+        "titre": "Humour à La Trinité, salon gourmand à Cagnes, châtaignes à Isola et théâtre à Carros : notre sélection sorties",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/loisirs/humour-a-la-trinite-salon-gourmand-a-cagnes-chataignes-a-isola-et-theatre-a-carros-notre-selection-sorties-pour-ce-week-end-des-6-7-et-8-novembre-dans-les-alpes-maritimes-10753695"
+      }
+    ],
+    "sources": [
+      "France 3 Côte d'Azur",
+      "Nice-Matin"
+    ]
+  },
+  {
     "id": "2026-11-06-en-portrait-junior-william-joyant",
     "lang": "en",
     "date": "2026-11-06",
@@ -786,6 +1012,72 @@
     "transparence": "Disclosure: Junior William Joyant is the publication director of L'Écho des Anges."
   },
   {
+    "id": "2026-11-06-grasse-nice-malaussene-terres-polluees-eaux-usees-et-dechets",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "heure": "2026-11-06T11:10:00Z",
+    "section": "Business",
+    "rubrique": "Grands chantiers",
+    "emoji": "💼",
+    "type": "article",
+    "auteur": "Camille Rostand",
+    "titre": "Grasse, Nice, Malaussène : terres polluées, eaux usées et déchets au menu des chantiers azuréens",
+    "chapo": "Deux projets urbains de Grasse voient leur facture grimper, Nice prépare l'arrivée des eaux usées de la rive droite du Var et un projet de traitement des résidus d'incinération fait débat dans le haut pays.",
+    "corps": [
+      "À Grasse, les aléas de chantier alourdissent la note. Le jardin de pluie de la gare SNCF, conçu pour absorber les inondations dans le secteur, est passé de 2,5 à près de 2,9 millions d'euros, rapporte Nice-Matin. La passerelle de la Roque, qui doit relier le parking du même nom au centre historique et sera inaugurée le 10 novembre, coûte 145 000 euros de plus que prévu. En cause : des terres polluées, des ouvrages d'art et des câbles téléphoniques non répertoriés. Ces rallonges ont fait débat jeudi 5 novembre en conseil communautaire.",
+      "Sur la rive droite du Var, des travaux ont commencé pour acheminer vers Nice les effluents aujourd'hui traités par la station d'épuration de Saint-Laurent-du-Var. Ils rejoindront la future station Haliotis 2, indique Nice-Matin.",
+      "Dans le haut pays, un autre dossier lié aux déchets suscite des interrogations. Une filiale de Vinci porte à Malaussène un projet de « centre de production de granulats alternatifs » fabriqués à partir des résidus d'incinérateurs. L'enquête publique s'est achevée le 6 octobre. Un projet similaire au Bar-sur-Loup avait récemment soulevé une vague de protestation, élus et associations dénonçant des risques de pollution."
+    ],
+    "liens": [
+      {
+        "titre": "Terres polluées, ouvrages d'art et câbles téléphoniques non répertoriés… Des aléas de chantier font grimper la facture de deux gros projets urbains à Grasse",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/societe/urbanisme/terres-polluees-ouvrages-d-art-et-cables-telephoniques-non-repertories-des-aleas-de-chantier-font-grimper-la-facture-de-deux-gros-projets-urbains-a-grasse-10754387"
+      },
+      {
+        "titre": "Les eaux usées traitées par la station d'épuration de Saint-Laurent-du-Var vont être amenées à Nice",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/environnement/les-eaux-usees-traitees-par-la-station-d-epuration-de-saint-laurent-du-var-vont-etre-amenees-a-nice-on-vous-explique-comment-10752479"
+      },
+      {
+        "titre": "Une usine de traitement des résidus d'incinérateurs va-t-elle voir le jour dans le haut pays de Nice ?",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/environnement/ce-sont-les-dechets-de-la-population-du-departement-il-faut-bien-les-recycler-quelque-part-une-usine-de-traitement-des-residus-d-incinerateurs-va-t-elle-voir-le-jour-dans-le-haut-pays-de-nice-10730697"
+      }
+    ],
+    "sources": [
+      "Nice-Matin"
+    ]
+  },
+  {
+    "id": "2026-11-06-le-sociologue-jean-claude-passeron-enfant-d-ascros-et-coaute",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "heure": "2026-11-06T11:20:00Z",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Disparition",
+    "emoji": "🌴",
+    "type": "article",
+    "auteur": "Lucas Giordano",
+    "titre": "Le sociologue Jean-Claude Passeron, enfant d'Ascros et coauteur des « Héritiers », est mort à 96 ans",
+    "chapo": "Originaire de l'arrière-pays niçois, le philosophe et sociologue avait signé avec Pierre Bourdieu, en 1964, l'un des livres les plus marquants de la sociologie française.",
+    "corps": [
+      "Le philosophe et sociologue Jean-Claude Passeron s'est éteint à Marseille à l'âge de 96 ans, annonce Nice-Matin. Il était originaire du village d'Ascros, dans l'arrière-pays de Nice, où il vivait.",
+      "Son nom reste associé à celui de Pierre Bourdieu, avec qui il avait cosigné en 1964 « Les Héritiers ». L'ouvrage analysait le poids de l'origine sociale dans la réussite des étudiants et a durablement marqué la réflexion sur l'école et l'université en France.",
+      "Avec sa disparition, l'arrière-pays niçois perd l'une de ses figures intellectuelles les plus reconnues."
+    ],
+    "liens": [
+      {
+        "titre": "Il avait cosigné avec Pierre Bourdieu « Les Héritiers » : Jean-Claude Passeron, qui habitait dans l'arrière-pays de Nice, s'est éteint",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/societe/il-avait-cosigne-avec-pierre-bourdieu-les-heritiers-jean-claude-passeron-qui-habitait-dans-l-arriere-pays-de-nice-s-est-eteint-10754380"
+      }
+    ],
+    "sources": [
+      "Nice-Matin"
+    ]
+  },
+  {
     "id": "2026-11-06-portrait-junior-william-joyant",
     "lang": "fr",
     "date": "2026-11-06",
@@ -844,6 +1136,118 @@
       }
     ],
     "transparence": "Transparence : Junior William Joyant est le directeur de la publication de L'Écho des Anges."
+  },
+  {
+    "id": "2026-11-06-rallye-du-haut-pays-nicois-nissa-rugby-handball-un-week-end-",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "heure": "2026-11-06T11:30:00Z",
+    "section": "Sport",
+    "rubrique": "Sport azuréen",
+    "emoji": "⚽",
+    "type": "article",
+    "auteur": "Inès Morel",
+    "titre": "Rallye du Haut Pays Niçois, Nissa Rugby, handball : un week-end chargé pour le sport azuréen",
+    "chapo": "Le rallye de Contes fête sa 50e édition, les rugbymen niçois se déplacent à Narbonne et les handballeuses jouent un derby décisif à Toulon. L'OGC Nice, lui, profite de la forme de ses pistons.",
+    "corps": [
+      "Le Rallye régional du Haut Pays Niçois s'élance vendredi soir pour sa 50e édition. Basée à Contes, l'épreuve franchit le cap du demi-siècle avec un favori désigné, Bruno Riberi, selon Nice-Matin.",
+      "En rugby, Nissa Rugby se déplace vendredi soir à Narbonne, l'autre promu en Pro D2. Les Niçois retrouvent l'équipe qui les avait battus en finale de Nationale la saison dernière, aujourd'hui mal engagée au classement, avec l'occasion de signer une deuxième victoire consécutive, la première à l'extérieur, et de s'éloigner du bas de tableau.",
+      "Les handballeuses de Nice jouent gros elles aussi. Lanternes rouges de la Ligue féminine, elles se rendent à Toulon vendredi à 20 heures pour clore la 8e journée, dans un derby de la Côte d'Azur où elles n'ont plus droit à l'erreur, souligne Nice-Matin.",
+      "Côté football, l'OGC Nice traverse une bonne période, portée notamment par ses joueurs de couloir Jonathan Clauss et Niels Nkounkou, dont Nice-Matin salue l'influence grandissante dans le jeu des Aiglons.",
+      "Enfin, un Niçois est monté sur un podium mondial : licencié au Cercle parachutiste de Nice, Adrien Gallot a remporté la médaille de bronze en freestyle avec Laurie Lubbé aux championnats du monde de parachutisme, disputés du 18 au 24 octobre en Arizona."
+    ],
+    "liens": [
+      {
+        "titre": "Top départ ce vendredi soir pour la 50e édition du Rallye régional du Haut Pays Niçois",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/sports/automobile/top-depart-ce-vendredi-soir-pour-la-50e-edition-du-rallye-regional-du-haut-pays-nicois-10754612"
+      },
+      {
+        "titre": "« Ils ont davantage de pression que nous » : Nissa Rugby se déplace ce vendredi chez l'autre promu, Narbonne",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/sports/rugby/ils-ont-davantage-de-pression-que-nous-nissa-rugby-se-deplace-ce-vendredi-chez-l-autre-promu-narbonne-pour-une-rencontre-vraiment-pas-comme-les-autres-10754366"
+      },
+      {
+        "titre": "« Jouer à Toulon, ce n'est jamais évident » : les handballeuses niçoises n'ont plus droit à l'erreur",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/sports/handball/jouer-a-toulon-ce-n-est-jamais-evident-les-handballeuses-nicoises-n-ont-plus-droit-a-l-erreur-ce-vendredi-20h-10754388"
+      },
+      {
+        "titre": "L'omniprésence de Clauss, la montée en puissance de Nkounkou... Focus sur deux pistons qui donnent des ailes à l'OGC Nice",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/sports/football/l-omnipresence-de-clauss-la-montee-en-puissance-de-nkounkou-focus-sur-deux-pistons-qui-donnent-des-ailes-a-l-ogc-nice-10754362"
+      },
+      {
+        "titre": "Un Niçois décroche la médaille de bronze aux championnats du monde de parachutisme",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/sports/un-nicois-decroche-la-medaille-de-bronze-aux-championnats-du-monde-de-parachutisme-10752447"
+      }
+    ],
+    "sources": [
+      "Nice-Matin"
+    ]
+  },
+  {
+    "id": "2026-11-06-vie-chere-apres-les-5-000-manifestants-de-jeudi-les-syndicat",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "heure": "2026-11-06T12:10:00Z",
+    "section": "Nice & Côte d'Azur",
+    "rubrique": "Social",
+    "emoji": "🌴",
+    "type": "article",
+    "auteur": "Lucas Giordano",
+    "titre": "Vie chère : après les 5 000 manifestants de jeudi, les syndicats appellent à un « acte IV » samedi à Nice",
+    "chapo": "La mobilisation contre la vie chère ne faiblit pas sur la Côte d'Azur. Salariés, retraités, étudiants et lycéens ont défilé jeudi à Nice et à Cannes ; un nouveau cortège est prévu samedi 7 novembre.",
+    "corps": [
+      "Près de 5 000 personnes ont défilé jeudi 5 novembre dans les rues de Nice et environ 400 à Cannes, à l'appel de plusieurs organisations syndicales, selon ici Azur. Salariés du privé et du public, étudiants et retraités ont pris part aux cortèges pour réclamer des hausses de salaires et défendre les services publics, dans un climat décrit comme bon enfant.",
+      "Les chiffres restent difficiles à établir. BFM Nice Côte d'Azur relève des écarts entre le décompte de la préfecture et celui des syndicats, qui parlent de « la plus grosse mobilisation depuis le début du mouvement ». Le secrétaire général de la CGT des Alpes-Maritimes, Rémy Demouveaux, a prévenu sur ici Azur : « On ne lâchera pas tant qu'on ne gagnera pas. »",
+      "La contestation se poursuit dès ce week-end. L'intersyndicale CGT-FSU-SUD-Solidaires appelle à manifester à nouveau samedi 7 novembre à Nice, lors d'un « acte IV » qui prolonge plusieurs week-ends consécutifs de mobilisation, selon Nice-Matin, qui indique que le parcours retenu fait débat. Au niveau national, l'intersyndicale décidera des suites du mouvement après la conférence sociale organisée lundi par Matignon.",
+      "Les lycéens restent mobilisés. Vendredi matin à Antibes, des élèves du lycée Jacques-Audiberti ont tenté sans succès de bloquer leur établissement avant de défiler jusqu'au lycée Jacques-Dolle pour y entraîner leurs camarades. Nice-Matin en a compté entre 60 et 80, France 3 Côte d'Azur environ 130. Ils protestent contre Parcoursup et contre leurs conditions d'étude, l'état des sanitaires étant devenu l'un des symboles de leurs revendications."
+    ],
+    "liens": [
+      {
+        "titre": "Salaires, services publics, pouvoir d'achat : à Nice, plusieurs générations dans la rue pour se faire entendre",
+        "source": "ici Azur",
+        "url": "https://www.ici.fr/emissions/l-info-d-ici-ici-azur/salaires-services-publics-pouvoir-d-achat-a-nice-plusieurs-generations-dans-la-rue-pour-se-faire-entendre-7059732"
+      },
+      {
+        "titre": "Grève du 5 novembre : 5.000 manifestants à Nice et 400 à Cannes",
+        "source": "ici Azur",
+        "url": "https://www.ici.fr/provence-alpes-cote-d-azur/alpes-maritimes-06/nice/greve-du-5-novembre-5000-manifestants-a-nice-et-400-a-cannes-6740708"
+      },
+      {
+        "titre": "Mobilisations du 5 novembre : des difficultés à chiffrer dans les Alpes-Maritimes",
+        "source": "BFM Nice Côte d'Azur",
+        "url": "https://www.bfmtv.com/cote-d-azur/replay-emissions/azur-politiques/video-mobilisations-du-5-novembre-des-difficultes-a-chiffrer-dans-les-alpes-maritimes_VN-202611050801.html"
+      },
+      {
+        "titre": "\"On ne lâchera pas tant qu'on ne gagnera pas\", assure Rémy Demouveaux, secrétaire général de la CGT des Alpes-Maritimes",
+        "source": "ici Azur",
+        "url": "https://www.ici.fr/emissions/l-invite-d-ici-matin-ici-azur/remy-demouveaux-secretaire-general-de-la-cgt-06-on-ne-lachera-pas-tant-qu-on-ne-gagnera-pas-8249902"
+      },
+      {
+        "titre": "Mobilisation « Acte IV » : on connaît le parcours de la manifestation de samedi 7 novembre à Nice",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/societe/greves/mobilisation-acte-iv-on-connait-le-parcours-de-la-manifestation-de-samedi-7-novembre-a-nice-10754318"
+      },
+      {
+        "titre": "Manifestation spontanée à Antibes : une centaine de lycéens dans les rues contre Parcoursup",
+        "source": "France 3 Côte d'Azur",
+        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/antibes/manifestation-spontanee-a-antibes-une-centaine-de-lyceens-dans-les-rues-contre-parcoursup-et-leurs-conditions-d-etude-3445176.html"
+      },
+      {
+        "titre": "La mobilisation tourne court ce vendredi matin à Antibes",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/societe/blocage-des-lycees/la-mobilisation-tourne-court-ce-vendredi-matin-a-antibes-pres-de-80-lyceens-de-jacques-audiberti-ont-battu-le-pave-jusqu-a-jacques-dolle-afin-de-les-mobiliser-en-vain-10754626"
+      }
+    ],
+    "sources": [
+      "ici Azur",
+      "BFM Nice Côte d'Azur",
+      "Nice-Matin",
+      "France 3 Côte d'Azur"
+    ]
   },
   {
     "id": "2026-11-05-actu-business",
