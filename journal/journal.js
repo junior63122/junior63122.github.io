@@ -34,6 +34,7 @@
       archivesChapo: "Les grands événements de la Côte d'Azur depuis 2020, de Nice à Monaco, de Cannes à l'arrière-pays.",
       archivesFr: "",
       fromArchives: "Dans nos archives",
+      local: "L'actualité de la Côte d'Azur",
       allArchives: "Toutes les archives ›",
       history: "Notre histoire",
       legal: "Mentions légales",
@@ -69,6 +70,7 @@
       archivesChapo: "The Riviera's major events since 2020, from Nice to Monaco and from Cannes to the hinterland.",
       archivesFr: "Our archives are currently available in French only.",
       fromArchives: "From our archives",
+      local: "Riviera news",
       allArchives: "All archives ›",
       history: "Our story",
       legal: "Legal notice",
@@ -189,14 +191,21 @@
     if (!all.length) { app.innerHTML = `<p class="loading">${esc(T.empty)}</p>`; return; }
     const bySec = latestBySection();
     const revues = ORDRE.map((k) => bySec[k]).filter(Boolean);
-    const lead = revues.slice().sort((x, y) => ((y.liens[0] && y.liens[0].heure) || "").localeCompare((x.liens[0] && x.liens[0].heure) || ""))[0] || all[0];
-    // Les articles maison restent à la une 3 jours, puis vivent dans leur rubrique.
+    // Les articles de la rédaction restent à la une 3 jours, puis vivent dans leur rubrique.
     const today = new Date().toLocaleDateString("en-CA", { timeZone: TZ });
-    const features = all.filter((a) => a.type === "article" && (Date.parse(today) - Date.parse(a.date)) / 864e5 <= 3).slice(0, 1);
+    const recents = all.filter((a) => a.type === "article" && (Date.parse(today) - Date.parse(a.date)) / 864e5 <= 3);
+    const redaction = recents.filter((a) => a.heure).sort((x, y) => y.heure.localeCompare(x.heure));
+    const leadRevue = revues.slice().sort((x, y) => ((y.liens[0] && y.liens[0].heure) || "").localeCompare((x.liens[0] && x.liens[0].heure) || ""))[0] || all[0];
+    const lead = redaction[0] || leadRevue;
+    const features = recents.filter((a) => !a.heure).slice(0, 1);
     const sideRevues = revues.filter((r) => r !== lead).slice(0, features.length ? 1 : 2);
     const blocks = revues.filter((r) => r !== lead && !sideRevues.includes(r));
+    const autres = redaction.slice(5);
 
-    const leadAlso = (lead.liens || []).slice(1, 5);
+    const leadAlso = lead.type === "article"
+      ? redaction.slice(1, 5).map((a) => ({ titre: a.titre, source: a.rubrique || secName(a.section), href: artLink(a) }))
+      : (lead.liens || []).slice(1, 5).map((l, i) => ({ titre: l.titre, source: l.source, href: artLink(lead, i + 1) }));
+    const leadHref = lead.type === "article" ? artLink(lead) : artLink(lead, lead.liens ? 0 : null);
     const featureHtml = (a, badge) => `<article class="feature">
         ${a.type === "article" ? `<a href="${artLink(a)}" tabindex="-1">${thumb(imageFor(a), "portrait")}</a>` : ""}
         <span>${badge ? `<span class="badge">${esc(badge)}</span>` : `<span class="kicker">${esc(kicker(a))}</span>`}</span>
@@ -210,14 +219,14 @@
       <section class="top">
         <article class="lead">
           <span class="kicker">${esc(kicker(lead))}</span>
-          <h2><a href="${artLink(lead, lead.liens ? 0 : null)}">${esc(lead.titre)}</a></h2>
+          <h2><a href="${leadHref}">${esc(lead.titre)}</a></h2>
           <div class="lead-body">
             <div>
               <p class="chapo">${esc(!lead.redige && lead.liens && lead.liens[0].resume ? lead.liens[0].resume : lead.chapo)}</p>
               <p class="byline">${esc(T.by)} ${esc(lead.auteur)} <span class="when">· ${esc(longDate(lead.date))}</span></p>
-              ${imageFor(lead) ? `<a href="${artLink(lead, lead.liens ? 0 : null)}" tabindex="-1">${thumb(imageFor(lead), "lead-img")}</a>` : `<div class="wave" role="presentation"></div>`}
+              ${imageFor(lead) ? `<a href="${leadHref}" tabindex="-1">${thumb(imageFor(lead), "lead-img")}</a>` : `<div class="wave" role="presentation"></div>`}
             </div>
-            ${leadAlso.length ? `<ul class="also">${leadAlso.map((l, i) => `<li><a href="${artLink(lead, i + 1)}">${esc(l.titre)}</a><span class="src">${esc(l.source)}</span></li>`).join("")}</ul>` : ""}
+            ${leadAlso.length ? `<ul class="also">${leadAlso.map((l) => `<li><a href="${l.href}">${esc(l.titre)}</a><span class="src">${esc(l.source)}</span></li>`).join("")}</ul>` : ""}
           </div>
         </article>
         <aside>
@@ -225,6 +234,12 @@
           ${sideRevues.map((a) => featureHtml(a, null)).join("")}
         </aside>
       </section>
+      ${autres.length ? `<section class="block">
+        <div class="block-head"><h2>${esc(T.local)}</h2><a class="more" href="#r/nice">${esc(T.more)}</a></div>
+        <div class="block-grid archives-grid">${autres.map((a) => `<div>${thumb(imageFor(a))}
+          <span class="kicker">${esc(kicker(a))}</span>
+          <h3><a href="${artLink(a)}">${esc(a.titre)}</a></h3><p>${esc(a.chapo)}</p></div>`).join("")}</div>
+      </section>` : ""}
       ${blocks.map(renderBlock).join("")}
       ${renderArchivesBlock()}
     </div>`;
@@ -319,7 +334,7 @@
       ${(a.corps || []).map((p) => `<p class="body">${esc(p)}</p>`).join("")}
       ${a.transparence ? `<p class="transparence">${esc(a.transparence)}</p>` : ""}
       ${a.galerie && a.galerie.length ? `<div class="galerie">${a.galerie.map((g) => figure({ src: g.src, credit: `${T.photo} : ${g.credit}`, legende: (g.legende || {})[lang] || "" })).join("")}</div>` : ""}
-      ${(a.redige || a.type === "archive") && a.liens && a.liens.length ? `<section class="sources-list"><h2>${esc(T.sources)}</h2><ul>${a.liens.map((l, i) => `
+      ${(a.redige || a.type !== "revue") && a.liens && a.liens.length ? `<section class="sources-list"><h2>${esc(T.sources)}</h2><ul>${a.liens.map((l, i) => `
         <li id="info-${i}"><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.titre)}</a> <span>— ${esc(l.source)}</span></li>`).join("")}</ul></section>` : ""}
       ${revue && a.liens && a.liens.length ? `<ol class="revue">${a.liens.map((l, i) => `
         <li id="info-${i}"><div>
