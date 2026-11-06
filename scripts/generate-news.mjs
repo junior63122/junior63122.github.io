@@ -177,7 +177,15 @@ async function main() {
     if (!art) { console.warn(`! [${lang}] ${L.nom} : aucune info récente, article ignoré`); continue; }
     art.liens.forEach((l) => dejaVus.add(l.url)); // une info = une seule rubrique
     const i = db.findIndex((a) => a.id === art.id);
-    if (i >= 0) db[i] = art; else db.push(art); // relancer le même jour = mise à jour
+    // Relancer le même jour = mise à jour. Si les dépêches n'ont pas changé,
+    // on garde l'article déjà rédigé (voir write-articles.mjs).
+    if (i >= 0) {
+      const old = db[i];
+      if (old.redige && old.liens.map((l) => l.url).join("|") === art.liens.map((l) => l.url).join("|")) {
+        Object.assign(art, { titre: old.titre, chapo: old.chapo, corps: old.corps, redige: true, redigeSur: old.redigeSur });
+      }
+      db[i] = art;
+    } else db.push(art);
     if (!ids.has(art.id)) ajoutes++;
     console.log(`+ [${lang}] [${art.rubrique}] ${art.titre}`);
   }

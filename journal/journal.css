@@ -213,3 +213,12 @@ main { min-height: 50vh; }
 .galerie .fig { margin: 0; }
 .galerie .fig img { aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%; }
 @media (max-width: 600px) { .galerie { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- Sources d'un article rédigé ---------- */
+.sources-list { margin-top: 36px; padding-top: 14px; border-top: 3px solid var(--ink); font-family: var(--sans); }
+.sources-list h2 { font-family: var(--cond); font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 8px; }
+.sources-list ul { list-style: none; margin: 0; padding: 0; }
+.sources-list li { padding: 7px 0; border-bottom: 1px solid var(--rule); font-size: 0.92rem; line-height: 1.4; }
+.sources-list a { color: var(--azur); font-weight: 500; }
+.sources-list a:hover { text-decoration: underline; }
+.sources-list span { color: var(--muted); }
