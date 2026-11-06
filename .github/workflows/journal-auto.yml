@@ -21,10 +21,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+      - run: npm ci --no-audit --no-fund
       - name: Photos libres de droits (Wikimedia Commons)
         run: node scripts/fetch-images.mjs
       - name: Actualité (Business, Finance, Événementiel, Tech, Monde, Nice, Sport)
         run: node scripts/generate-news.mjs
+      - name: Rédaction des articles
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/write-articles.mjs
       - name: Publier
         run: |
           git config user.name "journal-bot"

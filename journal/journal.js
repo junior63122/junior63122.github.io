@@ -30,7 +30,7 @@
       team: "La rédaction",
       sectionsTitle: "Rubriques",
       about: "À propos",
-      sourcesNote: "Nos revues de presse sélectionnent l'essentiel de l'actualité et renvoient vers les articles des médias cités.",
+      sourcesNote: "Nos articles s'appuient sur les informations des médias cités en source, accessibles en fin d'article.",
       more: "Toute la rubrique ›",
       alsoTitle: "À lire aussi",
       portrait: "Portrait",
@@ -58,7 +58,7 @@
       team: "Our newsroom",
       sectionsTitle: "Sections",
       about: "About",
-      sourcesNote: "Our press reviews pick out the day's essential news and link to the original articles of the outlets cited.",
+      sourcesNote: "Our articles draw on reporting by the outlets credited as sources, listed at the end of each article.",
       more: "Whole section ›",
       alsoTitle: "Also worth reading",
       portrait: "Profile",
@@ -196,7 +196,7 @@
           <h2><a href="${artLink(lead, lead.liens ? 0 : null)}">${esc(lead.titre)}</a></h2>
           <div class="lead-body">
             <div>
-              <p class="chapo">${esc(lead.liens && lead.liens[0].resume ? lead.liens[0].resume : lead.chapo)}</p>
+              <p class="chapo">${esc(!lead.redige && lead.liens && lead.liens[0].resume ? lead.liens[0].resume : lead.chapo)}</p>
               <p class="byline">${esc(T.by)} ${esc(lead.auteur)} <span class="when">· ${esc(longDate(lead.date))}</span></p>
               ${imageFor(lead) ? `<a href="${artLink(lead, lead.liens ? 0 : null)}" tabindex="-1">${thumb(imageFor(lead), "lead-img")}</a>` : `<div class="wave" role="presentation"></div>`}
             </div>
@@ -213,13 +213,14 @@
   }
 
   function renderBlock(a) {
-    const [main, ...rest] = a.liens || [];
-    if (!main) return "";
+    const [first, ...rest] = a.liens || [];
+    if (!first) return "";
+    const main = a.redige ? { titre: a.titre, resume: a.chapo, source: (a.sources || []).join(", ") } : first;
     const side = rest.slice(0, 2);
     return `<section class="block">
       <div class="block-head"><h2><a href="${secLink(a.section)}">${esc(secName(a.section))}</a></h2><a class="more" href="${secLink(a.section)}">${esc(T.more)}</a></div>
       <div class="block-grid">
-        <div class="main">${thumb(imageFor(a))}<h3><a href="${artLink(a, 0)}">${esc(main.titre)}</a></h3>${main.resume ? `<p>${esc(main.resume)}</p>` : ""}<span class="src">${esc(T.by)} ${esc(a.auteur)} · ${esc(T.source)} : ${esc(main.source)}</span></div>
+        <div class="main">${thumb(imageFor(a))}<h3><a href="${artLink(a, 0)}">${esc(main.titre)}</a></h3>${main.resume ? `<p>${esc(main.resume)}</p>` : ""}<span class="src">${esc(T.by)} ${esc(a.auteur)}${a.redige ? "" : ` · ${esc(T.source)} : ${esc(main.source)}`}</span></div>
         ${side.map((l, i) => `<div class="side"><h3><a href="${artLink(a, i + 1)}">${esc(l.titre)}</a></h3><span class="src">${esc(l.source)}</span></div>`).join("")}
       </div>
     </section>`;
@@ -231,7 +232,7 @@
     const list = visibles().filter((a) => a.section === key);
     app.innerHTML = `<div class="rubrique-head"><h1>${esc(secName(key))}</h1></div>
       <div class="list">${list.length ? list.map((a) => `<article class="list-item">
-        <span class="kicker">${esc(a.type === "revue" ? T.review : a.rubrique)} · ${esc(longDate(a.date))}</span>
+        <span class="kicker">${esc(a.type === "revue" ? (a.redige ? secName(a.section) : T.review) : a.rubrique)} · ${esc(longDate(a.date))}</span>
         <h3><a href="${artLink(a)}">${esc(a.titre)}</a></h3>
         <p>${esc(a.chapo)}</p>
         <p class="byline">${esc(T.by)} ${esc(a.auteur)}</p></article>`).join("") : `<p class="loading">${esc(T.empty)}</p>`}</div>`;
@@ -241,16 +242,19 @@
   // ---------- Article ----------
   function renderArticle(a, focus) {
     markNav(SLUG[a.section]);
+    const revue = a.type === "revue" && !a.redige;
     const sources = a.sources && a.sources.length ? `<span class="sources">${esc(T.sources)} : ${esc(a.sources.join(", "))}</span>` : "";
     app.innerHTML = `<article class="article">
-      <div class="crumbs"><a href="${secLink(a.section)}">${esc(secName(a.section))}</a>${a.type === "revue" ? ` · ${esc(T.review)}` : a.rubrique ? ` · ${esc(a.rubrique)}` : ""}</div>
+      <div class="crumbs"><a href="${secLink(a.section)}">${esc(secName(a.section))}</a>${revue ? ` · ${esc(T.review)}` : a.type === "article" && a.rubrique ? ` · ${esc(a.rubrique)}` : ""}</div>
       <h1>${esc(a.titre)}</h1>
       <p class="chapo">${esc(a.chapo)}</p>
       <div class="meta-line"><strong>${esc(T.by)} ${esc(a.auteur)}</strong><span class="when">${esc(T.published)} ${esc(longDate(a.date))}</span>${sources}</div>
       ${figure(imageFor(a), a.image ? "hero-portrait" : "hero")}
       ${(a.corps || []).map((p) => `<p class="body">${esc(p)}</p>`).join("")}
       ${a.galerie && a.galerie.length ? `<div class="galerie">${a.galerie.map((g) => figure({ src: g.src, credit: `${T.photo} : ${g.credit}`, legende: (g.legende || {})[lang] || "" })).join("")}</div>` : ""}
-      ${a.liens && a.liens.length ? `<ol class="revue">${a.liens.map((l, i) => `
+      ${a.redige && a.liens && a.liens.length ? `<section class="sources-list"><h2>${esc(T.sources)}</h2><ul>${a.liens.map((l, i) => `
+        <li id="info-${i}"><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.titre)}</a> <span>— ${esc(l.source)}</span></li>`).join("")}</ul></section>` : ""}
+      ${revue && a.liens && a.liens.length ? `<ol class="revue">${a.liens.map((l, i) => `
         <li id="info-${i}"><div>
           <h2>${esc(l.titre)}</h2>
           ${l.resume ? `<p>${esc(l.resume)}</p>` : ""}
