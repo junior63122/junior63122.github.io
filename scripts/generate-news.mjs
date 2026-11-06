@@ -191,8 +191,11 @@ async function main() {
   }
 
   db.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : (a.type === "revue" ? 0 : 1) - (b.type === "revue" ? 0 : 1) || a.id.localeCompare(b.id)));
-  writeFileSync(DB, JSON.stringify(db.slice(0, MAX_ARTICLES), null, 2) + "\n");
-  console.log(`${ajoutes} nouvel(s) article(s) d'actu, ${Math.min(db.length, MAX_ARTICLES)} au total.`);
+  // La limite ne concerne que les revues de presse : archives et articles sont toujours conservés.
+  let revues = 0;
+  const garde = db.filter((x) => x.type !== "revue" || ++revues <= MAX_ARTICLES);
+  writeFileSync(DB, JSON.stringify(garde, null, 2) + "\n");
+  console.log(`${ajoutes} nouvel(s) article(s) d'actu, ${garde.length} au total.`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) main();
