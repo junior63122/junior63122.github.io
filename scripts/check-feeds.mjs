@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Vérifie quels flux RSS de médias locaux répondent, et ce qu'ils contiennent.
-// Usage : node scripts/check-feeds.mjs [url ...]
+// Usage : node scripts/check-feeds.mjs [url ...]   (DUMP=1 pour afficher toutes les infos)
 import { parseFeed } from "./generate-news.mjs";
 
 const CANDIDATS = process.argv.slice(2).length ? process.argv.slice(2) : [
@@ -24,7 +24,9 @@ for (const url of CANDIDATS) {
     const items = res.ok ? parseFeed(txt, url) : [];
     const avecResume = items.filter((i) => i.resume && i.resume.length > 40).length;
     console.log(`${res.ok && items.length ? "OK " : "-- "} ${res.status} ${String(items.length).padStart(3)} items, ${String(avecResume).padStart(3)} résumés  ${url}`);
-    if (items[0]) console.log(`      ex : ${items[0].titre.slice(0, 90)} | ${items[0].resume.slice(0, 120)}`);
+    if (process.env.DUMP) {
+      for (const i of items) console.log(`  * ${i.date ? new Date(i.date).toISOString().slice(0, 16) : "?"} | ${i.titre} | ${i.resume} | ${i.url}`);
+    } else if (items[0]) console.log(`      ex : ${items[0].titre.slice(0, 90)} | ${items[0].resume.slice(0, 120)}`);
   } catch (e) {
     console.log(`ERR ${e.message.slice(0, 40)}  ${url}`);
   }
