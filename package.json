@@ -1,9 +1,0 @@
-{
-  "name": "echo-des-anges",
-  "private": true,
-  "type": "module",
-  "description": "Robot de L'Écho des Anges : collecte de l'actualité, photos libres et rédaction des articles.",
-  "dependencies": {
-    "@anthropic-ai/sdk": "^1.6.0"
-  }
-}
