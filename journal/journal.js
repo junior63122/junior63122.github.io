@@ -143,8 +143,8 @@
     const secLinks = ORDRE.map((k) => `<a href="${secLink(k)}" data-sec="${SLUG[k]}">${esc(secName(k))}</a>`).join("");
     const extra = `<a href="#archives" data-sec="archives">${esc(T.archives)}</a>`;
     document.getElementById("sections").innerHTML = `<a class="home" href="#">${esc(T.home)}</a>${secLinks}${extra}`;
-    document.getElementById("drawer-nav").innerHTML = `<a href="#">${esc(T.home)}</a>${secLinks}${extra}<a href="#p/histoire">${esc(T.history)}</a>`;
-    document.getElementById("about-links").innerHTML = `<li><a href="#p/histoire">${esc(T.history)}</a></li><li><a href="#archives">${esc(T.archives)}</a></li>`;
+    document.getElementById("drawer-nav").innerHTML = `<a href="#">${esc(T.home)}</a>${secLinks}${extra}<a href="#p/histoire">${esc(T.history)}</a><a href="#p/mentions">${esc(T.legal)}</a>`;
+    document.getElementById("about-links").innerHTML = `<li><a href="#p/histoire">${esc(T.history)}</a></li><li><a href="#archives">${esc(T.archives)}</a></li><li><a href="#p/mentions">${esc(T.legal)}</a></li>`;
     document.getElementById("footer-sections").innerHTML = ORDRE.map((k) => `<li><a href="${secLink(k)}">${esc(secName(k))}</a></li>`).join("");
     document.getElementById("redaction").innerHTML = REDACTION.map(([nom, k]) => `<li><strong>${esc(nom)}</strong> · ${esc(secName(k))}</li>`).join("");
   }

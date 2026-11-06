@@ -44,5 +44,7 @@ Par exemple : 2024-01-01 → 2026-10-31, puis 2022-01-01 → 2023-12-31, puis 20
 
 ### Pages fixes
 
-Histoire du journal : `journal/pages.js`. Les mentions légales ont été retirées à la demande de
-l'éditeur ; leur dernière version se trouve dans l'historique Git (commit 2501f78).
+Histoire du journal et mentions légales : `journal/pages.js`.
+**Avant la mise en ligne, l'éditeur doit compléter `JOURNAL_CONFIG`** en haut de ce fichier (raison sociale,
+forme juridique et capital, RCS, siège, téléphone, éventuellement TVA, hébergeur définitif). Tant qu'un champ
+est vide, la page affiche « [à compléter] ».

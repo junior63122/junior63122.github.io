@@ -1,5 +1,23 @@
-// Pages fixes de L'Écho des Anges : histoire du journal.
+// Pages fixes de L'Écho des Anges : histoire du journal et mentions légales.
+//
+// MENTIONS LÉGALES — À COMPLÉTER PAR L'ÉDITEUR AVANT LA MISE EN LIGNE
+// Renseignez les champs ci-dessous ; tant qu'un champ est vide, la page affiche « [à compléter] ».
+window.JOURNAL_CONFIG = {
+  editeur: "",          // raison sociale de la société éditrice (ex. « L'Écho des Anges SAS »)
+  forme: "",            // forme juridique et capital (ex. « SAS au capital de 10 000 € »)
+  rcs: "",              // immatriculation (ex. « RCS Nice 123 456 789 »)
+  siege: "",            // adresse du siège social
+  telephone: "",        // numéro de téléphone de l'éditeur
+  tva: "",              // numéro de TVA intracommunautaire (si assujetti)
+  directeur: "Jules Vernet",          // directeur de la publication
+  contact: "jules.vernet@gmail.com",  // adresse de contact (droit de réponse, données personnelles)
+  hebergeur: "GitHub, Inc. (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis",
+};
+
 (function () {
+  const C = window.JOURNAL_CONFIG;
+  const v = (x) => x || "[à compléter]";
+  const mail = C.contact ? `<a href="mailto:${C.contact}">${C.contact}</a>` : "[à compléter]";
 
   window.JOURNAL_PAGES = {
     histoire: {
@@ -45,5 +63,89 @@
       },
     },
 
+    mentions: {
+      fr: {
+        titre: "Mentions légales",
+        chapo: "Informations relatives à l'éditeur, à l'hébergement, aux contenus et aux données personnelles, conformément à la loi pour la confiance dans l'économie numérique (LCEN) et au RGPD.",
+        html: `
+<h2>Éditeur</h2>
+<p>Le site L'Écho des Anges est édité par ${v(C.editeur)}, ${v(C.forme)}, immatriculée sous le numéro ${v(C.rcs)}, dont le siège social est situé ${v(C.siege)}.<br>
+Téléphone : ${v(C.telephone)} — Courriel : ${mail}${C.tva ? `<br>TVA intracommunautaire : ${C.tva}` : ""}</p>
+
+<h2>Directeur de la publication</h2>
+<p>${v(C.directeur)}.</p>
+
+<h2>Hébergement</h2>
+<p>${v(C.hebergeur)}.</p>
+
+<h2>Rédaction et méthode</h2>
+<p>Les signatures des articles sont des noms de plume de la rédaction. Les articles d'actualité sont rédigés à partir d'informations publiées par des médias et des organismes identifiés, cités dans le texte et listés en fin d'article. Certains contenus sont produits avec l'assistance d'outils d'intelligence artificielle, sous la responsabilité éditoriale du directeur de la publication.</p>
+<p>Les articles d'archives retracent des événements passés ; leur date est celle de l'événement relaté.</p>
+
+<h2>Droit de réponse, rectification et retrait</h2>
+<p>Toute personne nommée ou désignée dans un article dispose d'un droit de réponse (article 6, IV de la LCEN), à exercer dans un délai de trois mois à compter de la mise en ligne. Les demandes de rectification d'une erreur ou de retrait d'un contenu peuvent être adressées à ${mail}.</p>
+
+<h2>Propriété intellectuelle</h2>
+<p>Les textes publiés sur L'Écho des Anges sont protégés par le droit d'auteur. Toute reproduction intégrale est interdite sans autorisation ; les courtes citations sont autorisées avec mention de la source et un lien vers l'article.</p>
+<p>Les titres et extraits d'articles de médias tiers sont reproduits au titre du droit de courte citation (article L. 122-5 du code de la propriété intellectuelle), avec mention de leur source et un lien vers l'article d'origine ; ils restent la propriété de leurs auteurs.</p>
+<p>Photographies : les images de rubrique proviennent de Wikimedia Commons et de Pexels, sous licences libres (domaine public, CC0, CC BY, CC BY-SA, licence Pexels) ; l'auteur et la licence sont indiqués sous chaque image. Les autres photographies sont publiées avec l'accord de leurs ayants droit (mention « DR » ou nom du photographe).</p>
+
+<h2>Responsabilité</h2>
+<p>L'Écho des Anges s'efforce de publier des informations exactes et à jour, mais ne peut garantir l'absence d'erreur. Les informations publiées ne constituent pas un conseil financier, juridique ou d'investissement. Le site contient des liens vers des sites tiers dont il ne contrôle pas le contenu.</p>
+
+<h2>Données personnelles et cookies</h2>
+<p>Le site ne propose ni compte, ni formulaire, ni publicité, et n'utilise aucun outil de mesure d'audience ni aucun cookie de suivi.</p>
+<ul>
+  <li><strong>Préférence de langue.</strong> Le choix entre français et anglais est conservé dans le stockage local de votre navigateur (localStorage). Cette information reste sur votre appareil et n'est transmise à personne.</li>
+  <li><strong>Hébergement.</strong> L'hébergeur enregistre des données techniques de connexion, dont l'adresse IP, pour assurer le fonctionnement et la sécurité du service.</li>
+  <li><strong>Polices de caractères.</strong> Les polices sont chargées depuis Google Fonts ; votre navigateur transmet à ce titre votre adresse IP à Google (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">règles de confidentialité de Google</a>).</li>
+</ul>
+<p>Responsable du traitement : ${v(C.editeur)}. Conformément au RGPD, vous disposez de droits d'accès, de rectification, d'effacement et d'opposition, que vous pouvez exercer à l'adresse ${mail}. Vous pouvez également adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
+
+<h2>Droit applicable</h2>
+<p>Le présent site et ses mentions légales sont soumis au droit français.</p>`,
+      },
+      en: {
+        titre: "Legal notice",
+        chapo: "Information about the publisher, hosting, content and personal data, in accordance with French law (LCEN) and the GDPR.",
+        html: `
+<h2>Publisher</h2>
+<p>L'Écho des Anges is published by ${v(C.editeur)}, ${v(C.forme)}, registered under number ${v(C.rcs)}, with its registered office at ${v(C.siege)}.<br>
+Telephone: ${v(C.telephone)} — Email: ${mail}${C.tva ? `<br>EU VAT number: ${C.tva}` : ""}</p>
+
+<h2>Publication director</h2>
+<p>${v(C.directeur)}.</p>
+
+<h2>Hosting</h2>
+<p>${v(C.hebergeur)}.</p>
+
+<h2>Editorial method</h2>
+<p>Bylines are the newsroom's pen names. News articles are written from information published by identified outlets and organisations, credited in the text and listed at the end of each article. Some content is produced with the assistance of artificial intelligence tools, under the editorial responsibility of the publication director.</p>
+<p>Archive articles cover past events; their date is the date of the event reported.</p>
+
+<h2>Right of reply, corrections and removal</h2>
+<p>Anyone named or referred to in an article has a right of reply (article 6, IV of the LCEN), to be exercised within three months of publication. Requests to correct an error or remove content can be sent to ${mail}.</p>
+
+<h2>Intellectual property</h2>
+<p>Texts published on L'Écho des Anges are protected by copyright. Full reproduction is prohibited without permission; short quotations are allowed with credit and a link to the article.</p>
+<p>Headlines and extracts from third-party outlets are reproduced under the right of short quotation (article L. 122-5 of the French Intellectual Property Code), credited and linked to the original article; they remain the property of their authors.</p>
+<p>Photographs: section images come from Wikimedia Commons and Pexels under free licences (public domain, CC0, CC BY, CC BY-SA, Pexels licence); the author and licence are shown under each image. Other photographs are published with the consent of their rights holders (“DR” or the photographer's name).</p>
+
+<h2>Liability</h2>
+<p>L'Écho des Anges strives to publish accurate and up-to-date information but cannot guarantee it is error-free. Nothing published here constitutes financial, legal or investment advice. The site links to third-party websites whose content it does not control.</p>
+
+<h2>Personal data and cookies</h2>
+<p>The site has no accounts, forms or advertising, and uses no analytics or tracking cookies.</p>
+<ul>
+  <li><strong>Language preference.</strong> Your choice of French or English is stored in your browser's local storage. It stays on your device and is not sent to anyone.</li>
+  <li><strong>Hosting.</strong> The host logs technical connection data, including IP addresses, to run and secure the service.</li>
+  <li><strong>Fonts.</strong> Fonts are loaded from Google Fonts, so your browser sends your IP address to Google (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google privacy policy</a>).</li>
+</ul>
+<p>Data controller: ${v(C.editeur)}. Under the GDPR you have rights of access, rectification, erasure and objection, which you can exercise at ${mail}. You may also lodge a complaint with the CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
+
+<h2>Governing law</h2>
+<p>This site and its legal notice are governed by French law.</p>`,
+      },
+    }
   };
 })();
