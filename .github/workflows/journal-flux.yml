@@ -3,6 +3,13 @@ name: Journal - vérification des flux
 # Lancement manuel : teste les flux RSS des médias locaux et affiche le résultat dans le journal d'exécution.
 on:
   workflow_dispatch:
+    inputs:
+      flux:
+        description: "Flux à tester (séparés par des espaces) ; vide = liste par défaut"
+        default: ""
+      detail:
+        description: "Afficher toutes les infos de chaque flux (oui/non)"
+        default: "non"
 
 jobs:
   flux:
@@ -12,4 +19,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/check-feeds.mjs
+      - run: node scripts/check-feeds.mjs ${{ github.event.inputs.flux }}
+        env:
+          DUMP: ${{ github.event.inputs.detail == 'oui' && '1' || '' }}
