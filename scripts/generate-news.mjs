@@ -34,7 +34,7 @@ export const RUBRIQUES = [
       feeds: [gnewsEn("stock markets finance"), gnewsEn("interest rates central bank crypto")] } },
   { key: "Événementiel", emoji: "🎪", journaliste: "Léa Fontaine",
     fr: { nom: "Événementiel", intro: "Salons, festivals, concerts, grands rendez-vous : l'actualité de l'événementiel.",
-      feeds: [gnews("événementiel France"), gnews("festival salon concert France"), "https://www.lemonde.fr/culture/rss_full.xml"] },
+      feeds: [gnews("événementiel Côte d'Azur Nice Cannes Monaco"), gnews("événementiel France"), gnews("festival salon concert France"), "https://www.lemonde.fr/culture/rss_full.xml"] },
     en: { nom: "Events", intro: "Trade shows, festivals, concerts and big gatherings: the events industry today.",
       feeds: [gnewsEn("events industry"), gnewsEn("festival trade show concert"), bbc("entertainment_and_arts")] } },
   { key: "Tech", emoji: "💻", journaliste: "Nathan Belkacem",
@@ -49,9 +49,11 @@ export const RUBRIQUES = [
       feeds: [bbc("world"), gnewsEn("world news")] } },
   { key: "Nice & Côte d'Azur", emoji: "🌴", journaliste: "Lucas Giordano",
     fr: { nom: "Nice & Côte d'Azur", intro: "Ce qui se passe près de chez nous, de Nice à Monaco.",
-      feeds: [gnews("Nice Côte d'Azur"), gnews("Nice événement sortie"), gnews("Monaco actualité")] },
+      feeds: ["https://www.nicematin.com/rss", "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/rss",
+        "https://www.francebleu.fr/rss/azur/rubrique/infos.xml", "https://www.bfmtv.com/rss/cote-d-azur/", "https://www.monaco-tribune.com/feed/",
+        gnews("Nice Côte d'Azur")] },
     en: { nom: "Nice & the Riviera", intro: "What's happening on the French Riviera, from Nice to Monaco.",
-      feeds: [gnewsEn("Nice France"), gnewsEn("French Riviera"), gnewsEn("Monaco")] } },
+      feeds: ["https://www.nice-premium.com/feed", gnewsEn("Nice France"), gnewsEn("French Riviera"), gnewsEn("Monaco")] } },
   { key: "Sport", emoji: "⚽", journaliste: "Inès Morel",
     fr: { nom: "Sport", intro: "Résultats, transferts et grands moments du sport.",
       feeds: ["https://www.lemonde.fr/sport/rss_full.xml", gnews("OGC Nice"), "https://www.francetvinfo.fr/sports.rss"] },
@@ -74,7 +76,9 @@ function tag(xml, name) {
   return m ? m[1] : "";
 }
 
-const MEDIAS = { "lemonde.fr": "Le Monde", "francetvinfo.fr": "franceinfo", "feeds.bbci.co.uk": "BBC News" };
+const MEDIAS = { "lemonde.fr": "Le Monde", "francetvinfo.fr": "franceinfo", "feeds.bbci.co.uk": "BBC News", "nicematin.com": "Nice-Matin",
+  "france3-regions.franceinfo.fr": "France 3 Côte d'Azur", "francebleu.fr": "ici Azur", "bfmtv.com": "BFM Nice Côte d'Azur",
+  "monaco-tribune.com": "Monaco Tribune", "nice-premium.com": "Nice Premium" };
 
 export function parseFeed(xml, feedUrl = "") {
   const host = (() => { try { return new URL(feedUrl).hostname.replace(/^www\./, ""); } catch { return ""; } })();
@@ -96,7 +100,7 @@ export function parseFeed(xml, feedUrl = "") {
     }
     let resume = clean(tag(b, "description") || tag(b, "summary") || tag(b, "content"));
     if (resume.startsWith(titre.slice(0, 40))) resume = ""; // Google News répète le titre
-    if (resume.length > 260) resume = resume.slice(0, 257).replace(/\s+\S*$/, "") + "…";
+    if (resume.length > 600) resume = resume.slice(0, 597).replace(/\s+\S*$/, "") + "…";
     const d = Date.parse(clean(tag(b, "pubDate") || tag(b, "published") || tag(b, "updated") || tag(b, "dc:date")));
     return { titre, source, url: link, resume, date: Number.isNaN(d) ? null : d };
   }).filter((i) => i.titre && /^https?:\/\//.test(i.url));
@@ -120,12 +124,14 @@ export function buildArticle(rub, items, date, dejaVus = new Set(), lang = "fr")
   const L = rub[lang];
   const now = Date.parse(date + "T23:59:59Z");
   const seen = new Set();
+  const parSource = {};
   const choisis = items
     .filter((i) => !i.date || (now - i.date < 3 * 864e5 && i.date - now < 864e5)) // infos de moins de 3 jours
     .sort((a, b) => (b.date ?? 0) - (a.date ?? 0))
     .filter((i) => {
       const k = norm(i.titre).slice(0, 70);
       if (seen.has(k) || dejaVus.has(i.url)) return false;
+      if ((parSource[i.source] = (parSource[i.source] || 0) + 1) > 2) return false; // 2 infos max par média
       seen.add(k);
       return true;
     })
@@ -166,12 +172,11 @@ async function main() {
     for (const url of fixture ? [fixture] : L.feeds) {
       try {
         const got = fixture ? parseFeed(readFileSync(url, "utf8"), "https://www.lemonde.fr/x") : await fetchFeed(url);
-        items.push(...got);
+        items.push(...got.slice(0, 12)); // les plus récentes de chaque flux
         console.log(`  [${lang}] ${L.nom} ← ${got.length} (${url.slice(0, 70)})`);
       } catch (e) {
         console.warn(`  [${lang}] ${L.nom} ✗ ${url.slice(0, 70)} : ${e.message}`);
       }
-      if (items.length >= PAR_ARTICLE * 3) break;
     }
     const art = buildArticle(rub, items, date, dejaVus, lang);
     if (!art) { console.warn(`! [${lang}] ${L.nom} : aucune info récente, article ignoré`); continue; }
