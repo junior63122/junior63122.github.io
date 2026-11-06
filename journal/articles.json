@@ -573,6 +573,48 @@
     ]
   },
   {
+    "id": "2026-11-06-en-portrait-junior-william-joyant",
+    "lang": "en",
+    "date": "2026-11-06",
+    "section": "Business",
+    "rubrique": "Profile",
+    "emoji": "💼",
+    "type": "article",
+    "auteur": "Camille Rostand",
+    "sources": [],
+    "titre": "Junior William Joyant, 22, an entrepreneur between tech and Riviera nightlife",
+    "chapo": "Founder of Oneera and Teufy and an investor in two agencies, the young Niçois puts the value of his holdings at between €2.5 million and €4 million.",
+    "corps": [
+      "At 22, Junior William Joyant runs several projects at once between Nice, Cannes and Monaco. Trained in cybersecurity and then in events management, and now on a work-study programme at ISCOM Nice, he describes himself as an entrepreneur at the crossroads of technology, events and investment.",
+      "His first venture, Teufy, dates back to 2021: an app listing nearby parties, festivals and deals while giving venues more visibility. He owns 80% of it and claims a historical network of more than 200 partners on the Côte d'Azur and in the Var. A complete overhaul is planned for 2027-2028.",
+      "Since May 2026, most of his energy has gone into Oneera, a real-time mapping and geolocation company aimed at festivals, clubs and other venues open to the public. He is its founder and chairman, with 70% of the capital.",
+      "He also says he is an investor in, and helps run, two agencies whose names he does not disclose, citing confidentiality commitments: one has been building apps, web platforms and business software since 2022; the other, based in Monaco since 2023, organises private receptions, villa parties and yacht parties around the Riviera's major events.",
+      "What is it all worth? The entrepreneur puts the value of his holdings at between €2.5 million and €4 million, based on the valuation of his companies and on buyout offers received for his stakes in the agencies. These amounts are not cash, and our newsroom has not been able to verify them.",
+      "Saying he has already helped more than fifteen companies grow, Junior William Joyant now has a twofold ambition: to invest in other entrepreneurs' projects and to open his own to new partners."
+    ]
+  },
+  {
+    "id": "2026-11-06-portrait-junior-william-joyant",
+    "lang": "fr",
+    "date": "2026-11-06",
+    "section": "Business",
+    "rubrique": "Portrait",
+    "emoji": "💼",
+    "type": "article",
+    "auteur": "Camille Rostand",
+    "sources": [],
+    "titre": "Junior William Joyant, 22 ans, entrepreneur entre la tech et les nuits de la Riviera",
+    "chapo": "Fondateur d'Oneera et de Teufy, investisseur dans deux agences, le jeune Niçois évalue ses participations entre 2,5 et 4 millions d'euros.",
+    "corps": [
+      "À 22 ans, Junior William Joyant mène plusieurs projets de front entre Nice, Cannes et Monaco. Formé à la cybersécurité puis à l'événementiel, aujourd'hui en alternance à l'ISCOM Nice, il se présente comme un entrepreneur à la croisée de la technologie, de l'événementiel et de l'investissement.",
+      "Son premier projet, Teufy, remonte à 2021 : une application qui recense soirées, festivals et bons plans à proximité, tout en offrant de la visibilité aux établissements. Il en détient 80 % et revendique un réseau historique de plus de 200 partenaires sur la Côte d'Azur et dans le Var. Une refonte complète est annoncée pour 2027-2028.",
+      "Depuis mai 2026, l'essentiel de son énergie va à Oneera, une société de cartographie et de géolocalisation en temps réel destinée aux festivals, aux clubs et aux lieux qui accueillent du public. Il en est le fondateur et le président, avec 70 % du capital.",
+      "Il se dit également investisseur, et impliqué dans le pilotage, de deux agences dont il ne communique pas les noms, en invoquant des engagements de confidentialité : l'une développe applications, plateformes web et logiciels métiers depuis 2022 ; l'autre, basée à Monaco depuis 2023, organise des réceptions privées, des villa parties et des yacht parties autour des grands rendez-vous de la Riviera.",
+      "Combien pèse cet ensemble ? L'entrepreneur évalue la valeur de ses participations entre 2,5 et 4 millions d'euros, en s'appuyant sur la valorisation de ses sociétés et sur des offres de rachat reçues pour ses parts dans les agences. Ces montants ne correspondent pas à des liquidités, et notre rédaction n'a pas été en mesure de les vérifier.",
+      "Disant avoir déjà accompagné plus d'une quinzaine d'entreprises dans leur développement, Junior William Joyant affiche désormais une double ambition : investir dans les projets d'autres entrepreneurs et ouvrir les siens à de nouveaux partenaires."
+    ]
+  },
+  {
     "id": "2026-11-05-actu-business",
     "lang": "fr",
     "date": "2026-11-05",
@@ -1245,75 +1287,41 @@
     ]
   },
   {
-    "section": "Nice & Côte d'Azur",
-    "emoji": "🌴",
-    "type": "article",
-    "corps": [
-      "In Nice, you often hear Junior Joyant's laugh before you see him. The computer science and cybersecurity student lives by a simple rule: never take yourself too seriously. “Take everything I say as a joke — I'm always joking,” he warns from the start.",
-      "Born and raised in Nice, he splits his time between classes, friends and his favourite shows. A big fan of anime and K-dramas, he readily admits to watching “just one more episode” at night.",
-      "That love of company led him to join a group of students and young professionals set up to make new friends on the Riviera. “Friendship between girls and guys exists,” he smiles. And when a party is being organised, he is rarely missing: dancing remains, he says, his best way to unwind."
-    ],
-    "sources": [],
-    "id": "2026-11-04-en-portrait-junior-joyant",
+    "id": "2026-11-05-en-oneera-cartographie-temps-reel",
     "lang": "en",
-    "date": "2026-11-04",
-    "rubrique": "Profile",
-    "auteur": "Lucas Giordano",
-    "titre": "Junior Joyant, the Nice student who bets on good humour",
-    "chapo": "A computer science and cybersecurity student, the young Niçois is known among his friends for his sense of humour and love of meeting people."
-  },
-  {
-    "section": "Nice & Côte d'Azur",
-    "emoji": "🌴",
-    "type": "article",
-    "corps": [
-      "À Nice, on le reconnaît souvent à son rire avant de le voir. Junior Joyant, étudiant en informatique et en cybersécurité, revendique une règle simple : ne jamais se prendre trop au sérieux. « Prenez tout ce que je dis à la rigolade, je suis toujours dans la rigolade », prévient-il d'emblée.",
-      "Niçois de naissance, il partage son temps entre ses cours, ses amis et ses séries. Grand amateur d'animes et de K-dramas, il reconnaît volontiers enchaîner « un épisode de plus » le soir.",
-      "Ce goût du collectif l'a poussé à rejoindre un groupe d'étudiants et de jeunes actifs créé pour se faire de nouveaux amis sur la Côte d'Azur. « L'amitié entre filles et garçons, ça existe », sourit-il. Et quand une soirée s'organise, il répond rarement absent : la danse reste, dit-il, son meilleur moyen de décompresser."
-    ],
-    "sources": [],
-    "id": "2026-11-04-portrait-junior-joyant",
-    "lang": "fr",
-    "date": "2026-11-04",
-    "rubrique": "Portrait",
-    "auteur": "Lucas Giordano",
-    "titre": "Junior Joyant, l'étudiant niçois qui mise sur la bonne humeur",
-    "chapo": "Étudiant en informatique et en cybersécurité, le jeune Niçois s'est fait connaître dans son cercle pour son sens de l'humour et son goût des rencontres."
-  },
-  {
+    "date": "2026-11-05",
     "section": "Tech",
+    "rubrique": "Start-up",
     "emoji": "💻",
     "type": "article",
-    "corps": [
-      "« Tout le monde pense que ça n'arrive qu'aux autres. » Pour Junior Joyant, étudiant en informatique et en cybersécurité, c'est la première idée reçue à combattre.",
-      "Ses recommandations tiennent en quelques lignes : un gestionnaire de mots de passe et des phrases de passe longues plutôt que des combinaisons faciles à deviner ; la double authentification activée partout où c'est possible ; et de la méfiance face aux messages qui pressent ou font peur, « presque toujours un piège ».",
-      "Il insiste aussi sur les mises à jour, « là pour boucher des failles, pas pour embêter », et sur les sauvegardes. « La cybersécurité, ce n'est pas réservé aux experts, conclut-il. Le meilleur antivirus, c'est le bon sens. »"
-    ],
-    "sources": [],
-    "id": "2026-11-02-cyber-conseils-etudiant",
-    "lang": "fr",
-    "date": "2026-11-02",
-    "rubrique": "Tech",
     "auteur": "Nathan Belkacem",
-    "titre": "Mots de passe, phishing : les conseils simples d'un étudiant niçois en cybersécurité",
-    "chapo": "Pour Junior Joyant, étudiant en cybersécurité à Nice, la plupart des piratages du quotidien s'évitent avec quelques réflexes."
+    "sources": [],
+    "titre": "With Oneera, a Nice entrepreneur wants to map festivals and clubs in real time",
+    "chapo": "Launched in 2026 by Junior William Joyant, the start-up promises visitors a way to find their bearings and their friends, and organisers better control of the crowd.",
+    "corps": [
+      "Adding a digital layer on top of venues and events: that is the ambition of Oneera, a company set up in May 2026 by 22-year-old Junior William Joyant. The idea is to help visitors find their way, locate their friends and understand their surroundings, while giving organisers tools to follow crowd movements live.",
+      "For visitors, the app offers a map with points of interest, day and night modes, announcements and notifications. Friends are added by QR code and locations are shared for a limited time. For organisers, a dashboard shows crowd density, a heatmap, incident reports and communication tools for staff on the ground.",
+      "Technically, Oneera combines GPS and Bluetooth and plans a fallback mode when the network is saturated. Its founder stands by one choice: no wristband to wear, everything runs on the phone. Tests carried out this summer in venues in Cannes helped identify the adjustments still needed, notably on indoor positioning accuracy.",
+      "The company is now targeting festivals, clubs and tourist destinations. To fund the next versions of its product, its founder, who owns 70% of the capital, is considering opening part of it to investors while keeping a majority stake."
+    ]
   },
   {
+    "id": "2026-11-05-oneera-cartographie-temps-reel",
+    "lang": "fr",
+    "date": "2026-11-05",
     "section": "Tech",
+    "rubrique": "Start-up",
     "emoji": "💻",
     "type": "article",
-    "corps": [
-      "“Everyone thinks it only happens to other people.” For Junior Joyant, a computer science and cybersecurity student, that is the first misconception to tackle.",
-      "His advice fits in a few lines: a password manager and long passphrases rather than easy-to-guess combinations; two-factor authentication switched on wherever possible; and suspicion towards messages that rush or scare you — “almost always a trap”.",
-      "He also stresses software updates, “there to patch holes, not to annoy you”, and backups. “Cybersecurity isn't only for experts,” he concludes. “The best antivirus is common sense.”"
-    ],
-    "sources": [],
-    "id": "2026-11-02-en-cyber-conseils-etudiant",
-    "lang": "en",
-    "date": "2026-11-02",
-    "rubrique": "Tech",
     "auteur": "Nathan Belkacem",
-    "titre": "Passwords and phishing: simple advice from a Nice cybersecurity student",
-    "chapo": "For Junior Joyant, a cybersecurity student in Nice, most everyday hacks can be avoided with a few good habits."
+    "sources": [],
+    "titre": "Avec Oneera, un Niçois veut cartographier en temps réel festivals et clubs",
+    "chapo": "Lancée en 2026 par Junior William Joyant, la jeune pousse promet aux visiteurs de se repérer et de retrouver leurs amis, et aux organisateurs de mieux piloter la foule.",
+    "corps": [
+      "Ajouter une couche numérique au-dessus des lieux et des événements : c'est l'ambition d'Oneera, société créée en mai 2026 par Junior William Joyant, 22 ans. L'idée est de permettre au public de se repérer, de retrouver ses amis et de comprendre son environnement, tout en donnant aux organisateurs des outils pour suivre les flux en direct.",
+      "Côté visiteurs, l'application propose une carte avec points d'intérêt, modes jour et nuit, annonces et notifications. On y ajoute ses amis par QR code et on partage sa position pour une durée limitée. Côté organisateurs, le tableau de bord affiche la densité de la foule, une carte de chaleur, les signalements d'incidents et des outils de communication pour les équipes sur le terrain.",
+      "Techniquement, Oneera combine GPS et Bluetooth et prévoit un mode dégradé quand le réseau sature. Son fondateur assume un choix : pas de bracelet à porter, tout passe par le téléphone. Des tests menés cet été dans des établissements cannois ont permis d'identifier les ajustements à apporter, notamment sur la précision du positionnement en intérieur.",
+      "La société vise désormais les festivals, les clubs et les destinations touristiques. Pour financer les prochaines versions de son produit, son fondateur, qui détient 70 % du capital, envisage d'en ouvrir une partie à des investisseurs tout en restant majoritaire."
+    ]
   }
 ]
