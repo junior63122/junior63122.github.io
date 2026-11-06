@@ -91,48 +91,7 @@
       "page": "https://commons.wikimedia.org/wiki/File:La_D%C3%A9fense_-_Paris_photo5.jpg"
     }
   ],
-  "Finance": [
-    {
-      "fichier": "finance-1.jpg",
-      "origine": "wikimedia",
-      "auteur": "Ank Kumar",
-      "licence": "CC BY-SA 4.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_01.jpg"
-    },
-    {
-      "fichier": "finance-2.jpg",
-      "origine": "wikimedia",
-      "auteur": "Ank Kumar",
-      "licence": "CC BY-SA 4.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_02.jpg"
-    },
-    {
-      "fichier": "finance-3.jpg",
-      "origine": "wikimedia",
-      "auteur": "Ank Kumar",
-      "licence": "CC BY-SA 4.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_04.jpg"
-    },
-    {
-      "fichier": "finance-4.jpg",
-      "origine": "wikimedia",
-      "auteur": "Ank Kumar",
-      "licence": "CC BY-SA 4.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_05.jpg"
-    },
-    {
-      "fichier": "finance-5.jpg",
-      "origine": "wikimedia",
-      "auteur": "Ank Kumar",
-      "licence": "CC BY-SA 4.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_06.jpg"
-    }
-  ],
+  "Finance": [],
   "Événementiel": [
     {
       "fichier": "evenementiel-1.jpg",
@@ -175,48 +134,7 @@
       "page": "https://commons.wikimedia.org/wiki/File:Live_rock_band_performance_under_stage_lights_during_an_outdoor_festival_in_the_evening.jpg"
     }
   ],
-  "Monde": [
-    {
-      "fichier": "monde-1.jpg",
-      "origine": "wikimedia",
-      "auteur": "Mr Bullitt",
-      "licence": "CC BY 2.5",
-      "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
-      "page": "https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly.JPG"
-    },
-    {
-      "fichier": "monde-2.jpg",
-      "origine": "wikimedia",
-      "auteur": "Basil D Soufi",
-      "licence": "CC BY-SA 3.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "page": "https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_-_Closeup_of_Emblem.jpg"
-    },
-    {
-      "fichier": "monde-3.jpg",
-      "origine": "wikimedia",
-      "auteur": "Basil D Soufi",
-      "licence": "CC BY-SA 3.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "page": "https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_(2).jpg"
-    },
-    {
-      "fichier": "monde-4.jpg",
-      "origine": "wikimedia",
-      "auteur": "Basil D Soufi",
-      "licence": "CC BY-SA 3.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "page": "https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_(3).jpg"
-    },
-    {
-      "fichier": "monde-5.jpg",
-      "origine": "wikimedia",
-      "auteur": "Пресс-служба Президента России",
-      "licence": "CC BY 4.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Vladimir_Putin_addresses_the_United_Nations_General_Assembly_01.JPG"
-    }
-  ],
+  "Monde": [],
   "Nice & Côte d'Azur": [
     {
       "fichier": "nice-cote-d-azur-1.jpg",
@@ -259,46 +177,5 @@
       "page": "https://commons.wikimedia.org/wiki/File:Nice_-_Promenade_des_Anglais_-_View_East.jpg"
     }
   ],
-  "Sport": [
-    {
-      "fichier": "sport-1.jpg",
-      "origine": "wikimedia",
-      "auteur": "Reenatoo06",
-      "licence": "CC BY-SA 3.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Allianz_riviera.jpg"
-    },
-    {
-      "fichier": "sport-2.jpg",
-      "origine": "wikimedia",
-      "auteur": "Reenatoo06",
-      "licence": "CC BY-SA 3.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Allianz_riviera.JPG"
-    },
-    {
-      "fichier": "sport-3.jpg",
-      "origine": "wikimedia",
-      "auteur": "Reenatoo06",
-      "licence": "CC BY-SA 3.0",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "page": "https://commons.wikimedia.org/wiki/File:Stade_st_isidore.JPG"
-    },
-    {
-      "fichier": "sport-4.jpg",
-      "origine": "wikimedia",
-      "auteur": "Reenatoo06",
-      "licence": "CC0",
-      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "page": "https://commons.wikimedia.org/wiki/File:Vue_d%27ensemble_le_3_Janvier_2013.jpg"
-    },
-    {
-      "fichier": "sport-5.jpg",
-      "origine": "wikimedia",
-      "auteur": "Supporterhéninois",
-      "licence": "CC0",
-      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "page": "https://commons.wikimedia.org/wiki/File:Allianz_Riviera_Juillet_2013.jpg"
-    }
-  ]
+  "Sport": []
 }
