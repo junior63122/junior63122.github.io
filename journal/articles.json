@@ -7,16 +7,23 @@
     "rubrique": "Business",
     "emoji": "💼",
     "type": "revue",
-    "titre": "Plusieurs avocats annoncent saisir la Cour de justice de la République contre le ministre de l'Intérieur Laurent Nuñez, après les blessures infligées à des manifestants",
+    "titre": "Plusieurs avocats vont saisir la Cour de justice de la République contre le ministre de l'Intérieur Laurent Nuñez, après les blessures infligées à des manifestants",
     "chapo": "Entreprises, emploi, stratégie : l'essentiel de l'actualité économique. Le point du 6 novembre.",
     "corps": [],
     "liens": [
       {
-        "titre": "Plusieurs avocats annoncent saisir la Cour de justice de la République contre le ministre de l'Intérieur Laurent Nuñez, après les blessures infligées à des manifestants",
+        "titre": "Plusieurs avocats vont saisir la Cour de justice de la République contre le ministre de l'Intérieur Laurent Nuñez, après les blessures infligées à des manifestants",
         "source": "franceinfo",
         "url": "https://www.franceinfo.fr/societe/manifestations/plusieurs-avocats-annoncent-saisir-la-cour-de-justice-de-la-republique-contre-le-ministre-de-l-interieur-laurent-nunez-apres-les-blessures-infligees-a-des-manifestants_8270813.html#xtor=RSS-3-%5Bgeneral%5D",
         "resume": "Ils lui reprochent le recours à des \"armes mutilantes\" lors des récentes opérations de maintien de l'ordre.",
-        "heure": "2026-11-06T12:04:52.000Z"
+        "heure": "2026-11-06T12:48:44.000Z"
+      },
+      {
+        "titre": "Alertes à la bombe : quatre vols commerciaux survolant la France se sont posés « sans encombre »",
+        "source": "Le Monde",
+        "url": "https://www.lemonde.fr/international/article/2026/11/06/alertes-a-la-bombe-quatre-vols-commerciaux-survolant-la-france-se-sont-poses-sans-encombre_6807787_3210.html",
+        "resume": "Plusieurs vols européens ont été perturbés, vendredi, alors qu’une série d’alertes à la bombe, jusque-là toutes fausses, sévit depuis le début de la semaine.",
+        "heure": "2026-11-06T12:41:25.000Z"
       },
       {
         "titre": "TGV nouvelle génération enfin sur les rails",
@@ -31,13 +38,6 @@
         "url": "https://www.lemonde.fr/economie/article/2026/11/06/en-italie-une-taxe-de-sortie-pour-les-grandes-fortunes_6807773_3234.html",
         "resume": "Le projet de loi de finances pour 2027 du gouvernement Meloni prévoit la création d’une « exit tax » visant les grandes fortunes qui décideraient de quitter l’Italie. Une mesure qui infléchirait une politique fiscale visant depuis 2017 à attirer des ultrariches dans la péninsule",
         "heure": "2026-11-06T10:45:05.000Z"
-      },
-      {
-        "titre": "Les salaires du privé ont baissé de 1,1 % sur un an, en prenant en compte l’inflation",
-        "source": "Le Monde",
-        "url": "https://www.lemonde.fr/economie-francaise/article/2026/11/06/les-salaires-du-prive-ont-baisse-de-1-1-sur-un-an-en-prenant-en-compte-l-inflation_6807767_1656968.html",
-        "resume": "Sans correction de la hausse des prix, l’indice du salaire mensuel de base des salariés a progressé de 0,2 % au troisième trimestre par rapport au trimestre précédent et augmenté de 1,9 % sur un an.",
-        "heure": "2026-11-06T10:24:55.000Z"
       },
       {
         "titre": "SMIC : le projet de décret du gouvernement pour forcer les entreprises à négocier sur les salaires",
@@ -150,16 +150,23 @@
     "rubrique": "Monde",
     "emoji": "🌍",
     "type": "revue",
-    "titre": "Belgique : le roi refuse la démission du premier ministre, Bart De Wever, présentée sur fond de blocage budgétaire au Parlement",
+    "titre": "Après la collision d'Urda en Espagne, le Parquet européen ouvre une enquête sur d'éventuelles fraudes aux aides destinées à la rénovation de la ligne ferroviaire",
     "chapo": "Le tour du monde de l'actualité en quelques titres. Le point du 6 novembre.",
     "corps": [],
     "liens": [
+      {
+        "titre": "Après la collision d'Urda en Espagne, le Parquet européen ouvre une enquête sur d'éventuelles fraudes aux aides destinées à la rénovation de la ligne ferroviaire",
+        "source": "franceinfo",
+        "url": "https://www.franceinfo.fr/monde/espagne/accident-de-trains-pres-de-tolede/le-parquet-europeen-lance-une-enquete-sur-d-eventuelles-fraudes-aux-aides-apres-le-drame-ferroviaire-d-urda_8270771.html#xtor=RSS-3-%5Bgeneral%5D",
+        "resume": "Une collision de trains avait provoqué la mort de 69 personnes, le 28 octobre. La juridiction rappelle qu'elle avait déjà ouvert une première enquête similaire portant sur la même ligne ferroviaire, après un premier drame survenu en janvier.",
+        "heure": "2026-11-06T12:24:52.000Z"
+      },
       {
         "titre": "Belgique : le roi refuse la démission du premier ministre, Bart De Wever, présentée sur fond de blocage budgétaire au Parlement",
         "source": "Le Monde",
         "url": "https://www.lemonde.fr/international/article/2026/11/06/belgique-le-roi-refuse-la-demission-du-premier-ministre-bart-de-wever-presentee-sur-fond-de-blocage-budgetaire-au-parlement_6807784_3210.html",
         "resume": "Le chef du gouvernement belge avait proposé sa démission lundi. Le conservateur flamand souhaite un effort budgétaire massif de 10 milliards d’euros d’ici à 2029, auquel s’oppose l’un des partenaires de la coalition, le Mouvement réformateur.",
-        "heure": "2026-11-06T11:58:48.000Z"
+        "heure": "2026-11-06T11:58:46.000Z"
       },
       {
         "titre": "EN DIRECT, guerre en Ukraine : 53 personnes ont été tuées lundi à Komychouvakha, selon un nouveau bilan",
@@ -167,13 +174,6 @@
         "url": "https://www.lemonde.fr/international/live/2026/11/06/en-direct-guerre-en-ukraine-cinquante-trois-personnes-ont-ete-tuees-lundi-a-komychouvakha-selon-un-nouveau-bilan_6803934_3210.html",
         "resume": "La police a fait savoir qu’une trentaine de personnes pourraient encore se trouver dans les décombres de l’abri, aménagé dans une école et touché alors qu’une distribution d’aide humanitaire s’y déroulait.",
         "heure": "2026-11-06T11:51:35.000Z"
-      },
-      {
-        "titre": "Après le drame ferroviaire d'Urda en Espagne, le Parquet européen lance une enquête sur d'éventuelles fraudes aux aides",
-        "source": "franceinfo",
-        "url": "https://www.franceinfo.fr/monde/espagne/accident-de-trains-pres-de-tolede/le-parquet-europeen-lance-une-enquete-sur-d-eventuelles-fraudes-aux-aides-apres-le-drame-ferroviaire-d-urda_8270771.html#xtor=RSS-3-%5Bgeneral%5D",
-        "resume": "Une collision de trains avait provoqué la mort de 69 personnes, le 28 octobre. La juridiction rappelle qu'elle avait déjà ouvert une première enquête similaire portant sur la même ligne ferroviaire, après un premier drame survenu en janvier.",
-        "heure": "2026-11-06T11:44:48.000Z"
       },
       {
         "titre": "Les géants de l'IA s'effondrent en Bourse après la défaite des républicains aux midterms",
@@ -185,8 +185,8 @@
     ],
     "auteur": "Sofia Delmas",
     "sources": [
-      "Le Monde",
-      "franceinfo"
+      "franceinfo",
+      "Le Monde"
     ]
   },
   {
@@ -197,23 +197,37 @@
     "rubrique": "Nice & Côte d'Azur",
     "emoji": "🌴",
     "type": "revue",
-    "titre": "Deux morts, 16 blessés, « personnes sous le choc, sidérées »... Ce que l’on sait du terrible accident de car survenu dans l’Ain, ce vendredi",
+    "titre": "Enseignante et directrice agressées dans une école à Nice: le personnel de l'établissement en grève",
     "chapo": "Ce qui se passe près de chez nous, de Nice à Monaco. Le point du 6 novembre.",
     "corps": [],
     "liens": [
       {
-        "titre": "Deux morts, 16 blessés, « personnes sous le choc, sidérées »... Ce que l’on sait du terrible accident de car survenu dans l’Ain, ce vendredi",
-        "source": "Nice-Matin",
-        "url": "https://www.nicematin.com/societe/transports/deux-morts-16-blesses-personnes-sous-le-choc-siderees-ce-que-l-on-sait-du-terrible-accident-de-car-survenu-dans-l-ain-ce-vendredi-10754643",
-        "resume": "Un car régional qui transportait des adultes et une quinzaine d’élèves est sorti de route vendredi matin au sud de Bourg-en-Bresse (Ain), tuant deux jeunes, dont un mineur, et faisant 16 blessés, dont trois graves.",
-        "heure": "2026-11-06T12:00:37.000Z"
+        "titre": "Enseignante et directrice agressées dans une école à Nice: le personnel de l'établissement en grève",
+        "source": "BFM Nice Côte d'Azur",
+        "url": "https://www.bfmtv.com/cote-d-azur/enseignante-et-directrice-agressees-dans-une-ecole-a-nice-le-personnel-de-l-etablissement-en-greve_AD-202611060520.html",
+        "resume": "Le personnel de l'école maternelle s'est mis en grève ce vendredi par solidarité avec la directrice et l'enseignante qui ont été agressée au début de la semaine par une mère d'élève.",
+        "heure": "2026-11-06T12:55:00.000Z"
       },
       {
-        "titre": "La mobilisation tourne court ce vendredi matin à Antibes : près de 80 lycéens de Jacques-Audiberti ont battu le pavé jusqu’à Jacques-Dolle afin de les mobiliser, en vain",
+        "titre": "Deux hommes interpellés près de Brignoles après la dégradation d’un radar de chantier",
         "source": "Nice-Matin",
-        "url": "https://www.nicematin.com/societe/blocage-des-lycees/la-mobilisation-tourne-court-ce-vendredi-matin-a-antibes-pres-de-80-lyceens-de-jacques-audiberti-ont-battu-le-pave-jusqu-a-jacques-dolle-afin-de-les-mobiliser-en-vain-10754626",
-        "resume": "À l’initiative de l’Union syndicale lycéenne (USL), entre 60 et 80 élèves du lycée Jacques-Audiberti à Antibes ont battu le pavé avec l’espoir de mobiliser ceux de Jacques-Dolle ou ceux de Leonard-de-Vinci. Un espoir douché par la pluie et les hésitations mais qui n’a pas laissé place au renoncement.",
-        "heure": "2026-11-06T11:45:00.000Z"
+        "url": "https://www.nicematin.com/faits-divers/deux-hommes-interpelles-pres-de-brignoles-apres-la-degradation-d-un-radar-de-chantier-10754635",
+        "resume": "En l’espace de quelques jours, deux hommes de 53 et 22 ont été arrêtés et mis en garde à vue pour avoir dégradé un radar de chantier installé sur la RD 562, dans la commune de Carcès. Ils seront tous les deux jugés dans les prochaines semaines.",
+        "heure": "2026-11-06T12:36:24.000Z"
+      },
+      {
+        "titre": "Tout savoir sur le destin hors du commun de l’abbé Galli : un documentaire présenté à La Seyne sur cet acteur du siècle dernier devenu curé à Sanary",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/societe/vie-locale/tout-savoir-sur-le-destin-hors-du-commun-de-l-abbe-galli-un-documentaire-presente-a-la-seyne-sur-cet-acteur-du-siecle-dernier-devenu-cure-a-sanary-10754325",
+        "resume": "Un documentaire historique retraçant l’étonnant parcours de Georges Galli, cet homme de cinéma devenu homme d’Eglise, sera diffusé samedi à la salle Baudouin.",
+        "heure": "2026-11-06T12:30:02.000Z"
+      },
+      {
+        "titre": "La Métropole Nice Côte d'Azur vote la gratuité des parkings souterrains métropolitains pour les professionnels de santé",
+        "source": "RCF",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPd2dMT3IyYVRYeGRra0xTQnVhNVkzTWJlWGZ1amRqN1IxanRlb0lPTVdhcVpKYTlOcl9Na0pNM0hKMXVoNnJCdnJnVXdfLXlsUllFUndNR3NzTHB0ODR6cF9tSGdzYUhVQzdYTVl3Zm5kN013bGRPVF8zMHVZR1Ntc2RUaTBad19aNTl2dU40ZG1MSml5a1Z5dkhhcjVULWFHd2RZdEtMNG5NeHAy?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T12:01:00.000Z"
       },
       {
         "titre": "\"Une contrainte majeure\" : l'audit financier sur la gestion de Nice par Christian Estrosi révèle une dette élevée et des dépenses importantes",
@@ -221,27 +235,14 @@
         "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/nice/une-contrainte-majeure-l-audit-financier-sur-la-gestion-de-nice-par-christian-estrosi-revele-une-dette-elevee-et-des-depenses-importantes-3444987.html",
         "resume": "Plusieurs mois après avoir indiqué qu'un audit financier sur la gestion financière de la ville de Nice et de la métropole était en cours, Éric Ciotti en a révélé les résultats ce jeudi 5 novembre. Le rapport pointe une dette importante, des dépenses élevées et de nombreux travaux à prévoir. Voici ce qu'il en est.",
         "heure": "2026-11-06T11:38:39.000Z"
-      },
-      {
-        "titre": "Manifestation spontanée à Antibes : une centaine de lycéens dans les rues contre Parcoursup et leurs conditions d'étude",
-        "source": "France 3 Côte d'Azur",
-        "url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/antibes/manifestation-spontanee-a-antibes-une-centaine-de-lyceens-dans-les-rues-contre-parcoursup-et-leurs-conditions-d-etude-3445176.html",
-        "resume": "La mobilisation ne faiblit pas du côté de certains lycéens. Ainsi, ce vendredi 6 novembre 2026, environ 130 élèves ont tenté de bloquer le lycée Jacques Audiberti à Antibes (Alpes-Maritimes), mais sans succès. Ils ont ensuite décidé de manifester de manière spontanée en cortège dans les rues de la ville.",
-        "heure": "2026-11-06T11:21:14.000Z"
-      },
-      {
-        "titre": "Comment l'IA bouscule les métiers du tourisme sur la Côte d'Azur",
-        "source": "Tribuca.net",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUVRDNUJ2dWRVZ0x1Q1NuVXZHeF9iaXFuSml6ejlEYjVVQl9jbDl4WjlEV01uSjFLSGUtX3l5NkQtQVk3WjhlTnE0eUhyZlFoVWdSRUtFOTNoWTYwajIzS3E2VGFJVXJEaXR6T0RaRWtvLTR4X25faXF5czZSbVdySWRpVTl2VzhKRHRR?oc=5",
-        "resume": "",
-        "heure": "2026-11-06T11:01:14.000Z"
       }
     ],
     "auteur": "Lucas Giordano",
     "sources": [
+      "BFM Nice Côte d'Azur",
       "Nice-Matin",
-      "France 3 Côte d'Azur",
-      "Tribuca.net"
+      "RCF",
+      "France 3 Côte d'Azur"
     ]
   },
   {
@@ -252,10 +253,17 @@
     "rubrique": "Sport",
     "emoji": "⚽",
     "type": "revue",
-    "titre": "Avec Mbappé mais sans Dembélé, à quoi faut-il s'attendre pour la deuxième liste de Zinédine Zidane à la tête des Bleus ?",
+    "titre": "« En L1, il n’y a pas de match facile » : Erwann Le Postec met en garde les joueurs de l’OGC Nice avant le déplacement à Angers dimanche",
     "chapo": "Résultats, transferts et grands moments du sport. Le point du 6 novembre.",
     "corps": [],
     "liens": [
+      {
+        "titre": "« En L1, il n’y a pas de match facile » : Erwann Le Postec met en garde les joueurs de l’OGC Nice avant le déplacement à Angers dimanche",
+        "source": "Nice-Matin",
+        "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPcHc3ekZSdlZFQkdqdGR2U3k4cjk1M0lsZmhUSE1DZWR5cWp5Q0hZWHU4Y3V0ekQ2LUVNZE52MEk0SmJjOUhJbi1Zejk1Ni0xdFdDM1ZPbE1uVlE5c3VFZ2NnaFd4REtOX0xIOVN0dHRYdmZmTFNJVHNRVVpjUXUtVDBYT0pqb1ZxUzlQakMyemxsbndLbEhsTERVQ1JiN3lQQl9tUWl2c0phejBQVjFfLVVjcnRXNWtCVTZ0X3ZZRzlrcS1aWk1HcXV2d0prelczNS1YcTBaMHRPNWhtQ0ZJUjJrbEVFZmsxQkgzRFJPa2p2Q2drWVRqSHgzYjRWSGdKWkNtZmRlOG5TTWRX?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T12:24:59.000Z"
+      },
       {
         "titre": "Avec Mbappé mais sans Dembélé, à quoi faut-il s'attendre pour la deuxième liste de Zinédine Zidane à la tête des Bleus ?",
         "source": "franceinfo",
@@ -283,21 +291,14 @@
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNR3dIVnZPbnV6U0VGZE1PNWJOZVU0ZlFTWXRZRS1FNWk0ZEowZTg1VlpFQlY1SDZWNndiZmdSV0ZhblUzTDE1dkFwekdVR2lHTlU3cFQyakZ0Z0hZSjl5VXZDbFF2MExuNFUya2thbS1qMnMtRFR6ckZxbFZaOERHM3NPdWRfNlg5Y0FJTTlXR0RvZ3dlc2pQang0WWJTbi1SOFNRYlluR01ObEtIV2o4TUhwUTVKNVlOeFE?oc=5",
         "resume": "",
         "heure": "2026-11-06T10:06:37.000Z"
-      },
-      {
-        "titre": "Au Masters 1000 de Paris, les joueurs doivent composer avec l’une des surfaces les plus rapides du circuit",
-        "source": "Le Monde",
-        "url": "https://www.lemonde.fr/sport/article/2026/11/06/au-masters-1000-de-paris-les-joueurs-doivent-composer-avec-l-une-des-surfaces-les-plus-rapides-du-circuit_6807758_3242.html",
-        "resume": "Les conditions de jeu ayant été jugées trop lentes en 2025, les organisateurs du tournoi parisien ont choisi une surface plus rapide cette année. Ce qui sied bien aux frappeurs tels que Ben Shelton, Tommy Paul ou Taylor Fritz, au détriment de Carlos Alcaraz.",
-        "heure": "2026-11-06T09:30:09.000Z"
       }
     ],
     "auteur": "Inès Morel",
     "sources": [
+      "Nice-Matin",
       "franceinfo",
       "Foot01",
-      "SO FOOT.com",
-      "Le Monde"
+      "SO FOOT.com"
     ]
   },
   {
@@ -397,11 +398,11 @@
         "heure": "2026-11-05T14:00:00.000Z"
       },
       {
-        "titre": "Blow for gig economy as Uber loses $81m High Court battle",
-        "source": "SMH.com.au",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNTUdCTGttWktrLVVydks3YmpZQlZNUTNZTXJLYjJZcXo4cXppU0t6NUxDLWIxQTBJdWxfN0ZCYnpoQl8tMlJJQW5oVks0TlBKaDhPRTQzcHZxWkdkQ2VOY0J2cm0xLXItbkd1emhoVU5PVmVDdzQ0MlUyanpxOEVVaVZ4LXZNVFByNDlYODdNd2JoOExWSFlfWnctemlpTm1sc0d3dFVGWjZTZm5USWpzQTlYWU5kd080bTFF?oc=5",
+        "titre": "2026 U.S. Midterm Elections: What the Results Mean for Business",
+        "source": "Edelman",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBUNDk4ZWltZ1NQSVR0dHl0SFNXR0JlQ1hJUlhlQmhrbG5MQzhnMnZqNTMtV3hfNVdTQ0Zlc3hXYWZWYjlnQ1Nld05pc01rOVJqNG5HeVo0REE2aDlUbWk4QnpXRVdwYzRIckE?oc=5",
         "resume": "",
-        "heure": "2026-11-04T00:41:51.000Z"
+        "heure": "2026-11-04T12:00:00.000Z"
       }
     ],
     "auteur": "Camille Rostand",
@@ -409,7 +410,7 @@
       "BBC News",
       "Darden Report",
       "Business Wire",
-      "SMH.com.au"
+      "Edelman"
     ]
   },
   {
@@ -420,23 +421,23 @@
     "rubrique": "Events",
     "emoji": "🎪",
     "type": "revue",
-    "titre": "Olivia Rodrigo's Christmas song sounds familiar... on purpose",
+    "titre": "'We have our own fair playing field': 1Xtra launches first ever UK rap chart",
     "chapo": "Trade shows, festivals, concerts and big gatherings: the events industry today. Our round-up for 6 November.",
     "corps": [],
     "liens": [
+      {
+        "titre": "'We have our own fair playing field': 1Xtra launches first ever UK rap chart",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/news/articles/cqrkyymd3533o?at_medium=RSS&at_campaign=rss",
+        "resume": "The top 20 best selling UK rap tracks will be celebrated each week on Radio 1Xtra with DJ Kenny Allstar.",
+        "heure": "2026-11-06T12:37:58.000Z"
+      },
       {
         "titre": "Olivia Rodrigo's Christmas song sounds familiar... on purpose",
         "source": "BBC News",
         "url": "https://www.bbc.co.uk/news/articles/crje55yzjw47o?at_medium=RSS&at_campaign=rss",
         "resume": "The pop star sought permission from cult 80s band The Waitresses before releasing her festive single.",
         "heure": "2026-11-06T11:13:21.000Z"
-      },
-      {
-        "titre": "Met chief says he wouldn't be surprised if more allegations made about Brand after rape conviction",
-        "source": "BBC News",
-        "url": "https://www.bbc.co.uk/news/articles/cmly00r44jgvo?at_medium=RSS&at_campaign=rss",
-        "resume": "Sir Mark Rowley tells the BBC that what he heard reported from Brand's trial came close to \"victim blaming\".",
-        "heure": "2026-11-06T11:01:58.000Z"
       },
       {
         "titre": "Sharing what works: why the business events industry learns best together",
@@ -477,14 +478,14 @@
         "source": "Yahoo Finance",
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNc2VDQVlTbHhaTXJZWkhOWkdvcWk5LW84LXlCc1NyTGZZSWZlT0hRd3NQc3lwQTByRHRVU0VfVmJKU1pTWWlFTUZmT2EzS2ExS3haNHRfZ3pFaFd3TDB4NmZ0WXVFVFBxUFJiU3VTUmhsWEIzeFJwb2NRUEw3V210dXhsUjZZWU4xZk9zNkp3U3dSSFM5cTc0WW5CVUJwZ2FfV25KQjBnSFRTb2RmejRqejJsRjFsT002THJqNg?oc=5",
         "resume": "",
-        "heure": "2026-11-06T09:19:27.000Z"
+        "heure": "2026-11-06T12:37:23.000Z"
       },
       {
         "titre": "‘So sad’: Trump erupts as crash goes global",
         "source": "News.com.au",
         "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNb0llQW5CNnVMRTNPMjhlRDQ2RmJ2dEdfQ3NHeWp6U2NOMmxaWHRTS2xkbzVTcThrcDdWcEltNFBnWlFuTFpfX2hPck9mMks5RmFTeG9zOFp5eGUwcUlUVVlPaDRlYV82NDlaVG5TblZIMjFYQ2t1aG8xQy1GSXdjYjB6cFhUZjc3eGZ6aG10ZWMxNl9pdnBtM2wzTnlmOF9EVVZZT3EzZUliZGl0MU91TU1LLTBET25oX3dMdXBNSmJkUFdWaTNQODN5T0dmdW95OVNLY0xseUx0UdIB3wFBVV95cUxNWmdRdm5BYzRmVGhHb2lxSnBuVDdBQWw1WDVwLWh2aU11QjlNWVV6azM4U2N1TUV3X0RFeWowNDNnRmV1MWp4Ny1YcnNDdDlwenEwYnhjOGZ1Y2FHYmQ2MEE4LWw2WVJwaXFFQWZoTUdhVVI4VUZjMVRxWE8wZGZWbUNldzRGbXdOSGFIeWVTejdhYmw1d1dKdFRROEhTQnJTOC1kYm1mSUU0YXhtQ2RxOHVLMlJQVXM2QVFIV0I2RjAwTWZ4cFNPTldvUnBZVmZ0eEw5cE53Q1U0Z3NfcWpz?oc=5",
         "resume": "",
-        "heure": "2026-11-06T09:05:39.000Z"
+        "heure": "2026-11-06T09:25:47.000Z"
       },
       {
         "titre": "AI firms hit in worst stock market crash for 18 months",
@@ -494,18 +495,18 @@
         "heure": "2026-11-06T08:28:51.000Z"
       },
       {
-        "titre": "Stocks tumble as AI panic sweeps markets, bonds draw haven demand",
-        "source": "Euronext Markets: Real-time Stock Market Data | live",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOYXlrU3ppUTlyUTFkRkpXbmYtc0FBQTN4RzJ4NnQwSDRhTjR5NFVzMF82anlCT0wxUHFORkZsbmhEV2V5TUxhUXh5Mk5YSE1NWGY0UUFLaUNFSXVETzA2U21TQVFnRWJsS3E5Y2dSNEtQNmNZX0pZTWdFbjQwSmdCbF8xaDF3U3F0cFVMOF9GbVpIQ0dPTE5qSERTYWJBU1JKY0JWTmFDck0?oc=5",
-        "resume": "",
-        "heure": "2026-11-06T08:23:34.000Z"
-      },
-      {
         "titre": "Global markets tumble after US tech stock sell-off",
         "source": "Yahoo Finance UK",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQaTBVcl9vM2FHRTJrVkdBQ2dfVnRCek9FUVZfTlF0Sm0tQTRsMlpxTWduYmctcnZ5dFlsVUF3anhEME5wTlJYRV9UVzZ6bGQ3VHlQdWcwT1VybXhBNDJCam01SF9UOWV2a3NzVGdqQ3ozZnNKYlFqd0xvaE9lYVZ1eFpQNk8?oc=5",
         "resume": "",
         "heure": "2026-11-06T08:00:57.000Z"
+      },
+      {
+        "titre": "Nasdaq Stock Market Correction: 3 Words From Warren Buffett To Remember RIght Now",
+        "source": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc2s5ZTNSZ21PYlVINzJOeXZDeUwxRGNhbnNDYkN0VzB6dF8tRGtaMXJxQkc1RlBULWJmUjBSTnR1MGIyV3NZNzB6c2RBYVBIZWRjNmR4Qm42TnBMdkdROFJhWklGbzNRNzlSOHdTUmI5dEVaVzBfTlNFX2s2a0V0dGcwNU5Vcm81cUdPZ1Z5SER0THR5VklsZlNrb0ctVmFzZXN6bjFaRUthUjdvbkVWbTQwUXk4eC03d1c4TUFn?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T06:07:00.000Z"
       }
     ],
     "auteur": "Hugo Marchetti",
@@ -513,7 +514,7 @@
       "Yahoo Finance",
       "News.com.au",
       "Yahoo Finance UK",
-      "Euronext Markets: Real-time Stock Market Data | live"
+      "The Motley Fool"
     ]
   },
   {
@@ -533,43 +534,43 @@
         "source": "BBC News",
         "url": "https://www.bbc.co.uk/news/articles/cm5yne5984l0o?at_medium=RSS&at_campaign=rss",
         "resume": "Paul Mackenzie ordered his followers to starve their children to death in a forest so they could \"meet Jesus\".",
-        "heure": "2026-11-06T11:54:08.000Z"
+        "heure": "2026-11-06T12:54:04.000Z"
       },
       {
-        "titre": "Tanzanian opposition leader found guilty of inciting unrest but acquitted of treason",
+        "titre": "Russian extremist group denies sending hoax bomb threats",
         "source": "BBC News",
-        "url": "https://www.bbc.co.uk/news/articles/ckp8g4pm0y4lo?at_medium=RSS&at_campaign=rss",
-        "resume": "The 58-year-old, who has been detained since April last year, says the charges are politically motivated.",
-        "heure": "2026-11-06T11:36:14.000Z"
+        "url": "https://www.bbc.co.uk/news/articles/cm2d66n0lx1yo?at_medium=RSS&at_campaign=rss",
+        "resume": "Scores of flights across Europe have received bomb threats this week, but no explosives have been found so far.",
+        "heure": "2026-11-06T12:51:38.000Z"
       },
       {
-        "titre": "Video. Latest news bulletin | November 6th, 2026 – Midday",
-        "source": "Euronews",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNT1VhbHFTT0ZXU1dYWDNQWTlmOU50VXhfY0Y0Z0hlTFhxT19FQW1lNEM4ai1saGNReGdGZ0haeHAyNDJzY25pX244T0hXTGl1Mnp5dFRzTGg3Z2Q3UExhY0w4cjhUZ0dmLU5RUWQ4MFNWLXpiLVpWbHlzWUFtVHdwQ21RMGc4eXRud0FyR1dKTWk?oc=5",
+        "titre": "Global tech stocks plunge amid AI slowdown fears - live updates",
+        "source": "BBC",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBLOFVxRnRvbGdVMGt1OURWc3Y3SFhRc29RNXRld184ZVBJb0tJSm9oaGhMQ25zSWpHQUd6cjhaRnFVM1NiUGZUTGRWejJ5b3VBeXZIbUR3?oc=5",
         "resume": "",
-        "heure": "2026-11-06T11:00:15.000Z"
+        "heure": "2026-11-06T12:46:47.000Z"
       },
       {
         "titre": "European skies on high alert as more airlines receive bomb threats – Europe live",
         "source": "The Guardian",
         "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNSnMwdlJyTGN4akVOaDdaYjk2UDJaS0xzQk5sc0NwUk13ak10SXVxaWlkcERaNDZ4WEp0UTVZbnRfZlo4SFE1OW5iSVZYRVduUUxxYWZxVXNwTVIwVFB0OGtPRXBqM194S0xCYlRNUy0wNy00R3R0MWs4MTQ5UHJpSHB2U1RaVVFOVDZTQ0pqaktwRHZVSWhYcVJJai1DY2ZWY0xfZ3pmS3FHOF9hM3dIdG9SV0FZYXp3bDI2ZnhnalFYbFF1?oc=5",
         "resume": "",
-        "heure": "2026-11-06T09:03:00.000Z"
+        "heure": "2026-11-06T12:26:31.000Z"
       },
       {
-        "titre": "White House denies Hegseth, Rubio will leave jobs amid Republican election fallout",
-        "source": "BBC",
-        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBybzRqOVdsTlI1aDFOaFNiX1JIYzRqWUNocVJfSU1OTUZIOTNvSWlUTy1JdVdNckttWlB3YW5LWHZuVGR5bXRYOHVmV0lPS1o2SnROTEdNRk1ZODQ?oc=5",
+        "titre": "Kenyan cult leader sentenced to 200 years in prison for murder of 190 children",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPOVFQN3ZZdXgwV0VlOWE3MF8zbXg0ZF9ZenNaZ3pVTl8xcHpuREFHUFpodWFmMXVzSmN3c29kRVViMDZhdkZ1QjB1WGdoR0tLZ09OaTRORzBOWmNQQUFUb2RvMnpVdjQ3eGlCcmJsSGxPNzFVM0N2bEJCZ3V5SVJ0OTRyZW9LbFVhVmRXeUV2a0Q0eFE4WVR1Vl81V1NoTWZ4THNYbklpbFc1RmxIZ043WTBVWWxwTW4yVmNYXw?oc=5",
         "resume": "",
-        "heure": "2026-11-06T02:08:57.000Z"
+        "heure": "2026-11-06T12:06:01.000Z"
       }
     ],
     "auteur": "Sofia Delmas",
     "sources": [
       "BBC News",
-      "Euronews",
+      "BBC",
       "The Guardian",
-      "BBC"
+      "Reuters"
     ]
   },
   {
@@ -636,23 +637,23 @@
     "rubrique": "Sport",
     "emoji": "⚽",
     "type": "revue",
-    "titre": "Two-year ban for 'Clicky Ponting' cricketer",
+    "titre": "RFU boss confirms WRU Anglo-Welsh league approach",
     "chapo": "Results, transfers and the big moments in sport. Our round-up for 6 November.",
     "corps": [],
     "liens": [
+      {
+        "titre": "RFU boss confirms WRU Anglo-Welsh league approach",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/rugby-union/articles/c9p8ggzzerz5o?at_medium=RSS&at_campaign=rss",
+        "resume": "RFU chief executive Bill Sweeney confirms the WRU has officially asked to join an Anglo-Welsh league, although no talks have taken place.",
+        "heure": "2026-11-06T12:46:01.000Z"
+      },
       {
         "titre": "Two-year ban for 'Clicky Ponting' cricketer",
         "source": "BBC News",
         "url": "https://www.bbc.co.uk/sport/cricket/articles/c62keenz7dzjo?at_medium=RSS&at_campaign=rss",
         "resume": "An amateur cricketer is banned for two years for his role in the ‘Clicky Ponting’ cheating scandal that made headlines across the globe.",
         "heure": "2026-11-06T12:00:21.000Z"
-      },
-      {
-        "titre": "Has Anderson lived up to the hype after Man City move?",
-        "source": "BBC News",
-        "url": "https://www.bbc.co.uk/sport/football/articles/cqde8w0k2pz1o?at_medium=RSS&at_campaign=rss",
-        "resume": "As Elliot Anderson returns to Nottingham Forest after his £116m move to Manchester City, has he lived up to the price tag?",
-        "heure": "2026-11-06T12:00:18.000Z"
       },
       {
         "titre": "OGC Nice want to extend rising star Djibril Coulibaly contract, but…",
@@ -676,10 +677,17 @@
     "rubrique": "Tech",
     "emoji": "💻",
     "type": "revue",
-    "titre": "CyberSecurity Live 2026: Five key lessons from last year’s event",
+    "titre": "European Innovation Council launches €1.8 billion in funding for 2027",
     "chapo": "Start-ups, cybersecurity and digital life: the latest from the tech world. Our round-up for 6 November.",
     "corps": [],
     "liens": [
+      {
+        "titre": "European Innovation Council launches €1.8 billion in funding for 2027",
+        "source": "The European Sting",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWFI0ODNoUnJSbTBiSC1vNWRxbUg1ekZwZC00N0dmVzhnVmxySHR4eWQ5MUNPbEtTcE83anRJbWNITktaV21yeHFoanVDYXNUZ3UzMFlpZGt6SkdrQ1VkWVFmbXBkdkN3UFktal9oeU12dmo3UU1RNTNpS1N0S3dQa0tidlRmMDlpcFVvcGdKcy16ZzJ6bnk1NnB6NE5vOGw5OHFUSjlHb012b1U?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T10:33:31.000Z"
+      },
       {
         "titre": "CyberSecurity Live 2026: Five key lessons from last year’s event",
         "source": "FStech",
@@ -707,22 +715,15 @@
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNejRLWk5MbEJfaVUxYUF4QWtJU0FVYThETUwyUHdtcmc3Y050N2pESHFWa1ZRSjNEN1FUeHhGaGdIUDd4b3IzaHBtNXFPYkZkWS1JZnB0Q1l5czM0aWE2akNXek1oU2hBOS1ndVV0WXNuX293Rmhxdk5IZXJQOW1oSGtQR2dKZDZWaWFEQnM2Q0hsbXVPdVJBdlJfQlI2ckVXdkVYUXRQeVJfWVdCR1Fr?oc=5",
         "resume": "",
         "heure": "2026-11-06T09:09:04.000Z"
-      },
-      {
-        "titre": "Entrepreneur uses new start-up in fight against cancer in memory of her mum",
-        "source": "LincsOnline",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPV2Q0MHBOazRibVVUbElndnliSmtNUkI1WWFXMUV2NVpHY212MEcwa1QyVkg1Q0FUMFhHelFXcmw1U3F1cEhQWlJRdVlTNWNnemUzcjgyQ1dEekpKay1Ob1A1Rzc0LUZzR3pFeGtpYWtoQTliT3FMZmkzRGEzVGZwSWdGX1dLdXZ2MXRwYkNsbmpxLUtkWEhwOUwtajAzVnUtR0g3MnpHMXVIS0FkWmZIaFZXWQ?oc=5",
-        "resume": "",
-        "heure": "2026-11-06T05:00:00.000Z"
       }
     ],
     "auteur": "Nathan Belkacem",
     "sources": [
+      "The European Sting",
       "FStech",
       "dev.ua",
       "Minutehack",
-      "Bloomberg.com",
-      "LincsOnline"
+      "Bloomberg.com"
     ]
   },
   {
