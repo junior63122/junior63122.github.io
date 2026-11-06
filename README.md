@@ -1,6 +1,6 @@
 # junior63122.github.io
 
-## 📰 Le Journal de Junior — `/journal/`
+## 📰 L'Écho des Anges — `/journal/`
 
 Un quotidien en ligne, en **français et en anglais**, mis à jour deux fois par jour par un workflow GitHub Actions.
 Chaque rubrique est signée par un(e) journaliste de la rédaction (noms dans `scripts/generate-news.mjs` et `scripts/generate-article.mjs`) :

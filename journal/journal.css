@@ -114,3 +114,4 @@ ol.revue .src a { text-decoration: underline; }
 .card .sig { margin-top: auto; padding-top: 6px; }
 .redaction-title { font-family: "Playfair Display", serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 6px; }
 .redaction { list-style: none; padding: 0; margin: 0 auto 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; max-width: 760px; }
+.fonde { margin: 0; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted); }
