@@ -48,3 +48,17 @@ Histoire du journal et mentions légales : `journal/pages.js`.
 **Avant la mise en ligne, l'éditeur doit compléter `JOURNAL_CONFIG`** en haut de ce fichier (raison sociale,
 forme juridique et capital, RCS, siège, téléphone, éventuellement TVA, hébergeur définitif). Tant qu'un champ
 est vide, la page affiche « [à compléter] ».
+
+### Référencement
+
+`scripts/build-static.mjs` (lancé par le robot à chaque édition) génère pour les moteurs de recherche et les IA :
+une page HTML complète par article (`journal/a/`), l'index de tous les articles (`journal/a/index.html`),
+les pages fixes (`journal/p/`), le plan du site (`journal/sitemap.xml`), le fil RSS (`journal/feed.xml`),
+`llms.txt` et `robots.txt`. Chaque page porte un titre, une description, une adresse canonique, les balises
+Open Graph / Twitter et des données structurées schema.org (NewsArticle).
+
+Si le site change de domaine : `SITE_URL=https://nouveau-domaine.fr node scripts/build-static.mjs`
+(et mettre à jour les adresses dans `journal/index.html`).
+
+À faire une fois par l'éditeur : déclarer le site et son plan (`/journal/sitemap.xml`) dans
+Google Search Console et Bing Webmaster Tools, ce qui accélère l'indexation.

@@ -31,11 +31,14 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/write-articles.mjs
+      - name: Référencement (pages statiques, sitemap, RSS, llms.txt)
+        if: always()
+        run: node scripts/build-static.mjs
       - name: Publier
         run: |
           git config user.name "journal-bot"
           git config user.email "journal-bot@users.noreply.github.com"
-          git add journal/articles.json journal/img/stock
+          git add journal robots.txt llms.txt
           git diff --cached --quiet && echo "Rien de nouveau" && exit 0
           git commit -m "Journal : édition du $(date -u +%F)"
           git pull --rebase
