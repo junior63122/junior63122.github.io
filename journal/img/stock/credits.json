@@ -1,5 +1,304 @@
 {
   "Tech": [
-    { "fichier": "tech-pexels-drone.jpg", "origine": "pexels", "auteur": "Inmortal Producciones", "licence": "Licence Pexels", "licenceUrl": "https://www.pexels.com/license/", "page": "https://www.pexels.com/" }
+    {
+      "fichier": "tech-pexels-drone.jpg",
+      "origine": "pexels",
+      "auteur": "Inmortal Producciones",
+      "licence": "Licence Pexels",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "page": "https://www.pexels.com/"
+    },
+    {
+      "fichier": "tech-1.jpg",
+      "origine": "wikimedia",
+      "auteur": "Victorgrigas",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Wikimedia_Foundation_Servers-8055_13.jpg"
+    },
+    {
+      "fichier": "tech-2.jpg",
+      "origine": "wikimedia",
+      "auteur": "BalticServers.com",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:BalticServers_data_center.jpg"
+    },
+    {
+      "fichier": "tech-3.jpg",
+      "origine": "wikimedia",
+      "auteur": "Daoducquan",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Data_Center_c%E1%BB%A7a_CMC_Telecom_(2).jpg"
+    },
+    {
+      "fichier": "tech-4.jpg",
+      "origine": "wikimedia",
+      "auteur": "Christopher Bowns",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Virginia_Tech_-_data_center.jpg"
+    },
+    {
+      "fichier": "tech-5.jpg",
+      "origine": "wikimedia",
+      "auteur": "Rsparks3",
+      "licence": "CC0",
+      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Data_center_roof.jpg"
+    }
+  ],
+  "Business": [
+    {
+      "fichier": "business-1.jpg",
+      "origine": "wikimedia",
+      "auteur": "Freepenguin",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:La_D%C3%A9fense_skyscrapers_5297.jpg"
+    },
+    {
+      "fichier": "business-2.jpg",
+      "origine": "wikimedia",
+      "auteur": "Cristian Bortes from Cluj-Napoca, Romania",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:La_D%C3%A9fense,_Paris_September_2013_001.jpg"
+    },
+    {
+      "fichier": "business-3.jpg",
+      "origine": "wikimedia",
+      "auteur": "Cristian Bortes from Cluj-Napoca, Romania",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:La_D%C3%A9fense,_April_2011_001.jpg"
+    },
+    {
+      "fichier": "business-4.jpg",
+      "origine": "wikimedia",
+      "auteur": "Guilhem Vellut from Paris, France",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Skyscrapers_of_La_D%C3%A9fense_@_Seine_@_Boulogne-Billancourt_(28044210870).jpg"
+    },
+    {
+      "fichier": "business-5.jpg",
+      "origine": "wikimedia",
+      "auteur": "Sami Mlouhi",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:La_D%C3%A9fense_-_Paris_photo5.jpg"
+    }
+  ],
+  "Finance": [
+    {
+      "fichier": "finance-1.jpg",
+      "origine": "wikimedia",
+      "auteur": "Ank Kumar",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_01.jpg"
+    },
+    {
+      "fichier": "finance-2.jpg",
+      "origine": "wikimedia",
+      "auteur": "Ank Kumar",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_02.jpg"
+    },
+    {
+      "fichier": "finance-3.jpg",
+      "origine": "wikimedia",
+      "auteur": "Ank Kumar",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_04.jpg"
+    },
+    {
+      "fichier": "finance-4.jpg",
+      "origine": "wikimedia",
+      "auteur": "Ank Kumar",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_05.jpg"
+    },
+    {
+      "fichier": "finance-5.jpg",
+      "origine": "wikimedia",
+      "auteur": "Ank Kumar",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Stock_Exchange_(Ank_Kumar)_06.jpg"
+    }
+  ],
+  "Événementiel": [
+    {
+      "fichier": "evenementiel-1.jpg",
+      "origine": "wikimedia",
+      "auteur": "Shixart1985",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Musicians_performing_on_stage_at_a_night_concert_featuring_vibrant_lights_and_energetic_atmosphere.jpg"
+    },
+    {
+      "fichier": "evenementiel-2.jpg",
+      "origine": "wikimedia",
+      "auteur": "PattayaPatrol",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:DFC_3516_A_vibrant_live_concert_on_stage_with_colorful_lights_dancers_and_a_large_illuminated_sign_in_Thai_reading_%E0%B8%A3%E0%B8%81%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3_Rak_Phet_-_performers_entertain_a_cheering_crowd_in_Khon_Kaen.jpg"
+    },
+    {
+      "fichier": "evenementiel-3.jpg",
+      "origine": "wikimedia",
+      "auteur": "Shixart1985",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Enjoying_a_live_rock_concert_at_an_outdoor_venue_with_vibrant_lights_and_enthusiastic_fans.jpg"
+    },
+    {
+      "fichier": "evenementiel-4.jpg",
+      "origine": "wikimedia",
+      "auteur": "Shixart1985",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Live_band_performance_at_an_outdoor_concert_with_lights_and_energetic_crowd_during_nighttime.jpg"
+    },
+    {
+      "fichier": "evenementiel-5.jpg",
+      "origine": "wikimedia",
+      "auteur": "Shixart1985",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Live_rock_band_performance_under_stage_lights_during_an_outdoor_festival_in_the_evening.jpg"
+    }
+  ],
+  "Monde": [
+    {
+      "fichier": "monde-1.jpg",
+      "origine": "wikimedia",
+      "auteur": "Mr Bullitt",
+      "licence": "CC BY 2.5",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly.JPG"
+    },
+    {
+      "fichier": "monde-2.jpg",
+      "origine": "wikimedia",
+      "auteur": "Basil D Soufi",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_-_Closeup_of_Emblem.jpg"
+    },
+    {
+      "fichier": "monde-3.jpg",
+      "origine": "wikimedia",
+      "auteur": "Basil D Soufi",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_(2).jpg"
+    },
+    {
+      "fichier": "monde-4.jpg",
+      "origine": "wikimedia",
+      "auteur": "Basil D Soufi",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_(3).jpg"
+    },
+    {
+      "fichier": "monde-5.jpg",
+      "origine": "wikimedia",
+      "auteur": "Пресс-служба Президента России",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Vladimir_Putin_addresses_the_United_Nations_General_Assembly_01.JPG"
+    }
+  ],
+  "Nice & Côte d'Azur": [
+    {
+      "fichier": "nice-cote-d-azur-1.jpg",
+      "origine": "wikimedia",
+      "auteur": "W. M. Connolley",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Nice-night-view-with-blurred-cars_1200x900.jpg"
+    },
+    {
+      "fichier": "nice-cote-d-azur-2.jpg",
+      "origine": "wikimedia",
+      "auteur": "Lspigon",
+      "licence": "Public domain",
+      "licenceUrl": "",
+      "page": "https://commons.wikimedia.org/wiki/File:Nice,_Quai_des_%C3%89tats-Unis_and_Promenade_des_Anglais_FRANCE.jpg"
+    },
+    {
+      "fichier": "nice-cote-d-azur-3.jpg",
+      "origine": "wikimedia",
+      "auteur": "Staeiou",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Promenade_des_Anglais_in_Nice.jpg"
+    },
+    {
+      "fichier": "nice-cote-d-azur-4.jpg",
+      "origine": "wikimedia",
+      "auteur": "Txllxt TxllxT",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Nice_-_Promenade_des_Anglais_-_View_WSW.jpg"
+    },
+    {
+      "fichier": "nice-cote-d-azur-5.jpg",
+      "origine": "wikimedia",
+      "auteur": "Txllxt TxllxT",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Nice_-_Promenade_des_Anglais_-_View_East.jpg"
+    }
+  ],
+  "Sport": [
+    {
+      "fichier": "sport-1.jpg",
+      "origine": "wikimedia",
+      "auteur": "Reenatoo06",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Allianz_riviera.jpg"
+    },
+    {
+      "fichier": "sport-2.jpg",
+      "origine": "wikimedia",
+      "auteur": "Reenatoo06",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Allianz_riviera.JPG"
+    },
+    {
+      "fichier": "sport-3.jpg",
+      "origine": "wikimedia",
+      "auteur": "Reenatoo06",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Stade_st_isidore.JPG"
+    },
+    {
+      "fichier": "sport-4.jpg",
+      "origine": "wikimedia",
+      "auteur": "Reenatoo06",
+      "licence": "CC0",
+      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Vue_d%27ensemble_le_3_Janvier_2013.jpg"
+    },
+    {
+      "fichier": "sport-5.jpg",
+      "origine": "wikimedia",
+      "auteur": "Supporterhéninois",
+      "licence": "CC0",
+      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Allianz_Riviera_Juillet_2013.jpg"
+    }
   ]
 }
