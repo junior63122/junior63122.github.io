@@ -30,6 +30,13 @@
       team: "La rédaction",
       sectionsTitle: "Rubriques",
       about: "À propos",
+      archives: "Archives",
+      archivesChapo: "Les grands événements de la Côte d'Azur depuis 2020, de Nice à Monaco, de Cannes à l'arrière-pays.",
+      archivesFr: "",
+      fromArchives: "Dans nos archives",
+      allArchives: "Toutes les archives ›",
+      history: "Notre histoire",
+      legal: "Mentions légales",
       sourcesNote: "Nos articles s'appuient sur les informations des médias cités en source, accessibles en fin d'article.",
       more: "Toute la rubrique ›",
       alsoTitle: "À lire aussi",
@@ -58,6 +65,13 @@
       team: "Our newsroom",
       sectionsTitle: "Sections",
       about: "About",
+      archives: "Archives",
+      archivesChapo: "The Riviera's major events since 2020, from Nice to Monaco and from Cannes to the hinterland.",
+      archivesFr: "Our archives are currently available in French only.",
+      fromArchives: "From our archives",
+      allArchives: "All archives ›",
+      history: "Our story",
+      legal: "Legal notice",
       sourcesNote: "Our articles draw on reporting by the outlets credited as sources, listed at the end of each article.",
       more: "Whole section ›",
       alsoTitle: "Also worth reading",
@@ -83,7 +97,7 @@
   const langOf = (a) => a.lang || "fr";
   const visibles = () => articles.filter((a) => langOf(a) === lang);
   // Un article et sa traduction ont le même id, à la langue près (« 2026-11-05-en-… »).
-  const twinKey = (id) => id.replace(/^(\d{4}-\d\d-\d\d)-[a-z]{2}-/, "$1-");
+  const twinKey = (a) => (langOf(a) === "en" ? a.id.replace(/^((?:archive-)?\d{4}-\d\d-\d\d)-en-/, "$1-") : a.id);
   const secName = (k) => T.sections[k] || k;
 
   const longDate = (d) => new Date(d + "T12:00:00Z").toLocaleDateString(T.locale, { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
@@ -97,10 +111,11 @@
   // (la même pour un article et sa traduction).
   const hash = (str) => { let h = 0; for (const c of str) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; };
   function imageFor(a) {
+    if (a.photo === false) return null; // sujets tragiques : pas de photo d'illustration
     if (a.image) return { src: a.image.src, credit: `${T.photo} : ${a.image.credit}`, legende: (a.image.legende || {})[lang] || "" };
     const pool = photos[a.section] || [];
     if (!pool.length) return null;
-    const p = pool[hash(twinKey(a.id)) % pool.length];
+    const p = pool[hash(twinKey(a)) % pool.length];
     const origine = p.origine === "wikimedia" ? "Wikimedia Commons" : p.origine === "pexels" ? "Pexels" : p.origine;
     return { src: `img/stock/${p.fichier}`, credit: `${T.photo} : ${p.auteur} / ${origine} (${p.licence})`, href: p.page, legende: "" };
   }
@@ -124,8 +139,10 @@
     document.getElementById("numero").textContent = `${T.numero} ${n}`;
     document.getElementById("year").textContent = today.slice(0, 4);
     const secLinks = ORDRE.map((k) => `<a href="${secLink(k)}" data-sec="${SLUG[k]}">${esc(secName(k))}</a>`).join("");
-    document.getElementById("sections").innerHTML = `<a class="home" href="#">${esc(T.home)}</a>${secLinks}`;
-    document.getElementById("drawer-nav").innerHTML = `<a href="#">${esc(T.home)}</a>${secLinks}`;
+    const extra = `<a href="#archives" data-sec="archives">${esc(T.archives)}</a>`;
+    document.getElementById("sections").innerHTML = `<a class="home" href="#">${esc(T.home)}</a>${secLinks}${extra}`;
+    document.getElementById("drawer-nav").innerHTML = `<a href="#">${esc(T.home)}</a>${secLinks}${extra}<a href="#p/histoire">${esc(T.history)}</a><a href="#p/mentions">${esc(T.legal)}</a>`;
+    document.getElementById("about-links").innerHTML = `<li><a href="#p/histoire">${esc(T.history)}</a></li><li><a href="#archives">${esc(T.archives)}</a></li><li><a href="#p/mentions">${esc(T.legal)}</a></li>`;
     document.getElementById("footer-sections").innerHTML = ORDRE.map((k) => `<li><a href="${secLink(k)}">${esc(secName(k))}</a></li>`).join("");
     document.getElementById("redaction").innerHTML = REDACTION.map(([nom, k]) => `<li><strong>${esc(nom)}</strong> · ${esc(secName(k))}</li>`).join("");
   }
@@ -209,7 +226,56 @@
         </aside>
       </section>
       ${blocks.map(renderBlock).join("")}
+      ${renderArchivesBlock()}
     </div>`;
+  }
+
+  // Trois archives tirées au sort chaque jour (les mêmes pour tous les lecteurs).
+  function archivesPool() {
+    const own = articles.filter((a) => a.type === "archive" && langOf(a) === lang);
+    return own.length ? own : articles.filter((a) => a.type === "archive");
+  }
+  function renderArchivesBlock() {
+    const pool = archivesPool();
+    if (!pool.length) return "";
+    const seed = hash(new Date().toLocaleDateString("en-CA", { timeZone: TZ }));
+    const picks = [];
+    for (let i = 0; picks.length < Math.min(3, pool.length) && i < 50; i++) {
+      const a = pool[(seed + i * 7919) % pool.length];
+      if (!picks.includes(a)) picks.push(a);
+    }
+    return `<section class="block archives-block">
+      <div class="block-head"><h2><a href="#archives">${esc(T.fromArchives)}</a></h2><a class="more" href="#archives">${esc(T.allArchives)}</a></div>
+      <div class="block-grid archives-grid">${picks.map((a) => `<div>${thumb(imageFor(a))}
+        <span class="kicker">${esc(secName(a.section))} · ${esc(longDate(a.date))}</span>
+        <h3><a href="${artLink(a)}">${esc(a.titre)}</a></h3><p>${esc(a.chapo)}</p></div>`).join("")}</div>
+    </section>`;
+  }
+
+  // ---------- Archives ----------
+  function renderArchives() {
+    markNav("archives");
+    const own = articles.filter((a) => a.type === "archive" && langOf(a) === lang);
+    const list = own.length ? own : articles.filter((a) => a.type === "archive");
+    const parAn = {};
+    for (const a of list) (parAn[a.date.slice(0, 4)] ||= []).push(a);
+    const annees = Object.keys(parAn).sort().reverse();
+    app.innerHTML = `<div class="rubrique-head"><h1>${esc(T.archives)}</h1><p class="rubrique-chapo">${esc(T.archivesChapo)}${!own.length && T.archivesFr ? " " + esc(T.archivesFr) : ""}</p></div>
+      <nav class="years">${annees.map((y) => `<a href="#archives/${y}">${y}</a>`).join("")}</nav>
+      <div class="list">${annees.map((y) => `<h2 class="year" id="y-${y}">${y}</h2>${parAn[y].map((a) => `<article class="list-item">
+        <span class="kicker">${esc(secName(a.section))} · ${esc(longDate(a.date))}</span>
+        <h3><a href="${artLink(a)}">${esc(a.titre)}</a></h3>
+        <p>${esc(a.chapo)}</p></article>`).join("")}`).join("") || `<p class="loading">${esc(T.empty)}</p>`}</div>`;
+  }
+
+  // ---------- Pages fixes ----------
+  function renderPage(key) {
+    markNav(null);
+    const page = (window.JOURNAL_PAGES || {})[key];
+    if (!page) return renderHome();
+    const P = page[lang] || page.fr;
+    app.innerHTML = `<article class="article page"><h1>${esc(P.titre)}</h1><p class="chapo">${esc(P.chapo)}</p><div class="page-body">${P.html}</div></article>`;
+    window.scrollTo(0, 0);
   }
 
   function renderBlock(a) {
@@ -245,14 +311,15 @@
     const revue = a.type === "revue" && !a.redige;
     const sources = a.sources && a.sources.length ? `<span class="sources">${esc(T.sources)} : ${esc(a.sources.join(", "))}</span>` : "";
     app.innerHTML = `<article class="article">
-      <div class="crumbs"><a href="${secLink(a.section)}">${esc(secName(a.section))}</a>${revue ? ` · ${esc(T.review)}` : a.type === "article" && a.rubrique ? ` · ${esc(a.rubrique)}` : ""}</div>
+      <div class="crumbs">${a.type === "archive" ? `<a href="#archives">${esc(T.archives)}</a> · ` : ""}<a href="${secLink(a.section)}">${esc(secName(a.section))}</a>${revue ? ` · ${esc(T.review)}` : a.type === "article" && a.rubrique ? ` · ${esc(a.rubrique)}` : ""}</div>
       <h1>${esc(a.titre)}</h1>
       <p class="chapo">${esc(a.chapo)}</p>
-      <div class="meta-line"><strong>${esc(T.by)} ${esc(a.auteur)}</strong><span class="when">${esc(T.published)} ${esc(longDate(a.date))}</span>${sources}</div>
+      <div class="meta-line"><strong>${esc(T.by)} ${esc(a.auteur)}</strong><span class="when">${a.type === "archive" ? esc(longDate(a.date)) : `${esc(T.published)} ${esc(longDate(a.date))}`}</span>${sources}</div>
       ${figure(imageFor(a), a.image ? "hero-portrait" : "hero")}
       ${(a.corps || []).map((p) => `<p class="body">${esc(p)}</p>`).join("")}
+      ${a.transparence ? `<p class="transparence">${esc(a.transparence)}</p>` : ""}
       ${a.galerie && a.galerie.length ? `<div class="galerie">${a.galerie.map((g) => figure({ src: g.src, credit: `${T.photo} : ${g.credit}`, legende: (g.legende || {})[lang] || "" })).join("")}</div>` : ""}
-      ${a.redige && a.liens && a.liens.length ? `<section class="sources-list"><h2>${esc(T.sources)}</h2><ul>${a.liens.map((l, i) => `
+      ${(a.redige || a.type === "archive") && a.liens && a.liens.length ? `<section class="sources-list"><h2>${esc(T.sources)}</h2><ul>${a.liens.map((l, i) => `
         <li id="info-${i}"><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.titre)}</a> <span>— ${esc(l.source)}</span></li>`).join("")}</ul></section>` : ""}
       ${revue && a.liens && a.liens.length ? `<ol class="revue">${a.liens.map((l, i) => `
         <li id="info-${i}"><div>
@@ -275,6 +342,12 @@
       if (a) { if (langOf(a) !== lang) setLang(langOf(a), false); return renderArticle(a, m[2] != null ? +m[2] : null); }
     }
     if ((m = h.match(/^r\/([a-z]+)$/)) && FROM_SLUG[m[1]]) return renderSection(FROM_SLUG[m[1]]);
+    if ((m = h.match(/^archives(?:\/(\d{4}))?$/))) {
+      renderArchives();
+      const y = m[1] && document.getElementById("y-" + m[1]);
+      return y ? y.scrollIntoView() : window.scrollTo(0, 0);
+    }
+    if ((m = h.match(/^p\/([a-z]+)$/))) return renderPage(m[1]);
     renderHome();
   }
 
@@ -292,7 +365,7 @@
     const current = m && articles.find((x) => x.id === decodeURIComponent(m[1]));
     const target = b.dataset.lang;
     if (current) {
-      const twin = articles.find((x) => langOf(x) === target && twinKey(x.id) === twinKey(current.id))
+      const twin = articles.find((x) => langOf(x) === target && twinKey(x) === twinKey(current))
         || articles.find((x) => langOf(x) === target && x.type === current.type && x.section === current.section && x.date === current.date);
       setLang(target, false);
       location.hash = twin ? `a/${encodeURIComponent(twin.id)}` : "";

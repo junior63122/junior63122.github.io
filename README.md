@@ -33,3 +33,16 @@ rédige un article complet par rubrique et par langue :
 2. Dans le dépôt GitHub : **Settings → Secrets and variables → Actions → New repository secret**,
    nom `ANTHROPIC_API_KEY`, valeur = la clé.
 3. Lancer le robot (onglet **Actions → Journal - éditions → Run workflow**).
+
+### Archives
+
+Les archives retracent les événements marquants de la Côte d'Azur depuis 2020. Pour en ajouter
+(clé API nécessaire, voir ci-dessus) : onglet **Actions → « Journal - archives » → Run workflow**,
+en indiquant la période et le nombre d'articles. Chaque événement est vérifié par recherche web
+et les pages consultées sont citées en sources ; une version anglaise est produite.
+Par exemple : 2024-01-01 → 2026-10-31, puis 2022-01-01 → 2023-12-31, puis 2020-01-01 → 2021-12-31.
+
+### Pages fixes
+
+Histoire du journal et mentions légales : `journal/pages.js`. L'adresse de contact de l'éditeur
+se règle dans `JOURNAL_CONFIG.contact` (obligatoire pour un site mis en ligne).
