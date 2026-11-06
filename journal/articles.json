@@ -412,13 +412,6 @@
         "heure": "2026-11-06T10:35:01.000Z"
       },
       {
-        "titre": "Trustmark (TRMK) Stock Could Be Cheap After A 130% Run",
-        "source": "Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWUJPU21XekZKb3FMSndJZ3EwZXU2Si00ejB5ZHBvS2VPS1ZxT0VISmlBN3JGcWhWU1doc0Yyc3lPLVlIRDB5eWxfZUlrQ013Q05oRW1xX2tHMnBqMmVsLTB0V29SSnhXaGJxck1RVGJON2JjWGVHeVZxVE51SnZnTzVwWWNMcHFWczRqWFZYNzh0aGc1MFkycjQzOUREZw?oc=5",
-        "resume": "",
-        "heure": "2026-11-06T10:16:47.000Z"
-      },
-      {
         "titre": "Stock market today: Dow, S&P 500, Nasdaq futures wobble after brutal sell-off, with key jobs report on deck",
         "source": "Yahoo Finance",
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNc2VDQVlTbHhaTXJZWkhOWkdvcWk5LW84LXlCc1NyTGZZSWZlT0hRd3NQc3lwQTByRHRVU0VfVmJKU1pTWWlFTUZmT2EzS2ExS3haNHRfZ3pFaFd3TDB4NmZ0WXVFVFBxUFJiU3VTUmhsWEIzeFJwb2NRUEw3V210dXhsUjZZWU4xZk9zNkp3U3dSSFM5cTc0WW5CVUJwZ2FfV25KQjBnSFRTb2RmejRqejJsRjFsT002THJqNg?oc=5",
@@ -431,6 +424,13 @@
         "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8tNUp1Nkt1SGpXbFRWd0U3dWhhV0h1QTdhenhtWGtMYnhEbUlaeTh4aUlwa1VsbWFIVWFqcm9EemFlTU5UcWhrTUIxaFRNMDE0MXRVcnluTlJKMmFNSEtzdGs5czNQb1I5UmlwTDhXbEw2Y2dVb0lyanZjQ3RSQQ?oc=5",
         "resume": "",
         "heure": "2026-11-06T09:51:47.000Z"
+      },
+      {
+        "titre": "Nasdaq futures rise after steep AI selloff as chip stocks stabilize",
+        "source": "Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQanhvOGROdXJUck5kaGdNUnNFczRKSzRZYmVqRi1FN3lVVjE2RnU5WWtmaWVJRkE5R25TLUVkT2ttT215Ri1rMXI1UzdUQXVrT19xN2lueUlrMmF6Q3k1ZmJiQmRtWTA5bDcwS0t0VWZwcExISEdZcEZ1MHY0NVdsek1rQ19FOTJwcW5uYTFXTnRScVNBc2Iw?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T09:44:00.000Z"
       }
     ],
     "auteur": "Hugo Marchetti",
@@ -448,23 +448,23 @@
     "rubrique": "World",
     "emoji": "🌍",
     "type": "revue",
-    "titre": "Tanzanian opposition leader found guilty of incitement",
+    "titre": "Tanzanian opposition leader found guilty of inciting unrest",
     "chapo": "Around the world in a few headlines. Our round-up for 6 November.",
     "corps": [],
     "liens": [
       {
-        "titre": "Tanzanian opposition leader found guilty of incitement",
+        "titre": "Tanzanian opposition leader found guilty of inciting unrest",
         "source": "BBC News",
         "url": "https://www.bbc.co.uk/news/articles/ckp8g4pm0y4lo?at_medium=RSS&at_campaign=rss",
         "resume": "The 58-year-old, who has been detained since April last year, was acquitted of the more serious charge of treason.",
-        "heure": "2026-11-06T10:47:52.000Z"
+        "heure": "2026-11-06T10:57:30.000Z"
       },
       {
         "titre": "Two dead after bus crashes in France, officials say",
         "source": "BBC News",
         "url": "https://www.bbc.co.uk/news/articles/cmly00l4p3lwo?at_medium=RSS&at_campaign=rss",
         "resume": "One child and one young adult were killed in the crash, local authorities say, with more injured.",
-        "heure": "2026-11-06T10:36:31.000Z"
+        "heure": "2026-11-06T10:57:14.000Z"
       },
       {
         "titre": "Trump signs order to preserve Oval Office as national monument",
@@ -526,10 +526,17 @@
     "rubrique": "Sport",
     "emoji": "⚽",
     "type": "revue",
-    "titre": "Championship preview: Contenders, pretenders and strugglers",
+    "titre": "England beat Ireland to top Wheelchair World Cup group",
     "chapo": "Results, transfers and the big moments in sport. Our round-up for 6 November.",
     "corps": [],
     "liens": [
+      {
+        "titre": "England beat Ireland to top Wheelchair World Cup group",
+        "source": "BBC News",
+        "url": "https://www.bbc.co.uk/sport/rugby-league/articles/cj62yy5qnweeo?at_medium=RSS&at_campaign=rss",
+        "resume": "England captain Lewis King says his side relish \"high-pressure games\" after they beat Ireland to secure top spot in Pool A en route to the semi-finals of the Wheelchair Rugby League World Cup.",
+        "heure": "2026-11-06T10:23:59.000Z"
+      },
       {
         "titre": "Championship preview: Contenders, pretenders and strugglers",
         "source": "BBC News",
@@ -557,13 +564,6 @@
         "url": "https://www.bbc.co.uk/sport/rugby-union/articles/cve8rx3yxg2eo?at_medium=RSS&at_campaign=rss",
         "resume": "Less than a year away from a potential 2027 World Cup quarter-final meeting, Ireland's hosting of Argentina represents an important staging post on the journey to Australia next autumn.",
         "heure": "2026-11-06T08:02:48.000Z"
-      },
-      {
-        "titre": "Scotland can be best & worst team in world - Dempsey",
-        "source": "BBC News",
-        "url": "https://www.bbc.co.uk/sport/rugby-union/articles/cmd934jpg59yo?at_medium=RSS&at_campaign=rss",
-        "resume": "Jack Dempsey on his guilt over leaving Glasgow, coming up against Dave Rennie and Scotland's hopes of finally overcoming New Zealand.",
-        "heure": "2026-11-06T07:53:44.000Z"
       }
     ],
     "auteur": "Inès Morel",
