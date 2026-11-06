@@ -19,6 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/check-feeds.mjs ${{ github.event.inputs.flux }}
+      - run: node scripts/check-feeds.mjs $FLUX
         env:
+          FLUX: ${{ github.event.inputs.flux }}
           DUMP: ${{ github.event.inputs.detail == 'oui' && '1' || '' }}
