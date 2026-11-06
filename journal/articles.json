@@ -7,10 +7,17 @@
     "rubrique": "Business",
     "emoji": "💼",
     "type": "revue",
-    "titre": "Plusieurs avocats vont saisir la Cour de justice de la République contre le ministre de l'Intérieur Laurent Nuñez, après les blessures infligées à des manifestants",
+    "titre": "\"Un pays de propriétaires\" : pourquoi y a-t-il si peu de logements sociaux en Espagne ?",
     "chapo": "Entreprises, emploi, stratégie : l'essentiel de l'actualité économique. Le point du 6 novembre.",
     "corps": [],
     "liens": [
+      {
+        "titre": "\"Un pays de propriétaires\" : pourquoi y a-t-il si peu de logements sociaux en Espagne ?",
+        "source": "franceinfo",
+        "url": "https://www.franceinfo.fr/monde/espagne/un-pays-de-proprietaires-pourquoi-y-a-t-il-si-peu-de-logements-sociaux-en-espagne_8270816.html#xtor=RSS-3-%5Bgeneral%5D",
+        "resume": "La crise du logement en Espagne résulte de plusieurs décennies de politiques ayant privilégié l'accession à la propriété au détriment du logement locatif social. Cette politique a conduit le pays à disposer de l'un des parcs de logements locatifs sociaux les plus faibles d'Europe, comme l'explique le média public espagnol RTVE dans cet article.",
+        "heure": "2026-11-06T12:59:31.000Z"
+      },
       {
         "titre": "Plusieurs avocats vont saisir la Cour de justice de la République contre le ministre de l'Intérieur Laurent Nuñez, après les blessures infligées à des manifestants",
         "source": "franceinfo",
@@ -24,13 +31,6 @@
         "url": "https://www.lemonde.fr/international/article/2026/11/06/alertes-a-la-bombe-quatre-vols-commerciaux-survolant-la-france-se-sont-poses-sans-encombre_6807787_3210.html",
         "resume": "Plusieurs vols européens ont été perturbés, vendredi, alors qu’une série d’alertes à la bombe, jusque-là toutes fausses, sévit depuis le début de la semaine.",
         "heure": "2026-11-06T12:41:25.000Z"
-      },
-      {
-        "titre": "TGV nouvelle génération enfin sur les rails",
-        "source": "franceinfo",
-        "url": "https://www.franceinfo.fr/economie/transports/sncf/tgv-nouvelle-generation-enfin-sur-les-rails_8270801.html#xtor=RSS-3-%5Bgeneral%5D",
-        "resume": "Après deux ans d’attente le TGV nouvelle génération est enfin sur les rails. Plus spacieux, coloré, recyclable, les premiers voyageurs ont pu prendre place ce vendredi 6 octobre. À quoi ressemble-t-il ?",
-        "heure": "2026-11-06T12:00:02.000Z"
       },
       {
         "titre": "En Italie, une « taxe de sortie » pour les grandes fortunes",
@@ -197,10 +197,17 @@
     "rubrique": "Nice & Côte d'Azur",
     "emoji": "🌴",
     "type": "revue",
-    "titre": "Enseignante et directrice agressées dans une école à Nice: le personnel de l'établissement en grève",
+    "titre": "« Je rappelle que c’est illégal (...) il y aura des sanctions » : le gouvernement promet de sévir si l’accès aux salles de classe est compromis",
     "chapo": "Ce qui se passe près de chez nous, de Nice à Monaco. Le point du 6 novembre.",
     "corps": [],
     "liens": [
+      {
+        "titre": "« Je rappelle que c’est illégal (...) il y aura des sanctions » : le gouvernement promet de sévir si l’accès aux salles de classe est compromis",
+        "source": "Nice-Matin",
+        "url": "https://www.nicematin.com/societe/blocage-des-lycees/je-rappelle-que-c-est-illegal-il-y-aura-des-sanctions-le-gouvernement-promet-de-sevir-si-l-acces-aux-salles-de-classe-est-compromis-10754654",
+        "resume": "Le ministre de l’Education nationale, Edouard Geffray, a affirmé vendredi qu’interdire l’accès aux salles de classe comme le font certains élèves dans le cadre du mouvement lycéen est « illégal », promettant des « sanctions ».",
+        "heure": "2026-11-06T12:58:14.000Z"
+      },
       {
         "titre": "Enseignante et directrice agressées dans une école à Nice: le personnel de l'établissement en grève",
         "source": "BFM Nice Côte d'Azur",
@@ -209,18 +216,11 @@
         "heure": "2026-11-06T12:55:00.000Z"
       },
       {
-        "titre": "Deux hommes interpellés près de Brignoles après la dégradation d’un radar de chantier",
+        "titre": "Dix acteurs, seize musiciens, des costumes créés avec des matériaux de récupération : la Philharmonique La Seynoise présente son nouveau spectacle",
         "source": "Nice-Matin",
-        "url": "https://www.nicematin.com/faits-divers/deux-hommes-interpelles-pres-de-brignoles-apres-la-degradation-d-un-radar-de-chantier-10754635",
-        "resume": "En l’espace de quelques jours, deux hommes de 53 et 22 ont été arrêtés et mis en garde à vue pour avoir dégradé un radar de chantier installé sur la RD 562, dans la commune de Carcès. Ils seront tous les deux jugés dans les prochaines semaines.",
-        "heure": "2026-11-06T12:36:24.000Z"
-      },
-      {
-        "titre": "Tout savoir sur le destin hors du commun de l’abbé Galli : un documentaire présenté à La Seyne sur cet acteur du siècle dernier devenu curé à Sanary",
-        "source": "Nice-Matin",
-        "url": "https://www.nicematin.com/societe/vie-locale/tout-savoir-sur-le-destin-hors-du-commun-de-l-abbe-galli-un-documentaire-presente-a-la-seyne-sur-cet-acteur-du-siecle-dernier-devenu-cure-a-sanary-10754325",
-        "resume": "Un documentaire historique retraçant l’étonnant parcours de Georges Galli, cet homme de cinéma devenu homme d’Eglise, sera diffusé samedi à la salle Baudouin.",
-        "heure": "2026-11-06T12:30:02.000Z"
+        "url": "https://www.nicematin.com/culture/dix-acteurs-seize-musiciens-des-costumes-crees-avec-des-materiaux-de-recuperation-la-philharmonique-la-seynoise-presente-son-nouveau-spectacle-10754319",
+        "resume": "Imaginé sur le thème d’un défilé de mode insolite, le spectacle intitulé « L’art de rien » sera joué lors de deux représentations gratuites, samedi 7 et dimanche 8 novembre, au chapiteau Circoscène des Sablettes.",
+        "heure": "2026-11-06T12:50:02.000Z"
       },
       {
         "titre": "La Métropole Nice Côte d'Azur vote la gratuité des parkings souterrains métropolitains pour les professionnels de santé",
@@ -239,8 +239,8 @@
     ],
     "auteur": "Lucas Giordano",
     "sources": [
-      "BFM Nice Côte d'Azur",
       "Nice-Matin",
+      "BFM Nice Côte d'Azur",
       "RCF",
       "France 3 Côte d'Azur"
     ]
@@ -335,26 +335,26 @@
         "heure": "2026-11-06T07:00:05.000Z"
       },
       {
-        "titre": "La start-up normande Deigma rachetée par le spécialiste bordelais des logiciels de santé Dedalus",
-        "source": "Ouest-France",
-        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQdGJIWDVkREdNR1g3YllxTHNYV3NpcTB5X3Ztei1XWTVkbVJYUm1pMmJ2ZVVMa0J6alJnVER2OERvSmdVM0NtRlN1cVVpb256Q1hRTmRDOVFDMUJHemdTeUVYRVotTTFlLUVsWkFvTVIzMW80Tl9Fc3hyalB3OXQ4TTdtQ0diNlpxMFFvc2FwNEM1Si1tNExlVTVhVjU5UGVWeGRwOTVwWlNqdFlXd3NWcUVMQ3lzRko3TXk3QllZUTJHTmhWdjJvcktlOW1QWFB5aWpaLUduaUpXOHVrUFJtTFRrY2xjOXFvLWlVR0tOd3dTUEZZMjhSTC1EaEttZmtQX0dTdA?oc=5",
-        "resume": "",
-        "heure": "2026-11-06T05:30:21.000Z"
-      },
-      {
         "titre": "GPT-6 Cyber : OpenAI lance sa nouvelle IA pour la cybersécurité",
         "source": "KultureGeek",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQNnlzaWhTUEhyZHZvVFdzOFdIQ3UyTHVmMWpqa3FUc0FuSkxyMng0dlg2NVl6c3JHUk5lcllPdkNmT01jTW52YTZmb3JkQXI5OTdfa20tZkxGeU0xNTNOVkthc2h4VkZ0Vks0MTgwYkN4bHNReHlZaUNmTkNwdW5MZlFkNktKengwc0NvaDlR?oc=5",
         "resume": "",
         "heure": "2026-11-05T18:33:00.000Z"
+      },
+      {
+        "titre": "\"On n'a pas pensé à les sécuriser ni à auditer leur sécurité\": la nouvelle cyberattaque contre les réfrigérateurs de supermarchés, reflet du manque d'anticipation et de préparation des entreprises face aux cybercriminels",
+        "source": "BFM",
+        "url": "https://news.google.com/rss/articles/CBMijwNBVV95cUxOV3pSbTAyRFVuSERybDVJNzQ5eUlUaXZUbkd0UTUtbHVUcEZHV1BheklJNHZmLUs3cWJrTjUwRkRVOHJBUlVzQTFidHZkcWM3YjNoOWxRTWs1Mk9LWThRRVljcWM0V0Y2SktvZzV5TE5pYVNpNmNlZWpmWGk5aE1FemVYNFNCcjNYUUZReXhGS2RlYXIza2U2Mm8xOThuX0FGOGhDVjFHc2pMUzZCMzVnX3FnQnI2UndpU3p2Q3VDRDVvN0lKamNxRnJ2LXVEOW90N3hPSmRjdUlrMmJLZlBLVE95d2Y1SVctLTBNcGx1M2lLN19Uam9xNTg3Z2o0U0VqX3d3blA4M0l3bHZDUUk0Y1RudHdXUnY2MEczTEFEcE02S1NzbTNRQklZd0dNUmtXWEUwTExtbzNyTnRlek14OWplbllaSkVNd3VYQjI5UHZjcEFpV0Y0ZWhTYXZEeUxTMktEalVhSS1ZZVdibUlwVll3ZzBSQmhNdnNJWHgxNmZOUmtPSnFuWndrLURwTW8?oc=5",
+        "resume": "",
+        "heure": "2026-11-05T17:32:27.000Z"
       }
     ],
     "auteur": "Nathan Belkacem",
     "sources": [
       "Orange Actualités",
       "Le Monde",
-      "Ouest-France",
-      "KultureGeek"
+      "KultureGeek",
+      "BFM"
     ]
   },
   {
@@ -478,7 +478,7 @@
         "source": "Yahoo Finance",
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNc2VDQVlTbHhaTXJZWkhOWkdvcWk5LW84LXlCc1NyTGZZSWZlT0hRd3NQc3lwQTByRHRVU0VfVmJKU1pTWWlFTUZmT2EzS2ExS3haNHRfZ3pFaFd3TDB4NmZ0WXVFVFBxUFJiU3VTUmhsWEIzeFJwb2NRUEw3V210dXhsUjZZWU4xZk9zNkp3U3dSSFM5cTc0WW5CVUJwZ2FfV25KQjBnSFRTb2RmejRqejJsRjFsT002THJqNg?oc=5",
         "resume": "",
-        "heure": "2026-11-06T12:37:23.000Z"
+        "heure": "2026-11-06T12:00:29.000Z"
       },
       {
         "titre": "‘So sad’: Trump erupts as crash goes global",
@@ -525,10 +525,17 @@
     "rubrique": "World",
     "emoji": "🌍",
     "type": "revue",
-    "titre": "Kenyan doomsday cult leader given life sentence for murdering 191 people",
+    "titre": "Global tech stocks plunge amid AI slowdown fears - live updates",
     "chapo": "Around the world in a few headlines. Our round-up for 6 November.",
     "corps": [],
     "liens": [
+      {
+        "titre": "Global tech stocks plunge amid AI slowdown fears - live updates",
+        "source": "BBC",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBLOFVxRnRvbGdVMGt1OURWc3Y3SFhRc29RNXRld184ZVBJb0tJSm9oaGhMQ25zSWpHQUd6cjhaRnFVM1NiUGZUTGRWejJ5b3VBeXZIbUR3?oc=5",
+        "resume": "",
+        "heure": "2026-11-06T12:55:00.000Z"
+      },
       {
         "titre": "Kenyan doomsday cult leader given life sentence for murdering 191 people",
         "source": "BBC News",
@@ -542,13 +549,6 @@
         "url": "https://www.bbc.co.uk/news/articles/cm2d66n0lx1yo?at_medium=RSS&at_campaign=rss",
         "resume": "Scores of flights across Europe have received bomb threats this week, but no explosives have been found so far.",
         "heure": "2026-11-06T12:51:38.000Z"
-      },
-      {
-        "titre": "Global tech stocks plunge amid AI slowdown fears - live updates",
-        "source": "BBC",
-        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBLOFVxRnRvbGdVMGt1OURWc3Y3SFhRc29RNXRld184ZVBJb0tJSm9oaGhMQ25zSWpHQUd6cjhaRnFVM1NiUGZUTGRWejJ5b3VBeXZIbUR3?oc=5",
-        "resume": "",
-        "heure": "2026-11-06T12:46:47.000Z"
       },
       {
         "titre": "European skies on high alert as more airlines receive bomb threats – Europe live",
@@ -567,8 +567,8 @@
     ],
     "auteur": "Sofia Delmas",
     "sources": [
-      "BBC News",
       "BBC",
+      "BBC News",
       "The Guardian",
       "Reuters"
     ]
