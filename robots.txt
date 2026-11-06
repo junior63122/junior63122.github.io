@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://junior63122.github.io/echo-des-anges/sitemap.xml
+Sitemap: https://echodesanges.fr/sitemap.xml
