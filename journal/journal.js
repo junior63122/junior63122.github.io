@@ -34,6 +34,7 @@
       more: "Toute la rubrique ›",
       alsoTitle: "À lire aussi",
       portrait: "Portrait",
+      photo: "Photo",
       sections: { Business: "Économie", Finance: "Finance", "Événementiel": "Événementiel", Tech: "Tech", Monde: "International", "Nice & Côte d'Azur": "Nice & Côte d'Azur", Sport: "Sport" },
     },
     en: {
@@ -61,6 +62,7 @@
       more: "Whole section ›",
       alsoTitle: "Also worth reading",
       portrait: "Profile",
+      photo: "Photo",
       sections: { Business: "Business", Finance: "Finance", "Événementiel": "Events", Tech: "Tech", Monde: "World", "Nice & Côte d'Azur": "Nice & the Riviera", Sport: "Sport" },
     },
   };
@@ -77,6 +79,7 @@
   let T = I18N[lang];
 
   let articles = [];
+  let photos = {};
   const langOf = (a) => a.lang || "fr";
   const visibles = () => articles.filter((a) => langOf(a) === lang);
   // Un article et sa traduction ont le même id, à la langue près (« 2026-11-05-en-… »).
@@ -88,6 +91,26 @@
   const artLink = (a, i) => `#a/${encodeURIComponent(a.id)}${i != null ? "/" + i : ""}`;
   const secLink = (k) => `#r/${SLUG[k]}`;
   const kicker = (a) => (a.type === "article" && a.rubrique && a.rubrique !== secName(a.section) ? `${secName(a.section)} · ${a.rubrique}` : secName(a.section));
+
+  // ---------- Photos ----------
+  // Photo propre à l'article, sinon une photo libre de droits de la rubrique
+  // (la même pour un article et sa traduction).
+  const hash = (str) => { let h = 0; for (const c of str) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; };
+  function imageFor(a) {
+    if (a.image) return { src: a.image.src, credit: `${T.photo} : ${a.image.credit}`, legende: (a.image.legende || {})[lang] || "" };
+    const pool = photos[a.section] || [];
+    if (!pool.length) return null;
+    const p = pool[hash(twinKey(a.id)) % pool.length];
+    const origine = p.origine === "wikimedia" ? "Wikimedia Commons" : p.origine === "pexels" ? "Pexels" : p.origine;
+    return { src: `img/stock/${p.fichier}`, credit: `${T.photo} : ${p.auteur} / ${origine} (${p.licence})`, href: p.page, legende: "" };
+  }
+  function figure(img, cls) {
+    if (!img) return "";
+    const credit = img.href ? `<a href="${esc(img.href)}" target="_blank" rel="noopener">${esc(img.credit)}</a>` : esc(img.credit);
+    return `<figure class="fig ${cls || ""}"><img src="${esc(img.src)}" alt="${esc(img.legende)}" loading="lazy" decoding="async">
+      <figcaption>${img.legende ? `<span>${esc(img.legende)}</span> ` : ""}<span class="credit">${credit}</span></figcaption></figure>`;
+  }
+  const thumb = (img, cls) => (img ? `<div class="thumb ${cls || ""}"><img src="${esc(img.src)}" alt="${esc(img.legende)}" loading="lazy" decoding="async"></div>` : "");
 
   // ---------- Éléments fixes ----------
   function applyStatic() {
@@ -158,6 +181,7 @@
 
     const leadAlso = (lead.liens || []).slice(1, 5);
     const featureHtml = (a, badge) => `<article class="feature">
+        ${a.type === "article" ? `<a href="${artLink(a)}" tabindex="-1">${thumb(imageFor(a), "portrait")}</a>` : ""}
         <span>${badge ? `<span class="badge">${esc(badge)}</span>` : `<span class="kicker">${esc(kicker(a))}</span>`}</span>
         <h3><a href="${artLink(a)}">${esc(a.titre)}</a></h3>
         <p>${esc(a.chapo)}</p>
@@ -174,7 +198,7 @@
             <div>
               <p class="chapo">${esc(lead.liens && lead.liens[0].resume ? lead.liens[0].resume : lead.chapo)}</p>
               <p class="byline">${esc(T.by)} ${esc(lead.auteur)} <span class="when">· ${esc(longDate(lead.date))}</span></p>
-              <div class="wave" role="presentation"></div>
+              ${imageFor(lead) ? `<a href="${artLink(lead, lead.liens ? 0 : null)}" tabindex="-1">${thumb(imageFor(lead), "lead-img")}</a>` : `<div class="wave" role="presentation"></div>`}
             </div>
             ${leadAlso.length ? `<ul class="also">${leadAlso.map((l, i) => `<li><a href="${artLink(lead, i + 1)}">${esc(l.titre)}</a><span class="src">${esc(l.source)}</span></li>`).join("")}</ul>` : ""}
           </div>
@@ -195,7 +219,7 @@
     return `<section class="block">
       <div class="block-head"><h2><a href="${secLink(a.section)}">${esc(secName(a.section))}</a></h2><a class="more" href="${secLink(a.section)}">${esc(T.more)}</a></div>
       <div class="block-grid">
-        <div class="main"><h3><a href="${artLink(a, 0)}">${esc(main.titre)}</a></h3>${main.resume ? `<p>${esc(main.resume)}</p>` : ""}<span class="src">${esc(T.by)} ${esc(a.auteur)} · ${esc(T.source)} : ${esc(main.source)}</span></div>
+        <div class="main">${thumb(imageFor(a))}<h3><a href="${artLink(a, 0)}">${esc(main.titre)}</a></h3>${main.resume ? `<p>${esc(main.resume)}</p>` : ""}<span class="src">${esc(T.by)} ${esc(a.auteur)} · ${esc(T.source)} : ${esc(main.source)}</span></div>
         ${side.map((l, i) => `<div class="side"><h3><a href="${artLink(a, i + 1)}">${esc(l.titre)}</a></h3><span class="src">${esc(l.source)}</span></div>`).join("")}
       </div>
     </section>`;
@@ -223,7 +247,9 @@
       <h1>${esc(a.titre)}</h1>
       <p class="chapo">${esc(a.chapo)}</p>
       <div class="meta-line"><strong>${esc(T.by)} ${esc(a.auteur)}</strong><span class="when">${esc(T.published)} ${esc(longDate(a.date))}</span>${sources}</div>
+      ${figure(imageFor(a), a.image ? "hero-portrait" : "hero")}
       ${(a.corps || []).map((p) => `<p class="body">${esc(p)}</p>`).join("")}
+      ${a.galerie && a.galerie.length ? `<div class="galerie">${a.galerie.map((g) => figure({ src: g.src, credit: `${T.photo} : ${g.credit}`, legende: (g.legende || {})[lang] || "" })).join("")}</div>` : ""}
       ${a.liens && a.liens.length ? `<ol class="revue">${a.liens.map((l, i) => `
         <li id="info-${i}"><div>
           <h2>${esc(l.titre)}</h2>
@@ -281,8 +307,11 @@
 
   window.addEventListener("hashchange", route);
   applyStatic();
-  fetch("articles.json?v=" + Date.now())
-    .then((r) => r.json())
-    .then((data) => { articles = data; route(); })
+  const v = "?v=" + Date.now();
+  Promise.all([
+    fetch("articles.json" + v).then((r) => r.json()),
+    fetch("img/stock/credits.json" + v).then((r) => (r.ok ? r.json() : {})).catch(() => ({})),
+  ])
+    .then(([data, credits]) => { articles = data; photos = credits || {}; route(); })
     .catch(() => { app.innerHTML = `<p class="loading">${esc(T.error)}</p>`; });
 })();

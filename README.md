@@ -15,6 +15,7 @@ Chaque rubrique est signée par un(e) journaliste de la rédaction (noms dans `s
 | Site | https://junior63122.github.io/journal/ |
 | Articles | `journal/articles.json` |
 | Générateur d'actu | `scripts/generate-news.mjs` (liste des flux dans `RUBRIQUES`) |
+| Photos libres (Wikimedia Commons) | `scripts/fetch-images.mjs` → `journal/img/stock/` (+ `credits.json`) |
 | Robot | `.github/workflows/journal-auto.yml` |
 
 Lancer le robot à la main : onglet **Actions → « Journal - articles automatiques » → Run workflow**.

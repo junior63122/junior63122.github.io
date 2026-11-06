@@ -195,3 +195,21 @@ main { min-height: 50vh; }
   .live-item { flex-basis: 220px; padding: 8px 16px 14px; }
   .live-item:first-child { border-left: 0; }
 }
+
+/* ---------- Photos ---------- */
+.thumb { overflow: hidden; background: var(--paper-2); margin-bottom: 10px; }
+.thumb img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.thumb.portrait img { aspect-ratio: 4 / 3; object-position: 50% 18%; }
+.thumb.lead-img { margin: 16px 0 0; }
+.fig { margin: 22px 0 0; }
+.fig img { display: block; width: 100%; height: auto; background: var(--paper-2); }
+.fig.hero img { aspect-ratio: 16 / 9; object-fit: cover; }
+.fig.hero-portrait img { width: auto; max-width: 100%; max-height: 720px; margin: 0 auto; }
+.fig figcaption { font-family: var(--sans); font-size: 0.82rem; color: var(--muted); padding-top: 6px; line-height: 1.4; }
+.fig figcaption span:first-child:not(.credit) { color: var(--ink-2); }
+.fig .credit { text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.72rem; }
+.fig .credit a:hover { text-decoration: underline; }
+.galerie { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+.galerie .fig { margin: 0; }
+.galerie .fig img { aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%; }
+@media (max-width: 600px) { .galerie { grid-template-columns: 1fr 1fr; } }
