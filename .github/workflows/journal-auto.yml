@@ -1,14 +1,10 @@
-name: Journal - articles automatiques
+name: Journal - éditions
 
 on:
   schedule:
     - cron: "17 5 * * *"  # vers 6h/7h (heure de Paris) : édition du matin
     - cron: "17 16 * * *" # vers 17h/18h : mise à jour de l'actu
   workflow_dispatch:
-    inputs:
-      nombre:
-        description: "Nombre d'articles sur Junior à générer"
-        default: "1"
 
 permissions:
   contents: write
@@ -27,8 +23,6 @@ jobs:
           node-version: 20
       - name: Actualité (Business, Finance, Événementiel, Tech, Monde, Nice, Sport)
         run: node scripts/generate-news.mjs
-      - name: Article(s) sur Junior
-        run: node scripts/generate-article.mjs "${{ github.event.inputs.nombre || '1' }}"
       - name: Publier
         run: |
           git config user.name "journal-bot"
