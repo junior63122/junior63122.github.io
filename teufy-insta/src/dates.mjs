@@ -57,3 +57,27 @@ export function plage(from, to) {
 }
 
 function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+// Jour ISO (1 = lundi … 7 = dimanche) et rang de ce jour dans le mois (1er, 2e… lundi du mois).
+export function slotOfDay(now = new Date()) {
+  const p = parts(now);
+  const dow = { Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6, Sun: 7 }[p.weekday];
+  return { jour: dow, rang: Math.ceil(+p.day / 7), date: `${p.year}-${p.month}-${p.day}` };
+}
+
+// Toutes les dates du mois de `now` (midi heure de Paris).
+export function daysOfMonth(now = new Date()) {
+  const p = parts(now);
+  const out = [];
+  for (let d = 1; d <= 31; d++) {
+    const t = parisToUtc(+p.year, +p.month, d, 12);
+    if (parts(t).month !== p.month) break;
+    out.push(t);
+  }
+  return out;
+}
+
+// Fenêtre glissante : de `now` + a jours à `now` + b jours.
+export function rolling(now, a, b) {
+  return { from: new Date(now.getTime() + a * 86400e3), to: new Date(now.getTime() + b * 86400e3) };
+}

@@ -73,8 +73,22 @@ function toEvent(o, { source, baseUrl }) {
     img(o.flyer) || img(o.event_images) || img(o.picture) || img(o.imageUrl) || '';
 
   const price = priceOf(o);
+  const tags = tagsOf(o);
+  const description = clean(str(o.description) || str(o.about) || str(o.summary)).slice(0, 600);
 
-  return { source, name: clean(name), start, end, venue: clean(venue), city: clean(city), address: clean(address), url, image, price };
+  return { source, name: clean(name), start, end, venue: clean(venue), city: clean(city), address: clean(address), url, image, price, tags, description };
+}
+
+// Styles musicaux / catégories (Shotgun : tags, genres ; DICE : genre_tags, tags…)
+function tagsOf(o) {
+  const out = new Set();
+  for (const k of ['tags', 'genres', 'genre_tags', 'genreTags', 'musicGenres', 'musicGenre', 'genre', 'keywords', 'categories', 'category', 'type_tags']) {
+    for (const t of [].concat(o[k] || [])) {
+      const v = typeof t === 'string' ? t : str(t?.name) || str(t?.title) || str(t?.label) || str(t?.value);
+      if (v) v.split(/[,;|]/).forEach((x) => x.trim() && out.add(clean(x).toLowerCase()));
+    }
+  }
+  return [...out].slice(0, 15);
 }
 
 function priceOf(o) {
@@ -188,6 +202,7 @@ export function dedupe(events) {
     if (!prev) { map.set(k, e); continue; }
     // On fusionne en gardant les champs renseignés.
     for (const f of Object.keys(e)) if (!prev[f] && e[f]) prev[f] = e[f];
+    if (e.tags?.length) prev.tags = [...new Set([...(prev.tags || []), ...e.tags])];
     if (prev.source !== e.source && !prev.sources) prev.sources = [prev.source, e.source];
   }
   return [...map.values()];

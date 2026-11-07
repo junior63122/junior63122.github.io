@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Publication automatique Instagram Teufy : soirées Shotgun + DICE de la Côte d'Azur",
-  "engines": { "node": ">=20" },
+  "description": "Teufy : 9 publications Instagram par mois (soirées Shotgun + DICE, bons plans, débats, reels)",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "semaine": "node src/run.mjs semaine",
-    "weekend": "node src/run.mjs weekend",
-    "reel": "node src/run.mjs reel",
-    "apercu": "node src/run.mjs tout --dry-run",
+    "auto": "node src/run.mjs auto",
+    "mois": "node src/run.mjs mois",
     "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {

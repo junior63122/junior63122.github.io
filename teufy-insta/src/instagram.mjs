@@ -64,6 +64,12 @@ export async function publishCarousel(imageUrls, caption, ig) {
   return publish(id, ig);
 }
 
+export async function publishSingle(imageUrl, caption, ig) {
+  const { id } = await call('POST', `${ig.user}/media`, { image_url: imageUrl, caption }, ig);
+  await waitReady(id, ig, { timeoutMs: 3 * 60e3 });
+  return publish(id, ig);
+}
+
 export async function publishReel(videoUrl, coverUrl, caption, ig) {
   const params = { media_type: 'REELS', video_url: videoUrl, caption, share_to_feed: 'true' };
   if (coverUrl) params.cover_url = coverUrl;

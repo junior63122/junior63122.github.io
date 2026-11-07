@@ -4,12 +4,40 @@
   "compte": "@teufy",
   "appel_a_l_action": "Toutes les soirées sont sur Teufy",
   "villes": [
-    "nice", "cannes", "antibes", "juan-les-pins", "monaco", "monte-carlo", "menton",
-    "cagnes-sur-mer", "saint-laurent-du-var", "villefranche-sur-mer", "beaulieu-sur-mer",
-    "eze", "cap-d'ail", "roquebrune-cap-martin", "grasse", "mandelieu", "theoule-sur-mer",
-    "golfe-juan", "vallauris", "valbonne", "sophia-antipolis", "biot", "villeneuve-loubet",
-    "saint-tropez", "frejus", "saint-raphael", "sainte-maxime", "ramatuelle", "carros",
-    "la-colle-sur-loup", "vence", "saint-paul-de-vence", "le-cannet", "mougins"
+    "nice",
+    "cannes",
+    "antibes",
+    "juan-les-pins",
+    "monaco",
+    "monte-carlo",
+    "menton",
+    "cagnes-sur-mer",
+    "saint-laurent-du-var",
+    "villefranche-sur-mer",
+    "beaulieu-sur-mer",
+    "eze",
+    "cap-d'ail",
+    "roquebrune-cap-martin",
+    "grasse",
+    "mandelieu",
+    "theoule-sur-mer",
+    "golfe-juan",
+    "vallauris",
+    "valbonne",
+    "sophia-antipolis",
+    "biot",
+    "villeneuve-loubet",
+    "saint-tropez",
+    "frejus",
+    "saint-raphael",
+    "sainte-maxime",
+    "ramatuelle",
+    "carros",
+    "la-colle-sur-loup",
+    "vence",
+    "saint-paul-de-vence",
+    "le-cannet",
+    "mougins"
   ],
   "sources": {
     "shotgun": [
@@ -24,13 +52,65 @@
       "https://dice.fm/browse/monaco"
     ]
   },
-  "publications": {
-    "semaine": { "jours": [1, 2, 3, 4], "titre": "Les soirées de la semaine", "sous_titre": "sur la Côte d'Azur", "max": 9 },
-    "weekend": { "jours": [5, 6, 0], "titre": "Les soirées de la semaine", "sous_titre": "spécial week-end sur la Côte d'Azur", "max": 9 },
-    "reel": { "jours": [5, 6, 0], "max": 6, "secondes_par_soiree": 2.2 }
-  },
-  "hashtags": [
-    "#teufy", "#soireenice", "#nice", "#cotedazur", "#nicenightlife", "#cannes", "#monaco",
-    "#antibes", "#clubbing", "#teuf", "#sortiranice", "#nightlife", "#techno", "#party", "#frenchriviera"
-  ]
+  "calendrier_explication": "Chaque ligne = une publication par mois. jour : 1 = lundi … 7 = dimanche. rang : 1 = premier de ce jour dans le mois, 2 = deuxième… (1 à 4). Heure : voir le workflow.",
+  "calendrier": [
+    {
+      "jour": 1,
+      "rang": 1,
+      "type": "incontournables",
+      "variante": "commercial"
+    },
+    {
+      "jour": 4,
+      "rang": 1,
+      "type": "reel",
+      "variante": "weekend"
+    },
+    {
+      "jour": 3,
+      "rang": 2,
+      "type": "debat"
+    },
+    {
+      "jour": 5,
+      "rang": 2,
+      "type": "bonplan",
+      "variante": "petits-prix"
+    },
+    {
+      "jour": 1,
+      "rang": 3,
+      "type": "incontournables",
+      "variante": "techno"
+    },
+    {
+      "jour": 4,
+      "rang": 3,
+      "type": "reel",
+      "variante": "techno"
+    },
+    {
+      "jour": 2,
+      "rang": 4,
+      "type": "bonplan",
+      "variante": "a-reserver"
+    },
+    {
+      "jour": 3,
+      "rang": 4,
+      "type": "debat"
+    },
+    {
+      "jour": 5,
+      "rang": 4,
+      "type": "reel",
+      "variante": "petits-prix"
+    }
+  ],
+  "reglages": {
+    "soirees_par_carrousel": 9,
+    "soirees_par_reel": 6,
+    "secondes_par_soiree_reel": 2.2,
+    "petit_prix_max": 10
+  }
 }

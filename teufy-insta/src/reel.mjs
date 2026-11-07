@@ -1,6 +1,7 @@
 // Monte le reel (MP4 H.264 1080×1920, 30 i/s) à partir des PNG, avec ffmpeg.
 // Chaque image a un léger zoom, les transitions sont des fondus/glissés rapides.
-// Musique : un fichier pris au hasard dans assets/musiques/ (mp3/m4a libres de droits),
+// Musique : un fichier pris au hasard dans assets/musiques/techno/ (reel techno) ou
+// assets/musiques/club/ (les autres), à défaut dans assets/musiques/ (mp3/m4a libres de droits),
 // sinon une piste silencieuse (Instagram exige une piste audio).
 import { spawn } from 'node:child_process';
 import { readdir } from 'node:fs/promises';
@@ -10,7 +11,7 @@ import path from 'node:path';
 const FPS = 30;
 const TRANSITIONS = ['slideleft', 'fade', 'slideup', 'circleopen', 'smoothleft', 'fadeblack'];
 
-export async function buildReel(images, out, { root, durees }) {
+export async function buildReel(images, out, { root, durees, genre = 'club' }) {
   const T = 0.35; // durée d'une transition
   const inputs = [];
   const filters = [];
@@ -33,7 +34,7 @@ export async function buildReel(images, out, { root, durees }) {
   }
   const total = durees.reduce((a, b) => a + b, 0) + T;
 
-  const musique = await pickMusic(root);
+  const musique = (await pickMusic(path.join(root, 'assets', 'musiques', genre))) || (await pickMusic(path.join(root, 'assets', 'musiques')));
   const audioIdx = images.length;
   if (musique) inputs.push('-i', musique);
   else inputs.push('-f', 'lavfi', '-t', String(total), '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100');
@@ -51,8 +52,7 @@ export async function buildReel(images, out, { root, durees }) {
   return { out, total, musique };
 }
 
-async function pickMusic(root) {
-  const dir = path.join(root, 'assets', 'musiques');
+async function pickMusic(dir) {
   if (!existsSync(dir)) return null;
   const files = (await readdir(dir)).filter((f) => /\.(mp3|m4a|aac|wav)$/i.test(f));
   if (!files.length) return null;
