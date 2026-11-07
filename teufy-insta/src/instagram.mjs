@@ -81,3 +81,44 @@ export async function publishReel(videoUrl, coverUrl, caption, ig) {
 export async function permalink(mediaId, ig) {
   try { return (await call('GET', mediaId, { fields: 'permalink' }, ig)).permalink; } catch { return null; }
 }
+
+// --- Statistiques (permission instagram_manage_insights) ----------------------
+
+const FEED_METRICS = ['reach', 'likes', 'comments', 'saved', 'shares', 'total_interactions', 'follows', 'profile_visits'];
+const REEL_METRICS = ['reach', 'likes', 'comments', 'saved', 'shares', 'total_interactions', 'views', 'ig_reels_avg_watch_time'];
+
+function parseInsights(json) {
+  const out = {};
+  for (const d of json.data || []) {
+    const v = d.values?.[0]?.value ?? d.total_value?.value;
+    if (typeof v === 'number') out[d.name] = v;
+  }
+  return out;
+}
+
+export async function insights(mediaId, isReel, ig) {
+  const metrics = isReel ? REEL_METRICS : FEED_METRICS;
+  let out = {};
+  try {
+    out = parseInsights(await call('GET', `${mediaId}/insights`, { metric: metrics.join(',') }, ig));
+  } catch {
+    // Une métrique non disponible fait échouer tout l'appel : on les demande une par une.
+    for (const m of metrics) {
+      try { Object.assign(out, parseInsights(await call('GET', `${mediaId}/insights`, { metric: m }, ig))); } catch { /* ignorée */ }
+    }
+  }
+  // Repli sans permission « insights » : likes et commentaires publics.
+  if (out.likes == null || out.comments == null) {
+    try {
+      const f = await call('GET', mediaId, { fields: 'like_count,comments_count' }, ig);
+      out.likes ??= f.like_count;
+      out.comments ??= f.comments_count;
+    } catch { /* ignorée */ }
+  }
+  return Object.keys(out).length ? out : null;
+}
+
+export async function followers(ig) {
+  const f = await call('GET', ig.user, { fields: 'followers_count' }, ig);
+  return f.followers_count;
+}

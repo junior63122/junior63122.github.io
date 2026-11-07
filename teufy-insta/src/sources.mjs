@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
-import { extractEvents, dedupe } from './extract.mjs';
+import { extractEvents, dedupe, keyOf } from './extract.mjs';
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
 
@@ -90,4 +90,26 @@ export function filterEvents(events, { from, to, villes }) {
 // Classement : événements Teufy d'abord, puis ceux avec visuel, lieu et lien.
 function score(e) {
   return (e.manuel ? 100 : 0) + (e.mise_en_avant ? 50 : 0) + (e.image ? 10 : 0) + (e.venue ? 4 : 0) + (e.url ? 2 : 0) + (e.sources ? 3 : 0);
+}
+
+// Complète les soirées retenues (affiche, style, description, prix) en lisant leur page de détail.
+export async function enrich(events, { max = 25, debugDir } = {}) {
+  let n = 0;
+  for (const e of events) {
+    if (n >= max) break;
+    if (!e.url || e.enrichi || (e.image && e.tags?.length && e.price != null)) continue;
+    n++;
+    e.enrichi = true;
+    try {
+      const html = await fetchHtml(e.url, 2);
+      if (debugDir) { await mkdir(debugDir, { recursive: true }); await writeFile(path.join(debugDir, `detail-${slug(e.url)}.html`), html); }
+      const found = extractEvents(html, { source: e.source, baseUrl: e.url });
+      const m = found.find((x) => keyOf(x) === keyOf(e)) || found.find((x) => x.start.slice(0, 10) === e.start.slice(0, 10)) || found[0];
+      if (!m) continue;
+      for (const f of ['image', 'venue', 'city', 'address', 'description', 'popularite']) if (!e[f] && m[f]) e[f] = m[f];
+      if (e.price == null && m.price != null) e.price = m.price;
+      if (m.tags?.length) e.tags = [...new Set([...(e.tags || []), ...m.tags])];
+    } catch { /* page indisponible : on garde ce qu'on a */ }
+  }
+  return events;
 }

@@ -2,7 +2,6 @@
   "fuseau": "Europe/Paris",
   "marque": "Teufy",
   "compte": "@teufy",
-  "appel_a_l_action": "Toutes les soirées sont sur Teufy",
   "villes": [
     "nice",
     "cannes",
@@ -111,6 +110,13 @@
     "soirees_par_carrousel": 9,
     "soirees_par_reel": 6,
     "secondes_par_soiree_reel": 2.2,
-    "petit_prix_max": 10
+    "petit_prix_max": 10,
+    "creneaux_utc": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "_creneaux": "Heures (UTC) parmi lesquelles le bot choisit l'heure de publication selon ce qui marche (16h-19h l'hiver, 17h-20h l'été à Paris). Le passage de 19h UTC sert de rattrapage."
   }
 }

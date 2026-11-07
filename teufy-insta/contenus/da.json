@@ -1,0 +1,54 @@
+{
+  "_explication": "Direction artistique. Couleurs en hexadécimal. Le logo (assets/logo.png ou .svg) remplace le nom écrit s'il existe. La palette change avec la saison de la date de publication.",
+  "polices": {
+    "titre": "Anton",
+    "texte": "Inter",
+    "techno": "Space Mono",
+    "google_fonts": "family=Anton&family=Inter:wght@500;700;900&family=Space+Mono:wght@700"
+  },
+  "arrondi": 28,
+  "saisons": {
+    "hiver": {
+      "_mois": "décembre, janvier, février",
+      "fond": "#070b1f",
+      "accent": "#7aa2ff",
+      "accent2": "#b28dff",
+      "accent3": "#e9f1ff",
+      "texte": "#ffffff",
+      "lueurs": ["rgba(122,162,255,.45)", "rgba(178,141,255,.45)", "rgba(233,241,255,.18)"]
+    },
+    "printemps": {
+      "_mois": "mars, avril, mai",
+      "fond": "#140a1c",
+      "accent": "#ff6fb5",
+      "accent2": "#7dffc7",
+      "accent3": "#ffe27a",
+      "texte": "#ffffff",
+      "lueurs": ["rgba(255,111,181,.5)", "rgba(125,255,199,.35)", "rgba(255,226,122,.25)"]
+    },
+    "ete": {
+      "_mois": "juin, juillet, août",
+      "fond": "#1a0a14",
+      "accent": "#ff7a3d",
+      "accent2": "#ff2d87",
+      "accent3": "#2de2e6",
+      "texte": "#ffffff",
+      "lueurs": ["rgba(255,122,61,.55)", "rgba(255,45,135,.5)", "rgba(45,226,230,.3)"]
+    },
+    "automne": {
+      "_mois": "septembre, octobre, novembre",
+      "fond": "#140806",
+      "accent": "#ff8a1f",
+      "accent2": "#b3263c",
+      "accent3": "#ffd29a",
+      "texte": "#ffffff",
+      "lueurs": ["rgba(255,138,31,.45)", "rgba(179,38,60,.55)", "rgba(255,210,154,.2)"]
+    }
+  },
+  "techno": {
+    "_explication": "Univers techno : fond noir, typo brute ; l'accent suit aussi la saison.",
+    "fond": "#050505",
+    "texte": "#ffffff",
+    "accents": { "hiver": "#9ad1ff", "printemps": "#c6ff00", "ete": "#ff3b1f", "automne": "#ff9d00" }
+  }
+}

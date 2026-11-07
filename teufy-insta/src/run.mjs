@@ -2,20 +2,24 @@
 // Usage :
 //   node src/run.mjs auto   [preparer|publier]   → la publication prévue aujourd'hui dans le calendrier (ou rien)
 //   node src/run.mjs mois                          → aperçu des 9 publications du mois (jamais publié)
+//   node src/run.mjs collecter                     → relève les statistiques Instagram (apprentissage.json, RAPPORT.md)
 //   node src/run.mjs <type>[:variante] [preparer|publier]
 //        types : incontournables:commercial, incontournables:techno, bonplan:petits-prix, bonplan:a-reserver,
 //                debat, reel:weekend, reel:techno, reel:petits-prix
-// Options : --dry-run  --now=2026-11-09T12:00:00Z  --fixtures=tests/fixtures  --quoi (affiche seulement la publication du jour)
+// Options : --dry-run  --now=2026-11-09T12:00:00Z  --fixtures=tests/fixtures
+//           --quoi (affiche seulement la publication du jour)  --horaire (avec --quoi : attend l'heure apprise)
 import { readFile, writeFile, rm, mkdir, appendFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { collectEvents, filterEvents } from './sources.mjs';
+import { collectEvents, filterEvents, enrich } from './sources.mjs';
 import { windowFor, rolling, isoLocal, plage, slotOfDay, daysOfMonth } from './dates.mjs';
 import { isTechno } from './genres.mjs';
-import { captionIncontournables, captionBonPlan, captionDebat, captionReel, rng, pick } from './captions.mjs';
-import { igConfig, publishCarousel, publishSingle, publishReel, permalink } from './instagram.mjs';
+import { captionIncontournables, captionBonPlan, captionDebat, captionReel, rng } from './captions.mjs';
+import { igConfig, publishCarousel, publishSingle, publishReel, permalink, insights, followers } from './instagram.mjs';
+import { buildModel, chooser, selectBest, eventFeatures, collect, hash } from './learn.mjs';
+import { theme } from './theme.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
@@ -32,6 +36,10 @@ const config = JSON.parse(await readFile(path.join(ROOT, 'config.json'), 'utf8')
 const R = config.reglages;
 const hist = existsSync(HIST_FILE) ? JSON.parse(await readFile(HIST_FILE, 'utf8')) : [];
 const usedHere = new Set(); // débats / bons plans déjà pris dans ce lancement (aperçu du mois)
+const MODEL = buildModel();
+const CRENEAUX = (R.creneaux_utc || [15, 16, 17, 18, 19]).map(String);
+// Heure de publication du jour (UTC), choisie selon ce qui a le mieux marché.
+const creneauDuJour = (d) => chooser(MODEL, rng(`${slotOfDay(d).date}-creneau`)).pick('creneau', CRENEAUX, (x) => x);
 
 // --- Quelle(s) publication(s) ? --------------------------------------------
 
@@ -39,9 +47,26 @@ const slotFor = (d) => { const s = slotOfDay(d); return config.calendrier.find((
 const slotId = (s) => [s.type, s.variante].filter(Boolean).join('-');
 
 let jobs;
+if (cible === 'collecter') {
+  const ig = igConfig();
+  if (!ig) { console.log('IG_ACCESS_TOKEN / IG_USER_ID absents : pas de statistiques.'); process.exit(0); }
+  const n = await collect({ hist, ig, api: { insights, followers } });
+  console.log(`Statistiques mises à jour pour ${n} publication(s). Voir RAPPORT.md`);
+  process.exit(0);
+}
 if (cible === 'auto') {
   const s = slotFor(NOW);
-  if (flag('quoi')) { await output('slot', s ? slotId(s) : ''); console.log(s ? slotId(s) : 'rien'); process.exit(0); }
+  if (flag('quoi')) {
+    let rep = s ? slotId(s) : 'rien';
+    if (s && hist.some((h) => h.id === slotId(s) && h.date === slotOfDay(NOW).date)) rep = 'rien'; // déjà publié aujourd'hui
+    else if (s && flag('horaire')) {
+      const choisi = +creneauDuJour(NOW);
+      if (NOW.getUTCHours() < choisi) { console.error(`Publication prévue vers ${choisi}h UTC.`); rep = 'rien'; }
+    }
+    await output('slot', rep === 'rien' ? '' : rep);
+    console.log(rep);
+    process.exit(0);
+  }
   if (!s) { console.log(`Rien de prévu le ${slotOfDay(NOW).date} dans le calendrier.`); process.exit(0); }
   jobs = [{ slot: s, now: NOW }];
 } else if (cible === 'mois') {
@@ -87,8 +112,18 @@ async function prepare(slot, now, id) {
   await mkdir(dir, { recursive: true });
   const stamp = isoLocal(now);
   const seed = `${stamp}-${id}`;
+  const r = rng(seed);
+  const ch = chooser(MODEL, r);
+  if (cible === 'auto') ch.choix.creneau = String(Math.min(Math.max(NOW.getUTCHours(), +CRENEAUX[0]), +CRENEAUX.at(-1)));
   const villes = config.villes;
-  const pickEv = async (win, pred = () => true) => filterEvents(await events(), { ...win, villes }).filter(pred);
+  const debugDir = path.join(ROOT, 'out', 'debug');
+  // Soirées de la période, complétées par leur page de détail (affiche, style, prix), puis filtrées.
+  const pickEv = async (win, pred = () => true) => {
+    const list = filterEvents(await events(), { ...win, villes });
+    if (!val('fixtures')) await enrich(list.slice(0, 40), { debugDir });
+    return list.filter(pred);
+  };
+  const best = (list, n) => selectBest(list, n, MODEL, r);
   const cheap = (e) => e.price != null && e.price <= R.petit_prix_max;
   let pub;
 
@@ -97,16 +132,16 @@ async function prepare(slot, now, id) {
     const all = JSON.parse(await readFile(path.join(ROOT, 'contenus', 'debats.json'), 'utf8'));
     let pool = all.filter((d) => !used.has(d.id));
     if (!pool.length) pool = all; // tout a été utilisé : on recommence
-    const debat = pick(rng(seed), pool);
+    const debat = ch.pick('debat', pool, (d) => d.id);
     usedHere.add(debat.id);
-    const files = await renderPages(debatPage({ debat, config }), dir, `debat-${stamp}`, { width: 1080, height: 1350 });
-    pub = { images: files, legende: captionDebat({ debat, seed }), debat: debat.id };
+    const files = await renderPages(debatPage({ th: theme(now, 'club'), debat, config }), dir, `debat-${stamp}`, { width: 1080, height: 1350 });
+    pub = { images: files, legende: captionDebat({ debat, ch, r }), debat: debat.id };
   } else if (slot.type === 'bonplan') {
     const manuel = await bonPlanManuel(now);
     if (manuel) {
       usedHere.add(manuel.titre);
-      const files = await renderPages(bonPlanManuelPage({ bp: manuel, config }), dir, `bonplan-${stamp}`, { width: 1080, height: 1350 });
-      pub = { images: files, legende: captionBonPlan({ manuel, seed }), bonplan: manuel.titre };
+      const files = await renderPages(bonPlanManuelPage({ th: theme(now, 'club'), bp: manuel, config }), dir, `bonplan-${stamp}`, { width: 1080, height: 1350 });
+      pub = { images: files, legende: captionBonPlan({ manuel, ch, r }), bonplan: manuel.titre };
     } else {
       let variante = slot.variante;
       let win = rolling(now, 0, 10);
@@ -114,10 +149,10 @@ async function prepare(slot, now, id) {
       if (list.length < 3) { variante = 'a-reserver'; win = rolling(now, 7, 45); list = await pickEv(win); }
       if (list.length < 3) { win = rolling(now, 2, 45); list = await pickEv(win); }
       need(list, 2);
-      const chosen = chrono(list.slice(0, R.soirees_par_carrousel));
+      const chosen = chrono(best(list, R.soirees_par_carrousel));
       const reserve = variante === 'a-reserver';
       const pages = carouselPages({
-        events: chosen, config,
+        th: theme(now, 'club'), events: chosen, config,
         couverture: reserve
           ? { pastille: 'Bon plan', titre: 'À réserver\navant sold out', sousTitre: 'Les grosses dates des prochaines semaines', compte: 'Swipe →' }
           : { pastille: 'Bon plan', titre: 'Sortir\nsans se ruiner', sousTitre: `Gratuit ou moins de ${R.petit_prix_max} € · ${plage(win.from, win.to)}`, compte: 'Swipe →' },
@@ -127,7 +162,7 @@ async function prepare(slot, now, id) {
           : { titre: 'Partage\nle bon plan', question: 'Tu connais d\'autres bons plans ? 👇', tag: '💸 Tag ton pote toujours fauché' },
       });
       const files = await renderPages(pages, dir, `bonplan-${stamp}`, { width: 1080, height: 1350 });
-      pub = { images: files, legende: captionBonPlan({ variante, events: chosen, ...win, seed }), soirees: chosen };
+      pub = { images: files, legende: captionBonPlan({ variante, events: chosen, ...win, ch, r }), soirees: chosen };
     }
   } else if (slot.type === 'incontournables') {
     const techno = slot.variante === 'techno';
@@ -138,10 +173,10 @@ async function prepare(slot, now, id) {
     let elargi = false;
     if (list.length < 3) { win = rolling(now, 0, 14); list = await pickEv(win, pred); elargi = true; }
     need(list, 2);
-    const chosen = chrono(list.slice(0, R.soirees_par_carrousel));
+    const chosen = chrono(best(list, R.soirees_par_carrousel));
     const periode = elargi ? 'des prochains jours' : 'de la semaine';
     const pages = carouselPages({
-      events: chosen, config, theme: techno ? 'techno' : 'club',
+      th: theme(now, techno ? 'techno' : 'club'), events: chosen, config,
       couverture: techno
         ? { pastille: plage(win.from, win.to), titre: 'Les incontournables\ntechno', sousTitre: `La sélection ${periode} sur la Côte`, compte: `${chosen.length} dates · swipe →` }
         : { pastille: plage(win.from, win.to), titre: `Les incontournables\n${periode}`, sousTitre: 'House · shatta · afro · électro', compte: `${chosen.length} soirées · swipe →` },
@@ -151,7 +186,7 @@ async function prepare(slot, now, id) {
         : { titre: 'Tu sors\noù ?', question: 'Dis-nous en commentaire 👇', tag: '👯 Tag la personne qui vient avec toi' },
     });
     const files = await renderPages(pages, dir, `incontournables-${stamp}`, { width: 1080, height: 1350 });
-    pub = { images: files, legende: captionIncontournables({ variante: slot.variante, events: chosen, ...win, seed, config }), soirees: chosen };
+    pub = { images: files, legende: captionIncontournables({ variante: slot.variante, events: chosen, ...win, ch, r }), soirees: chosen };
   } else if (slot.type === 'reel') {
     let variante = slot.variante;
     let win = windowFor([5, 6, 7], now);
@@ -161,8 +196,7 @@ async function prepare(slot, now, id) {
     if (list.length < 3 && variante !== 'weekend') { win = rolling(now, 0, 9); list = await pickEv(win, preds[variante]); elargi = true; }
     if (list.length < 3) { variante = 'weekend'; win = windowFor([5, 6, 7], now); list = await pickEv(win); elargi = false; }
     need(list, 2);
-    const chosen = pickReel(list, R.soirees_par_reel);
-    const r = rng(seed);
+    const chosen = pickReel(best(list, 40), R.soirees_par_reel);
     const hooks = {
       weekend: [
         { pre: 'POV :', titre: "t'as toujours\npas de plan\nce week-end", emoji: '👀' },
@@ -180,9 +214,9 @@ async function prepare(slot, now, id) {
       ],
     };
     const pages = reelPages({
-      events: chosen, config, theme: variante === 'techno' ? 'techno' : 'club',
+      th: theme(now, variante === 'techno' ? 'techno' : 'club'), events: chosen, config,
       // Période élargie : pas d'accroche qui parle du « week-end ».
-      hook: pick(r, hooks[variante].filter((h) => !elargi || !/week-end/i.test(h.pre + h.titre))),
+      hook: ch.pick(`hook-${variante}`, hooks[variante].filter((h) => !elargi || !/week-end/i.test(h.pre + h.titre)), (h) => hash(h.pre + h.titre)),
       sousHook: `${chosen.length} ${variante === 'techno' ? 'dates techno' : 'soirées'} sur la Côte ${plage(win.from, win.to)}`,
       question: variante === 'techno' ? 'Tu seras\noù ?' : variante === 'petits-prix' ? 'Laquelle\ntu prends ?' : 'Laquelle\ntu choisis ?',
     });
@@ -196,13 +230,14 @@ async function prepare(slot, now, id) {
     const cover = path.join(dir, `reel-${stamp}-couverture.jpg`);
     spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', imgs[0], '-q:v', '2', cover]);
     console.log(`[${id}] vidéo ${res.total.toFixed(1)} s${res.musique ? ` avec ${path.basename(res.musique)}` : ' (muette : ajoute des musiques dans assets/musiques/)'}`);
-    pub = { video, couverture: cover, legende: captionReel({ variante, events: chosen, seed, elargi }), soirees: chosen };
+    pub = { video, couverture: cover, legende: captionReel({ variante, events: chosen, ch, r, elargi }), soirees: chosen, duree: +res.total.toFixed(1) };
   } else {
     throw new Error(`Type inconnu : ${slot.type}`);
   }
 
   const rel = (f) => path.basename(f);
-  const out = { id, type: slot.type, variante: slot.variante || null, date: stamp, ...pub };
+  const out = { id, type: slot.type, variante: slot.variante || null, date: stamp, ...pub, choix: ch.choix,
+    features: (pub.soirees || []).flatMap(eventFeatures), nb_images: pub.images?.length || 0 };
   if (out.images) out.images = out.images.map(rel);
   if (out.video) { out.video = rel(out.video); out.couverture = rel(out.couverture); }
   await writeFile(path.join(dir, 'publication.json'), JSON.stringify(out, null, 2));
@@ -267,7 +302,8 @@ async function publishPrepared(id) {
       : await publishCarousel(p.images.map(url), p.legende, ig);
   const link = await permalink(res.id, ig);
   console.log(`[${id}] ✅ publié : ${link || res.id}`);
-  hist.push({ id, date: p.date, media: res.id, lien: link, debat: p.debat, bonplan: p.bonplan, le: new Date().toISOString() });
+  hist.push({ id, date: p.date, media: res.id, lien: link, debat: p.debat, bonplan: p.bonplan, le: new Date().toISOString(),
+    publication: { id: p.id, type: p.type, variante: p.variante, date: p.date, choix: p.choix, features: p.features, nb_images: p.nb_images, duree: p.duree } });
   await writeFile(HIST_FILE, JSON.stringify(hist.slice(-300), null, 2));
 }
 

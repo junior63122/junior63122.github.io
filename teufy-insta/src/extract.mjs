@@ -76,7 +76,10 @@ function toEvent(o, { source, baseUrl }) {
   const tags = tagsOf(o);
   const description = clean(str(o.description) || str(o.about) || str(o.summary)).slice(0, 600);
 
-  return { source, name: clean(name), start, end, venue: clean(venue), city: clean(city), address: clean(address), url, image, price, tags, description };
+  const popularite = num(o.interestedCount ?? o.interested_count ?? o.attendeesCount ?? o.attendees_count ?? o.goingCount ?? o.going_count ??
+    o.likesCount ?? o.likes_count ?? o.favouritesCount ?? o.favourites_count ?? o.followersCount ?? o.ticketsSold ?? o.tickets_sold ?? o.savesCount);
+
+  return { source, name: clean(name), start, end, venue: clean(venue), city: clean(city), address: clean(address), url, image: bigImage(image), price, tags, description, popularite };
 }
 
 // Styles musicaux / catégories (Shotgun : tags, genres ; DICE : genre_tags, tags…)
@@ -137,6 +140,17 @@ function img(v) {
       img(v.original) || img(v.large) || img(v.src) || img(v.image) || '';
   }
   return '';
+}
+
+// Affiche en grande taille : les CDN (imgix, Cloudinary…) redimensionnent via l'URL.
+export function bigImage(u) {
+  if (!u) return u;
+  try {
+    const url = new URL(u);
+    for (const k of ['w', 'width']) if (url.searchParams.has(k) && +url.searchParams.get(k) < 1080) url.searchParams.set(k, '1080');
+    for (const k of ['h', 'height']) if (url.searchParams.has(k)) url.searchParams.delete(k);
+    return url.href.replace(/\/w_\d{2,3},/, '/w_1080,').replace(/\/c_fill,h_\d+,w_\d+/, '/c_limit,w_1080');
+  } catch { return u; }
 }
 
 function safeJson(s) { try { return JSON.parse(s); } catch { return null; } }

@@ -1,13 +1,14 @@
 name: Teufy - Instagram automatique
 
-# Tous les jours vers 18h (heure de Paris), le script regarde le calendrier de
-# teufy-insta/config.json et publie s'il y a quelque chose de prévu ce jour-là.
-# 9 publications par mois :
-#   2 « incontournables de la semaine » (commercial, techno)
-#   2 bons plans · 2 débats · 3 reels
+# Chaque jour, de 15h à 19h UTC (16h-20h l'hiver, 17h-21h l'été à Paris) :
+#  - relève les statistiques Instagram des derniers posts
+#    (apprentissage.json + RAPPORT.md) pour améliorer les choix suivants ;
+#  - si le calendrier de teufy-insta/config.json prévoit une publication ce jour-là,
+#    publie à l'heure qui a le mieux marché jusqu'ici (apprise automatiquement).
+# 9 publications par mois : 2 incontournables (commercial, techno), 2 bons plans, 2 débats, 3 reels.
 on:
   schedule:
-    - cron: "37 16 * * *" # 17h37 l'hiver, 18h37 l'été
+    - cron: "7 15-19 * * *" # 15h-18h UTC : créneaux possibles ; 19h : rattrapage
   workflow_dispatch:
     inputs:
       quoi:
@@ -16,6 +17,7 @@ on:
         options:
           - mois (aperçu des 9 publications du mois)
           - auto (la publication prévue aujourd'hui)
+          - collecter (statistiques Instagram)
           - incontournables:commercial
           - incontournables:techno
           - bonplan:petits-prix
@@ -57,14 +59,27 @@ jobs:
         with:
           node-version: 20
 
-      - name: Quelle publication aujourd'hui ?
+      - name: Relever les statistiques (apprentissage)
+        # Chaque post est mesuré au plus une fois par jour (de J+1 à J+21) : les passages suivants ne font presque rien.
+        if: github.event_name == 'schedule' || startsWith(inputs.quoi, 'collecter')
+        run: |
+          node src/run.mjs collecter
+          git config user.name "teufy-bot"
+          git config user.email "teufy-bot@users.noreply.github.com"
+          git add apprentissage.json RAPPORT.md 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Teufy Instagram : statistiques du $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
+
+      - name: Quelle publication ?
         id: choix
         run: |
           QUOI="${{ inputs.quoi || 'auto' }}"
           QUOI="${QUOI%% *}"
+          if [ "$QUOI" = "collecter" ]; then echo "rien=true" >> "$GITHUB_OUTPUT"; exit 0; fi
           if [ "$QUOI" = "auto" ]; then
-            SLOT=$(node src/run.mjs auto --quoi)
-            [ "$SLOT" = "rien" ] && echo "Rien de prévu aujourd'hui." && echo "rien=true" >> "$GITHUB_OUTPUT"
+            if [ "${{ github.event_name }}" = "schedule" ]; then SLOT=$(node src/run.mjs auto --quoi --horaire); else SLOT=$(node src/run.mjs auto --quoi); fi
+            [ "$SLOT" = "rien" ] && echo "Rien à publier maintenant." && echo "rien=true" >> "$GITHUB_OUTPUT"
           fi
           PUBLIER=false
           if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.publier }}" = "true" ]; then PUBLIER=true; fi
@@ -119,6 +134,8 @@ jobs:
       - name: Enregistrer l'historique
         if: always() && steps.choix.outputs.publier == 'true' && steps.choix.outputs.rien != 'true'
         run: |
+          git config user.name "teufy-bot"
+          git config user.email "teufy-bot@users.noreply.github.com"
           git add historique.json 2>/dev/null || true
           git diff --cached --quiet && exit 0
           git commit -m "Teufy Instagram : publié (${{ steps.choix.outputs.quoi }})"

@@ -1,92 +1,97 @@
 # Teufy · Instagram automatique (Shotgun + DICE)
 
-L'automate publie 9 contenus par mois sur Instagram, à la place d'un community manager.
+L'automate publie 9 contenus par mois sur Instagram. Il mesure les résultats de chaque post et ajuste la suite pour gagner en engagement et en abonnés.
 
-| Quand (vers 18h, heure de Paris) | Publication |
+| Quand (vers 17h-20h, heure apprise) | Publication |
 | --- | --- |
 | 1er lundi du mois | **Les incontournables de la semaine** : soirées commerciales (house, shatta, afro, électro…) |
-| 1er jeudi | **Reel** : « POV : t'as toujours pas de plan ce week-end » (les soirées du week-end, numérotées) |
+| 1er jeudi | **Reel** : les soirées du week-end, numérotées (« Laquelle tu choisis ? ») |
 | 2e mercredi | **Débat** : une question qui fait parler (A ou B ?) |
-| 2e vendredi | **Bon plan** : sortir sans se ruiner (soirées gratuites ou à moins de 10 €) |
-| 3e lundi | **Les incontournables techno** : univers visuel à part (noir, vert acide) |
-| 3e jeudi | **Reel techno** : « Ce week-end ça tape » |
+| 2e vendredi | **Bon plan** : sortir sans se ruiner (gratuit ou moins de 10 €) |
+| 3e lundi | **Les incontournables techno** : univers visuel à part |
+| 3e jeudi | **Reel techno** |
 | 4e mardi | **Bon plan** : les grosses dates à réserver avant qu'elles soient sold out |
 | 4e mercredi | **Débat** |
-| 4e vendredi | **Reel petits prix** : le week-end à moins de 10 € |
+| 4e vendredi | **Reel petits prix** |
 
-Le calendrier se modifie dans `config.json` (`calendrier`). Chaque ligne indique le jour (1 = lundi … 7 = dimanche), son rang dans le mois (1er, 2e, 3e, 4e) et le type de publication.
+Le calendrier se modifie dans `config.json` (`calendrier`).
 
-## D'où vient le contenu
+## Les infos viennent de Shotgun et DICE
 
-- **Soirées** : pages publiques de Shotgun et DICE (Nice, Cannes, Antibes, Monaco), plus tes soirées dans `evenements-manuels.json`, toujours mises en avant. Les doublons sont fusionnés et les soirées hors Côte d'Azur écartées. Le style (techno ou commercial) est deviné grâce aux tags Shotgun/DICE et au nom de la soirée.
-- **Débats** : `contenus/debats.json`, 36 sujets écrits à la main (soirée pyjama Mario Kart en boîte, Just Dance à 2h du matin, Nice ou Cannes, filmer le set, dress code…). Un débat n'est jamais publié deux fois tant que la liste n'est pas épuisée, soit 18 mois. Ajoute les tiens sur le même modèle.
-- **Bons plans** : calculés automatiquement à partir des prix (gratuit / moins de 10 €) et des grosses dates à venir. Pour un vrai bon plan (code promo, partenariat, entrée offerte avant minuit…), ajoute-le dans `contenus/bons-plans.json`. Il passe en priorité, une seule fois :
+Pour chaque soirée, le bot récupère sur Shotgun et DICE l'**affiche**, le **titre**, le **style musical** (tags de la billetterie), la **date et l'heure**, le **lieu**, le **prix** et, quand la billetterie l'affiche, la **popularité** (nombre d'intéressés ou de participants). Si la liste ne donne pas tout, il ouvre la page de la soirée pour compléter.
+
+Sur les visuels, l'affiche est montrée **en entier**, sans recadrage, avec le style musical par-dessus. Dessous figurent le nom de la soirée, puis Quand / Où / Prix / Billets. L'agenda reprend chaque soirée avec sa vignette, l'heure, le style, le lieu et le prix.
+
+Tes propres soirées vont dans `evenements-manuels.json` et passent toujours en tête.
+
+## Il choisit les meilleures soirées et apprend tout seul
+
+Chaque jour, le bot relève les statistiques des posts des 3 dernières semaines : portée, likes, commentaires, enregistrements, partages, abonnements gagnés, visites du profil et temps de visionnage des reels. Il note aussi le nombre d'abonnés. Tout est enregistré dans `apprentissage.json`, avec un résumé lisible dans **`RAPPORT.md`**.
+
+- **Score d'un post** : likes + 2× commentaires + 3× enregistrements + 4× partages + 10× abonnements gagnés, rapporté à la portée et comparé aux autres posts du même format. Bonus pour la portée (nouveaux publics) et pour les reels regardés jusqu'au bout (rétention).
+- **Choix des soirées** : qualité des infos (affiche, style, prix), popularité, soirées en vente sur les deux billetteries… plus ce que le public a aimé : les styles, lieux, villes, gammes de prix et horaires qui ont fait réagir remontent. Deux soirées maximum par lieu dans un même post, pour garder de la variété.
+- **Textes et horaires** : accroches des reels, intros, questions, appels à s'abonner, sujets de débat et heure de publication (entre 16h et 20h). Le bot privilégie ce qui marche, tout en continuant à tester les autres options pour ne pas tourner en rond (échantillonnage de Thompson).
+
+Il faut environ 4 à 6 semaines de publications pour que l'apprentissage commence à peser vraiment.
+
+## Direction artistique
+
+La charte est dans **`contenus/da.json`** : polices, arrondis, et une palette par saison.
+
+| Saison | Ambiance par défaut |
+| --- | --- |
+| Hiver (déc.-fév.) | bleu glacé, lavande |
+| Printemps (mars-mai) | rose, menthe, jaune |
+| Été (juin-août) | orange coucher de soleil, rose, turquoise |
+| Automne (sept.-nov.) | orange ambré, bordeaux |
+
+La techno garde son univers à part (fond noir, typo brute, sans dégradés), avec une couleur d'accent qui suit aussi la saison. Pour mettre le logo officiel, dépose `assets/logo.png` (ou `.svg`) : il remplace le nom écrit sur tous les visuels.
+
+> Les couleurs par défaut sont provisoires. Elles sont à caler sur le compte Instagram officiel de Teufy (voir les captures demandées).
+
+## Pas d'invitation à télécharger l'app
+
+L'app n'est pas encore disponible. Les visuels et légendes poussent à **s'abonner au compte**, à enregistrer, à partager et à commenter. Le test `npm test` vérifie qu'aucune légende ne parle de téléchargement ou de « lien en bio ».
+
+## Contenus écrits à la main
+
+- **Débats** : `contenus/debats.json`, 36 sujets (soirée pyjama Mario Kart en boîte, Just Dance à 2h du matin, Nice ou Cannes, filmer le set, dress code…). Aucun n'est republié avant que la liste soit épuisée.
+- **Bons plans** : calculés à partir des prix et des grosses dates. Un vrai bon plan (code promo, entrée offerte…) se met dans `contenus/bons-plans.json` et passe en priorité :
   ```json
-  [
-    {
-      "titre": "Entrée offerte avant minuit",
-      "texte": "Tous les jeudis au Ghost avec le code TEUFY.\nValable jusqu'au 30 novembre.",
-      "du": "2026-11-01",
-      "au": "2026-11-30",
-      "image": "https://…/photo.jpg"
-    }
-  ]
+  [{ "titre": "Entrée offerte avant minuit", "texte": "Tous les jeudis au Ghost avec le code TEUFY.", "du": "2026-11-01", "au": "2026-11-30" }]
   ```
-
-### Pour que ça ne fasse pas « IA »
-
-- Légendes écrites à la main, plusieurs versions pour chaque format, tirées au hasard. Le ton est familier, avec des phrases courtes, peu d'emojis et pas de tiret « — » (typique des textes générés). Le test `npm test` le vérifie.
-- 6 à 7 hashtags ciblés qui changent à chaque post, au lieu d'un mur de 30.
-- Chaque publication se termine par une vraie question ou un « tag ton pote », pour faire réagir en commentaire.
-- La techno a son propre univers visuel et ses propres textes, parce que sa communauté ne se reconnaît pas dans les visuels « club ».
+- **Légendes** : plusieurs versions humaines par format, avec peu d'emojis, pas de tiret « — » et 7 hashtags qui tournent.
 
 ## Mise en route (une seule fois, ~20 min)
 
-### 1. Compte Instagram professionnel
+1. **Compte Instagram Professionnel** (Créateur ou Entreprise) relié à une Page Facebook.
+2. **Jeton Meta qui n'expire pas** :
+   - Sur <https://developers.facebook.com/apps>, crée une app **Business** et ajoute le produit Instagram.
+   - Dans Meta Business Suite → Paramètres → Utilisateurs système, crée un utilisateur **Admin** et donne-lui accès à la Page et au compte Instagram.
+   - Génère un jeton qui n'expire **jamais**, avec ces autorisations : `instagram_basic`, `instagram_content_publish`, **`instagram_manage_insights`** (indispensable pour l'apprentissage), `pages_show_list`, `pages_read_engagement`, `business_management`.
+   - Trouve l'identifiant du compte avec `https://graph.facebook.com/v21.0/me/accounts?fields=name,instagram_business_account&access_token=TON_JETON`. La valeur `instagram_business_account.id` est ton IG_USER_ID.
+3. **Secrets GitHub** (Settings → Secrets and variables → Actions) : `IG_ACCESS_TOKEN` et `IG_USER_ID`.
+4. **Aperçu** : Actions → « Teufy - Instagram automatique » → Run workflow → **mois**. Les 9 publications sont générées avec les vraies soirées, sans rien publier. Tout est dans l'artefact `teufy-…`.
 
-Le compte Teufy doit être un compte **Professionnel** (Créateur ou Entreprise), relié à une **Page Facebook**. C'est obligatoire pour publier via l'API officielle de Meta. Aucun mot de passe n'est utilisé.
-
-### 2. Jeton d'accès Meta
-
-1. Sur <https://developers.facebook.com/apps>, crée une app de type **Business** et ajoute le produit **Instagram**.
-2. Dans **Meta Business Suite → Paramètres → Utilisateurs système**, crée un utilisateur système **Admin**. Donne-lui accès à la Page et au compte Instagram Teufy.
-3. Clique sur **Générer un jeton** pour ton app, avec les autorisations `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `pages_read_engagement` et `business_management`. Choisis l'expiration **Jamais**.
-4. Ouvre `https://graph.facebook.com/v21.0/me/accounts?fields=name,instagram_business_account&access_token=TON_JETON`. La valeur `instagram_business_account.id` est ton **IG_USER_ID**.
-
-Tu passes par « Instagram API with Instagram Login » (sans Page Facebook) ? Ajoute la variable de dépôt `IG_API_HOST` = `graph.instagram.com`. Ces jetons expirent au bout de 60 jours.
-
-### 3. Secrets GitHub
-
-Dans **Settings → Secrets and variables → Actions**, ajoute `IG_ACCESS_TOKEN` et `IG_USER_ID`. Sans eux, rien n'est publié.
-
-### 4. Voir le mois avant de lancer
-
-**Actions → « Teufy - Instagram automatique » → Run workflow → « mois »**. Les 9 publications du mois sont générées avec les vraies soirées du moment, sans rien publier. Télécharge l'artefact `teufy-…` : chaque dossier contient les visuels ou la vidéo, et `legende.txt`.
-
-Pour publier un contenu tout de suite, choisis-le dans la liste et coche *publier*.
+Avec « Instagram API with Instagram Login » (sans Page Facebook), ajoute la variable de dépôt `IG_API_HOST` = `graph.instagram.com`.
 
 ## Musique des reels
 
-L'API Instagram ne permet pas d'ajouter les sons tendance de la bibliothèque Instagram. Dépose des `.mp3` libres de droits :
-- `assets/musiques/techno/` pour le reel techno ;
-- `assets/musiques/club/` pour les autres ;
-- ou `assets/musiques/` pour tous.
-
-Un fichier est pris au hasard à chaque reel. Sans musique, le reel est muet.
+L'API Instagram ne permet pas d'utiliser les sons tendance. Dépose des `.mp3` libres de droits dans `assets/musiques/techno/` et `assets/musiques/club/` (ou `assets/musiques/` pour tous).
 
 ## En local
 
 ```sh
 cd teufy-insta
 npm install && npx playwright install chromium   # ffmpeg doit être installé
-node src/run.mjs mois                            # aperçu des 9 publications du mois dans media/
+node src/run.mjs mois                            # aperçu des 9 publications du mois
 node src/run.mjs reel:techno --dry-run           # un seul contenu
+node src/run.mjs collecter                       # statistiques (avec IG_ACCESS_TOKEN et IG_USER_ID)
 npm test
 ```
 
 ## Si quelque chose casse
 
-- **« Pas assez de soirées trouvées »** : rien n'est publié et GitHub t'envoie un e-mail d'échec. Les pages Shotgun/DICE récupérées sont dans l'artefact (`out/debug/`). Quand il y a peu de soirées techno ou à petit prix, l'automate élargit d'abord la période. Ensuite il bascule sur un format proche (par exemple reel « week-end » au lieu de « petits prix »).
-- **Erreur Instagram** : le message de l'API est dans le journal du workflow (souvent un jeton ou une autorisation manquante).
-- **Pas de double publication** : `historique.json` garde tout ce qui a été publié, y compris les débats et bons plans déjà utilisés.
-- Ce module lit les pages publiques de Shotgun et DICE. Pour un usage intensif, demande un accès API à Shotgun (API organisateurs) ou à DICE (API partenaires).
+- **« Pas assez de soirées trouvées »** : rien n'est publié et GitHub envoie un e-mail. Les pages récupérées sont dans l'artefact (`out/debug/`).
+- **Erreur Instagram** : le message de l'API est dans le journal du workflow (jeton ou autorisation manquante, le plus souvent).
+- **Pas de double publication** : `historique.json` garde tout ce qui a été publié.

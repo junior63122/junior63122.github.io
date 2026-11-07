@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { daysOfMonth, slotOfDay } from '../src/dates.mjs';
 import { genreOf } from '../src/genres.mjs';
-import { captionIncontournables, captionDebat, captionReel, captionBonPlan } from '../src/captions.mjs';
+import { captionIncontournables, captionDebat, captionReel, captionBonPlan, rng } from '../src/captions.mjs';
+import { chooser } from '../src/learn.mjs';
+const outils = (s) => { const r = rng(s); return { r, ch: chooser({ arms: {}, feats: {} }, r) }; };
 
 const config = JSON.parse(readFileSync(new URL('../config.json', import.meta.url)));
 const debats = JSON.parse(readFileSync(new URL('../contenus/debats.json', import.meta.url)));
@@ -42,14 +44,15 @@ test('légendes « humaines » : pas de tiret cadratin, ≤ 2200 caractères, pe
   const ev = [{ name: 'Afro Night', start: '2026-11-14T22:00:00Z', venue: 'Le Ghost', city: 'Nice', price: 10 }];
   const from = new Date('2026-11-09T05:00:00Z'), to = new Date('2026-11-16T05:00:00Z');
   const all = [
-    ...['commercial', 'techno'].map((v) => captionIncontournables({ variante: v, events: ev, from, to, seed: v, config })),
-    ...['petits-prix', 'a-reserver'].map((v) => captionBonPlan({ variante: v, events: ev, from, to, seed: v })),
-    ...['weekend', 'techno', 'petits-prix'].map((v) => captionReel({ variante: v, events: ev, seed: v })),
-    ...debats.map((d) => captionDebat({ debat: d, seed: d.id })),
+    ...['commercial', 'techno'].map((v) => captionIncontournables({ variante: v, events: ev, from, to, ...outils(v) })),
+    ...['petits-prix', 'a-reserver'].map((v) => captionBonPlan({ variante: v, events: ev, from, to, ...outils(v) })),
+    ...['weekend', 'techno', 'petits-prix'].map((v) => captionReel({ variante: v, events: ev, ...outils(v) })),
+    ...debats.map((d) => captionDebat({ debat: d, ...outils(d.id) })),
   ];
   for (const c of all) {
     assert.ok(!c.includes('—'), c);
     assert.ok(c.length <= 2200);
     assert.ok((c.match(/#\w+/g) || []).length <= 10);
+    assert.ok(!/télécharg|lien en bio|sur l'app/i.test(c), 'pas d\'invitation à télécharger l\'app : ' + c);
   }
 });
