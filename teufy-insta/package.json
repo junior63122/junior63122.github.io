@@ -13,6 +13,7 @@
     "test": "node --test --test-concurrency=1 tests/*.test.mjs"
   },
   "dependencies": {
-    "playwright": "1.48.2"
+    "playwright": "1.48.2",
+    "@anthropic-ai/sdk": "^1.6.0"
   }
 }

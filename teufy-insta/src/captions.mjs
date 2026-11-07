@@ -55,7 +55,8 @@ const SUIVRE = [
 
 export function captionIncontournables({ variante, events, from, to, ch, r }) {
   const techno = variante === 'techno';
-  const intro = ch.pick(`intro-${variante}`, techno
+  const ajoutees = TENDANCES.intros_ajoutees?.[variante] || []; // proposées par l'analyse hebdomadaire
+  const intro = ch.pick(`intro-${variante}`, [...ajoutees, ...(techno
     ? [
       `Les événements techno de la semaine.\nDes line-up solides, des lieux qui comptent, une communauté qui répond toujours présent.`,
       `Pas juste des soirées. Des nuits entières.\nLa sélection techno de la semaine sur la Côte.`,
@@ -67,7 +68,7 @@ export function captionIncontournables({ variante, events, from, to, ch, r }) {
       `Une semaine, plusieurs ambiances.\nDu rooftop au club, voilà nos coups de cœur.`,
       `Certaines soirées se racontent pendant des semaines.\nCelles-là en font partie.`,
       `Afro, house, shatta, électro…\nCette semaine, il y en a pour toutes les envies.`,
-    ]);
+    ])]);
   const question = ch.pick(`question-${variante}`, techno
     ? ['Tu seras à laquelle ?', 'On se retrouve où ?', 'Laquelle t\'attire le plus ?']
     : ['Tu sors où cette semaine ?', 'Laquelle on fait ensemble ?', 'Ta préférée, c\'est laquelle ?']);

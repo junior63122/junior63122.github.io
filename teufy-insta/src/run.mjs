@@ -2,7 +2,8 @@
 // Usage :
 //   node src/run.mjs auto   [preparer|publier]   → la publication prévue aujourd'hui dans le calendrier (ou rien)
 //   node src/run.mjs mois                          → aperçu des 9 publications du mois (jamais publié)
-//   node src/run.mjs collecter                     → relève les statistiques Instagram (apprentissage.json, RAPPORT.md)
+//   node src/run.mjs collecter [--cerveau]         → relève les statistiques Instagram (apprentissage.json, RAPPORT.md)
+//                                                    et, une fois par semaine, l'analyse Claude (veille Meta, pourquoi, tests)
 //   node src/run.mjs <type>[:variante] [preparer|publier]
 //        types : incontournables:commercial, incontournables:techno, bonplan:petits-prix, bonplan:a-reserver,
 //                debat, reel:weekend, reel:techno, reel:petits-prix
@@ -17,7 +18,7 @@ import { collectEvents, filterEvents, enrich } from './sources.mjs';
 import { windowFor, rolling, isoLocal, plage, slotOfDay, daysOfMonth } from './dates.mjs';
 import { isTechno } from './genres.mjs';
 import { captionIncontournables, captionBonPlan, captionDebat, captionReel, captionOrgas, rng } from './captions.mjs';
-import { igConfig, publishCarousel, publishSingle, publishReel, permalink, insights, followers, businessDiscovery } from './instagram.mjs';
+import { igConfig, publishCarousel, publishSingle, publishReel, permalink, insights, followers, businessDiscovery, compteMedia } from './instagram.mjs';
 import { TENDANCES, analyserComptes } from './tendances.mjs';
 import { buildModel, chooser, selectBest, eventFeatures, collect, hash } from './learn.mjs';
 import { theme } from './theme.mjs';
@@ -53,8 +54,23 @@ if (cible === 'collecter') {
   if (!ig) { console.log('IG_ACCESS_TOKEN / IG_USER_ID absents : pas de statistiques.'); process.exit(0); }
   const t = await analyserComptes({ ig, api: { businessDiscovery }, force: !!flag('force') });
   if (!t.deja) console.log(`Tendances : ${Object.keys(t.comptes || {}).length} compte(s) analysé(s), ${Object.keys(t.hashtags || {}).length} hashtag(s) repéré(s).`);
-  const n = await collect({ hist, ig, api: { insights, followers } });
+  const n = await collect({ hist, ig, api: { insights, followers, compteMedia } });
   console.log(`Statistiques mises à jour pour ${n} publication(s). Voir RAPPORT.md`);
+  // Analyse hebdomadaire par Claude (veille Meta, pourquoi, nouveaux tests), une fois par semaine.
+  const derniere = TENDANCES.derniere_analyse ? new Date(TENDANCES.derniere_analyse) : null;
+  if (flag('cerveau') || !derniere || (NOW - derniere) / 86400e3 >= 6.5) {
+    const { analyserSemaine } = await import('./cerveau.mjs');
+    try {
+      const res = await analyserSemaine({ now: NOW });
+      if (res) {
+        const f = path.join(ROOT, 'contenus', 'tendances.json');
+        const t = JSON.parse(await readFile(f, 'utf8'));
+        t.derniere_analyse = NOW.toISOString();
+        await writeFile(f, JSON.stringify(t, null, 2) + '\n');
+        await collect({ hist, ig, api: { insights, followers } }); // régénère RAPPORT.md avec l'analyse
+      }
+    } catch (err) { console.error(`Analyse hebdomadaire impossible : ${err.message}`); }
+  }
   process.exit(0);
 }
 if (cible === 'auto') {
@@ -210,7 +226,7 @@ async function prepare(slot, now, id) {
         : { texte: 'Tu sors où cette semaine ?\nDis-le en commentaire.', pied: `Abonne-toi à ${config.compte} 👇` },
     });
     const files = await renderPages(pages, dir, `incontournables-${stamp}`, { width: 1080, height: 1350 });
-    pub = { images: files, legende: captionIncontournables({ variante: slot.variante, events: chosen, ...win, ch, r }), soirees: chosen };
+    pub = { images: files, legende: captionIncontournables({ variante: slot.variante, events: chosen, ...win, ch, r }), soirees: chosen, titre };
   } else if (slot.type === 'reel') {
     let variante = slot.variante;
     let win = windowFor([5, 6, 7], now);
@@ -240,7 +256,7 @@ async function prepare(slot, now, id) {
     const cover = path.join(dir, `reel-${stamp}-couverture.jpg`);
     spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', imgs[0], '-q:v', '2', cover]);
     console.log(`[${id}] vidéo ${res.total.toFixed(1)} s${res.musique ? ` avec ${path.basename(res.musique)}` : ' (muette : ajoute des musiques dans assets/musiques/)'}`);
-    pub = { video, couverture: cover, legende: captionReel({ variante, events: chosen, ch, r, elargi }), soirees: chosen, duree: +res.total.toFixed(1) };
+    pub = { video, couverture: cover, legende: captionReel({ variante, events: chosen, ch, r, elargi }), soirees: chosen, duree: +res.total.toFixed(1), titre: hook.titre };
   } else {
     throw new Error(`Type inconnu : ${slot.type}`);
   }
@@ -313,7 +329,7 @@ async function publishPrepared(id) {
   const link = await permalink(res.id, ig);
   console.log(`[${id}] ✅ publié : ${link || res.id}`);
   hist.push({ id, date: p.date, media: res.id, lien: link, debat: p.debat, bonplan: p.bonplan, le: new Date().toISOString(),
-    publication: { id: p.id, type: p.type, variante: p.variante, date: p.date, choix: p.choix, features: p.features, nb_images: p.nb_images, duree: p.duree } });
+    publication: { id: p.id, type: p.type, variante: p.variante, date: p.date, choix: p.choix, features: p.features, nb_images: p.nb_images, duree: p.duree, legende: p.legende, titre: p.titre } });
   await writeFile(HIST_FILE, JSON.stringify(hist.slice(-300), null, 2));
 }
 

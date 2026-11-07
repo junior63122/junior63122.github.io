@@ -1,6 +1,8 @@
 name: Teufy - Instagram automatique
 
 # Chaque jour, de 15h à 19h UTC (16h-20h l'hiver, 17h-21h l'été à Paris) :
+#  - une fois par semaine, l'analyse Claude : veille des nouveautés Instagram/Meta, pourquoi
+#    certains posts marchent mieux, nouvelles accroches/intros/débats à tester (si ANTHROPIC_API_KEY) ;
 #  - relève les statistiques Instagram des derniers posts
 #    (apprentissage.json + RAPPORT.md) pour améliorer les choix suivants ;
 #  - si le calendrier de teufy-insta/config.json prévoit une publication ce jour-là,
@@ -51,6 +53,7 @@ jobs:
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       IG_API_HOST: ${{ vars.IG_API_HOST || 'graph.facebook.com' }}
       PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       MEDIA_BASE_URL: https://${{ github.repository_owner }}.github.io/teufy-insta/media
       MEDIA_FALLBACK_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/teufy-insta/media
     steps:
@@ -64,10 +67,11 @@ jobs:
         # Chaque post est mesuré au plus une fois par jour (de J+1 à J+21) : les passages suivants ne font presque rien.
         if: github.event_name == 'schedule' || startsWith(inputs.quoi, 'collecter')
         run: |
+          npm install --no-audit --no-fund
           node src/run.mjs collecter
           git config user.name "teufy-bot"
           git config user.email "teufy-bot@users.noreply.github.com"
-          git add apprentissage.json RAPPORT.md tendances-auto.json 2>/dev/null || true
+          git add apprentissage.json RAPPORT.md ANALYSE.md tendances-auto.json contenus veille 2>/dev/null || true
           git diff --cached --quiet && exit 0
           git commit -m "Teufy Instagram : statistiques du $(date -u +%F)"
           for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done

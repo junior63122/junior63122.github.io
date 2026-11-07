@@ -52,6 +52,24 @@ Le bot est livré avec **79 photos libres de droits (CC0)** sélectionnées à l
 
 Tu peux ajouter tes propres photos dans ces dossiers. Pinterest n'est pas une banque libre de droits, donc le bot ne s'en sert pas.
 
+## Notes /100, objectif et analyse hebdomadaire
+
+**Chaque post reçoit une note sur 100**, qu'il soit publié par le bot ou à la main par l'équipe (les anciens posts du compte sont importés et notés aussi) :
+- 50 = la performance habituelle du compte pour ce format, 100 = deux fois mieux ;
+- la note combine likes, commentaires (×2), enregistrements (×3), partages (×4), abonnés gagnés (×10), visites du profil et portée, et pour les reels la part de la vidéo regardée.
+
+**Objectif** : chaque post doit battre la note médiane des 10 derniers posts (+5 points). `RAPPORT.md` montre ✅ ou ❌ pour chaque post récent, compare la moyenne du bot à celle de l'équipe, et liste **ce qui fait monter ou baisser la note** : heure, jour, format, type de post, style musical, lieu, ville, source (Shotgun/DICE), prix, hashtags, forme de la légende, accroche, titre, photos…
+
+**Analyse hebdomadaire par Claude** (si le secret `ANTHROPIC_API_KEY` est défini), une fois par semaine :
+1. **Veille** : recherche sur le web des nouveautés Instagram et Meta des 14 derniers jours (sources officielles en priorité : about.instagram.com, creators.instagram.com, about.fb.com, changelog développeurs Meta, Adam Mosseri).
+2. **Pourquoi** : explication des meilleurs et moins bons posts, chiffres à l'appui, avec une action pour chaque constat.
+3. **Tests** : nouvelles accroches de reels, intros de légende, sujets de débat et hashtags à essayer, ajoutés automatiquement au bot. L'apprentissage les garde s'ils font mieux. Les options testées au moins 4 fois et nettement sous la moyenne sont retirées.
+4. **Règles** : hashtags max, durée des reels et durée de l'accroche ne sont changés que si une **source officielle** Instagram ou Meta le confirme.
+
+Garde-fous : rien n'est publié sans passer par le code. Pas de tiret « — », pas de « lien en bio », pas d'invitation à télécharger l'app, longueurs limitées, hashtags valides. Tout est journalisé dans `ANALYSE.md` (repris en haut de `RAPPORT.md`) et dans `veille/AAAA-MM-JJ.md`.
+
+Coût : deux appels à Claude par semaine (dont une recherche web), soit quelques dizaines de centimes à environ 1 € par semaine selon la quantité de veille.
+
 ## Tendances et règles Instagram
 
 Le fichier **`contenus/tendances.json`** regroupe ce que le bot applique, et tu peux le modifier :
@@ -90,7 +108,7 @@ L'app n'est pas encore disponible. Les visuels et légendes poussent à **s'abon
    - Dans Meta Business Suite → Paramètres → Utilisateurs système, crée un utilisateur **Admin** et donne-lui accès à la Page et au compte Instagram.
    - Génère un jeton qui n'expire **jamais**, avec ces autorisations : `instagram_basic`, `instagram_content_publish`, **`instagram_manage_insights`** (indispensable pour l'apprentissage), `pages_show_list`, `pages_read_engagement`, `business_management`.
    - Trouve l'identifiant du compte avec `https://graph.facebook.com/v21.0/me/accounts?fields=name,instagram_business_account&access_token=TON_JETON`. La valeur `instagram_business_account.id` est ton IG_USER_ID.
-3. **Secrets GitHub** (Settings → Secrets and variables → Actions) : `IG_ACCESS_TOKEN` et `IG_USER_ID` (sans eux, rien n'est publié), et `PEXELS_API_KEY` pour les photos d'ambiance.
+3. **Secrets GitHub** (Settings → Secrets and variables → Actions) : `IG_ACCESS_TOKEN` et `IG_USER_ID` (sans eux, rien n'est publié), `ANTHROPIC_API_KEY` pour l'analyse hebdomadaire (clé sur <https://console.anthropic.com>), et `PEXELS_API_KEY` en option.
 4. **Aperçu** : Actions → « Teufy - Instagram automatique » → Run workflow → **mois**. Les 9 publications sont générées avec les vraies soirées, sans rien publier. Tout est dans l'artefact `teufy-…`.
 
 Avec « Instagram API with Instagram Login » (sans Page Facebook), ajoute la variable de dépôt `IG_API_HOST` = `graph.instagram.com`.

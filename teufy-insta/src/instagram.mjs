@@ -139,3 +139,9 @@ export async function businessDiscovery(handle, ig) {
   const j = await call('GET', ig.user, { fields }, ig);
   return j.business_discovery;
 }
+
+// Derniers posts du compte (y compris ceux publiés à la main), pour les noter et comparer.
+export async function compteMedia(ig, limit = 60) {
+  const j = await call('GET', `${ig.user}/media`, { fields: 'id,caption,media_type,media_product_type,timestamp,permalink', limit: String(limit) }, ig);
+  return j.data || [];
+}
