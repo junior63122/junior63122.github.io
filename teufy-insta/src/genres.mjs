@@ -47,3 +47,28 @@ export function styleLabel(e) {
   }
   return out.join(' · ');
 }
+
+// Liste des styles affichée dans le bandeau du bas (« Techno, Bass House, Disco »),
+// tirée des tags Shotgun/DICE puis du nom et de la description de la soirée.
+const GENRES = [
+  'Melodic Techno', 'Hard Techno', 'Hardgroove', 'Acid Techno', 'Industrial', 'Minimal', 'Trance', 'Techno', 'Acid',
+  'Afro House', 'Tech House', 'Deep House', 'Bass House', 'Disco House', 'Electro House', 'Progressive House', 'House',
+  'Drum & Bass', 'Dubstep', 'Afrobeat', 'Amapiano', 'Afro', 'Shatta', 'Dancehall', 'Reggaeton', 'Baile Funk', 'Latino', 'Kompa', 'Zouk',
+  'Hip Hop', 'Rap', 'RnB', 'Jersey Club', 'Disco', 'Funk', 'Électro', 'Variété Française', 'Années 2000', 'Années 80', 'Pop', 'Indie', 'Progressive', 'Club',
+];
+const ALIAS = { 'hip-hop': 'hip hop', 'r&b': 'rnb', 'r n b': 'rnb', electro: 'électro', 'variete francaise': 'variété française', 'annees 2000': 'années 2000', '2000s': 'années 2000', 'annees 80': 'années 80', 'dnb': 'drum & bass', 'drum and bass': 'drum & bass' };
+
+export function genresList(e, max = 6) {
+  let txt = ' ' + norm([...(e.tags || []), e.name, e.description].join(' | ')).replace(/[^a-z0-9&|]+/g, ' ') + ' ';
+  for (const [a, b] of Object.entries(ALIAS)) txt = txt.split(` ${norm(a).replace(/[^a-z0-9&]+/g, ' ')} `).join(` ${norm(b)} `);
+  const out = [];
+  for (const g of GENRES) {
+    const k = ` ${norm(g)} `;
+    if (txt.includes(k)) {
+      txt = txt.split(k).join(' | ');
+      if (!out.some((o) => norm(o).startsWith(norm(g)))) out.push(g); // « Afro » inutile si « Afrobeat »
+    }
+    if (out.length >= max) break;
+  }
+  return out;
+}

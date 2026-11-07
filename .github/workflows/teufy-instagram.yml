@@ -50,6 +50,7 @@ jobs:
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       IG_API_HOST: ${{ vars.IG_API_HOST || 'graph.facebook.com' }}
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
       MEDIA_BASE_URL: https://${{ github.repository_owner }}.github.io/teufy-insta/media
       MEDIA_FALLBACK_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/teufy-insta/media
     steps:

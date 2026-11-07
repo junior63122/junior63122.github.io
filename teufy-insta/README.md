@@ -34,20 +34,24 @@ Chaque jour, le bot relève les statistiques des posts des 3 dernières semaines
 
 Il faut environ 4 à 6 semaines de publications pour que l'apprentissage commence à peser vraiment.
 
-## Direction artistique
+## Direction artistique (reprise de @teufy_official)
 
-La charte est dans **`contenus/da.json`** : polices, arrondis, et une palette par saison.
+- **Couverture** : photo de soirée plein cadre, passée en noir et blanc puis teintée de la couleur de la saison. Par-dessus, grand titre blanc en capitales très larges (« NOS ÉVÉNEMENTS COUPS DE CŒUR DE LA SEMAINE », « LES ÉVÉNEMENTS TECHNO »…) et sous-titre corail (« DU 7 AU 13 DÉCEMBRE », « EN DÉCEMBRE »).
+- **Une diapo par soirée, en 3 bandeaux** : en haut, photo + **date · logo TF · ville** ; au milieu, **l'affiche Shotgun/DICE** en entier ; en bas, photo + **styles musicaux** (« Afro House, Indie, Progressive ») + nom · lieu · heure · prix.
+- **Dernière diapo, débats et bons plans** : photo, logo TF en haut, pastille corail **#TeufyParty** / **#TeufyDébat** / **#BonPlan**, texte en gras.
+- **Logo** : `assets/logo.png` (le TF blanc détouré du logo officiel), avec l'ombre corail.
+- **Police** : Archivo très large (`assets/fonts/`), proche des titres Teufy.
+- **Teinte des photos selon la saison** : rouge l'hiver (comme les posts de décembre), rose au printemps, corail l'été, violet l'automne. La techno passe en noir et blanc contrasté.
+- **Temps forts** : Nouvel An, Halloween, Saint-Valentin et Fête de la musique changent le titre (« LES SOIRÉES DU NOUVEL AN À NE PAS MANQUER ») et les photos.
 
-| Saison | Ambiance par défaut |
-| --- | --- |
-| Hiver (déc.-fév.) | bleu glacé, lavande |
-| Printemps (mars-mai) | rose, menthe, jaune |
-| Été (juin-août) | orange coucher de soleil, rose, turquoise |
-| Automne (sept.-nov.) | orange ambré, bordeaux |
+Tout se règle dans `contenus/da.json`.
 
-La techno garde son univers à part (fond noir, typo brute, sans dégradés), avec une couleur d'accent qui suit aussi la saison. Pour mettre le logo officiel, dépose `assets/logo.png` (ou `.svg`) : il remplace le nom écrit sur tous les visuels.
+### Les photos d'ambiance : à fournir
 
-> Les couleurs par défaut sont provisoires. Elles sont à caler sur le compte Instagram officiel de Teufy (voir les captures demandées).
+Ce sont elles qui donnent l'âme des visuels. Par ordre de priorité, le bot prend :
+1. **Tes photos**, à déposer dans `assets/photos/` (voir `assets/photos/LISEZMOI.md` : dossiers `techno/`, `club/`, `fetes/`, `debat/`, saisons). C'est le mieux : vos soirées, vos lieux.
+2. **Pexels** (photos libres et gratuites) : crée une clé sur <https://www.pexels.com/api/> et ajoute-la dans les secrets GitHub sous le nom `PEXELS_API_KEY`. Le bot cherche des photos selon le style et la saison (« techno rave crowd », « new year party fireworks »…), et apprend lesquelles font réagir.
+3. Sinon, il dessine un fond de faisceaux de lumière teinté.
 
 ## Pas d'invitation à télécharger l'app
 
@@ -60,7 +64,7 @@ L'app n'est pas encore disponible. Les visuels et légendes poussent à **s'abon
   ```json
   [{ "titre": "Entrée offerte avant minuit", "texte": "Tous les jeudis au Ghost avec le code TEUFY.", "du": "2026-11-01", "au": "2026-11-30" }]
   ```
-- **Légendes** : plusieurs versions humaines par format, avec peu d'emojis, pas de tiret « — » et 7 hashtags qui tournent.
+- **Légendes** : plusieurs versions humaines par format, dans le ton du compte (« Cette semaine, la Côte d'Azur ne dort pas… »), avec peu d'emojis, pas de tiret « — » et 7 hashtags qui tournent, dont #TeufyParty.
 
 ## Mise en route (une seule fois, ~20 min)
 
@@ -70,7 +74,7 @@ L'app n'est pas encore disponible. Les visuels et légendes poussent à **s'abon
    - Dans Meta Business Suite → Paramètres → Utilisateurs système, crée un utilisateur **Admin** et donne-lui accès à la Page et au compte Instagram.
    - Génère un jeton qui n'expire **jamais**, avec ces autorisations : `instagram_basic`, `instagram_content_publish`, **`instagram_manage_insights`** (indispensable pour l'apprentissage), `pages_show_list`, `pages_read_engagement`, `business_management`.
    - Trouve l'identifiant du compte avec `https://graph.facebook.com/v21.0/me/accounts?fields=name,instagram_business_account&access_token=TON_JETON`. La valeur `instagram_business_account.id` est ton IG_USER_ID.
-3. **Secrets GitHub** (Settings → Secrets and variables → Actions) : `IG_ACCESS_TOKEN` et `IG_USER_ID`.
+3. **Secrets GitHub** (Settings → Secrets and variables → Actions) : `IG_ACCESS_TOKEN` et `IG_USER_ID` (sans eux, rien n'est publié), et `PEXELS_API_KEY` pour les photos d'ambiance.
 4. **Aperçu** : Actions → « Teufy - Instagram automatique » → Run workflow → **mois**. Les 9 publications sont générées avec les vraies soirées, sans rien publier. Tout est dans l'artefact `teufy-…`.
 
 Avec « Instagram API with Instagram Login » (sans Page Facebook), ajoute la variable de dépôt `IG_API_HOST` = `graph.instagram.com`.

@@ -107,6 +107,7 @@ if (echecs.length) die(`Échec : ${echecs.join(', ')}`);
 
 async function prepare(slot, now, id) {
   const { renderPages, carouselPages, reelPages, debatPage, bonPlanManuelPage } = await import('./render.mjs');
+  const { photoSource } = await import('./photos.mjs');
   const dir = path.join(MEDIA_DIR, id);
   await rm(dir, { recursive: true, force: true });
   await mkdir(dir, { recursive: true });
@@ -125,6 +126,13 @@ async function prepare(slot, now, id) {
   };
   const best = (list, n) => selectBest(list, n, MODEL, r);
   const cheap = (e) => e.price != null && e.price <= R.petit_prix_max;
+  const MOIS = (d) => new Intl.DateTimeFormat('fr-FR', { timeZone: 'Europe/Paris', month: 'long' }).format(d);
+  const sousPlage = (win) => plage(win.from, win.to).toUpperCase();
+  const visuel = async (univers, opts = {}) => {
+    const th = theme(now, univers);
+    const photos = await photoSource({ univers, saison: th.saison, fetes: !!th.tempsFort?.fetes, ch, r, ...opts });
+    return { th, photos };
+  };
   let pub;
 
   if (slot.type === 'debat') {
@@ -134,13 +142,15 @@ async function prepare(slot, now, id) {
     if (!pool.length) pool = all; // tout a été utilisé : on recommence
     const debat = ch.pick('debat', pool, (d) => d.id);
     usedHere.add(debat.id);
-    const files = await renderPages(debatPage({ th: theme(now, 'club'), debat, config }), dir, `debat-${stamp}`, { width: 1080, height: 1350 });
+    const { th, photos } = await visuel('club', { debat: true });
+    const files = await renderPages(debatPage({ th, debat, photos }), dir, `debat-${stamp}`, { width: 1080, height: 1350 });
     pub = { images: files, legende: captionDebat({ debat, ch, r }), debat: debat.id };
   } else if (slot.type === 'bonplan') {
     const manuel = await bonPlanManuel(now);
     if (manuel) {
       usedHere.add(manuel.titre);
-      const files = await renderPages(bonPlanManuelPage({ th: theme(now, 'club'), bp: manuel, config }), dir, `bonplan-${stamp}`, { width: 1080, height: 1350 });
+      const { th, photos } = await visuel('club');
+      const files = await renderPages(bonPlanManuelPage({ th, bp: manuel, photos }), dir, `bonplan-${stamp}`, { width: 1080, height: 1350 });
       pub = { images: files, legende: captionBonPlan({ manuel, ch, r }), bonplan: manuel.titre };
     } else {
       let variante = slot.variante;
@@ -151,15 +161,14 @@ async function prepare(slot, now, id) {
       need(list, 2);
       const chosen = chrono(best(list, R.soirees_par_carrousel));
       const reserve = variante === 'a-reserver';
+      const { th, photos } = await visuel('club');
       const pages = carouselPages({
-        th: theme(now, 'club'), events: chosen, config,
-        couverture: reserve
-          ? { pastille: 'Bon plan', titre: 'À réserver\navant sold out', sousTitre: 'Les grosses dates des prochaines semaines', compte: 'Swipe →' }
-          : { pastille: 'Bon plan', titre: 'Sortir\nsans se ruiner', sousTitre: `Gratuit ou moins de ${R.petit_prix_max} € · ${plage(win.from, win.to)}`, compte: 'Swipe →' },
-        agenda: { titre: reserve ? 'Les dates' : 'Petits prix', avecMois: reserve },
+        th, photos, events: chosen,
+        titre: reserve ? 'À réserver avant sold out' : 'Sortir sans se ruiner',
+        sous: reserve ? 'Les grosses dates' : `Moins de ${R.petit_prix_max} €`,
         fin: reserve
-          ? { titre: 'Prends\ntes places', question: 'Laquelle te tente le plus ? 👇', tag: '📌 Enregistre pour plus tard' }
-          : { titre: 'Partage\nle bon plan', question: 'Tu connais d\'autres bons plans ? 👇', tag: '💸 Tag ton pote toujours fauché' },
+          ? { texte: 'Prends tes places tant qu\'il en reste.', pied: `Abonne-toi à ${config.compte} 👇` }
+          : { texte: 'Partage le bon plan à ton pote toujours fauché.', pied: `Abonne-toi à ${config.compte} 👇` },
       });
       const files = await renderPages(pages, dir, `bonplan-${stamp}`, { width: 1080, height: 1350 });
       pub = { images: files, legende: captionBonPlan({ variante, events: chosen, ...win, ch, r }), soirees: chosen };
@@ -174,16 +183,17 @@ async function prepare(slot, now, id) {
     if (list.length < 3) { win = rolling(now, 0, 14); list = await pickEv(win, pred); elargi = true; }
     need(list, 2);
     const chosen = chrono(best(list, R.soirees_par_carrousel));
-    const periode = elargi ? 'des prochains jours' : 'de la semaine';
+    const { th, photos } = await visuel(techno ? 'techno' : 'club');
+    const fort = !techno && th.tempsFort?.titre;
+    const titre = techno
+      ? ch.pick('titre-techno', ['Les événements techno', 'Les dates techno à ne pas manquer', 'Techno : la sélection'])
+      : fort || ch.pick('titre-commercial', ['Nos événements coups de cœur de la semaine', 'Les soirées à ne pas manquer', 'Nos coups de cœur de la semaine']);
     const pages = carouselPages({
-      th: theme(now, techno ? 'techno' : 'club'), events: chosen, config,
-      couverture: techno
-        ? { pastille: plage(win.from, win.to), titre: 'Les incontournables\ntechno', sousTitre: `La sélection ${periode} sur la Côte`, compte: `${chosen.length} dates · swipe →` }
-        : { pastille: plage(win.from, win.to), titre: `Les incontournables\n${periode}`, sousTitre: 'House · shatta · afro · électro', compte: `${chosen.length} soirées · swipe →` },
-      agenda: { titre: techno ? 'Les dates' : 'Le programme' },
+      th, photos, events: chosen, titre,
+      sous: fort ? `En ${MOIS(now)}` : elargi ? 'Ces prochains jours' : sousPlage(win),
       fin: techno
-        ? { titre: 'On se voit\nsur le dancefloor', question: 'Tu seras à laquelle ? 👇', tag: 'Tag ton binôme de rave' }
-        : { titre: 'Tu sors\noù ?', question: 'Dis-nous en commentaire 👇', tag: '👯 Tag la personne qui vient avec toi' },
+        ? { texte: 'On se voit sur le dancefloor.\nTu seras à laquelle ?', pied: `Abonne-toi à ${config.compte} 👇` }
+        : { texte: 'Tu sors où cette semaine ?\nDis-le en commentaire.', pied: `Abonne-toi à ${config.compte} 👇` },
     });
     const files = await renderPages(pages, dir, `incontournables-${stamp}`, { width: 1080, height: 1350 });
     pub = { images: files, legende: captionIncontournables({ variante: slot.variante, events: chosen, ...win, ch, r }), soirees: chosen };
@@ -199,32 +209,31 @@ async function prepare(slot, now, id) {
     const chosen = pickReel(best(list, 40), R.soirees_par_reel);
     const hooks = {
       weekend: [
-        { pre: 'POV :', titre: "t'as toujours\npas de plan\nce week-end", emoji: '👀' },
-        { pre: 'Ce week-end', titre: 'tu sors\noù ?', emoji: '🪩' },
-        { pre: 'Rappel :', titre: 'le canapé\npeut attendre', emoji: '🛋️' },
+        { titre: "POV : t'as toujours pas de plan ce week-end", sous: 'Swipe pas' },
+        { titre: 'Ce week-end, tu sors où ?', sous: sousPlage(win) },
+        { titre: 'Le canapé peut attendre', sous: 'Ce week-end' },
       ],
       techno: [
-        { pre: 'TECHNO ONLY', titre: 'Ce week-end\nça tape', emoji: '' },
-        { pre: 'Pour la famille', titre: 'techno de\nla Côte', emoji: '' },
-        { pre: 'Rentrer avant 6h ?', titre: 'Non.', emoji: '' },
+        { titre: 'Ce week-end ça tape', sous: 'Techno only' },
+        { titre: 'Pour la famille techno de la Côte', sous: sousPlage(win) },
+        { titre: 'Rentrer avant 6h ? Non.', sous: 'Techno only' },
       ],
       'petits-prix': [
-        { pre: 'BON PLAN', titre: `Le week-end\nà moins\nde ${R.petit_prix_max} €`, emoji: '💸' },
-        { pre: 'Fin de mois ?', titre: 'Sors quand\nmême', emoji: '💸' },
+        { titre: `Le week-end à moins de ${R.petit_prix_max} €`, sous: 'Bon plan' },
+        { titre: 'Fin de mois ? Sors quand même', sous: 'Petits prix' },
       ],
     };
+    const hook = ch.pick(`hook-${variante}`, hooks[variante].filter((h) => !elargi || !/week-end/i.test(h.titre + h.sous)), (h) => hash(h.titre));
+    const { th, photos } = await visuel(variante === 'techno' ? 'techno' : 'club');
     const pages = reelPages({
-      th: theme(now, variante === 'techno' ? 'techno' : 'club'), events: chosen, config,
-      // Période élargie : pas d'accroche qui parle du « week-end ».
-      hook: ch.pick(`hook-${variante}`, hooks[variante].filter((h) => !elargi || !/week-end/i.test(h.pre + h.titre)), (h) => hash(h.pre + h.titre)),
-      sousHook: `${chosen.length} ${variante === 'techno' ? 'dates techno' : 'soirées'} sur la Côte ${plage(win.from, win.to)}`,
-      question: variante === 'techno' ? 'Tu seras\noù ?' : variante === 'petits-prix' ? 'Laquelle\ntu prends ?' : 'Laquelle\ntu choisis ?',
+      th, photos, events: chosen, titre: hook.titre, sous: hook.sous, compte: config.compte,
+      question: variante === 'techno' ? 'Tu seras où ?' : variante === 'petits-prix' ? 'Laquelle tu prends ?' : 'Laquelle tu choisis ?',
     });
     const tmp = path.join(ROOT, 'out', `reel-${id}`);
     await rm(tmp, { recursive: true, force: true });
     const imgs = await renderPages(pages, tmp, 'reel', { width: 1080, height: 1920, png: true });
     const { buildReel } = await import('./reel.mjs');
-    const durees = [2.4, ...chosen.map(() => R.secondes_par_soiree_reel), 2.6, 2.2];
+    const durees = [2.4, ...chosen.map(() => R.secondes_par_soiree_reel), 3, 2.2];
     const video = path.join(dir, `reel-${stamp}.mp4`);
     const res = await buildReel(imgs, video, { root: ROOT, durees, genre: variante === 'techno' ? 'techno' : 'club' });
     const cover = path.join(dir, `reel-${stamp}-couverture.jpg`);

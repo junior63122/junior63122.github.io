@@ -22,7 +22,7 @@ const GENRE = {
   general: ['#soiree', '#nightlife', '#teuf', '#sortir', '#clubbing'],
 };
 export function hashtags(r, genre = 'general') {
-  return ['#teufy', ...shuffle(r, LOCAL).slice(0, 3), ...shuffle(r, GENRE[genre] || GENRE.general).slice(0, 3)].join(' ');
+  return ['#TeufyParty', ...shuffle(r, LOCAL).slice(0, 3), ...shuffle(r, GENRE[genre] || GENRE.general).slice(0, 3)].join(' ');
 }
 
 // Une ligne d'info par soirée : date, nom, style, lieu, heure, prix.
@@ -57,8 +57,10 @@ export function captionIncontournables({ variante, events, from, to, ch, r }) {
       `Cette semaine ça tape fort sur la Côte d'Azur. On vous a fait le tri.`,
       `Pour la communauté techno de la Côte : voilà où vous serez cette semaine.`,
       `Moins de blabla, plus de BPM. Les soirées techno de la semaine 👇`,
+      `Pas juste des soirées. Des line-up, des lieux, une vraie communauté. La techno sur la Côte cette semaine 👇`,
     ]
     : [
+      `Cette semaine, la Côte d'Azur ne dort pas.\nNice, Cannes, Monaco… des ambiances, des styles, des vibes pour tous.`,
       `Les soirées incontournables de la semaine sur la Côte, ${plage(from, to)} 👇`,
       `House, shatta, afro, électro… Cette semaine il y en a pour tout le monde.`,
       `Votre semaine est réglée. Voilà les soirées à pas louper sur la Côte d'Azur.`,

@@ -1,264 +1,161 @@
-// Génère les visuels (JPEG/PNG) à partir de gabarits HTML, rendus par Chromium (Playwright).
-// Couleurs, polices et logo viennent de contenus/da.json (src/theme.mjs) et changent avec la saison.
-// Priorité à l'info : affiche Shotgun/DICE en entier, style musical, date, lieu, prix.
+// Visuels dans la DA du compte @teufy_official, rendus par Chromium (Playwright) :
+//  - couverture : photo de soirée plein cadre teintée (couleur de la saison), grand titre blanc
+//    en capitales très larges, sous-titre corail ;
+//  - une diapo par soirée en 3 bandeaux : photo + « 13/12 · logo · Cannes », l'affiche
+//    Shotgun/DICE, photo + styles musicaux (et nom · lieu · heure · prix) ;
+//  - fin / débat / bon plan : photo, logo TF, pastille #TeufyParty, texte en gras.
 import { chromium } from 'playwright';
 import { mkdir } from 'node:fs/promises';
 import path from 'node:path';
-import { jourCourt, jourNum, moisCourt, heure } from './dates.mjs';
-import { styleLabel } from './genres.mjs';
+import { heure } from './dates.mjs';
+import { genresList, styleLabel } from './genres.mjs';
 
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const srcLabel = (e) => (e.manuel ? 'Teufy' : e.source === 'dice' ? 'DICE' : e.source === 'shotgun' ? 'Shotgun' : e.source);
-const prix = (e) => (e.price == null ? '' : e.price === 0 ? 'Gratuit' : `dès ${String(Math.round(e.price * 100) / 100).replace('.', ',')} €`);
-const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-const lieu = (e) => [e.venue, e.city && !norm(e.venue).includes(norm(e.city)) ? e.city : ''].filter(Boolean).join(' · ');
+// Typo française : espace insécable avant ? ! : ; et à l'intérieur des guillemets.
+const fr = (s) => String(s ?? '').replace(/ ([?!:;»])/g, '\u00a0$1').replace(/« /g, '«\u00a0');
+const esc = (s) => fr(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const nl = (s) => esc(s).replace(/\n/g, '<br>');
-const bg = (url) => `background-image:url('${esc(url)}')`;
+const bg = (url) => (url ? `background-image:url('${esc(url)}')` : '');
+const prix = (e) => (e.price == null ? '' : e.price === 0 ? 'Gratuit' : `dès ${String(Math.round(e.price * 100) / 100).replace('.', ',')} €`);
+const dateCourte = (d) => new Intl.DateTimeFormat('fr-FR', { timeZone: 'Europe/Paris', day: '2-digit', month: '2-digit' }).format(new Date(new Date(d).getTime() - 6 * 3600e3));
+const ville = (e) => (e.city || e.venue || "Côte d'Azur").replace(/^./, (c) => c.toUpperCase());
 
 const BASE_CSS = `
 *{box-sizing:border-box;margin:0;padding:0}
-h1{max-width:100%}
-html,body{width:var(--w);height:var(--h);overflow:hidden;background:var(--fond);color:var(--texte);font-family:var(--f-texte)}
-.titre{font-family:var(--f-titre);text-transform:uppercase;line-height:.92;letter-spacing:.5px}
-.mono{font-family:var(--f-mono)}
-.fond{position:absolute;inset:0;background:
- radial-gradient(60% 45% at 15% 10%,var(--l1),transparent 70%),
- radial-gradient(55% 45% at 90% 85%,var(--l2),transparent 70%),
- radial-gradient(40% 30% at 80% 20%,var(--l3),transparent 70%),var(--fond)}
-.grain{position:absolute;inset:0;opacity:.08;background-image:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 3px)}
-.flou{position:absolute;inset:-80px;background-size:cover;background-position:center;filter:blur(50px) brightness(.4) saturate(1.3)}
-.marque{position:absolute;font-weight:900;letter-spacing:2px;font-size:30px;display:flex;align-items:center}
-.marque b{color:var(--accent)}
-.marque img{height:52px;width:auto}
-.pastille{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:900;font-size:28px;background:var(--accent);color:var(--sur-accent)}
-.pastille.c{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.35);color:var(--texte)}
-.grad{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--sur-accent)}
-.affiche{position:absolute;overflow:hidden;border-radius:var(--r);box-shadow:0 30px 90px rgba(0,0,0,.7),0 0 0 3px rgba(255,255,255,.1);background:#000}
-.affiche .derriere{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(30px) brightness(.55)}
-.affiche .devant{position:absolute;inset:0;background-size:contain;background-repeat:no-repeat;background-position:center}
-.affiche.vide{display:flex;align-items:center;justify-content:center;padding:60px;text-align:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--sur-accent)}
-.genre{position:absolute;left:24px;top:24px;z-index:2}
-`;
-const TECHNO_CSS = `
-.grain{opacity:.14}
-.flou{filter:blur(50px) brightness(.3) grayscale(.7)}
-.pastille{border-radius:4px;font-family:var(--f-mono)}
-.grad{background:var(--accent)}
+html,body{width:var(--w);height:var(--h);overflow:hidden;background:var(--nuit);color:var(--blanc);font-family:'TeufyWide',Archivo,'DejaVu Sans',sans-serif;font-stretch:var(--wdth)}
+.large{font-family:'TeufyWide',Archivo,'DejaVu Sans',sans-serif;font-stretch:var(--wdth);font-weight:var(--g-titre);text-transform:uppercase;letter-spacing:.5px;line-height:1.02}
+h1,h2,p{max-width:100%}
+.ph{position:absolute;overflow:hidden;background:#111}
+.ph .img{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.3) brightness(1.12)}
+.ph .img.repli{inset:-60px;filter:grayscale(1) blur(22px) contrast(1.25) brightness(.85)}
+.ph .tint{position:absolute;inset:0;background:var(--teinte);mix-blend-mode:multiply;opacity:var(--teinte-force)}
+.ph .lift{position:absolute;inset:0;background:var(--teinte);mix-blend-mode:screen;opacity:.16}
+.ph.nb .tint,.ph.nb .lift{opacity:0}
+.ph .img.synth{filter:none;background:
+ repeating-conic-gradient(from var(--a) at 50% -10%,rgba(255,255,255,.55) 0 2deg,transparent 2deg 11deg),
+ radial-gradient(60% 40% at 50% 0%,rgba(255,255,255,.9),transparent 70%),
+ radial-gradient(80% 50% at 50% 110%,rgba(255,255,255,.35),transparent 70%),#2a2a2a}
+.ph .voile{position:absolute;inset:0}
+.logo{display:block;width:auto;filter:drop-shadow(7px 7px 0 var(--ombre))}
+.ombre{text-shadow:0 4px 28px rgba(0,0,0,.45)}
+.pill{display:inline-block;padding:10px 26px;border:4px solid var(--corail);border-radius:22px;font-weight:600;font-stretch:100%;font-size:44px;background:rgba(0,0,0,.18)}
 `;
 
-// Réduit la taille des grands titres tant qu'un mot dépasse la largeur disponible.
+// Réduit la taille d'un texte tant qu'il dépasse sa boîte (largeur et hauteur).
 const FIT = `<script>
 window.__fit = (async () => {
   try { await document.fonts.ready; } catch (e) {}
-  for (const el of document.querySelectorAll('h1')) {
+  for (const el of document.querySelectorAll('.fit')) {
     let s = parseFloat(getComputedStyle(el).fontSize);
-    while (el.scrollWidth > el.clientWidth + 2 && s > 30) { s -= 4; el.style.fontSize = s + 'px'; }
+    const maxH = parseFloat(el.dataset.maxh || 0);
+    while ((el.scrollWidth > el.clientWidth + 2 || (maxH && el.scrollHeight > maxH)) && s > 18) { s -= 2; el.style.fontSize = s + 'px'; }
   }
 })();
 </script>`;
 
 function page(th, w, h, body, extraCss = '') {
-  return `<!doctype html><html lang="fr"><head><meta charset="utf-8">
-<style>@import url('https://fonts.googleapis.com/css2?${th.polices.google_fonts}&display=swap');
-:root{--w:${w}px;--h:${h}px}${th.css}${BASE_CSS}${th.univers === 'techno' ? TECHNO_CSS : ''}${extraCss}</style></head><body>${body}${FIT}</body></html>`;
-}
-const marque = (th, brand, pos = 'top:56px;left:64px') => (th.logo
-  ? `<div class="marque" style="${pos}"><img src="${th.logo}" alt=""></div>`
-  : `<div class="marque" style="${pos}">${esc(brand.slice(0, -2))}<b>${esc(brand.slice(-2))}</b></div>`);
-
-// Affiche entière (contain) sur un fond flouté de la même image ; pastille de style musical.
-function affiche(e, css) {
-  const g = styleLabel(e);
-  if (!e.image) return `<div class="affiche vide grad" style="${css}"><span class="titre" style="font-size:88px">${esc(e.name)}</span>${g ? `<span class="pastille c genre">${esc(g)}</span>` : ''}</div>`;
-  return `<div class="affiche" style="${css}"><div class="derriere" style="${bg(e.image)}"></div><div class="devant" style="${bg(e.image)}"></div>${g ? `<span class="pastille genre">${esc(g)}</span>` : ''}</div>`;
+  return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><style>${th.css}
+:root{--w:${w}px;--h:${h}px}${BASE_CSS}${extraCss}</style></head><body>${body}${FIT}</body></html>`;
 }
 
-// --- Carrousel 1080×1350 ---------------------------------------------------
+// Bloc photo teintée. `src` = { url, photo } ; sans vraie photo, l'affiche est floutée.
+function photo(src, css, { nb = false, voile = 'rgba(0,0,0,.25)' } = {}) {
+  const img = src.url
+    ? `<div class="img${src.photo ? '' : ' repli'}" style="${bg(src.url)}"></div>`
+    : `<div class="img synth" style="--a:${(css.length * 37) % 360}deg"></div>`; // ni photo ni affiche : faisceaux de lumière
+  return `<div class="ph${nb ? ' nb' : ''}" style="${css}">${img}<div class="tint"></div><div class="lift"></div><div class="voile" style="background:${voile}"></div></div>`;
+}
+const logo = (th, h) => (th.logo ? `<img class="logo" src="${th.logo}" style="height:${h}px" alt="">` : `<span class="large" style="font-size:${h}px">T</span>`);
 
-function slideCouverture(th, { pastille, titre, sousTitre, compte, events, brand }) {
-  const imgs = events.filter((e) => e.image).slice(0, 6);
-  const techno = th.univers === 'techno';
-  const mosaique = imgs.map((e, i) => `<div class="m" style="${bg(e.image)};transform:rotate(${techno ? 0 : [-6, 4, -3, 7, -5, 3][i]}deg)"></div>`).join('');
-  return page(th, 1080, 1350, `
-  <div class="fond"></div>
-  <div class="mosaique">${mosaique}</div>
-  <div class="voile"></div><div class="grain"></div>
-  ${marque(th, brand)}
-  <div class="bloc">
-    <div class="pastille">${esc(pastille)}</div>
-    <h1 class="titre">${nl(titre)}</h1>
-    <h2>${esc(sousTitre)}</h2>
-    <p class="compte">${esc(compte)}</p>
-  </div>`, `
-  .mosaique{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:150px 40px 0;opacity:${techno ? 0.4 : 0.6}}
-  .m{aspect-ratio:1;border-radius:var(--r);background-size:cover;background-position:center;box-shadow:0 20px 60px rgba(0,0,0,.6)${techno ? ';filter:grayscale(1) contrast(1.2)' : ''}}
-  .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.65) 45%,var(--fond) 72%)}
-  .bloc{position:absolute;left:64px;right:64px;bottom:90px}
-  h1{font-size:${titre.length > 40 ? 128 : 160}px;margin:34px 0 18px}
-  h2{font-size:52px;font-weight:900;color:var(--accent3)}
-  .compte{margin-top:40px;font-size:34px;font-weight:700;opacity:.9}`);
+// --- Couverture -------------------------------------------------------------
+
+function couverture(th, w, h, { titre, sous, src }) {
+  return page(th, w, h, `
+  ${photo(src, 'inset:0', { voile: 'linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.25) 60%,rgba(0,0,0,.45))' })}
+  <h1 class="large fit ombre t" data-maxh="${Math.round(h * 0.34)}">${nl(titre)}</h1>
+  ${sous ? `<h2 class="large fit s">${esc(sous)}</h2>` : ''}`, `
+  .t{position:absolute;left:60px;right:60px;top:${Math.round(h * 0.42)}px;text-align:center;font-size:${h > 1500 ? 92 : 84}px}
+  .s{position:absolute;left:60px;right:60px;bottom:${Math.round(h * 0.09)}px;text-align:center;font-size:76px;color:var(--corail);white-space:nowrap}`);
 }
 
-function slideAgenda(th, { events, brand, titre = "L'agenda", pied = '📌 Enregistre pour ne rien rater', avecMois = false }) {
-  const lignes = events.slice(0, 10).map((e) => `
-    <li>${e.image ? `<span class="vig" style="${bg(e.image)}"></span>` : '<span class="vig grad"></span>'}
-    <span class="j">${esc(jourCourt(e.start))} ${esc(jourNum(e.start))}${avecMois ? ` ${esc(moisCourt(e.start))}` : ''}<small>${esc(heure(e.start))}</small></span>
-    <span class="n">${esc(e.name)}<small>${esc([styleLabel(e), lieu(e)].filter(Boolean).join(' · ') || srcLabel(e))}</small></span>
-    ${prix(e) ? `<span class="p">${esc(prix(e).replace('dès ', ''))}</span>` : ''}</li>`).join('');
-  return page(th, 1080, 1350, `
-  <div class="fond"></div><div class="grain"></div>
-  ${marque(th, brand)}
-  <h1 class="titre">${esc(titre)}</h1>
-  <ul>${lignes}</ul>
-  <p class="pied">${esc(pied)}</p>`, `
-  h1{position:absolute;top:120px;left:64px;right:64px;font-size:110px}
-  ul{position:absolute;top:260px;left:64px;right:64px;list-style:none}
-  li{display:flex;align-items:center;gap:22px;padding:14px 0;border-bottom:2px solid rgba(255,255,255,.12)}
-  .vig{flex:0 0 76px;height:76px;border-radius:calc(var(--r) / 2);background-size:cover;background-position:center}
-  .j{flex:0 0 128px;font-weight:900;font-size:30px;color:var(--accent);line-height:1.1}
-  .j small{display:block;font-size:24px;color:var(--texte);opacity:.75}
-  .n{flex:1;font-weight:700;font-size:30px;line-height:1.15;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-  .n small{display:block;font-weight:500;font-size:23px;opacity:.72;margin-top:4px}
-  .p{font-weight:900;font-size:26px;color:var(--accent3)}
-  .pied{position:absolute;bottom:56px;left:64px;font-size:30px;font-weight:700}`);
-}
+// --- Soirée en 3 bandeaux ---------------------------------------------------
 
-function slideSoiree(th, { e, i, n, brand }) {
-  return page(th, 1080, 1350, `
-  <div class="fond"></div>${e.image ? `<div class="flou" style="${bg(e.image)}"></div>` : ''}<div class="grain"></div>
-  ${marque(th, brand)}
-  <div class="num mono">${i}/${n}</div>
-  ${affiche(e, 'top:130px;left:110px;width:860px;height:800px')}
-  <div class="infos">
-    <h1>${esc(e.name)}</h1>
-    <div class="grille">
-      <div><small>Quand</small>${esc(jourCourt(e.start))} ${esc(jourNum(e.start))} ${esc(moisCourt(e.start))} · ${esc(heure(e.start))}</div>
-      <div><small>Où</small>${esc(lieu(e) || "Côte d'Azur")}</div>
-      <div><small>Prix</small>${esc(prix(e) || 'Voir billetterie')}</div>
-      <div><small>Billets</small>${esc(e.billetterie || srcLabel(e))}</div>
-    </div>
-  </div>`, `
-  .num{position:absolute;top:56px;right:64px;font-weight:900;font-size:30px;opacity:.8}
-  .infos{position:absolute;left:64px;right:64px;top:960px}
-  h1{font-size:58px;font-weight:900;line-height:1.05;margin-bottom:22px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-  .grille{display:grid;grid-template-columns:1.25fr 1fr;gap:14px 30px}
-  .grille div{font-size:31px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .grille small{display:block;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:2px}`);
-}
-
-function slideFin(th, { brand, compte, titre, question, tag }) {
-  return page(th, 1080, 1350, `
-  <div class="fond"></div><div class="grain"></div>
-  <div class="bloc">
-    <h1 class="titre">${nl(titre)}</h1>
-    <p class="q">${esc(question)}</p>
-    <div class="cta grad">Abonne-toi à ${esc(compte)}<br><span>Le programme des soirées de la Côte, chaque semaine</span></div>
-    <p class="tag">${esc(tag)}</p>
+function soiree(th, w, h, { e, haut, bas }) {
+  const bh = Math.round(h * 0.275);
+  const genres = genresList(e);
+  const info = [e.name, e.venue, heure(e.start), prix(e)].filter(Boolean).join(' · ');
+  return page(th, w, h, `
+  ${photo(haut, `left:0;right:0;top:0;height:${bh}px`, { nb: th.techno, voile: 'rgba(0,0,0,.28)' })}
+  <div class="bande haut"><span class="large d">${esc(dateCourte(e.start))}</span>${logo(th, Math.round(bh * 0.36))}<span class="large fit v">${esc(ville(e))}</span></div>
+  <div class="aff" style="top:${bh}px;height:${h - 2 * bh}px">
+    <div class="flou" style="${bg(e.image)}"></div>
+    ${e.image ? `<div class="net" style="${bg(e.image)}"></div>` : `<div class="sans"><span class="large fit" data-maxh="${h - 2 * bh - 80}">${esc(e.name)}</span></div>`}
   </div>
-  ${marque(th, brand, 'bottom:60px;left:50%;transform:translateX(-50%);font-size:44px')}`, `
-  .bloc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 70px;gap:44px}
-  h1{font-size:190px}
-  .q{font-size:46px;font-weight:900}
-  .cta{font-size:46px;font-weight:900;padding:36px 46px;border-radius:var(--r)}
-  .cta span{font-size:28px;font-weight:700;opacity:.9}
-  .tag{font-size:34px;font-weight:700;opacity:.85}`);
+  ${photo(bas, `left:0;right:0;bottom:0;height:${bh}px`, { nb: th.techno, voile: 'rgba(0,0,0,.38)' })}
+  <div class="bande bas"><p class="g fit" data-maxh="${Math.round(bh * 0.55)}">${esc(genres.length ? genres.join(', ') : styleLabel(e) || e.name)}</p><p class="i fit">${esc(info)}</p></div>`, `
+  .bande{position:absolute;left:0;right:0;height:${bh}px;display:flex;align-items:center;padding:0 70px}
+  .haut{top:0;justify-content:space-between;gap:30px}
+  .haut .d{font-size:${Math.round(bh * 0.17)}px;flex:1}
+  .haut .v{font-size:${Math.round(bh * 0.17)}px;flex:1;text-align:right;text-transform:none;white-space:nowrap}
+  .bas{bottom:0;flex-direction:column;justify-content:center;gap:${Math.round(bh * 0.06)}px;text-align:center}
+  .g{font-weight:var(--g-titre);font-size:${Math.round(bh * 0.17)}px;line-height:1.15;width:100%}
+  .i{font-weight:600;font-stretch:100%;font-size:${Math.round(bh * 0.085)}px;opacity:.9;white-space:nowrap;overflow:hidden;width:100%}
+  .aff{position:absolute;left:0;right:0;overflow:hidden;background:#000}
+  .aff .flou{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(36px) brightness(.5)}
+  .aff .net{position:absolute;inset:0;background-size:contain;background-repeat:no-repeat;background-position:center}
+  .aff .sans{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:40px 70px;text-align:center;background:linear-gradient(135deg,var(--logo1),var(--logo2))}
+  .aff .sans span{font-size:90px;width:100%}`);
 }
 
-// Carrousel de soirées (incontournables, bons plans).
-export function carouselPages({ th, couverture, agenda, fin, events, config }) {
-  const brand = config.marque;
-  const details = events.slice(0, 7); // couverture + agenda + 7 soirées + fin = 10 (max Instagram)
+// --- Diapo « message » (fin, débat, bon plan) : photo, logo, pastille, texte -------------
+
+function message(th, w, h, { src, pill, texte, options = [], pied }) {
+  return page(th, w, h, `
+  ${photo(src, 'inset:0', { voile: 'linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.1) 40%,rgba(0,0,0,.6))' })}
+  <div class="lg">${logo(th, Math.round(h * 0.1))}</div>
+  <div class="bloc">
+    ${pill ? `<span class="pill">${esc(pill)}</span>` : ''}
+    <p class="tx fit ombre" data-maxh="${Math.round(h * 0.3)}">${nl(texte)}</p>
+    ${options.map((o) => `<p class="op ombre"><b>${esc(o[0])}</b> ${esc(o[1])}</p>`).join('')}
+    ${pied ? `<p class="pd ombre">${esc(pied)}</p>` : ''}
+  </div>`, `
+  .lg{position:absolute;top:${Math.round(h * 0.07)}px;left:0;right:0;display:flex;justify-content:center}
+  .bloc{position:absolute;left:70px;right:70px;bottom:${Math.round(h * 0.07)}px;display:flex;flex-direction:column;align-items:flex-start;gap:26px}
+  .tx{font-weight:800;font-size:60px;line-height:1.18;width:100%}
+  .op{font-weight:700;font-size:44px;line-height:1.2}
+  .op b{display:inline-block;min-width:66px;color:var(--corail);font-weight:900}
+  .pd{font-weight:700;font-stretch:100%;font-size:40px;opacity:.95}`);
+}
+
+// --- Exports -----------------------------------------------------------------
+
+export function carouselPages({ th, titre, sous, events, photos, fin }) {
+  const details = events.slice(0, 8); // couverture + 8 soirées + fin = 10 (max Instagram)
   return [
-    slideCouverture(th, { ...couverture, events, brand }),
-    slideAgenda(th, { ...agenda, events, brand }),
-    ...details.map((e, i) => slideSoiree(th, { e, i: i + 1, n: details.length, brand })),
-    slideFin(th, { ...fin, brand, compte: config.compte }),
+    couverture(th, 1080, 1350, { titre, sous, src: photos.next(events[0]?.image) }),
+    ...details.map((e) => soiree(th, 1080, 1350, { e, haut: photos.next(e.image), bas: photos.next(e.image) })),
+    message(th, 1080, 1350, { src: photos.next(events.at(-1)?.image), pill: th.hashtag, texte: fin.texte, pied: fin.pied }),
   ];
 }
 
-// --- Débat : une seule image 1080×1350 -------------------------------------
-
-export function debatPage({ th, debat, config }) {
-  const ab = debat.a && debat.b;
-  return [page(th, 1080, 1350, `
-  <div class="fond"></div><div class="grain"></div>
-  ${marque(th, config.marque)}
-  <div class="tagd">On en parle ?</div>
-  <h1 class="${debat.q.length > 70 ? 'long' : ''}">${esc(debat.q)}</h1>
-  ${ab ? `<div class="ab"><div class="opt grad"><b>A</b>${esc(debat.a)}</div><div class="vs titre">vs</div><div class="opt c"><b>B</b>${esc(debat.b)}</div></div>` : ''}
-  <p class="pied">Réponds en commentaire 👇</p>`, `
-  .tagd{position:absolute;top:56px;right:64px;font-weight:900;font-size:28px;padding:10px 20px;border:2px solid rgba(255,255,255,.4);border-radius:999px}
-  h1{position:absolute;top:200px;left:64px;right:64px;font-size:80px;font-weight:900;line-height:1.08}
-  h1.long{font-size:66px}
-  .ab{position:absolute;left:64px;right:64px;bottom:190px;display:flex;align-items:center;gap:24px}
-  .opt{flex:1;min-height:210px;border-radius:var(--r);padding:30px;font-size:40px;font-weight:900;line-height:1.1;display:flex;flex-direction:column;justify-content:center;gap:12px}
-  .opt b{font-size:64px;font-family:var(--f-titre)}
-  .opt.c{background:rgba(255,255,255,.1);border:3px solid rgba(255,255,255,.35)}
-  .vs{font-size:60px;opacity:.8}
-  .pied{position:absolute;bottom:80px;left:64px;font-size:40px;font-weight:900}`)];
+export function debatPage({ th, debat, photos }) {
+  return [message(th, 1080, 1350, {
+    src: photos.next(), pill: '#TeufyDébat', texte: debat.q,
+    options: debat.a && debat.b ? [['A', debat.a], ['B', debat.b]] : [],
+    pied: 'Réponds en commentaire 👇',
+  })];
 }
 
-// --- Bon plan rédigé à la main : une image ----------------------------------
-
-export function bonPlanManuelPage({ th, bp, config }) {
-  return [page(th, 1080, 1350, `
-  <div class="fond"></div>${bp.image ? `<div class="flou" style="${bg(bp.image)};filter:blur(0) brightness(.4)"></div>` : ''}<div class="grain"></div>
-  ${marque(th, config.marque)}
-  <div class="bloc"><span class="pastille">Bon plan</span><h1 class="titre">${nl(bp.titre)}</h1><p>${nl(bp.texte)}</p></div>`, `
-  .bloc{position:absolute;left:64px;right:64px;bottom:110px;display:flex;flex-direction:column;gap:34px;align-items:flex-start}
-  h1{font-size:120px}
-  p{font-size:40px;font-weight:700;line-height:1.3;opacity:.95}`)];
+export function bonPlanManuelPage({ th, bp, photos }) {
+  return [message(th, 1080, 1350, { src: bp.image ? { url: bp.image, photo: true } : photos.next(), pill: '#BonPlan', texte: `${bp.titre}\n${bp.texte}` })];
 }
 
-// --- Reel 1080×1920 --------------------------------------------------------
-
-export function reelPages({ th, events, config, hook, sousHook, question = 'Laquelle\ntu choisis ?' }) {
-  const debut = page(th, 1080, 1920, `
-  <div class="fond"></div><div class="grain"></div>
-  <div class="bloc"><p class="pov mono">${esc(hook.pre)}</p><h1 class="titre">${nl(hook.titre)}</h1><p class="e">${esc(hook.emoji || '')}</p>
-  <p class="s">${esc(sousHook)}</p></div>`, `
-  .bloc{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 80px;gap:30px}
-  .pov{font-size:70px;font-weight:900;color:var(--accent3)}
-  h1{font-size:160px}
-  .e{font-size:140px}
-  .s{font-size:44px;font-weight:700;opacity:.85}`);
-
-  const slides = events.map((e, i) => page(th, 1080, 1920, `
-    <div class="fond"></div>${e.image ? `<div class="flou" style="${bg(e.image)}"></div>` : ''}<div class="grain"></div>
-    <div class="n titre">${i + 1}</div>
-    ${affiche(e, 'top:330px;left:70px;width:940px;height:1000px')}
-    <div class="infos">
-      <span class="pastille">${esc(jourCourt(e.start))} ${esc(jourNum(e.start))} · ${esc(heure(e.start))}</span>${prix(e) ? ` <span class="pastille c">${esc(prix(e))}</span>` : ''}
-      <h1>${esc(e.name)}</h1>
-      <p>📍 ${esc(lieu(e) || "Côte d'Azur")}</p>
-    </div>`, `
-    .n{position:absolute;top:110px;left:70px;font-size:190px;color:var(--accent)}
-    .infos{position:absolute;left:80px;right:80px;top:1390px}
-    h1{font-size:70px;font-weight:900;line-height:1.05;margin:28px 0 18px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-    p{font-size:42px;font-weight:700}`));
-
-  const choix = page(th, 1080, 1920, `
-  <div class="fond"></div><div class="grain"></div>
-  <div class="bloc"><h1 class="titre">${nl(question)}</h1>
-  <div class="nums">${events.map((_, i) => `<span class="grad">${i + 1}</span>`).join('')}</div>
-  <p>Réponds avec le numéro en commentaire 👇</p></div>`, `
-  .bloc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:60px;padding:0 70px}
-  h1{font-size:170px}
-  .nums{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
-  .nums span{width:120px;height:120px;border-radius:${th.univers === 'techno' ? '8px' : '50%'};display:flex;align-items:center;justify-content:center;font-size:64px;font-weight:900}
-  p{font-size:50px;font-weight:900}`);
-
-  const fin = page(th, 1080, 1920, `
-  <div class="fond"></div><div class="grain"></div>
-  <div class="bloc">${marque(th, config.marque, 'position:static;font-size:150px;letter-spacing:4px')}
-  <p class="t">Abonne-toi à ${esc(config.compte)}</p>
-  <p class="s">Les soirées de la Côte, chaque semaine<br>📲 Envoie ce reel à ton crew</p></div>`, `
-  .bloc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:50px;padding:0 70px}
-  .marque img{height:180px}
-  .t{font-size:66px;font-weight:900;color:var(--accent)}
-  .s{font-size:46px;font-weight:700;opacity:.9;line-height:1.4}`);
-
-  return [debut, ...slides, choix, fin];
+export function reelPages({ th, events, photos, titre, sous, question, compte }) {
+  return [
+    couverture(th, 1080, 1920, { titre, sous, src: photos.next(events[0]?.image) }),
+    ...events.map((e) => soiree(th, 1080, 1920, { e, haut: photos.next(e.image), bas: photos.next(e.image) })),
+    message(th, 1080, 1920, { src: photos.next(events[0]?.image), pill: th.hashtag, texte: question, options: events.map((e, i) => [String(i + 1), e.name]).slice(0, 6), pied: 'Ton numéro en commentaire 👇' }),
+    message(th, 1080, 1920, { src: photos.next(events.at(-1)?.image), texte: `Abonne-toi à ${compte}`, pied: 'Les soirées de la Côte, chaque semaine. Envoie à ton crew 📲' }),
+  ];
 }
 
 // --- Rendu -----------------------------------------------------------------
@@ -271,9 +168,9 @@ export async function renderPages(pages, outDir, prefix, { width, height, png = 
     const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1 });
     const pg = await ctx.newPage();
     for (let i = 0; i < pages.length; i++) {
-      await pg.setContent(pages[i], { waitUntil: 'load', timeout: 45000 }).catch(() => {});
+      await pg.setContent(pages[i], { waitUntil: 'load', timeout: 60000 }).catch(() => {});
       await pg.evaluate(() => window.__fit).catch(() => {});
-      await pg.waitForTimeout(300);
+      await pg.waitForTimeout(250);
       const f = path.join(outDir, `${prefix}-${String(i + 1).padStart(2, '0')}.${png ? 'png' : 'jpg'}`);
       await pg.screenshot(png ? { path: f } : { path: f, type: 'jpeg', quality: 92 });
       files.push(f);

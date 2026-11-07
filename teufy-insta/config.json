@@ -1,7 +1,7 @@
 {
   "fuseau": "Europe/Paris",
   "marque": "Teufy",
-  "compte": "@teufy",
+  "compte": "@teufy_official",
   "villes": [
     "nice",
     "cannes",
@@ -107,7 +107,7 @@
     }
   ],
   "reglages": {
-    "soirees_par_carrousel": 9,
+    "soirees_par_carrousel": 8,
     "soirees_par_reel": 6,
     "secondes_par_soiree_reel": 2.2,
     "petit_prix_max": 10,
