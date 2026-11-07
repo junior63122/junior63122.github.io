@@ -6,12 +6,12 @@ L'automate publie 9 contenus par mois sur Instagram. Il mesure les résultats de
 | --- | --- |
 | 1er lundi du mois | **Les incontournables de la semaine** : soirées commerciales (house, shatta, afro, électro…) |
 | 1er jeudi | **Reel** : les soirées du week-end, numérotées (« Laquelle tu choisis ? ») |
-| 2e mercredi | **Débat** : une question qui fait parler (A ou B ?) |
+| 2e mercredi | **Conversation** : un débat (A ou B ?) ou un appel aux organisateurs #TeufyParty (« Vous organisez une soirée ce week-end ? Postez-la ici 👇 ») |
 | 2e vendredi | **Bon plan** : sortir sans se ruiner (gratuit ou moins de 10 €) |
 | 3e lundi | **Les incontournables techno** : univers visuel à part |
 | 3e jeudi | **Reel techno** |
 | 4e mardi | **Bon plan** : les grosses dates à réserver avant qu'elles soient sold out |
-| 4e mercredi | **Débat** |
+| 4e mercredi | **Conversation** (débat ou #TeufyParty) |
 | 4e vendredi | **Reel petits prix** |
 
 Le calendrier se modifie dans `config.json` (`calendrier`).
@@ -46,12 +46,11 @@ Il faut environ 4 à 6 semaines de publications pour que l'apprentissage commenc
 
 Tout se règle dans `contenus/da.json`.
 
-### Les photos d'ambiance : à fournir
+### Les photos d'ambiance
 
-Ce sont elles qui donnent l'âme des visuels. Par ordre de priorité, le bot prend :
-1. **Tes photos**, à déposer dans `assets/photos/` (voir `assets/photos/LISEZMOI.md` : dossiers `techno/`, `club/`, `fetes/`, `debat/`, saisons). C'est le mieux : vos soirées, vos lieux.
-2. **Pexels** (photos libres et gratuites) : crée une clé sur <https://www.pexels.com/api/> et ajoute-la dans les secrets GitHub sous le nom `PEXELS_API_KEY`. Le bot cherche des photos selon le style et la saison (« techno rave crowd », « new year party fireworks »…), et apprend lesquelles font réagir.
-3. Sinon, il dessine un fond de faisceaux de lumière teinté.
+Le bot est livré avec **79 photos libres de droits (CC0)** sélectionnées à la main : concerts, foules, DJ, feux d'artifice, fêtes de fin d'année, plages au coucher du soleil (`assets/photos/`, crédits dans `assets/photos/CREDITS.md`). Il choisit selon le contenu et la saison : feux d'artifice et champagne en décembre, plages l'été, clubs sombres et DJ pour la techno. Les photos restent en couleur, avec une légère touche de la couleur de saison. Pour la techno, les bandeaux passent en noir et blanc.
+
+Tu peux ajouter tes propres photos dans ces dossiers. Pinterest n'est pas une banque libre de droits, donc le bot ne s'en sert pas.
 
 ## Pas d'invitation à télécharger l'app
 

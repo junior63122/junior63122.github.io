@@ -57,6 +57,6 @@ export function theme(date, univers = 'club') {
     css: `${fonts()}
 :root{--blanc:${c.blanc};--corail:${c.corail};--ombre:${c.ombre_logo};--nuit:${c.nuit};--teinte:${teinte};
 --logo1:${c.degrade_logo[0]};--logo2:${c.degrade_logo[1]};--wdth:${DA.police.largeur}%;--g-titre:${DA.police.graisse_titre};--g-texte:${DA.police.graisse_texte};
---teinte-force:${techno ? DA.techno.teinte_force : 0.88}}`,
+--teinte-force:${techno ? 0.12 : 0.22}}`,
   };
 }

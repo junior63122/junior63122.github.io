@@ -24,13 +24,13 @@ export const REQUETES = {
   debat: ['friends party night', 'nightlife friends laughing', 'bar friends night'],
 };
 
+// Toutes les photos des dossiers pertinents (le plus précis d'abord, sans doublon).
 function local(sousDossiers) {
   const out = [];
-  for (const d of [...sousDossiers, '']) {
+  for (const d of sousDossiers) {
     const dir = path.join(DIR, d);
     if (!existsSync(dir) || !statSync(dir).isDirectory()) continue;
-    for (const f of readdirSync(dir)) if (IMG.test(f)) out.push(path.join(dir, f));
-    if (out.length >= 6) break; // assez de photos dans les dossiers les plus précis
+    for (const f of readdirSync(dir)) if (IMG.test(f) && !out.includes(path.join(dir, f))) out.push(path.join(dir, f));
   }
   return out;
 }
@@ -57,10 +57,15 @@ async function pexels(query) {
 
 // Renvoie un « fournisseur » de photos distinctes pour un visuel donné.
 export async function photoSource({ univers, saison, fetes = false, debat = false, ch, r }) {
-  const dossiers = [debat ? 'debat' : null, fetes ? 'fetes' : null, univers, saison].filter(Boolean);
+  // Dossiers selon le contenu : la techno a ses photos, les fêtes de fin d'année aussi,
+  // l'été mélange plages et clubs, les débats mélangent soirées entre amis et clubs.
+  const dossiers = univers === 'techno' ? ['techno']
+    : fetes ? ['fetes', saison]
+      : debat ? ['debat', 'club', saison]
+        : ['club', saison, ...(saison === 'ete' ? ['ete'] : [])];
   let pool = local(dossiers).map(asDataUri);
   let requete = null;
-  if (pool.length < 3) {
+  if (pool.length < 4) {
     const cle = debat ? 'debat' : fetes ? 'fetes' : univers === 'techno' ? 'techno' : saison === 'ete' ? 'ete' : 'club';
     const choix = [...REQUETES[cle], ...(cle === 'club' ? REQUETES[saison] || [] : [])];
     requete = ch ? ch.pick('photos', choix) : choix[0];

@@ -25,10 +25,11 @@ html,body{width:var(--w);height:var(--h);overflow:hidden;background:var(--nuit);
 .large{font-family:'TeufyWide',Archivo,'DejaVu Sans',sans-serif;font-stretch:var(--wdth);font-weight:var(--g-titre);text-transform:uppercase;letter-spacing:.5px;line-height:1.02}
 h1,h2,p{max-width:100%}
 .ph{position:absolute;overflow:hidden;background:#111}
-.ph .img{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.3) brightness(1.12)}
+.ph .img{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(1.12) contrast(1.06)}
 .ph .img.repli{inset:-60px;filter:grayscale(1) blur(22px) contrast(1.25) brightness(.85)}
-.ph .tint{position:absolute;inset:0;background:var(--teinte);mix-blend-mode:multiply;opacity:var(--teinte-force)}
-.ph .lift{position:absolute;inset:0;background:var(--teinte);mix-blend-mode:screen;opacity:.16}
+.ph .tint{position:absolute;inset:0;background:var(--teinte);mix-blend-mode:color;opacity:var(--teinte-force)}
+.ph .lift{position:absolute;inset:0;background:var(--teinte);mix-blend-mode:soft-light;opacity:.25}
+.ph.nb .img{filter:grayscale(1) contrast(1.25) brightness(1.05)}
 .ph.nb .tint,.ph.nb .lift{opacity:0}
 .ph .img.synth{filter:none;background:
  repeating-conic-gradient(from var(--a) at 50% -10%,rgba(255,255,255,.55) 0 2deg,transparent 2deg 11deg),
@@ -70,7 +71,7 @@ const logo = (th, h) => (th.logo ? `<img class="logo" src="${th.logo}" style="he
 
 function couverture(th, w, h, { titre, sous, src }) {
   return page(th, w, h, `
-  ${photo(src, 'inset:0', { voile: 'linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.25) 60%,rgba(0,0,0,.45))' })}
+  ${photo(src, 'inset:0', { voile: 'linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.35) 45%,rgba(0,0,0,.35) 65%,rgba(0,0,0,.55))' })}
   <h1 class="large fit ombre t" data-maxh="${Math.round(h * 0.34)}">${nl(titre)}</h1>
   ${sous ? `<h2 class="large fit s">${esc(sous)}</h2>` : ''}`, `
   .t{position:absolute;left:60px;right:60px;top:${Math.round(h * 0.42)}px;text-align:center;font-size:${h > 1500 ? 92 : 84}px}
@@ -108,7 +109,7 @@ function soiree(th, w, h, { e, haut, bas }) {
 
 // --- Diapo « message » (fin, débat, bon plan) : photo, logo, pastille, texte -------------
 
-function message(th, w, h, { src, pill, texte, options = [], pied }) {
+export function message(th, w, h, { src, pill, texte, options = [], pied }) {
   return page(th, w, h, `
   ${photo(src, 'inset:0', { voile: 'linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.1) 40%,rgba(0,0,0,.6))' })}
   <div class="lg">${logo(th, Math.round(h * 0.1))}</div>

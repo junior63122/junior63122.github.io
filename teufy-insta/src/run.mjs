@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { collectEvents, filterEvents, enrich } from './sources.mjs';
 import { windowFor, rolling, isoLocal, plage, slotOfDay, daysOfMonth } from './dates.mjs';
 import { isTechno } from './genres.mjs';
-import { captionIncontournables, captionBonPlan, captionDebat, captionReel, rng } from './captions.mjs';
+import { captionIncontournables, captionBonPlan, captionDebat, captionReel, captionOrgas, rng } from './captions.mjs';
 import { igConfig, publishCarousel, publishSingle, publishReel, permalink, insights, followers } from './instagram.mjs';
 import { buildModel, chooser, selectBest, eventFeatures, collect, hash } from './learn.mjs';
 import { theme } from './theme.mjs';
@@ -135,7 +135,18 @@ async function prepare(slot, now, id) {
   };
   let pub;
 
-  if (slot.type === 'debat') {
+  // Conversation : débat, ou appel aux organisateurs #TeufyParty (le format qui fait le plus commenter).
+  const format = slot.type === 'debat' ? ch.pick('format-conversation', ['debat', 'orgas'], (x) => x) : null;
+  if (format === 'orgas') {
+    const th = theme(now, 'club');
+    const nouvelAn = th.tempsFort?.titre?.includes('Nouvel An');
+    const quand = nouvelAn ? 'pour le Nouvel An' : 'ce week-end';
+    const photos = await photoSource({ univers: 'club', saison: th.saison, fetes: !!th.tempsFort?.fetes, ch, r });
+    const { message } = await import('./render.mjs');
+    const pages = [message(th, 1080, 1350, { src: photos.next(), pill: th.hashtag, texte: `Vous organisez une soirée ${quand} ?\nPostez-la ici 👇` })];
+    const files = await renderPages(pages, dir, `orgas-${stamp}`, { width: 1080, height: 1350 });
+    pub = { images: files, legende: captionOrgas({ quand, ch, r }), format: 'orgas' };
+  } else if (slot.type === 'debat') {
     const used = new Set([...hist.map((h) => h.debat).filter(Boolean), ...usedHere]);
     const all = JSON.parse(await readFile(path.join(ROOT, 'contenus', 'debats.json'), 'utf8'));
     let pool = all.filter((d) => !used.has(d.id));
@@ -186,11 +197,11 @@ async function prepare(slot, now, id) {
     const { th, photos } = await visuel(techno ? 'techno' : 'club');
     const fort = !techno && th.tempsFort?.titre;
     const titre = techno
-      ? ch.pick('titre-techno', ['Les événements techno', 'Les dates techno à ne pas manquer', 'Techno : la sélection'])
+      ? ch.pick('titre-techno', ['Les événements techno', 'Les dates techno à ne pas manquer'])
       : fort || ch.pick('titre-commercial', ['Nos événements coups de cœur de la semaine', 'Les soirées à ne pas manquer', 'Nos coups de cœur de la semaine']);
     const pages = carouselPages({
       th, photos, events: chosen, titre,
-      sous: fort ? `En ${MOIS(now)}` : elargi ? 'Ces prochains jours' : sousPlage(win),
+      sous: fort ? `En ${MOIS(now)}` : elargi ? 'Ces prochains jours' : 'Cette semaine',
       fin: techno
         ? { texte: 'On se voit sur le dancefloor.\nTu seras à laquelle ?', pied: `Abonne-toi à ${config.compte} 👇` }
         : { texte: 'Tu sors où cette semaine ?\nDis-le en commentaire.', pied: `Abonne-toi à ${config.compte} 👇` },
@@ -210,12 +221,12 @@ async function prepare(slot, now, id) {
     const hooks = {
       weekend: [
         { titre: "POV : t'as toujours pas de plan ce week-end", sous: 'Swipe pas' },
-        { titre: 'Ce week-end, tu sors où ?', sous: sousPlage(win) },
+        { titre: 'Ce week-end, tu sors où ?', sous: 'Côte d\'Azur' },
         { titre: 'Le canapé peut attendre', sous: 'Ce week-end' },
       ],
       techno: [
         { titre: 'Ce week-end ça tape', sous: 'Techno only' },
-        { titre: 'Pour la famille techno de la Côte', sous: sousPlage(win) },
+        { titre: 'Pour la famille techno de la Côte', sous: 'Ce week-end' },
         { titre: 'Rentrer avant 6h ? Non.', sous: 'Techno only' },
       ],
       'petits-prix': [

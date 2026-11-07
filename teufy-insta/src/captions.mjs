@@ -22,15 +22,15 @@ const GENRE = {
   general: ['#soiree', '#nightlife', '#teuf', '#sortir', '#clubbing'],
 };
 export function hashtags(r, genre = 'general') {
-  return ['#TeufyParty', ...shuffle(r, LOCAL).slice(0, 3), ...shuffle(r, GENRE[genre] || GENRE.general).slice(0, 3)].join(' ');
+  return ['#TeufyParty', ...shuffle(r, LOCAL).slice(0, 3), ...shuffle(r, GENRE[genre] || GENRE.general).slice(0, 2)].join(' ');
 }
 
-// Une ligne d'info par soirée : date, nom, style, lieu, heure, prix.
+// Une ligne d'info par soirée : date, nom, styles, lieu, prix.
 const ligne = (e, avecMois = false) => {
   const lieu = [e.venue, e.city].filter(Boolean).join(', ');
   const style = styleLabel(e);
   const p = e.price === 0 ? ' · gratuit' : e.price != null ? ` · ${String(e.price).replace('.', ',')} €` : '';
-  return `${jourCourt(e.start)} ${jourNum(e.start)}${avecMois ? ` ${moisCourt(e.start)}` : ''} · ${e.name}${style ? ` [${style}]` : ''}${lieu ? ` · ${lieu}` : ''} · ${heure(e.start)}${p}`;
+  return `→ ${jourCourt(e.start)} ${jourNum(e.start)}${avecMois ? ` ${moisCourt(e.start)}` : ''} · ${e.name}${style ? ` (${style})` : ''}${lieu ? ` · ${lieu}` : ''} · ${heure(e.start)}${p}`;
 };
 // Le mois n'est ajouté que si les dates s'étalent sur plus de 9 jours.
 const liste = (events, n = 12) => {
@@ -40,10 +40,10 @@ const liste = (events, n = 12) => {
 };
 
 const SUIVRE = [
-  'Abonne-toi pour avoir le programme chaque semaine.',
-  'Suis le compte pour ne rater aucune soirée sur la Côte.',
-  'On poste les meilleures soirées de la Côte chaque semaine, abonne-toi.',
-  'Active les notifs pour avoir le programme avant tout le monde.',
+  'Abonne-toi pour ne rien rater de ce qui se passe sur la Côte.',
+  'Chaque semaine, les meilleures soirées de la Côte sont ici.',
+  'Enregistre le post, tu nous remercieras vendredi.',
+  'Envoie-le à ceux avec qui tu sors.',
 ];
 
 // --- Les incontournables de la semaine ------------------------------------
@@ -52,36 +52,33 @@ export function captionIncontournables({ variante, events, from, to, ch, r }) {
   const techno = variante === 'techno';
   const intro = ch.pick(`intro-${variante}`, techno
     ? [
-      `La sélection techno de la semaine.\nPour ceux qui restent jusqu'à la fermeture.`,
-      `Techno only. Les dates à pas rater ${plage(from, to)} sur la Côte.`,
-      `Cette semaine ça tape fort sur la Côte d'Azur. On vous a fait le tri.`,
-      `Pour la communauté techno de la Côte : voilà où vous serez cette semaine.`,
-      `Moins de blabla, plus de BPM. Les soirées techno de la semaine 👇`,
-      `Pas juste des soirées. Des line-up, des lieux, une vraie communauté. La techno sur la Côte cette semaine 👇`,
+      `Les événements techno de la semaine.\nDes line-up solides, des lieux qui comptent, une communauté qui répond toujours présent.`,
+      `Pas juste des soirées. Des nuits entières.\nLa sélection techno de la semaine sur la Côte.`,
+      `Pour ceux qui viennent pour la musique, et rien d'autre.\nVoilà où ça se passe cette semaine.`,
+      `Kicks lourds, lumières basses, jusqu'au lever du jour.\nLes dates techno à ne pas manquer.`,
     ]
     : [
       `Cette semaine, la Côte d'Azur ne dort pas.\nNice, Cannes, Monaco… des ambiances, des styles, des vibes pour tous.`,
-      `Les soirées incontournables de la semaine sur la Côte, ${plage(from, to)} 👇`,
-      `House, shatta, afro, électro… Cette semaine il y en a pour tout le monde.`,
-      `Votre semaine est réglée. Voilà les soirées à pas louper sur la Côte d'Azur.`,
-      `On a fait le tour des soirées de la semaine. Celles-là, on les recommande les yeux fermés.`,
-      `Pas d'excuse cette semaine, le programme est chargé 👇`,
+      `Une semaine, plusieurs ambiances.\nDu rooftop au club, voilà nos coups de cœur.`,
+      `Certaines soirées se racontent pendant des semaines.\nCelles-là en font partie.`,
+      `Afro, house, shatta, électro…\nCette semaine, il y en a pour toutes les envies.`,
     ]);
   const question = ch.pick(`question-${variante}`, techno
-    ? [
-      'Vous serez à laquelle ? Dites-le en commentaire, la famille techno se retrouve.',
-      'Il manque une date ? Ajoutez-la en commentaire pour les autres.',
-      'Tag ton binôme de rave.',
-      'Votre set préféré du mois dernier ? On veut des noms.',
-    ]
-    : [
-      'Vous allez à laquelle ? Dites-le en commentaire.',
-      'Tag la personne qui va te dire « juste un verre » et finir à 5h.',
-      'Enregistrez le post, vous nous remercierez vendredi.',
-      'Il en manque une ? Balancez-la en commentaire.',
-    ]);
+    ? ['Tu seras à laquelle ?', 'On se retrouve où ?', 'Laquelle t\'attire le plus ?']
+    : ['Tu sors où cette semaine ?', 'Laquelle on fait ensemble ?', 'Ta préférée, c\'est laquelle ?']);
   const suivre = ch.pick('suivre', SUIVRE);
-  return clip(`${intro}\n\n${liste(events)}\n\n${question}\n\nBillets sur Shotgun et DICE. ${suivre}\n\n${hashtags(r, variante)}`);
+  return clip(`${intro}\n\n${liste(events)}\n\n${question} ${suivre}\n\n${hashtags(r, variante)}`);
+}
+
+// --- Appel aux organisateurs (#TeufyParty) -----------------------------------
+
+export function captionOrgas({ quand, ch, r }) {
+  const intro = ch.pick('orgas', [
+    `Vous organisez une soirée ${quand} sur la Côte d'Azur ?\nPostez-la ici 👇\nDate, lieu, style : tout le monde passe par les commentaires.`,
+    `Organisateurs, DJ, collectifs…\nVotre soirée ${quand}, c'est en commentaire que ça se passe 👇`,
+    `Une soirée ${quand} à faire connaître ?\nDéposez-la ici, avec la date et le lieu 👇`,
+  ]);
+  return clip(`🪩 #TeufyParty\n\n${intro}\n\nEt si tu cherches où sortir, lis les commentaires.\n\n${hashtags(r)}`);
 }
 
 // --- Bons plans -------------------------------------------------------------
