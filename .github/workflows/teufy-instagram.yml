@@ -1,0 +1,111 @@
+name: Teufy - Instagram automatique
+
+# Chaque semaine (heures en UTC ; Paris = UTC+1 l'hiver, UTC+2 l'été) :
+#   lundi    ~12h : carrousel « Les soirées de la semaine » (lundi → jeudi)
+#   jeudi    ~17h : carrousel « Les soirées de la semaine » spécial week-end (vendredi → dimanche)
+#   vendredi ~18h : reel « Laquelle tu choisis ? » (vendredi → dimanche)
+on:
+  schedule:
+    - cron: "7 11 * * 1"
+    - cron: "7 16 * * 4"
+    - cron: "37 16 * * 5"
+  workflow_dispatch:
+    inputs:
+      type:
+        description: "Quoi générer"
+        type: choice
+        options: [semaine, weekend, reel, tout]
+        default: tout
+      publier:
+        description: "Publier vraiment sur Instagram (sinon : aperçu téléchargeable seulement)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: teufy-instagram
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: teufy-insta
+    env:
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_API_HOST: ${{ vars.IG_API_HOST || 'graph.facebook.com' }}
+      MEDIA_BASE_URL: https://${{ github.repository_owner }}.github.io/teufy-insta/media
+      MEDIA_FALLBACK_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/teufy-insta/media
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Choisir la publication
+        id: choix
+        run: |
+          case "${{ github.event.schedule }}" in
+            "7 11 * * 1")  TYPE=semaine ;;
+            "7 16 * * 4")  TYPE=weekend ;;
+            "37 16 * * 5") TYPE=reel ;;
+            *)             TYPE="${{ inputs.type || 'tout' }}" ;;
+          esac
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.publier }}" = "true" ]; then PUBLIER=true; else PUBLIER=false; fi
+          if [ -z "$IG_ACCESS_TOKEN" ] || [ -z "$IG_USER_ID" ]; then
+            echo "::warning::Secrets IG_ACCESS_TOKEN / IG_USER_ID absents : aperçu seulement, rien n'est publié."
+            PUBLIER=false
+          fi
+          echo "type=$TYPE" >> "$GITHUB_OUTPUT"
+          echo "publier=$PUBLIER" >> "$GITHUB_OUTPUT"
+          echo "Type : $TYPE · publication : $PUBLIER"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer Chromium, ffmpeg et polices
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-color-emoji
+
+      - name: Tests
+        run: npm test
+
+      - name: Récupérer les soirées et générer les visuels
+        run: node src/run.mjs ${{ steps.choix.outputs.type }} preparer
+
+      - name: Aperçu téléchargeable (visuels, vidéo, légendes, pages récupérées)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: teufy-${{ steps.choix.outputs.type }}-${{ github.run_number }}
+          path: |
+            teufy-insta/media/
+            teufy-insta/out/debug/
+          retention-days: 14
+
+      - name: Mettre les médias en ligne (GitHub Pages)
+        if: steps.choix.outputs.publier == 'true'
+        run: |
+          git config user.name "teufy-bot"
+          git config user.email "teufy-bot@users.noreply.github.com"
+          git add media
+          git diff --cached --quiet && exit 0
+          git commit -m "Teufy Instagram : médias ${{ steps.choix.outputs.type }} du $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
+
+      - name: Publier sur Instagram
+        if: steps.choix.outputs.publier == 'true'
+        run: node src/run.mjs ${{ steps.choix.outputs.type }} publier
+
+      - name: Enregistrer l'historique
+        if: steps.choix.outputs.publier == 'true'
+        run: |
+          git add historique.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Teufy Instagram : publié (${{ steps.choix.outputs.type }})"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done

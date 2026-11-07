@@ -1,0 +1,77 @@
+// Publication via l'API officielle Instagram (Graph API, compte professionnel).
+// Fonctionne avec graph.facebook.com (compte Instagram relié à une Page Facebook)
+// ou graph.instagram.com (« Instagram API with Instagram Login »).
+// Les médias doivent être accessibles par une URL publique (ici GitHub Pages).
+
+const VERSION = process.env.IG_API_VERSION || 'v21.0';
+const HOST = process.env.IG_API_HOST || 'graph.facebook.com';
+
+export function igConfig() {
+  const token = process.env.IG_ACCESS_TOKEN;
+  const user = process.env.IG_USER_ID;
+  return token && user ? { token, user } : null;
+}
+
+async function call(method, pathname, params, { token }) {
+  const url = new URL(`https://${HOST}/${VERSION}/${pathname}`);
+  const body = new URLSearchParams({ ...params, access_token: token });
+  let res;
+  if (method === 'GET') {
+    for (const [k, v] of body) url.searchParams.set(k, v);
+    res = await fetch(url, { signal: AbortSignal.timeout(60000) });
+  } else {
+    res = await fetch(url, { method, body, signal: AbortSignal.timeout(120000) });
+  }
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok || json.error) {
+    const e = json.error || {};
+    throw new Error(`Instagram ${pathname} : ${e.message || res.status} (code ${e.code ?? '?'}, sous-code ${e.error_subcode ?? '-'})`);
+  }
+  return json;
+}
+
+async function waitReady(id, ig, { timeoutMs = 10 * 60e3 } = {}) {
+  const t0 = Date.now();
+  for (;;) {
+    const { status_code, status } = await call('GET', id, { fields: 'status_code,status' }, ig);
+    if (status_code === 'FINISHED') return;
+    if (status_code === 'ERROR' || status_code === 'EXPIRED') throw new Error(`Conteneur ${id} : ${status_code} ${status || ''}`);
+    if (Date.now() - t0 > timeoutMs) throw new Error(`Conteneur ${id} pas prêt après ${timeoutMs / 1000} s (${status_code})`);
+    await new Promise((r) => setTimeout(r, 8000));
+  }
+}
+
+async function publish(creationId, ig) {
+  for (let i = 0; i < 4; i++) {
+    try {
+      return await call('POST', `${ig.user}/media_publish`, { creation_id: creationId }, ig);
+    } catch (err) {
+      if (i === 3) throw err;
+      await new Promise((r) => setTimeout(r, 15000)); // « média pas encore prêt » : on réessaie
+    }
+  }
+}
+
+export async function publishCarousel(imageUrls, caption, ig) {
+  const children = [];
+  for (const image_url of imageUrls.slice(0, 10)) {
+    const { id } = await call('POST', `${ig.user}/media`, { image_url, is_carousel_item: 'true' }, ig);
+    children.push(id);
+  }
+  for (const id of children) await waitReady(id, ig, { timeoutMs: 3 * 60e3 });
+  const { id } = await call('POST', `${ig.user}/media`, { media_type: 'CAROUSEL', children: children.join(','), caption }, ig);
+  await waitReady(id, ig, { timeoutMs: 3 * 60e3 });
+  return publish(id, ig);
+}
+
+export async function publishReel(videoUrl, coverUrl, caption, ig) {
+  const params = { media_type: 'REELS', video_url: videoUrl, caption, share_to_feed: 'true' };
+  if (coverUrl) params.cover_url = coverUrl;
+  const { id } = await call('POST', `${ig.user}/media`, params, ig);
+  await waitReady(id, ig);
+  return publish(id, ig);
+}
+
+export async function permalink(mediaId, ig) {
+  try { return (await call('GET', mediaId, { fields: 'permalink' }, ig)).permalink; } catch { return null; }
+}
