@@ -17,7 +17,8 @@ import { collectEvents, filterEvents, enrich } from './sources.mjs';
 import { windowFor, rolling, isoLocal, plage, slotOfDay, daysOfMonth } from './dates.mjs';
 import { isTechno } from './genres.mjs';
 import { captionIncontournables, captionBonPlan, captionDebat, captionReel, captionOrgas, rng } from './captions.mjs';
-import { igConfig, publishCarousel, publishSingle, publishReel, permalink, insights, followers } from './instagram.mjs';
+import { igConfig, publishCarousel, publishSingle, publishReel, permalink, insights, followers, businessDiscovery } from './instagram.mjs';
+import { TENDANCES, analyserComptes } from './tendances.mjs';
 import { buildModel, chooser, selectBest, eventFeatures, collect, hash } from './learn.mjs';
 import { theme } from './theme.mjs';
 
@@ -50,6 +51,8 @@ let jobs;
 if (cible === 'collecter') {
   const ig = igConfig();
   if (!ig) { console.log('IG_ACCESS_TOKEN / IG_USER_ID absents : pas de statistiques.'); process.exit(0); }
+  const t = await analyserComptes({ ig, api: { businessDiscovery }, force: !!flag('force') });
+  if (!t.deja) console.log(`Tendances : ${Object.keys(t.comptes || {}).length} compte(s) analysé(s), ${Object.keys(t.hashtags || {}).length} hashtag(s) repéré(s).`);
   const n = await collect({ hist, ig, api: { insights, followers } });
   console.log(`Statistiques mises à jour pour ${n} publication(s). Voir RAPPORT.md`);
   process.exit(0);
@@ -218,23 +221,9 @@ async function prepare(slot, now, id) {
     if (list.length < 3) { variante = 'weekend'; win = windowFor([5, 6, 7], now); list = await pickEv(win); elargi = false; }
     need(list, 2);
     const chosen = pickReel(best(list, 40), R.soirees_par_reel);
-    const hooks = {
-      weekend: [
-        { titre: "POV : t'as toujours pas de plan ce week-end", sous: 'Swipe pas' },
-        { titre: 'Ce week-end, tu sors où ?', sous: 'Côte d\'Azur' },
-        { titre: 'Le canapé peut attendre', sous: 'Ce week-end' },
-      ],
-      techno: [
-        { titre: 'Ce week-end ça tape', sous: 'Techno only' },
-        { titre: 'Pour la famille techno de la Côte', sous: 'Ce week-end' },
-        { titre: 'Rentrer avant 6h ? Non.', sous: 'Techno only' },
-      ],
-      'petits-prix': [
-        { titre: `Le week-end à moins de ${R.petit_prix_max} €`, sous: 'Bon plan' },
-        { titre: 'Fin de mois ? Sors quand même', sous: 'Petits prix' },
-      ],
-    };
-    const hook = ch.pick(`hook-${variante}`, hooks[variante].filter((h) => !elargi || !/week-end/i.test(h.titre + h.sous)), (h) => hash(h.titre));
+    const hooks = TENDANCES.accroches_reels;
+    const sansWeekend = hooks[variante].filter((h) => !elargi || !/week-end/i.test(h.titre + h.sous));
+    const hook = ch.pick(`hook-${variante}`, sansWeekend.length ? sansWeekend : hooks[variante], (h) => hash(h.titre));
     const { th, photos } = await visuel(variante === 'techno' ? 'techno' : 'club');
     const pages = reelPages({
       th, photos, events: chosen, titre: hook.titre, sous: hook.sous, compte: config.compte,
@@ -244,7 +233,8 @@ async function prepare(slot, now, id) {
     await rm(tmp, { recursive: true, force: true });
     const imgs = await renderPages(pages, tmp, 'reel', { width: 1080, height: 1920, png: true });
     const { buildReel } = await import('./reel.mjs');
-    const durees = [2.4, ...chosen.map(() => R.secondes_par_soiree_reel), 3, 2.2];
+    // Rythme rapide : accroche courte (≤ 1,6 s), puis une soirée toutes les ~1,8 s ; total visé 7-30 s.
+    const durees = [TENDANCES.regles_instagram.accroche_max_s, ...chosen.map(() => R.secondes_par_soiree_reel), 2.6, 1.8];
     const video = path.join(dir, `reel-${stamp}.mp4`);
     const res = await buildReel(imgs, video, { root: ROOT, durees, genre: variante === 'techno' ? 'techno' : 'club' });
     const cover = path.join(dir, `reel-${stamp}-couverture.jpg`);
@@ -316,7 +306,7 @@ async function publishPrepared(id) {
   }
 
   const res = p.video
-    ? await publishReel(url(p.video), url(p.couverture), p.legende, ig)
+    ? await publishReel(url(p.video), url(p.couverture), p.legende, ig, { essai: !!TENDANCES.reels_essai?.actif })
     : p.images.length === 1
       ? await publishSingle(url(p.images[0]), p.legende, ig)
       : await publishCarousel(p.images.map(url), p.legende, ig);

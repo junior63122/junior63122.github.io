@@ -52,7 +52,7 @@ test('légendes « humaines » : pas de tiret cadratin, ≤ 2200 caractères, pe
   for (const c of all) {
     assert.ok(!c.includes('—'), c);
     assert.ok(c.length <= 2200);
-    assert.ok((c.match(/#\w+/g) || []).length <= 10);
+    assert.ok((c.match(/#[\p{L}\p{N}_]+/gu) || []).length <= 5, 'max 5 hashtags : ' + c);
     assert.ok(!/télécharg|lien en bio|sur l'app/i.test(c), 'pas d\'invitation à télécharger l\'app : ' + c);
   }
 });

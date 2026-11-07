@@ -10,7 +10,7 @@
   "scripts": {
     "auto": "node src/run.mjs auto",
     "mois": "node src/run.mjs mois",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs"
   },
   "dependencies": {
     "playwright": "1.48.2"

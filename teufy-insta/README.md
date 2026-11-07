@@ -52,6 +52,23 @@ Le bot est livré avec **79 photos libres de droits (CC0)** sélectionnées à l
 
 Tu peux ajouter tes propres photos dans ces dossiers. Pinterest n'est pas une banque libre de droits, donc le bot ne s'en sert pas.
 
+## Tendances et règles Instagram
+
+Le fichier **`contenus/tendances.json`** regroupe ce que le bot applique, et tu peux le modifier :
+
+- **Règles Instagram 2026** :
+  - 5 hashtags maximum par post et par reel (annonce @creators du 18/12/2025) ;
+  - ce qui compte le plus : partages en message, enregistrements, reels regardés jusqu'au bout ;
+  - pas de repost brut ni de filigrane (contenus non originaux pénalisés, y compris les carrousels depuis avril 2026) ;
+  - format 4:5 (1080×1350), le seul accepté de façon sûre par l'API.
+- **Hashtags** : toujours #TeufyParty, plus 2 hashtags locaux et 2 du style de soirée. Le bot choisit ceux qui ont le mieux marché sur ton compte, et ceux qui accompagnent les meilleurs posts des autres comptes.
+- **Accroches de reels** : courtes, lisibles sans le son, et qui créent une tension dès la 1re seconde (« Ne me dis pas que tu restes chez toi », « 3 soirées. 1 seule nuit. Tu choisis laquelle ? », « Ceux qui savent, savent »…). Le bot garde celles qui retiennent le mieux.
+- **Rythme des reels** : accroche de 1,6 s, puis une soirée toutes les 1,8 s, soit environ 12 s au total. La zone de 7 à 30 s est celle qui touche le plus de non-abonnés.
+- **Veille des autres comptes** : chaque semaine, le bot analyse les 25 derniers posts publics des comptes listés dans `comptes_a_suivre` (clubs, organisateurs, médias nightlife de la Côte). Il passe par l'API officielle Instagram « Business Discovery », sans scraping. Il en tire les formats qui marchent, les meilleures heures, les hashtags des meilleurs posts et leurs accroches. Tout apparaît dans `RAPPORT.md` (section « Tendances des autres comptes ») et sert au choix des hashtags. Ajoute les comptes que tu veux suivre.
+- **Reels d'essai** (Trial Reels) : `reels_essai.actif` à `true` pour tester chaque reel d'abord auprès des non-abonnés. Si l'API refuse, le reel est publié normalement.
+
+Limites de l'API : impossible d'ajouter un son tendance de la bibliothèque Instagram ou de la musique sur un carrousel. Pour surfer sur un son viral, ajoute la musique à la main dans l'app après publication, ou dépose un .mp3 libre de droits dans `assets/musiques/`.
+
 ## Pas d'invitation à télécharger l'app
 
 L'app n'est pas encore disponible. Les visuels et légendes poussent à **s'abonner au compte**, à enregistrer, à partager et à commenter. Le test `npm test` vérifie qu'aucune légende ne parle de téléchargement ou de « lien en bio ».

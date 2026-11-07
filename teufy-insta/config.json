@@ -109,7 +109,7 @@
   "reglages": {
     "soirees_par_carrousel": 8,
     "soirees_par_reel": 6,
-    "secondes_par_soiree_reel": 2.2,
+    "secondes_par_soiree_reel": 1.8,
     "petit_prix_max": 10,
     "creneaux_utc": [
       15,

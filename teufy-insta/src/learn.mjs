@@ -14,6 +14,7 @@ import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { genreOf, styleLabel } from './genres.mjs';
+import { rapportTendances } from './tendances.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DATA_FILE = path.join(ROOT, 'apprentissage.json');
@@ -61,7 +62,7 @@ export function buildModel(data = loadData()) {
   const feats = {}; // caractéristique de soirée → { n, sum }
   const add = (map, k, v) => { const s = (map[k] ||= { n: 0, sum: 0 }); s.n++; s.sum += v; };
   for (const p of posts) {
-    for (const [pool, opt] of Object.entries(p.choix || {})) add(arms, `${pool}:${opt}`, p.score);
+    for (const [pool, opt] of Object.entries(p.choix || {})) for (const o of [].concat(opt)) add(arms, `${pool}:${o}`, p.score);
     for (const f of new Set(p.features || [])) add(feats, f, p.score);
   }
   return { arms, feats, nPosts: posts.length };
@@ -86,6 +87,15 @@ export function chooser(model, r) {
       }
       choix[pool] = idOf(best);
       return best;
+    },
+    // Choisit k options distinctes (ex. hashtags) ; `bonus` = score de tendance externe (0 à 1).
+    pickMany(pool, options, k, bonus = () => 0) {
+      const scored = options.map((o) => {
+        const s = model.arms[`${pool}:${o}`];
+        return [shrunk(s) + 0.5 * bonus(o) + gauss(r) * 0.35 / Math.sqrt((s?.n || 0) + 1), o];
+      }).sort((a, b) => b[0] - a[0]).slice(0, k).map((x) => x[1]);
+      choix[pool] = scored;
+      return scored;
     },
   };
 }
@@ -202,5 +212,6 @@ ${top.slice(0, 12).map(([k, v]) => `- ${k} : ${v.toFixed(2)}`).join('\n') || '- 
 ## Ce qui marche moins
 
 ${top.slice(-6).reverse().map(([k, v]) => `- ${k} : ${v.toFixed(2)}`).join('\n') || '-'}
-`;
+
+${rapportTendances()}`;
 }

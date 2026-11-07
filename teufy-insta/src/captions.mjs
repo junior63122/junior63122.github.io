@@ -13,16 +13,21 @@ export function rng(seedStr) {
   return () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; };
 }
 export const pick = (r, arr) => arr[Math.floor(r() * arr.length)];
-const shuffle = (r, arr) => arr.map((x) => [r(), x]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
 
-const LOCAL = ['#nice', '#cotedazur', '#sortiranice', '#nicefrance', '#cannes', '#monaco', '#antibes', '#frenchriviera', '#soireenice', '#nicenightlife'];
-const GENRE = {
-  commercial: ['#house', '#shatta', '#afro', '#clubbing', '#electro', '#amapiano', '#dancehall'],
-  techno: ['#techno', '#technonice', '#hardtechno', '#rave', '#technofamily', '#technolovers', '#undergroundtechno'],
-  general: ['#soiree', '#nightlife', '#teuf', '#sortir', '#clubbing'],
-};
-export function hashtags(r, genre = 'general') {
-  return ['#TeufyParty', ...shuffle(r, LOCAL).slice(0, 3), ...shuffle(r, GENRE[genre] || GENRE.general).slice(0, 2)].join(' ');
+import { TENDANCES, tendancesAuto, scoreHashtag } from './tendances.mjs';
+
+// 5 hashtags maximum (règle Instagram depuis décembre 2025) : #TeufyParty + 2 locaux + 2 du style.
+// Le choix suit ce qui a marché sur le compte (apprentissage) et les tendances des autres comptes.
+const PERTINENT = /nice|cannes|monaco|antibes|azur|riviera|techno|house|club|night|soir|teuf|rave|party|afro|shatta|amapiano/i;
+export function hashtags(ch, genre = 'general') {
+  const H = TENDANCES.hashtags_candidats;
+  const max = TENDANCES.regles_instagram.hashtags_max;
+  const tendance = Object.keys(tendancesAuto().hashtags || {}).filter((t) => PERTINENT.test(t) && t !== H.marque.toLowerCase());
+  const local = [...new Set([...H.local, ...tendance.filter((t) => /nice|cannes|monaco|antibes|azur|riviera/.test(t))])];
+  const style = [...new Set([...(H[genre] || H.general), ...tendance.filter((t) => !local.includes(t))])];
+  const l = ch.pickMany(`hashtags-local`, local, 2, scoreHashtag);
+  const g = ch.pickMany(`hashtags-${genre}`, style.filter((t) => !l.includes(t)), max - 3, scoreHashtag);
+  return [H.marque, ...l, ...g].slice(0, max).join(' ');
 }
 
 // Une ligne d'info par soirée : date, nom, styles, lieu, prix.
@@ -67,7 +72,7 @@ export function captionIncontournables({ variante, events, from, to, ch, r }) {
     ? ['Tu seras à laquelle ?', 'On se retrouve où ?', 'Laquelle t\'attire le plus ?']
     : ['Tu sors où cette semaine ?', 'Laquelle on fait ensemble ?', 'Ta préférée, c\'est laquelle ?']);
   const suivre = ch.pick('suivre', SUIVRE);
-  return clip(`${intro}\n\n${liste(events)}\n\n${question} ${suivre}\n\n${hashtags(r, variante)}`);
+  return clip(`${intro}\n\n${liste(events)}\n\n${question} ${suivre}\n\n${hashtags(ch, variante)}`);
 }
 
 // --- Appel aux organisateurs (#TeufyParty) -----------------------------------
@@ -78,7 +83,7 @@ export function captionOrgas({ quand, ch, r }) {
     `Organisateurs, DJ, collectifs…\nVotre soirée ${quand}, c'est en commentaire que ça se passe 👇`,
     `Une soirée ${quand} à faire connaître ?\nDéposez-la ici, avec la date et le lieu 👇`,
   ]);
-  return clip(`🪩 #TeufyParty\n\n${intro}\n\nEt si tu cherches où sortir, lis les commentaires.\n\n${hashtags(r)}`);
+  return clip(`🪩 ${intro}\n\nEt si tu cherches où sortir, lis les commentaires.\n\n${hashtags(ch)}`);
 }
 
 // --- Bons plans -------------------------------------------------------------
@@ -87,7 +92,7 @@ export function captionBonPlan({ variante, events, from, to, ch, r, manuel }) {
   const suivre = ch.pick('suivre', SUIVRE);
   if (manuel) {
     const fin = ch.pick('fin-bonplan', ['Partagez à ceux qui doivent savoir.', 'Enregistrez pour plus tard.', 'Envoyez ça à votre groupe.']);
-    return clip(`${manuel.titre}\n\n${manuel.texte}\n\n${fin} ${suivre}\n\n${hashtags(r)}`);
+    return clip(`${manuel.titre}\n\n${manuel.texte}\n\n${fin} ${suivre}\n\n${hashtags(ch)}`);
   }
   if (variante === 'a-reserver') {
     const intro = ch.pick('intro-a-reserver', [
@@ -96,7 +101,7 @@ export function captionBonPlan({ variante, events, from, to, ch, r, manuel }) {
       `À réserver maintenant, pas le jour J. Les dates qu'on surveille pour les prochaines semaines.`,
     ]);
     const fin = ch.pick('fin-a-reserver', ['Envoie ça à ton groupe avant d\'oublier.', 'Enregistre le post, ça t\'évitera le « c\'est complet ».', 'Laquelle vous tente le plus ?']);
-    return clip(`${intro}\n\n${liste(events)}\n\n${fin}\n\nBillets sur Shotgun et DICE. ${suivre}\n\n${hashtags(r)}`);
+    return clip(`${intro}\n\n${liste(events)}\n\n${fin}\n\nBillets sur Shotgun et DICE. ${suivre}\n\n${hashtags(ch)}`);
   }
   const intro = ch.pick('intro-petits-prix', [
     `Bon plan : sortir sur la Côte sans se ruiner. Gratuit ou petit prix, ${plage(from, to)}.`,
@@ -104,7 +109,7 @@ export function captionBonPlan({ variante, events, from, to, ch, r, manuel }) {
     `Qui a dit que sortir sur la Côte coûtait une fortune ? Petits prix et entrées gratuites 👇`,
   ]);
   const fin = ch.pick('fin-petits-prix', ['Partagez à votre pote toujours fauché.', 'Tag la personne qui dit toujours que c\'est trop cher.', 'Vous connaissez d\'autres bons plans ? Partagez en commentaire.']);
-  return clip(`${intro}\n\n${liste(events)}\n\n${fin}\n\n${suivre}\n\n${hashtags(r)}`);
+  return clip(`${intro}\n\n${liste(events)}\n\n${fin}\n\n${suivre}\n\n${hashtags(ch)}`);
 }
 
 // --- Débat ------------------------------------------------------------------
@@ -113,7 +118,7 @@ export function captionDebat({ debat, ch, r }) {
   const vote = debat.a && debat.b
     ? `\n\n${ch.pick('vote', ['Votez en commentaire', 'Répondez en commentaire', 'Votre camp en commentaire'])} : 🅰️ ${debat.a} ou 🅱️ ${debat.b}`
     : '';
-  return clip(`${debat.legende}${vote}\n\n${hashtags(r)}`);
+  return clip(`${debat.legende}${vote}\n\n${hashtags(ch)}`);
 }
 
 // --- Reels ------------------------------------------------------------------
@@ -127,7 +132,7 @@ export function captionReel({ variante, events, ch, r, elargi = false }) {
   const hook = ch.pick(`legende-reel-${variante}`, hooks.length ? hooks : ['Laquelle tu choisis ? Ton numéro en commentaire.']);
   const cta = ch.pick('cta-reel', ['Envoie ce reel à ton crew.', 'Tag ceux qui viennent avec toi.', 'Enregistre pour ne pas oublier.']);
   const suivre = ch.pick('suivre', SUIVRE);
-  return clip(`${hook}\n\n${events.map((e, i) => `${i + 1}. ${ligne(e)}`).join('\n')}\n\n${cta} ${suivre}\n\n${hashtags(r, variante === 'techno' ? 'techno' : 'general')}`);
+  return clip(`${hook}\n\n${events.map((e, i) => `${i + 1}. ${ligne(e)}`).join('\n')}\n\n${cta} ${suivre}\n\n${hashtags(ch, variante === 'techno' ? 'techno' : 'general')}`);
 }
 
 function clip(s) { return s.length <= 2200 ? s : s.slice(0, 2190) + '…'; }

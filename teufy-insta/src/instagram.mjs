@@ -70,10 +70,20 @@ export async function publishSingle(imageUrl, caption, ig) {
   return publish(id, ig);
 }
 
-export async function publishReel(videoUrl, coverUrl, caption, ig) {
+export async function publishReel(videoUrl, coverUrl, caption, ig, { essai = false } = {}) {
   const params = { media_type: 'REELS', video_url: videoUrl, caption, share_to_feed: 'true' };
   if (coverUrl) params.cover_url = coverUrl;
-  const { id } = await call('POST', `${ig.user}/media`, params, ig);
+  // Trial Reel : montré d'abord aux non-abonnés, publié sur le profil s'il performe.
+  if (essai) params.trial_params = JSON.stringify({ graduation_strategy: 'SS_PERFORMANCE' });
+  let id;
+  try {
+    ({ id } = await call('POST', `${ig.user}/media`, params, ig));
+  } catch (err) {
+    if (!essai) throw err;
+    console.log(`Reel d'essai refusé (${err.message}) : publication normale.`);
+    delete params.trial_params;
+    ({ id } = await call('POST', `${ig.user}/media`, params, ig));
+  }
   await waitReady(id, ig);
   return publish(id, ig);
 }
@@ -121,4 +131,11 @@ export async function insights(mediaId, isReel, ig) {
 export async function followers(ig) {
   const f = await call('GET', ig.user, { fields: 'followers_count' }, ig);
   return f.followers_count;
+}
+
+// Posts publics d'un autre compte professionnel (API « Business Discovery »).
+export async function businessDiscovery(handle, ig) {
+  const fields = `business_discovery.username(${handle}){username,followers_count,media_count,media.limit(25){caption,like_count,comments_count,media_type,media_product_type,timestamp,permalink}}`;
+  const j = await call('GET', ig.user, { fields }, ig);
+  return j.business_discovery;
 }
